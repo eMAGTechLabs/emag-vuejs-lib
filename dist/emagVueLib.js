@@ -90,6 +90,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 
 	  (0, _keys2.default)(components).forEach(function (key) {
+	    components[key].install = function (Vue) {};
 	    Vue.component(key, components[key]);
 	  });
 	}
