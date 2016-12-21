@@ -6,6 +6,7 @@ function plugin (Vue) {
   }
 
   Object.keys(components).forEach(function (key) {
+    components[key].install = function (Vue) {}
     Vue.component(key, components[key])
   })
 }
