@@ -8,7 +8,7 @@
           </button>
         </div>
         <a class="navbar-brand" href="javascript:void(0)">
-          <img src="./../assets/logo.png" />
+          <img v-if="logoPath" :src="logoPath" />
         </a>
         <div class="nav-controls visible-xs-inline-block pull-right">
           <button id="toggle-nav-btn" type="button" class="btn btn-default navbar-btn" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
@@ -17,13 +17,20 @@
         </div>
       </div>
       <div class="collapse navbar-collapse" id="main-nav">
-        <h4 class="navbar-text">Vue demo boilerplate</h4>
+        <h4 class="navbar-text">{{ appName }}</h4>
       </div>
     </div>
   </nav>
 </template>
 <script>
   export default {
-    name: 'navbar'
+    name: 'navbar',
+    props: ['dataOptions'],
+    data () {
+      return {
+        logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
+        appName: this.dataOptions ? this.dataOptions.appName : ''
+      }
+    }
   }
 </script>

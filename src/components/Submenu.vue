@@ -8,7 +8,6 @@
     </li>
   </ul>
 </template>
-<script src='./node_modules/emag-apps-ui-kit/dist/js/main_script.js' type="text/javascript"></script>
 <script>
 export default {
   name: 'submenu',

@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import Submenu from './Submenu'
-import SidebarControl from './SidebarControl'
+import Submenu from './Submenu.vue'
+import SidebarControl from './SidebarControl.vue'
 
 export default {
   name: 'sidebar',
