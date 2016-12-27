@@ -1506,6 +1506,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
+	var _assign = __webpack_require__(9);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
 	var _Submenu = __webpack_require__(60);
 	
 	var _Submenu2 = _interopRequireDefault(_Submenu);
@@ -1517,71 +1521,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <div id="sidebar" class="sidebar sidebar-fixed">
-	//     <div class="sidebar-outer scrollable default-skin" tabindex="-1">
-	//       <div class="viewport">
-	//         <div class="overview">
-	//           <ul class="sidebar-inner">
-	//             <li v-for="item in items"
-	//                 :class="['menu-item', item.children && item.children.length ? 'menu-item-has-children': '', item.open ? 'active' : '']">
-	//               <a :href="item.link">
-	//                 <i :class="['menu-icon', item.icon]"></i>
-	//                 <span class="menu-text">{{ item.label }}</span>
-	//               </a>
-	//               <div class="menu-item-data">
-	//                 <a :href="item.link" class="menu-item-min-link">
-	//                   <span class="menu-text">{{ item.label }}</span>
-	//                 </a>
-	//                 <submenu v-bind:item="item" v-if="item.children.length"></submenu>
-	//               </div>
-	//             </li>
-	//           </ul>
+	//     <div id="sidebar" class="sidebar sidebar-fixed">
+	//         <div class="sidebar-outer scrollable default-skin" tabindex="-1">
+	//             <div class="viewport">
+	//                 <div class="overview">
+	//                     <ul class="sidebar-inner">
+	//                         <li v-for="item in items"
+	//                             :class="['menu-item', item.children && item.children.length ? 'menu-item-has-children': '', item.open ? 'active' : '']">
+	//                             <a :href="item.link">
+	//                                 <i :class="['menu-icon', item.icon]"></i>
+	//                                 <span class="menu-text">{{ item.label }}</span>
+	//                             </a>
+	//                             <div class="menu-item-data">
+	//                                 <a :href="item.link" class="menu-item-min-link">
+	//                                     <span class="menu-text">{{ item.label }}</span>
+	//                                 </a>
+	//                                 <submenu v-bind:item="item" v-if="item.children.length"></submenu>
+	//                             </div>
+	//                         </li>
+	//                     </ul>
+	//                 </div>
+	//             </div>
 	//         </div>
-	//       </div>
+	//         <sidebar-control></sidebar-control>
 	//     </div>
-	//     <sidebar-control></sidebar-control>
-	//   </div>
 	// </template>
 	
 	// <script>
 	exports.default = {
 	  name: 'sidebar',
+	  props: ['dataOptions'],
 	  data: function data() {
-	    return {
-	      items: [{
-	        label: 'Dashboard',
-	        link: '#/demo/',
-	        icon: 'fa fa-dashboard',
-	        children: [],
-	        visible: true,
-	        current: true,
-	        open: false
-	      }, {
-	        label: 'Main Layout',
-	        link: '#',
-	        icon: 'fa fa-file-text',
-	        children: [{
-	          label: 'Page template',
-	          link: '#/boilerplate',
-	          icon: 'fa fa-angle-double-right',
-	          visible: true,
-	          current: false,
-	          open: false,
-	          chidren: [{
-	            label: 'Children 2',
-	            link: '#/demo/',
-	            icon: 'fa fa-dashboard',
-	            children: [],
-	            visible: true,
-	            current: true,
-	            open: false
-	          }]
-	        }],
-	        visible: true,
-	        current: false,
-	        open: false
-	      }]
-	    };
+	    return (0, _assign2.default)({}, this.dataOptions);
 	  },
 	
 	  components: {
@@ -1596,7 +1567,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }
 	};
-	
 	// </script>
 
 /***/ },
@@ -1714,7 +1684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 66 */
 /***/ function(module, exports) {
 
-	module.exports = "<div id=\"sidebar\" class=\"sidebar sidebar-fixed\">\n    <div class=\"sidebar-outer scrollable default-skin\" tabindex=\"-1\">\n      <div class=\"viewport\">\n        <div class=\"overview\">\n          <ul class=\"sidebar-inner\">\n            <li v-for=\"item in items\"\n                :class=\"['menu-item', item.children && item.children.length ? 'menu-item-has-children': '', item.open ? 'active' : '']\">\n              <a :href=\"item.link\">\n                <i :class=\"['menu-icon', item.icon]\"></i>\n                <span class=\"menu-text\">{{ item.label }}</span>\n              </a>\n              <div class=\"menu-item-data\">\n                <a :href=\"item.link\" class=\"menu-item-min-link\">\n                  <span class=\"menu-text\">{{ item.label }}</span>\n                </a>\n                <submenu v-bind:item=\"item\" v-if=\"item.children.length\"></submenu>\n              </div>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n    <sidebar-control></sidebar-control>\n  </div>";
+	module.exports = "<div id=\"sidebar\" class=\"sidebar sidebar-fixed\">\n        <div class=\"sidebar-outer scrollable default-skin\" tabindex=\"-1\">\n            <div class=\"viewport\">\n                <div class=\"overview\">\n                    <ul class=\"sidebar-inner\">\n                        <li v-for=\"item in items\"\n                            :class=\"['menu-item', item.children && item.children.length ? 'menu-item-has-children': '', item.open ? 'active' : '']\">\n                            <a :href=\"item.link\">\n                                <i :class=\"['menu-icon', item.icon]\"></i>\n                                <span class=\"menu-text\">{{ item.label }}</span>\n                            </a>\n                            <div class=\"menu-item-data\">\n                                <a :href=\"item.link\" class=\"menu-item-min-link\">\n                                    <span class=\"menu-text\">{{ item.label }}</span>\n                                </a>\n                                <submenu v-bind:item=\"item\" v-if=\"item.children.length\"></submenu>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        <sidebar-control></sidebar-control>\n    </div>";
 
 /***/ }
 /******/ ])
