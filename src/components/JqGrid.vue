@@ -11,10 +11,6 @@ export default {
   beforeCreate () {
     this.id = this._uid
   },
-  created () {
-    // @TODO Fix issues in emag-apps-ui-kit regarding default language for page
-    window.photonPageLang = 'en'
-  },
   mounted () {
     let options = Object.assign(this.dataOptions, {
       table: '#grid_table_' + this.id,

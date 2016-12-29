@@ -1,5 +1,5 @@
 export default {
-  'bg': {
+  'bg_BG': {
     'welcome': {
       'message': 'влезли като',
       'messageNoLogin': 'Неудостоверен потребител'

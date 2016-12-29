@@ -1,5 +1,5 @@
 export default {
-  'ro': {
+  'ro_RO': {
     'welcome': {
       'message': 'Autentificat ca',
       'messageNoLogin': 'Utilizator neautentificat'

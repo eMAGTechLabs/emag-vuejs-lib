@@ -1,5 +1,5 @@
 export default {
-  'hu': {
+  'hu_HU': {
     'welcome': {
       'message': 'bejelentkezve mint',
       'messageNoLogin': 'Hitelesített felhasználó'

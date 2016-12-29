@@ -3,7 +3,12 @@ const path = require('path')
 
 module.exports = {
   resolve: {
-    root: path.resolve('./')
+    extensions: ['', '.js', '.vue'],
+    root: path.resolve('./'),
+    alias: {
+      vue: 'vue/dist/vue.js',
+      components: path.resolve(__dirname, '../src/components')
+    }
   },
   module: {
     loaders: [
