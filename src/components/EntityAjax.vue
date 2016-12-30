@@ -1,5 +1,5 @@
 <template>
-    <select :id="'entity_ajax_' + id" class="form-control">
+    <select :id="'entity_ajax_' + id" class="form-control" :multiple="this.options.multiple ? this.options.multiple : false">
         <option value=''></option>
         <option :value="item.value" v-for="item in options.items">
             {{ item.name }}

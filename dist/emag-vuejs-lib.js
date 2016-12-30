@@ -1937,7 +1937,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	// Helpers
 	// <template>
-	//     <select :id="'entity_ajax_' + id" class="form-control">
+	//     <select :id="'entity_ajax_' + id" class="form-control" :multiple="this.options.multiple ? this.options.multiple : false">
 	//         <option value=''></option>
 	//         <option :value="item.value" v-for="item in options.items">
 	//             {{ item.name }}
@@ -1958,7 +1958,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 78 */
 /***/ function(module, exports) {
 
-	module.exports = "<select :id=\"'entity_ajax_' + id\" class=\"form-control\">\n        <option value=''></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
+	module.exports = "<select :id=\"'entity_ajax_' + id\" class=\"form-control\" :multiple=\"this.options.multiple ? this.options.multiple : false\">\n        <option value=''></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
 
 /***/ }
 /******/ ])
