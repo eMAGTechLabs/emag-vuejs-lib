@@ -5,6 +5,7 @@ import Sidebar from './Sidebar'
 import Footer from './Footer'
 import Submenu from './Submenu'
 import SidebarControl from './SidebarControl'
+import EntityAjax from './EntityAjax'
 import Translations from '../translations/messages.js'
 
 const EmagVueLib = {
@@ -15,7 +16,8 @@ const EmagVueLib = {
   Sidebar,
   Submenu,
   SidebarControl,
-  Translations
+  Translations,
+  EntityAjax
 }
 
 module.exports = EmagVueLib
