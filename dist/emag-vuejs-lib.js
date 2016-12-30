@@ -1616,6 +1616,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mounted: function mounted() {
 	    try {
 	      /* eslint-disable no-undef */
+	      // Methods from emag-apps-ui-kit
 	      initSidebarEvents();
 	      staticNavigation(this.$route.path);
 	      initScrollbarForSidebar();
@@ -1806,8 +1807,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'footer',
 	  props: ['dataOptions'],
 	  data: function data() {
-	    var content = '<span>Copyright &copy; 2011 - ' + new Date().getFullYear() + ' <strong>eMAG</strong><br class="visible-xs-inline"/> All rights reserved.</span>';
-	    return (0, _assign2.default)({ fixed: false, content: content, actions: '' }, this.dataOptions);
+	    return (0, _assign2.default)({ fixed: false, content: '', actions: '' }, this.dataOptions);
 	  }
 	};
 	// </script>

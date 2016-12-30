@@ -21,8 +21,7 @@ export default {
   name: 'footer',
   props: ['dataOptions'],
   data () {
-    let content = '<span>Copyright &copy; 2011 - ' + new Date().getFullYear() + ' <strong>eMAG</strong><br class="visible-xs-inline"/> All rights reserved.</span>'
-    return Object.assign({ fixed: false, content: content, actions: '' }, this.dataOptions)
+    return Object.assign({ fixed: false, content: '', actions: '' }, this.dataOptions)
   }
 }
 </script>

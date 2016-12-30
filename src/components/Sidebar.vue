@@ -41,6 +41,7 @@ export default {
   mounted () {
     try {
       /* eslint-disable no-undef */
+      // Methods from emag-apps-ui-kit
       initSidebarEvents()
       staticNavigation(this.$route.path)
       initScrollbarForSidebar()
