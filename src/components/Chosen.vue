@@ -1,10 +1,10 @@
 <template>
-    <select :id="'chosen_' + id" class="form-control">
-        <option value=''></option>
-        <option :value="item.value" v-for="item in options.items">
-            {{ item.name }}
-        </option>
-    </select>
+  <select :id="'chosen_' + id" class="form-control">
+    <option value=''></option>
+    <option :value="item.value" v-for="item in options.items">
+      {{ item.name }}
+    </option>
+  </select>
 </template>
 <script>
   import TranslationMessages from './../translations/messages'
@@ -38,6 +38,6 @@
     if (self.$store.state && self.$store.state.lang) {
       return self.$store.state.lang
     }
-    return 'en'
+    return Object.keys(TranslationMessages.translations)[0]
   }
 </script>

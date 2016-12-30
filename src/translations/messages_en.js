@@ -1,5 +1,5 @@
 export default {
-  'en': {
+  'en_GB': {
     'welcome': {
       'message': 'logged as',
       'messageNoLogin': 'Unauthenticated user'

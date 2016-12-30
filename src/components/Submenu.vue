@@ -1,10 +1,10 @@
 <template>
   <ul class="sidebar-submenu">
-    <li class="menu-item" v-for="child in item.children">
-      <a :href=child.link>
+    <li v-for="child in item.children" :class="['menu-item', child.children && child.children.length ? 'menu-item-has-children': '', child.open ? 'active' : '']">
+      <router-link v-bind:to="child.link" :href="child.link.length ? child.link: 'javascript:void(0)'">
         <span class="menu-text">{{ child.label }}</span>
-      </a>
-      <submenu v-bind:item="child"></submenu>
+      </router-link>
+      <submenu :item="child"></submenu>
     </li>
   </ul>
 </template>

@@ -6,15 +6,15 @@
                     <ul class="sidebar-inner">
                         <li v-for="item in items"
                             :class="['menu-item', item.children && item.children.length ? 'menu-item-has-children': '', item.open ? 'active' : '']">
-                            <a :href="item.link">
+                            <router-link :to="item.link" :href="item.link.length ? item.link: 'javascript:void(0)'">
                                 <i :class="['menu-icon', item.icon]"></i>
                                 <span class="menu-text">{{ item.label }}</span>
-                            </a>
+                            </router-link>
                             <div class="menu-item-data">
-                                <a :href="item.link" class="menu-item-min-link">
+                                <router-link :to="item.link" class="menu-item-min-link" :href="item.link.length ? item.link: 'javascript:void(0)'">
                                     <span class="menu-text">{{ item.label }}</span>
-                                </a>
-                                <submenu v-bind:item="item" v-if="item.children.length"></submenu>
+                                </router-link>
+                                <submenu :item="item" v-if="item.children.length"></submenu>
                             </div>
                         </li>
                     </ul>
@@ -26,14 +26,14 @@
 </template>
 
 <script>
-import Submenu from './Submenu.vue'
-import SidebarControl from './SidebarControl.vue'
+import SidebarControl from './SidebarControl'
+import Submenu from './Submenu'
 
 export default {
   name: 'sidebar',
   props: ['dataOptions'],
   data () {
-    return Object.assign({}, this.dataOptions)
+    return Object.assign({}, { items: (this.dataOptions && this.dataOptions.items) ? this.dataOptions.items : [] })
   },
   components: {
     Submenu, SidebarControl
@@ -41,6 +41,9 @@ export default {
   mounted () {
     try {
       /* eslint-disable no-undef */
+      // Methods from emag-apps-ui-kit
+      initSidebarEvents()
+      staticNavigation(this.$route.path)
       initScrollbarForSidebar()
     } catch (ex) {
       console.log(ex)

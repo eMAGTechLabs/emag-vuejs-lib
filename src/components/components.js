@@ -1,15 +1,19 @@
-import Chosen from './Chosen.vue'
-import Navbar from './Navbar.vue'
-import JqGrid from './JqGrid.vue'
-import Sidebar from './Sidebar.vue'
-import SidebarControl from './SidebarControl.vue'
+import Chosen from './Chosen'
+import Header from './Header'
+import JqGrid from './JqGrid'
+import Sidebar from './Sidebar'
+import Footer from './Footer'
+import Submenu from './Submenu'
+import SidebarControl from './SidebarControl'
 import Translations from '../translations/messages.js'
 
 const EmagVueLib = {
   Chosen,
-  Navbar,
+  Footer,
+  Header,
   JqGrid,
   Sidebar,
+  Submenu,
   SidebarControl,
   Translations
 }
