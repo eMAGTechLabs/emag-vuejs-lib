@@ -1,5 +1,5 @@
 <template>
-    <select :id="'entity_ajax_' + id" class="form-control" :multiple="this.options.multiple ? this.options.multiple : false">
+    <select :id="'autocomplete_' + id" class="form-control" :multiple="this.options.multiple ? this.options.multiple : false">
         <option value=''></option>
         <option :value="item.value" v-for="item in options.items">
             {{ item.name }}
@@ -10,7 +10,7 @@
   import TranslationMessages from './../translations/messages'
 
   export default {
-    name: 'entity-ajax',
+    name: 'autocomplete',
     props: ['dataOptions'],
     data () {
       /* eslint-disable no-undef */
@@ -42,7 +42,7 @@
               filterValues[prop] = this.filters[prop]
             }
           }
-          let term = $('#entity_ajax_' + this.id + '_chosen').find('input').val()
+          let term = $('#autocomplete_' + this.id + '_chosen').find('input').val()
           let dataSend = {
             'filters': filterValues,
             'term': term
@@ -55,7 +55,7 @@
       }
     },
     mounted () {
-      $('#entity_ajax_' + this.id).ajaxChosen(this.options, (data) => {
+      $('#autocomplete_' + this.id).ajaxChosen(this.options, (data) => {
         let terms = {}
         $.each(data.results, function (i, val) {
           terms[i] = val

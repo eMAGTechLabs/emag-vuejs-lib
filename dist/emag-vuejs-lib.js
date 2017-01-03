@@ -84,9 +84,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _SidebarControl2 = _interopRequireDefault(_SidebarControl);
 	
-	var _EntityAjax = __webpack_require__(76);
+	var _Autocomplete = __webpack_require__(76);
 	
-	var _EntityAjax2 = _interopRequireDefault(_EntityAjax);
+	var _Autocomplete2 = _interopRequireDefault(_Autocomplete);
 	
 	var _messages = __webpack_require__(52);
 	
@@ -103,7 +103,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  Submenu: _Submenu2.default,
 	  SidebarControl: _SidebarControl2.default,
 	  Translations: _messages2.default,
-	  EntityAjax: _EntityAjax2.default
+	  Autocomplete: _Autocomplete2.default
 	};
 	
 	module.exports = EmagVueLib;
@@ -1837,12 +1837,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./EntityAjax.vue"
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./EntityAjax.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./EntityAjax.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./EntityAjax.vue")
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./EntityAjax.vue")
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -1873,7 +1873,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	  name: 'entity-ajax',
+	  name: 'autocomplete',
 	  props: ['dataOptions'],
 	  data: function data() {
 	    /* eslint-disable no-undef */
@@ -1905,7 +1905,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            filterValues[prop] = this.filters[prop];
 	          }
 	        }
-	        var term = $('#entity_ajax_' + this.id + '_chosen').find('input').val();
+	        var term = $('#autocomplete_' + this.id + '_chosen').find('input').val();
 	        var dataSend = {
 	          'filters': filterValues,
 	          'term': term
@@ -1918,7 +1918,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	  },
 	  mounted: function mounted() {
-	    $('#entity_ajax_' + this.id).ajaxChosen(this.options, function (data) {
+	    $('#autocomplete_' + this.id).ajaxChosen(this.options, function (data) {
 	      var terms = {};
 	      $.each(data.results, function (i, val) {
 	        terms[i] = val;
@@ -1937,7 +1937,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	// Helpers
 	// <template>
-	//     <select :id="'entity_ajax_' + id" class="form-control" :multiple="this.options.multiple ? this.options.multiple : false">
+	//     <select :id="'autocomplete_' + id" class="form-control" :multiple="this.options.multiple ? this.options.multiple : false">
 	//         <option value=''></option>
 	//         <option :value="item.value" v-for="item in options.items">
 	//             {{ item.name }}
@@ -1958,7 +1958,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 78 */
 /***/ function(module, exports) {
 
-	module.exports = "<select :id=\"'entity_ajax_' + id\" class=\"form-control\" :multiple=\"this.options.multiple ? this.options.multiple : false\">\n        <option value=''></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
+	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"this.options.multiple ? this.options.multiple : false\">\n        <option value=''></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
 
 /***/ }
 /******/ ])

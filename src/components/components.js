@@ -5,7 +5,7 @@ import Sidebar from './Sidebar'
 import Footer from './Footer'
 import Submenu from './Submenu'
 import SidebarControl from './SidebarControl'
-import EntityAjax from './EntityAjax'
+import Autocomplete from './Autocomplete'
 import Translations from '../translations/messages.js'
 
 const EmagVueLib = {
@@ -17,7 +17,7 @@ const EmagVueLib = {
   Submenu,
   SidebarControl,
   Translations,
-  EntityAjax
+  Autocomplete
 }
 
 module.exports = EmagVueLib
