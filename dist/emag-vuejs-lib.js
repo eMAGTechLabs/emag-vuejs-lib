@@ -1872,11 +1872,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	/* eslint-disable no-undef */
 	exports.default = {
 	  name: 'autocomplete',
 	  props: ['dataOptions'],
+	  updated: function updated() {
+	    $('#autocomplete_' + this.id).trigger('chosen:updated');
+	  },
 	  data: function data() {
-	    /* eslint-disable no-undef */
 	    this.id = this._uid;
 	    this.translations = _messages2.default.translations[getDefaultLang(this)];
 	
@@ -1939,7 +1942,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <template>
 	//     <select :id="'autocomplete_' + id" class="form-control" :multiple="this.options.multiple ? this.options.multiple : false">
 	//         <option value=''></option>
-	//         <option :value="item.value" v-for="item in options.items">
+	//         <option v-for="item in dataOptions.items" :value="item.value" selected>
 	//             {{ item.name }}
 	//         </option>
 	//     </select>
@@ -1958,7 +1961,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 78 */
 /***/ function(module, exports) {
 
-	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"this.options.multiple ? this.options.multiple : false\">\n        <option value=''></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
+	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"this.options.multiple ? this.options.multiple : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" selected>\n            {{ item.name }}\n        </option>\n    </select>";
 
 /***/ }
 /******/ ])
