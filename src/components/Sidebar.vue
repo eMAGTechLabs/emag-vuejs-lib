@@ -5,15 +5,10 @@
                 <div class="overview">
                     <ul class="sidebar-inner">
                         <li v-for="item in items"
-                            :class="['menu-item', item.children && item.children.length ? 'menu-item-has-children': '', item.open ? 'active' : '']">
-                            <router-link :to="item.link" :href="item.link.length ? item.link: 'javascript:void(0)'">
-                                <i :class="['menu-icon', item.icon]"></i>
-                                <span class="menu-text">{{ item.label }}</span>
-                            </router-link>
+                            :class="getMenuItemCssClass(item)">
+                            <sidebar-item :item="item"></sidebar-item>
                             <div class="menu-item-data">
-                                <router-link :to="item.link" class="menu-item-min-link" :href="item.link.length ? item.link: 'javascript:void(0)'">
-                                    <span class="menu-text">{{ item.label }}</span>
-                                </router-link>
+                                <sidebar-item :item="item" :collapsed="true"></sidebar-item>
                                 <submenu :item="item" v-if="item.children.length"></submenu>
                             </div>
                         </li>
@@ -26,24 +21,32 @@
 </template>
 
 <script>
-import SidebarControl from './SidebarControl'
+/* eslint-disable no-unused-vars */
 import Submenu from './Submenu'
+import SidebarItem from './SidebarItem'
+import SidebarControl from './SidebarControl'
+import sidebarMixin from './../mixins/Sidebar'
 
 export default {
   name: 'sidebar',
   props: ['dataOptions'],
+  mixins: [ sidebarMixin ],
   data () {
-    return Object.assign({}, { items: (this.dataOptions && this.dataOptions.items) ? this.dataOptions.items : [] })
+    return Object.assign({ }, { items: (this.dataOptions && this.dataOptions.items) ? this.dataOptions.items : [] })
   },
   components: {
-    Submenu, SidebarControl
+    Submenu, SidebarItem, SidebarControl
   },
   mounted () {
     try {
+      let routePath = this.$route.path
+      if (this.$router.mode === 'hash') {
+        routePath = '#' + routePath
+      }
       /* eslint-disable no-undef */
       // Methods from emag-apps-ui-kit
       initSidebarEvents()
-      staticNavigation(this.$route.path)
+      staticNavigation(routePath)
       initScrollbarForSidebar()
     } catch (ex) {
       console.log(ex)
