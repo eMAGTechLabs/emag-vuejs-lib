@@ -5,7 +5,7 @@ describe('Datetimepicker.vue', () => {
     expect(Datetimepicker.props)
       .to.contains('dataOptions')
   })
-  it('should have tag name entity-ajax', () => {
+  it('should have tag name datetimepicker', () => {
     expect(Datetimepicker.name)
       .to.equal('datetimepicker')
   })
