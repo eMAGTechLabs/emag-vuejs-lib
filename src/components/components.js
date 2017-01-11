@@ -7,6 +7,7 @@ import Submenu from './Submenu'
 import SidebarControl from './SidebarControl'
 import Autocomplete from './Autocomplete'
 import Translations from '../translations/messages.js'
+import Datetimepicker from './Datetimepicker'
 
 const EmagVueLib = {
   Chosen,
@@ -17,7 +18,8 @@ const EmagVueLib = {
   Submenu,
   SidebarControl,
   Translations,
-  Autocomplete
+  Autocomplete,
+  Datetimepicker
 }
 
 module.exports = EmagVueLib
