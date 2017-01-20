@@ -2141,7 +2141,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mounted: function mounted() {
 	    this.initDatetimepicker(this);
-	    this.$watch('dataOptions', function (data) {
+	    this.unwatch = this.$watch('dataOptions', function (data) {
 	      this.options = this.getOptions(this);
 	      this.destroyDatetimepicker(this);
 	      this.initDatetimepicker(this);
@@ -2233,6 +2233,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var destroyDatetimepicker = function destroyDatetimepicker(self) {
 	  try {
 	    $(self.$el).find('#date_time_' + self.id).data('DateTimePicker').destroy();
+	    self.unwatch();
 	  } catch (ex) {}
 	};
 	

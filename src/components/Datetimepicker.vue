@@ -18,7 +18,7 @@ export default {
   },
   mounted () {
     this.initDatetimepicker(this)
-    this.$watch('dataOptions', function (data) {
+    this.unwatch = this.$watch('dataOptions', function (data) {
       this.options = this.getOptions(this)
       this.destroyDatetimepicker(this)
       this.initDatetimepicker(this)
