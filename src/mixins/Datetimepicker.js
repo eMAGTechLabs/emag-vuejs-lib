@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const getIcon = (format) => {
   /* eslint-disable no-unused-vars */
   let icon = 'fa fa-calendar'
@@ -32,11 +33,36 @@ const hasCharacters = (format, characters) => {
   return false
 }
 
+const getOptions = (self) => {
+  self.id = self._uid
+  let format = 'YYYY-MM-DD HH:mm:ss'
+  const options = {
+    format: format,
+    icons: {
+      date: self.getIcon(self.dataOptions.format || format)
+    }
+  }
+  return Object.assign({}, options, self.dataOptions)
+}
+
+const initDatetimepicker = (self) => {
+  $('#date_time_' + self.id).datetimepicker(self.options)
+}
+
+const destroyDatetimepicker = (self) => {
+  try {
+    $(self.$el).find('#date_time_' + self.id).data('DateTimePicker').destroy()
+  } catch (ex) {}
+}
+
 export default {
   methods: {
     getIcon: getIcon,
     hasDate: hasDate,
     hasTime: hasTime,
-    hasCharacters: hasCharacters
+    hasCharacters: hasCharacters,
+    getOptions: getOptions,
+    initDatetimepicker: initDatetimepicker,
+    destroyDatetimepicker: destroyDatetimepicker
   }
 }
