@@ -2125,10 +2125,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _assign = __webpack_require__(48);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
 	var _Datetimepicker = __webpack_require__(87);
 	
 	var _Datetimepicker2 = _interopRequireDefault(_Datetimepicker);
@@ -2138,35 +2134,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	exports.default = {
 	  name: 'datetimepicker',
-	  props: ['dataOptions'],
+	  props: ['dataOptions', 'disabled'],
 	  mixins: [_Datetimepicker2.default],
 	  data: function data() {
-	    this.id = this._uid;
-	    var defaultOptions = {
-	      format: 'YYYY-MM-DD HH:mm:ss',
-	      icons: {
-	        date: ''
-	      }
-	    };
-	    var options = (0, _assign2.default)(defaultOptions, this.dataOptions || {});
-	    options.icons.date = this.getIcon(options.format);
-	    return options;
+	    return { options: this.getOptions(this) };
 	  },
 	  mounted: function mounted() {
-	    $('#date_time_' + this.id).datetimepicker(this.options);
+	    this.initDatetimepicker(this);
+	    this.$watch('dataOptions', function (data) {
+	      this.options = this.getOptions(this);
+	      this.destroyDatetimepicker(this);
+	      this.initDatetimepicker(this);
+	    }, { deep: true });
 	  },
 	
 	  destroyed: function destroyed() {
-	    try {
-	      $(this.$el).find('#date_time_' + this.id).data('DateTimePicker').destroy();
-	    } catch (ex) {}
+	    this.destroyDatetimepicker(this);
 	  }
 	};
 	// </script>
+	
 	// <template>
 	//     <div class="input-group">
-	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off">
-	//         <div class="input-group-addon"><i :class="icons.date"></i>
+	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled">
+	//         <div class="input-group-addon"><i :class="options.icons.date"></i>
 	//         </div>
 	//     </div>
 	// </template>
@@ -2174,13 +2165,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 87 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _assign = __webpack_require__(48);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* eslint-disable no-undef */
 	var getIcon = function getIcon(format) {
 	  /* eslint-disable no-unused-vars */
 	  var icon = 'fa fa-calendar';
@@ -2215,12 +2214,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return false;
 	};
 	
+	var getOptions = function getOptions(self) {
+	  self.id = self._uid;
+	  var format = 'YYYY-MM-DD HH:mm:ss';
+	  var options = {
+	    format: format,
+	    icons: {
+	      date: self.getIcon(self.dataOptions.format || format)
+	    }
+	  };
+	  return (0, _assign2.default)({}, options, self.dataOptions);
+	};
+	
+	var initDatetimepicker = function initDatetimepicker(self) {
+	  $('#date_time_' + self.id).datetimepicker(self.options);
+	};
+	
+	var destroyDatetimepicker = function destroyDatetimepicker(self) {
+	  try {
+	    $(self.$el).find('#date_time_' + self.id).data('DateTimePicker').destroy();
+	  } catch (ex) {}
+	};
+	
 	exports.default = {
 	  methods: {
 	    getIcon: getIcon,
 	    hasDate: hasDate,
 	    hasTime: hasTime,
-	    hasCharacters: hasCharacters
+	    hasCharacters: hasCharacters,
+	    getOptions: getOptions,
+	    initDatetimepicker: initDatetimepicker,
+	    destroyDatetimepicker: destroyDatetimepicker
 	  }
 	};
 
@@ -2228,7 +2252,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 88 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\">\n        <div class=\"input-group-addon\"><i :class=\"icons.date\"></i>\n        </div>\n    </div>";
+	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\">\n        <div class=\"input-group-addon\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
 
 /***/ }
 /******/ ])

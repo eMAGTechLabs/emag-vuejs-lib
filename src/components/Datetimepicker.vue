@@ -1,7 +1,8 @@
+
 <template>
     <div class="input-group">
-        <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off">
-        <div class="input-group-addon"><i :class="icons.date"></i>
+        <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled">
+        <div class="input-group-addon"><i :class="options.icons.date"></i>
         </div>
     </div>
 </template>
@@ -10,27 +11,21 @@ import datetimeMixin from './../mixins/Datetimepicker'
 /* eslint-disable no-undef */
 export default {
   name: 'datetimepicker',
-  props: ['dataOptions'],
+  props: ['dataOptions', 'disabled'],
   mixins: [ datetimeMixin ],
   data () {
-    this.id = this._uid
-    const defaultOptions = {
-      format: 'YYYY-MM-DD HH:mm:ss',
-      icons: {
-        date: ''
-      }
-    }
-    let options = Object.assign(defaultOptions, this.dataOptions || {})
-    options.icons.date = this.getIcon(options.format)
-    return options
+    return { options: this.getOptions(this) }
   },
   mounted () {
-    $('#date_time_' + this.id).datetimepicker(this.options)
+    this.initDatetimepicker(this)
+    this.$watch('dataOptions', function (data) {
+      this.options = this.getOptions(this)
+      this.destroyDatetimepicker(this)
+      this.initDatetimepicker(this)
+    }, { deep: true })
   },
   destroyed: function () {
-    try {
-      $(this.$el).find('#date_time_' + this.id).data('DateTimePicker').destroy()
-    } catch (ex) {}
+    this.destroyDatetimepicker(this)
   }
 }
 </script>
