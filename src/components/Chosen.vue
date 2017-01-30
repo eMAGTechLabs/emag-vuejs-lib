@@ -1,5 +1,5 @@
 <template>
-    <select :id="'chosen_' + id" class="form-control" :disabled="disabled">
+    <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="multiple">
         <option value=''></option>
         <option :value="item.value" v-for="item in options.items">
             {{ item.name }}
@@ -11,7 +11,7 @@
   import chosenMixin from './../mixins/Chosen'
   export default {
     name: 'chosen',
-    props: ['dataOptions', 'disabled'],
+    props: ['dataOptions', 'disabled', 'multiple'],
     mixins: [ chosenMixin ],
     data () {
       return { options: this.getOptions(translationMessages) }

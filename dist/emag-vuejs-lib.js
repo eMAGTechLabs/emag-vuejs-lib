@@ -168,7 +168,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled">
+	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="multiple">
 	//         <option value=''></option>
 	//         <option :value="item.value" v-for="item in options.items">
 	//             {{ item.name }}
@@ -178,7 +178,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <script>
 	exports.default = {
 	  name: 'chosen',
-	  props: ['dataOptions', 'disabled'],
+	  props: ['dataOptions', 'disabled', 'multiple'],
 	  mixins: [_Chosen2.default],
 	  data: function data() {
 	    return { options: this.getOptions(_messages2.default) };
@@ -1439,7 +1439,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 60 */
 /***/ function(module, exports) {
 
-	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\">\n        <option value=''></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
+	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"multiple\">\n        <option value=''></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
 
 /***/ },
 /* 61 */
