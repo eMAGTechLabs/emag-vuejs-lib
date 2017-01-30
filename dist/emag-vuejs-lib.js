@@ -169,7 +169,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	// <template>
 	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="multiple">
-	//         <option value=''></option>
+	//         <option value="" v-if="!!multiple"></option>
 	//         <option :value="item.value" v-for="item in options.items">
 	//             {{ item.name }}
 	//         </option>
@@ -1439,7 +1439,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 60 */
 /***/ function(module, exports) {
 
-	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"multiple\">\n        <option value=''></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
+	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"multiple\">\n        <option value=\"\" v-if=\"!!multiple\"></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
 
 /***/ },
 /* 61 */
@@ -2056,7 +2056,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	exports.default = {
 	  name: 'autocomplete',
-	  props: ['dataOptions'],
+	  props: ['dataOptions', 'multiple'],
 	  updated: function updated() {
 	    $('#autocomplete_' + this.id).trigger('chosen:updated');
 	  },
@@ -2121,7 +2121,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	// Helpers
 	// <template>
-	//     <select :id="'autocomplete_' + id" class="form-control" :multiple="this.options.multiple ? this.options.multiple : false">
+	//     <select :id="'autocomplete_' + id" class="form-control" :multiple="options.multiple || multiple ? true : false">
 	//         <option value=''></option>
 	//         <option v-for="item in dataOptions.items" :value="item.value" selected>
 	//             {{ item.name }}
@@ -2142,7 +2142,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 85 */
 /***/ function(module, exports) {
 
-	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"this.options.multiple ? this.options.multiple : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" selected>\n            {{ item.name }}\n        </option>\n    </select>";
+	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" selected>\n            {{ item.name }}\n        </option>\n    </select>";
 
 /***/ },
 /* 86 */

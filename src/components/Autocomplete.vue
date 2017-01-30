@@ -1,5 +1,5 @@
 <template>
-    <select :id="'autocomplete_' + id" class="form-control" :multiple="this.options.multiple ? this.options.multiple : false">
+    <select :id="'autocomplete_' + id" class="form-control" :multiple="options.multiple || multiple ? true : false">
         <option value=''></option>
         <option v-for="item in dataOptions.items" :value="item.value" selected>
             {{ item.name }}
@@ -11,7 +11,7 @@
   /* eslint-disable no-undef */
   export default {
     name: 'autocomplete',
-    props: ['dataOptions'],
+    props: ['dataOptions', 'multiple'],
     updated () {
       $('#autocomplete_' + this.id).trigger('chosen:updated')
     },
