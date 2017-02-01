@@ -23,17 +23,7 @@
         return this.getOptions()
       },
       translations: function () {
-        return {
-          modalTitle: this.$t('tree.modalTitle'),
-          modalResetLabel: this.$t('tree.modalResetLabel'),
-          modalCancelLabel: this.$t('tree.modalResetLabel'),
-          modalOkLabel: this.$t('tree.modalOkLabel'),
-          textUnmatched: this.$t('tree.textUnmatched'),
-          textSelectHierarchy: this.$t('tree.textSelectHierarchy'),
-          noResults: this.$t('label.selectNoResults'),
-          textSelected: this.$t('tree.textSelected'),
-          searchPlaceholder: this.$t('tree.searchPlaceholder')
-        }
+        return this.getTranslations()
       }
     },
     watch: {

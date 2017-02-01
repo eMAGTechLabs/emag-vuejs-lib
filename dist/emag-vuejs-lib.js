@@ -169,7 +169,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	// <template>
 	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="multiple">
-	//         <option value="" v-if="!!multiple"></option>
+	//         <option value=""></option>
 	//         <option :value="item.value" v-for="item in options.items">
 	//             {{ item.name }}
 	//         </option>
@@ -1439,7 +1439,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 60 */
 /***/ function(module, exports) {
 
-	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"multiple\">\n        <option value=\"\" v-if=\"!!multiple\"></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
+	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"multiple\">\n        <option value=\"\"></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
 
 /***/ },
 /* 61 */
