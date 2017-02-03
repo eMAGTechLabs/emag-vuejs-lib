@@ -3,6 +3,7 @@ import Header from './Header'
 import JqGrid from './JqGrid'
 import Sidebar from './Sidebar'
 import Footer from './Footer'
+import TreeType from './TreeType'
 import Submenu from './Submenu'
 import SidebarControl from './SidebarControl'
 import Autocomplete from './Autocomplete'
@@ -17,6 +18,7 @@ const EmagVueLib = {
   Sidebar,
   Submenu,
   SidebarControl,
+  TreeType,
   Translations,
   Autocomplete,
   Datetimepicker
