@@ -14,7 +14,7 @@ function getTranslations () {
   return {
     modalTitle: this.$t('tree.modalTitle'),
     modalResetLabel: this.$t('tree.modalResetLabel'),
-    modalCancelLabel: this.$t('tree.modalResetLabel'),
+    modalCancelLabel: this.$t('tree.modalCancelLabel'),
     modalOkLabel: this.$t('tree.modalOkLabel'),
     textUnmatched: this.$t('tree.textUnmatched'),
     textSelectHierarchy: this.$t('tree.textSelectHierarchy'),

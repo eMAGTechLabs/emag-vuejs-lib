@@ -7,7 +7,7 @@
     <div class="input-group input-group-no-separation">
       <div class="form-control" :id="'id_tree_type_' + _uid"></div>
       <span class="input-group-addon">
-          <i class="fa fa-sitemap"></i>
+          <i class="fa fa-sitemap" v-on:click="openTree"></i>
       </span>
     </div>
   </div>
@@ -24,6 +24,13 @@
       },
       translations: function () {
         return this.getTranslations()
+      }
+    },
+    methods: {
+      openTree () {
+        try {
+          this.$el.querySelector('#id_tree_type_' + this._uid).click()
+        } catch (ex) {}
       }
     },
     watch: {

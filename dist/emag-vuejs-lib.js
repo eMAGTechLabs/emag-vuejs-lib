@@ -2063,6 +2063,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.getTranslations();
 	    }
 	  },
+	  methods: {
+	    openTree: function openTree() {
+	      try {
+	        this.$el.querySelector('#id_tree_type_' + this._uid).click();
+	      } catch (ex) {}
+	    }
+	  },
 	  watch: {
 	    translations: function translations() {
 	      this.initTreeType();
@@ -2091,7 +2098,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     <div class="input-group input-group-no-separation">
 	//       <div class="form-control" :id="'id_tree_type_' + _uid"></div>
 	//       <span class="input-group-addon">
-	//           <i class="fa fa-sitemap"></i>
+	//           <i class="fa fa-sitemap" v-on:click="openTree"></i>
 	//       </span>
 	//     </div>
 	//   </div>
@@ -2130,7 +2137,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return {
 	    modalTitle: this.$t('tree.modalTitle'),
 	    modalResetLabel: this.$t('tree.modalResetLabel'),
-	    modalCancelLabel: this.$t('tree.modalResetLabel'),
+	    modalCancelLabel: this.$t('tree.modalCancelLabel'),
 	    modalOkLabel: this.$t('tree.modalOkLabel'),
 	    textUnmatched: this.$t('tree.textUnmatched'),
 	    textSelectHierarchy: this.$t('tree.textSelectHierarchy'),
@@ -2152,7 +2159,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 87 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\">\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\"></i>\n      </span>\n    </div>\n  </div>";
+	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\">\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
 
 /***/ },
 /* 88 */
