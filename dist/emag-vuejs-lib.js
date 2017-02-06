@@ -154,14 +154,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// Mixins
+	_vue2.default.use(_vueI18n2.default);
+	
+	// Reusable items
 	
 	
 	// Store
 	
 	
-	// Reusable items
-	_vue2.default.use(_vueI18n2.default);
+	// Mixins
+	
 	
 	// Translations
 	
@@ -12557,6 +12559,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  setLocale: function setLocale(state, locale) {
 	    /* eslint-disable no-undef */
+	    console.log(_vue2.default.config);
 	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
 	    _vue2.default.config.lang = locale.key;
 	  }

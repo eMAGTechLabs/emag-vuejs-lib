@@ -13,6 +13,7 @@ export default {
   },
   setLocale: (state, locale) => {
     /* eslint-disable no-undef */
+    console.log(Vue.config)
     state.config.locale = Object.assign({}, state.config.locale, locale)
     Vue.config.lang = locale.key
   }

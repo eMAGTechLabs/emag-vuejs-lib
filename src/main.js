@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 
+Vue.use(VueI18n)
+
+
 // Reusable items
 import Chosen from './components/Chosen'
 import Header from './components/Header'
@@ -30,8 +33,6 @@ import treetype from './mixins/TreeType'
 
 // Translations
 import Translations from './translations/messages.js'
-
-Vue.use(VueI18n)
 
 const EmagVueLib = {
   Chosen,
