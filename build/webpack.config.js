@@ -7,7 +7,7 @@ module.exports = {
     root: path.resolve('./'),
     alias: {
       vue: 'vue/dist/vue.js',
-      components: path.resolve(__dirname, '../src/components')
+      components: path.resolve(__dirname, '../src/')
     }
   },
   module: {
