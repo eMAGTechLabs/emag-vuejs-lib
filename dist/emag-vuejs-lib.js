@@ -1552,40 +1552,53 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	//   <nav class="navbar navbar-default navbar-fixed-top">
-	//     <div class="container-fluid">
-	//       <div class="navbar-header">
-	//         <div class="nav-controls visible-xs-inline-block pull-left">
-	//           <button id="toggle-sidebar-btn" type="button" class="btn btn-default navbar-btn"
-	//                   aria-expanded="false">
-	//             <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
-	//           </button>
+	//     <nav class="navbar navbar-default navbar-fixed-top">
+	//         <div class="container-fluid">
+	//             <div class="navbar-header">
+	//                 <div class="nav-controls visible-xs-inline-block pull-left">
+	//                     <button id="toggle-sidebar-btn" type="button" class="btn btn-default navbar-btn"
+	//                             aria-expanded="false">
+	//                         <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
+	//                     </button>
+	//                 </div>
+	//                 <a class="navbar-brand" href="javascript:void(0)">
+	//                     <img v-if="logoPath" :src="logoPath"/>
+	//                 </a>
+	//                 <div class="nav-controls visible-xs-inline-block pull-right">
+	//                     <button id="toggle-nav-btn" type="button" class="btn btn-default navbar-btn" data-toggle="collapse"
+	//                             data-target="#main-nav" aria-expanded="false">
+	//                         <span class="sr-only">Toggle navigation</span><i class="fa fa-angle-down"></i>
+	//                     </button>
+	//                 </div>
+	//             </div>
+	//             <div class="collapse navbar-collapse" id="main-nav">
+	//                 <h4 class="navbar-text" v-if="appName">{{ appName }}</h4>
+	//                 <ul class="nav navbar-nav navbar-right" v-if="headerParts">
+	//                   <component v-bind:is="view.component" v-for="view in currentView" :dataOptions="view.options">
+	//                   </component>
+	//                 </ul>
+	//             </div>
 	//         </div>
-	//         <a class="navbar-brand" href="javascript:void(0)">
-	//           <img v-if="logoPath" :src="logoPath"/>
-	//         </a>
-	//         <div class="nav-controls visible-xs-inline-block pull-right">
-	//           <button id="toggle-nav-btn" type="button" class="btn btn-default navbar-btn" data-toggle="collapse"
-	//                   data-target="#main-nav" aria-expanded="false">
-	//             <span class="sr-only">Toggle navigation</span><i class="fa fa-angle-down"></i>
-	//           </button>
-	//         </div>
-	//       </div>
-	//       <div class="collapse navbar-collapse" id="main-nav">
-	//         <h4 class="navbar-text" v-if="appName">{{ appName }}</h4>
-	//       </div>
-	//     </div>
-	//   </nav>
+	//     </nav>
 	// </template>
 	// <script>
 	exports.default = {
 	  name: 'header',
-	  props: ['dataOptions'],
+	  props: ['dataOptions', 'headerParts'],
 	  data: function data() {
 	    return {
 	      logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
-	      appName: this.dataOptions ? this.dataOptions.appName : ''
+	      appName: this.dataOptions ? this.dataOptions.appName : '',
+	      currentView: this.headerParts
 	    };
+	  },
+	  beforeMount: function beforeMount() {
+	    this.unwatch = this.$watch('currentView', function (data) {
+	      this.currentView = this.headerParts;
+	    }, { deep: true });
+	  },
+	  destroy: function destroy() {
+	    this.unwatch();
 	  }
 	};
 	// </script>
@@ -1594,7 +1607,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 68 */
 /***/ function(module, exports) {
 
-	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <div class=\"nav-controls visible-xs-inline-block pull-left\">\n          <button id=\"toggle-sidebar-btn\" type=\"button\" class=\"btn btn-default navbar-btn\"\n                  aria-expanded=\"false\">\n            <span class=\"sr-only\">Toggle sidepanel</span><i class=\"fa fa-bars\"></i>\n          </button>\n        </div>\n        <a class=\"navbar-brand\" href=\"javascript:void(0)\">\n          <img v-if=\"logoPath\" :src=\"logoPath\"/>\n        </a>\n        <div class=\"nav-controls visible-xs-inline-block pull-right\">\n          <button id=\"toggle-nav-btn\" type=\"button\" class=\"btn btn-default navbar-btn\" data-toggle=\"collapse\"\n                  data-target=\"#main-nav\" aria-expanded=\"false\">\n            <span class=\"sr-only\">Toggle navigation</span><i class=\"fa fa-angle-down\"></i>\n          </button>\n        </div>\n      </div>\n      <div class=\"collapse navbar-collapse\" id=\"main-nav\">\n        <h4 class=\"navbar-text\" v-if=\"appName\">{{ appName }}</h4>\n      </div>\n    </div>\n  </nav>";
+	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <div class=\"nav-controls visible-xs-inline-block pull-left\">\n                    <button id=\"toggle-sidebar-btn\" type=\"button\" class=\"btn btn-default navbar-btn\"\n                            aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle sidepanel</span><i class=\"fa fa-bars\"></i>\n                    </button>\n                </div>\n                <a class=\"navbar-brand\" href=\"javascript:void(0)\">\n                    <img v-if=\"logoPath\" :src=\"logoPath\"/>\n                </a>\n                <div class=\"nav-controls visible-xs-inline-block pull-right\">\n                    <button id=\"toggle-nav-btn\" type=\"button\" class=\"btn btn-default navbar-btn\" data-toggle=\"collapse\"\n                            data-target=\"#main-nav\" aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle navigation</span><i class=\"fa fa-angle-down\"></i>\n                    </button>\n                </div>\n            </div>\n            <div class=\"collapse navbar-collapse\" id=\"main-nav\">\n                <h4 class=\"navbar-text\" v-if=\"appName\">{{ appName }}</h4>\n                <ul class=\"nav navbar-nav navbar-right\" v-if=\"headerParts\">\n                  <component v-bind:is=\"view.component\" v-for=\"view in currentView\" :dataOptions=\"view.options\">\n                  </component>\n                </ul>\n            </div>\n        </div>\n    </nav>";
 
 /***/ },
 /* 69 */
