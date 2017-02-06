@@ -3063,8 +3063,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    state.config.headerNotifications.nrOfNotifications = headerNotifications.nrOfNotifications;
 	  },
 	  setLocale: function setLocale(state, locale) {
+	    console.log(locale);
 	    /* eslint-disable no-undef */
 	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
+	    console.log(state.config.locale);
 	    _vue2.default.config.lang = locale.key;
 	  }
 	};
