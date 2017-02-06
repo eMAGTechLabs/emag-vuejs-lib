@@ -1,4 +1,7 @@
-//Reusable items
+import Vue from 'vue'
+import VueI18n from 'vue-i18n'
+
+// Reusable items
 import Chosen from './components/Chosen'
 import Header from './components/Header'
 import JqGrid from './components/JqGrid'
@@ -14,19 +17,21 @@ import HeaderNotificationsPart from './components/HeaderNotificationsPart'
 import HeaderUserPart from './components/HeaderUserPart'
 import LinkItem from './components/LinkItem'
 
-//Store
+// Store
 import config from './store/config'
 import mutations from './store/mutations'
 
-//Mixins
+// Mixins
 import chosen from './mixins/Chosen'
 import datetimepicker from './mixins/Datetimepicker'
 import header from './mixins/Header'
 import sidebar from './mixins/Sidebar'
 import treetype from './mixins/TreeType'
 
-//Translations
+// Translations
 import Translations from './translations/messages.js'
+
+Vue.use(VueI18n)
 
 const EmagVueLib = {
   Chosen,

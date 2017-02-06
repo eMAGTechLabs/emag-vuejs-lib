@@ -56,101 +56,116 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
-	var _Chosen = __webpack_require__(16);
+	var _vue = __webpack_require__(16);
+	
+	var _vue2 = _interopRequireDefault(_vue);
+	
+	var _vueI18n = __webpack_require__(17);
+	
+	var _vueI18n2 = _interopRequireDefault(_vueI18n);
+	
+	var _Chosen = __webpack_require__(19);
 	
 	var _Chosen2 = _interopRequireDefault(_Chosen);
 	
-	var _Header = __webpack_require__(66);
+	var _Header = __webpack_require__(69);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _JqGrid = __webpack_require__(69);
+	var _JqGrid = __webpack_require__(72);
 	
 	var _JqGrid2 = _interopRequireDefault(_JqGrid);
 	
-	var _Sidebar = __webpack_require__(72);
+	var _Sidebar = __webpack_require__(75);
 	
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 	
-	var _Footer = __webpack_require__(85);
+	var _Footer = __webpack_require__(88);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
 	
-	var _TreeType = __webpack_require__(88);
+	var _TreeType = __webpack_require__(91);
 	
 	var _TreeType2 = _interopRequireDefault(_TreeType);
 	
-	var _Submenu = __webpack_require__(74);
+	var _Submenu = __webpack_require__(77);
 	
 	var _Submenu2 = _interopRequireDefault(_Submenu);
 	
-	var _SidebarControl = __webpack_require__(81);
+	var _SidebarControl = __webpack_require__(84);
 	
 	var _SidebarControl2 = _interopRequireDefault(_SidebarControl);
 	
-	var _Autocomplete = __webpack_require__(92);
+	var _Autocomplete = __webpack_require__(95);
 	
 	var _Autocomplete2 = _interopRequireDefault(_Autocomplete);
 	
-	var _Datetimepicker = __webpack_require__(95);
+	var _Datetimepicker = __webpack_require__(98);
 	
 	var _Datetimepicker2 = _interopRequireDefault(_Datetimepicker);
 	
-	var _HeaderLocalePart = __webpack_require__(99);
+	var _HeaderLocalePart = __webpack_require__(102);
 	
 	var _HeaderLocalePart2 = _interopRequireDefault(_HeaderLocalePart);
 	
-	var _HeaderNotificationsPart = __webpack_require__(103);
+	var _HeaderNotificationsPart = __webpack_require__(106);
 	
 	var _HeaderNotificationsPart2 = _interopRequireDefault(_HeaderNotificationsPart);
 	
-	var _HeaderUserPart = __webpack_require__(109);
+	var _HeaderUserPart = __webpack_require__(112);
 	
 	var _HeaderUserPart2 = _interopRequireDefault(_HeaderUserPart);
 	
-	var _LinkItem = __webpack_require__(105);
+	var _LinkItem = __webpack_require__(108);
 	
 	var _LinkItem2 = _interopRequireDefault(_LinkItem);
 	
-	var _config = __webpack_require__(112);
+	var _config = __webpack_require__(115);
 	
 	var _config2 = _interopRequireDefault(_config);
 	
-	var _mutations = __webpack_require__(113);
+	var _mutations = __webpack_require__(116);
 	
 	var _mutations2 = _interopRequireDefault(_mutations);
 	
-	var _Chosen3 = __webpack_require__(60);
+	var _Chosen3 = __webpack_require__(63);
 	
 	var _Chosen4 = _interopRequireDefault(_Chosen3);
 	
-	var _Datetimepicker3 = __webpack_require__(97);
+	var _Datetimepicker3 = __webpack_require__(100);
 	
 	var _Datetimepicker4 = _interopRequireDefault(_Datetimepicker3);
 	
-	var _Header3 = __webpack_require__(101);
+	var _Header3 = __webpack_require__(104);
 	
 	var _Header4 = _interopRequireDefault(_Header3);
 	
-	var _Sidebar3 = __webpack_require__(76);
+	var _Sidebar3 = __webpack_require__(79);
 	
 	var _Sidebar4 = _interopRequireDefault(_Sidebar3);
 	
-	var _TreeType3 = __webpack_require__(90);
+	var _TreeType3 = __webpack_require__(93);
 	
 	var _TreeType4 = _interopRequireDefault(_TreeType3);
 	
-	var _messages = __webpack_require__(18);
+	var _messages = __webpack_require__(21);
 	
 	var _messages2 = _interopRequireDefault(_messages);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	//Mixins
+	// Mixins
 	
 	
-	//Store
-	//Reusable items
+	// Store
+	
+	
+	// Reusable items
+	_vue2.default.use(_vueI18n2.default);
+	
+	// Translations
+	
+	
 	var EmagVueLib = {
 	  Chosen: _Chosen2.default,
 	  Footer: _Footer2.default,
@@ -180,9 +195,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	
-	//Translations
-	
-	
 	module.exports = EmagVueLib;
 
 /***/ },
@@ -202,2877 +214,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 14 */,
 /* 15 */,
 /* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(17)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(65)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Chosen.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Chosen.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _messages = __webpack_require__(18);
-	
-	var _messages2 = _interopRequireDefault(_messages);
-	
-	var _Chosen = __webpack_require__(60);
-	
-	var _Chosen2 = _interopRequireDefault(_Chosen);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="multiple">
-	//         <option value=""></option>
-	//         <option :value="item.value" v-for="item in options.items">
-	//             {{ item.name }}
-	//         </option>
-	//     </select>
-	// </template>
-	// <script>
-	exports.default = {
-	  name: 'chosen',
-	  props: ['dataOptions', 'disabled', 'multiple'],
-	  mixins: [_Chosen2.default],
-	  data: function data() {
-	    return { options: this.getOptions(_messages2.default) };
-	  },
-	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      this.options = this.getOptions(_messages2.default);
-	      this.destroyChosen();
-	      this.initChosen();
-	      this.updateChosen();
-	    }, { deep: true });
-	  },
-	  mounted: function mounted() {
-	    this.initChosen();
-	  },
-	  destroy: function destroy() {
-	    this.destroyChosen();
-	  }
-	};
-	// </script>
-
-/***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	var _messages_en = __webpack_require__(56);
-	
-	var _messages_en2 = _interopRequireDefault(_messages_en);
-	
-	var _messages_ro = __webpack_require__(57);
-	
-	var _messages_ro2 = _interopRequireDefault(_messages_ro);
-	
-	var _messages_hu = __webpack_require__(58);
-	
-	var _messages_hu2 = _interopRequireDefault(_messages_hu);
-	
-	var _messages_bg = __webpack_require__(59);
-	
-	var _messages_bg2 = _interopRequireDefault(_messages_bg);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  'translations': (0, _assign2.default)(_messages_en2.default, _messages_ro2.default, _messages_bg2.default, _messages_hu2.default)
-	};
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(20), __esModule: true };
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(21);
-	module.exports = __webpack_require__(24).Object.assign;
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(22);
-	
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(37)});
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var global    = __webpack_require__(23)
-	  , core      = __webpack_require__(24)
-	  , ctx       = __webpack_require__(25)
-	  , hide      = __webpack_require__(27)
-	  , PROTOTYPE = 'prototype';
-	
-	var $export = function(type, name, source){
-	  var IS_FORCED = type & $export.F
-	    , IS_GLOBAL = type & $export.G
-	    , IS_STATIC = type & $export.S
-	    , IS_PROTO  = type & $export.P
-	    , IS_BIND   = type & $export.B
-	    , IS_WRAP   = type & $export.W
-	    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
-	    , expProto  = exports[PROTOTYPE]
-	    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
-	    , key, own, out;
-	  if(IS_GLOBAL)source = name;
-	  for(key in source){
-	    // contains in native
-	    own = !IS_FORCED && target && target[key] !== undefined;
-	    if(own && key in exports)continue;
-	    // export native or passed
-	    out = own ? target[key] : source[key];
-	    // prevent global pollution for namespaces
-	    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
-	    // bind timers to global for call from export context
-	    : IS_BIND && own ? ctx(out, global)
-	    // wrap global constructors for prevent change them in library
-	    : IS_WRAP && target[key] == out ? (function(C){
-	      var F = function(a, b, c){
-	        if(this instanceof C){
-	          switch(arguments.length){
-	            case 0: return new C;
-	            case 1: return new C(a);
-	            case 2: return new C(a, b);
-	          } return new C(a, b, c);
-	        } return C.apply(this, arguments);
-	      };
-	      F[PROTOTYPE] = C[PROTOTYPE];
-	      return F;
-	    // make static versions for prototype methods
-	    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
-	    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
-	    if(IS_PROTO){
-	      (exports.virtual || (exports.virtual = {}))[key] = out;
-	      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
-	      if(type & $export.R && expProto && !expProto[key])hide(expProto, key, out);
-	    }
-	  }
-	};
-	// type bitmap
-	$export.F = 1;   // forced
-	$export.G = 2;   // global
-	$export.S = 4;   // static
-	$export.P = 8;   // proto
-	$export.B = 16;  // bind
-	$export.W = 32;  // wrap
-	$export.U = 64;  // safe
-	$export.R = 128; // real proto method for `library` 
-	module.exports = $export;
-
-/***/ },
-/* 23 */
-/***/ function(module, exports) {
-
-	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-	var global = module.exports = typeof window != 'undefined' && window.Math == Math
-	  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
-	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
-
-/***/ },
-/* 24 */
-/***/ function(module, exports) {
-
-	var core = module.exports = {version: '2.4.0'};
-	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-
-/***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// optional / simple context binding
-	var aFunction = __webpack_require__(26);
-	module.exports = function(fn, that, length){
-	  aFunction(fn);
-	  if(that === undefined)return fn;
-	  switch(length){
-	    case 1: return function(a){
-	      return fn.call(that, a);
-	    };
-	    case 2: return function(a, b){
-	      return fn.call(that, a, b);
-	    };
-	    case 3: return function(a, b, c){
-	      return fn.call(that, a, b, c);
-	    };
-	  }
-	  return function(/* ...args */){
-	    return fn.apply(that, arguments);
-	  };
-	};
-
-/***/ },
-/* 26 */
-/***/ function(module, exports) {
-
-	module.exports = function(it){
-	  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
-	  return it;
-	};
-
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var dP         = __webpack_require__(28)
-	  , createDesc = __webpack_require__(36);
-	module.exports = __webpack_require__(32) ? function(object, key, value){
-	  return dP.f(object, key, createDesc(1, value));
-	} : function(object, key, value){
-	  object[key] = value;
-	  return object;
-	};
-
-/***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var anObject       = __webpack_require__(29)
-	  , IE8_DOM_DEFINE = __webpack_require__(31)
-	  , toPrimitive    = __webpack_require__(35)
-	  , dP             = Object.defineProperty;
-	
-	exports.f = __webpack_require__(32) ? Object.defineProperty : function defineProperty(O, P, Attributes){
-	  anObject(O);
-	  P = toPrimitive(P, true);
-	  anObject(Attributes);
-	  if(IE8_DOM_DEFINE)try {
-	    return dP(O, P, Attributes);
-	  } catch(e){ /* empty */ }
-	  if('get' in Attributes || 'set' in Attributes)throw TypeError('Accessors not supported!');
-	  if('value' in Attributes)O[P] = Attributes.value;
-	  return O;
-	};
-
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObject = __webpack_require__(30);
-	module.exports = function(it){
-	  if(!isObject(it))throw TypeError(it + ' is not an object!');
-	  return it;
-	};
-
-/***/ },
-/* 30 */
-/***/ function(module, exports) {
-
-	module.exports = function(it){
-	  return typeof it === 'object' ? it !== null : typeof it === 'function';
-	};
-
-/***/ },
-/* 31 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = !__webpack_require__(32) && !__webpack_require__(33)(function(){
-	  return Object.defineProperty(__webpack_require__(34)('div'), 'a', {get: function(){ return 7; }}).a != 7;
-	});
-
-/***/ },
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Thank's IE8 for his funny defineProperty
-	module.exports = !__webpack_require__(33)(function(){
-	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
-	});
-
-/***/ },
-/* 33 */
-/***/ function(module, exports) {
-
-	module.exports = function(exec){
-	  try {
-	    return !!exec();
-	  } catch(e){
-	    return true;
-	  }
-	};
-
-/***/ },
-/* 34 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObject = __webpack_require__(30)
-	  , document = __webpack_require__(23).document
-	  // in old IE typeof document.createElement is 'object'
-	  , is = isObject(document) && isObject(document.createElement);
-	module.exports = function(it){
-	  return is ? document.createElement(it) : {};
-	};
-
-/***/ },
-/* 35 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.1.1 ToPrimitive(input [, PreferredType])
-	var isObject = __webpack_require__(30);
-	// instead of the ES6 spec version, we didn't implement @@toPrimitive case
-	// and the second argument - flag - preferred type is a string
-	module.exports = function(it, S){
-	  if(!isObject(it))return it;
-	  var fn, val;
-	  if(S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
-	  if(typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it)))return val;
-	  if(!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
-	  throw TypeError("Can't convert object to primitive value");
-	};
-
-/***/ },
-/* 36 */
-/***/ function(module, exports) {
-
-	module.exports = function(bitmap, value){
-	  return {
-	    enumerable  : !(bitmap & 1),
-	    configurable: !(bitmap & 2),
-	    writable    : !(bitmap & 4),
-	    value       : value
-	  };
-	};
-
-/***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	// 19.1.2.1 Object.assign(target, source, ...)
-	var getKeys  = __webpack_require__(38)
-	  , gOPS     = __webpack_require__(53)
-	  , pIE      = __webpack_require__(54)
-	  , toObject = __webpack_require__(55)
-	  , IObject  = __webpack_require__(42)
-	  , $assign  = Object.assign;
-	
-	// should work with symbols and should have deterministic property order (V8 bug)
-	module.exports = !$assign || __webpack_require__(33)(function(){
-	  var A = {}
-	    , B = {}
-	    , S = Symbol()
-	    , K = 'abcdefghijklmnopqrst';
-	  A[S] = 7;
-	  K.split('').forEach(function(k){ B[k] = k; });
-	  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
-	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
-	  var T     = toObject(target)
-	    , aLen  = arguments.length
-	    , index = 1
-	    , getSymbols = gOPS.f
-	    , isEnum     = pIE.f;
-	  while(aLen > index){
-	    var S      = IObject(arguments[index++])
-	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
-	      , length = keys.length
-	      , j      = 0
-	      , key;
-	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
-	  } return T;
-	} : $assign;
-
-/***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-	var $keys       = __webpack_require__(39)
-	  , enumBugKeys = __webpack_require__(52);
-	
-	module.exports = Object.keys || function keys(O){
-	  return $keys(O, enumBugKeys);
-	};
-
-/***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var has          = __webpack_require__(40)
-	  , toIObject    = __webpack_require__(41)
-	  , arrayIndexOf = __webpack_require__(45)(false)
-	  , IE_PROTO     = __webpack_require__(49)('IE_PROTO');
-	
-	module.exports = function(object, names){
-	  var O      = toIObject(object)
-	    , i      = 0
-	    , result = []
-	    , key;
-	  for(key in O)if(key != IE_PROTO)has(O, key) && result.push(key);
-	  // Don't enum bug & hidden keys
-	  while(names.length > i)if(has(O, key = names[i++])){
-	    ~arrayIndexOf(result, key) || result.push(key);
-	  }
-	  return result;
-	};
-
-/***/ },
-/* 40 */
-/***/ function(module, exports) {
-
-	var hasOwnProperty = {}.hasOwnProperty;
-	module.exports = function(it, key){
-	  return hasOwnProperty.call(it, key);
-	};
-
-/***/ },
-/* 41 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// to indexed object, toObject with fallback for non-array-like ES3 strings
-	var IObject = __webpack_require__(42)
-	  , defined = __webpack_require__(44);
-	module.exports = function(it){
-	  return IObject(defined(it));
-	};
-
-/***/ },
-/* 42 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(43);
-	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
-	  return cof(it) == 'String' ? it.split('') : Object(it);
-	};
-
-/***/ },
-/* 43 */
-/***/ function(module, exports) {
-
-	var toString = {}.toString;
-	
-	module.exports = function(it){
-	  return toString.call(it).slice(8, -1);
-	};
-
-/***/ },
-/* 44 */
-/***/ function(module, exports) {
-
-	// 7.2.1 RequireObjectCoercible(argument)
-	module.exports = function(it){
-	  if(it == undefined)throw TypeError("Can't call method on  " + it);
-	  return it;
-	};
-
-/***/ },
-/* 45 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// false -> Array#indexOf
-	// true  -> Array#includes
-	var toIObject = __webpack_require__(41)
-	  , toLength  = __webpack_require__(46)
-	  , toIndex   = __webpack_require__(48);
-	module.exports = function(IS_INCLUDES){
-	  return function($this, el, fromIndex){
-	    var O      = toIObject($this)
-	      , length = toLength(O.length)
-	      , index  = toIndex(fromIndex, length)
-	      , value;
-	    // Array#includes uses SameValueZero equality algorithm
-	    if(IS_INCLUDES && el != el)while(length > index){
-	      value = O[index++];
-	      if(value != value)return true;
-	    // Array#toIndex ignores holes, Array#includes - not
-	    } else for(;length > index; index++)if(IS_INCLUDES || index in O){
-	      if(O[index] === el)return IS_INCLUDES || index || 0;
-	    } return !IS_INCLUDES && -1;
-	  };
-	};
-
-/***/ },
-/* 46 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(47)
-	  , min       = Math.min;
-	module.exports = function(it){
-	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
-	};
-
-/***/ },
-/* 47 */
-/***/ function(module, exports) {
-
-	// 7.1.4 ToInteger
-	var ceil  = Math.ceil
-	  , floor = Math.floor;
-	module.exports = function(it){
-	  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-	};
-
-/***/ },
-/* 48 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var toInteger = __webpack_require__(47)
-	  , max       = Math.max
-	  , min       = Math.min;
-	module.exports = function(index, length){
-	  index = toInteger(index);
-	  return index < 0 ? max(index + length, 0) : min(index, length);
-	};
-
-/***/ },
-/* 49 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var shared = __webpack_require__(50)('keys')
-	  , uid    = __webpack_require__(51);
-	module.exports = function(key){
-	  return shared[key] || (shared[key] = uid(key));
-	};
-
-/***/ },
-/* 50 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var global = __webpack_require__(23)
-	  , SHARED = '__core-js_shared__'
-	  , store  = global[SHARED] || (global[SHARED] = {});
-	module.exports = function(key){
-	  return store[key] || (store[key] = {});
-	};
-
-/***/ },
-/* 51 */
-/***/ function(module, exports) {
-
-	var id = 0
-	  , px = Math.random();
-	module.exports = function(key){
-	  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-	};
-
-/***/ },
-/* 52 */
-/***/ function(module, exports) {
-
-	// IE 8- don't enum bug keys
-	module.exports = (
-	  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
-	).split(',');
-
-/***/ },
-/* 53 */
-/***/ function(module, exports) {
-
-	exports.f = Object.getOwnPropertySymbols;
-
-/***/ },
-/* 54 */
-/***/ function(module, exports) {
-
-	exports.f = {}.propertyIsEnumerable;
-
-/***/ },
-/* 55 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(44);
-	module.exports = function(it){
-	  return Object(defined(it));
-	};
-
-/***/ },
-/* 56 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {
-	  'en_GB': {
-	    'welcome': {
-	      'message': 'logged as',
-	      'messageNoLogin': 'Unauthenticated user'
-	    },
-	    'label': {
-	      'logout': 'Logout',
-	      'profile': 'Profile',
-	      'home': 'Home',
-	      'loginName': 'Login',
-	      'loginRemember': 'Remember me',
-	      'loginText': 'Login',
-	      'userPlaceholder': 'Username',
-	      'passwordPlaceholder': 'Password',
-	      'filterSubmit': 'Search',
-	      'filterReset': 'Reset',
-	      'filterTitle': 'Filter',
-	      'submitBarSubmit': 'Save',
-	      'submitBarUpdate': 'Update',
-	      'submitBarUpload': 'Upload',
-	      'submitBarBack': 'Back',
-	      'mandatory': 'Mandatory fields',
-	      'wizardSubmitBarNext': 'Next',
-	      'wizardSubmitBarPrev': 'Prev',
-	      'wizardSubmitBarFinish': 'Finish',
-	      'wizardSubmitBarCancel': 'Cancel',
-	      'selectNoResults': 'No results match',
-	      'fileNoFile': 'No file',
-	      'fileChoose': 'Choose',
-	      'fileChange': 'Change',
-	      'save': 'Save',
-	      'cancel': 'Cancel',
-	      'preview': 'Preview',
-	      'close': 'Close',
-	      'confirm': 'Confirm',
-	      'change': 'Change',
-	      'language': 'Language',
-	      'accountSettings': 'Account settings',
-	      'support': 'Support',
-	      'pageSettings': 'Page settings',
-	      'yes': 'Yes',
-	      'no': 'No'
-	    },
-	    'localeName': {
-	      'ro_RO': 'romanian',
-	      'en_GB': 'english',
-	      'bg_BG': 'bulgarian',
-	      'hu_HU': 'hungarian',
-	      'pl_PL': 'polish',
-	      'ro-RO': 'romanian',
-	      'en-GB': 'english',
-	      'bg-BG': 'bulgarian',
-	      'hu-HU': 'hungarian',
-	      'pl-PL': 'polish',
-	      'ro': 'romanian',
-	      'en': 'english',
-	      'bg': 'bulgarian',
-	      'hu': 'hungarian',
-	      'pl': 'polish'
-	    },
-	    'baseNotifications': {
-	      'titleError': 'Check errors',
-	      'titleInfo': 'Info',
-	      'titleNotice': 'Notifications',
-	      'titleSuccess': 'Success',
-	      'titleDelete': 'Success',
-	      'viewAll': 'View all'
-	    },
-	    'tree': {
-	      'modalTitle': 'Select',
-	      'modalResetLabel': 'Reset',
-	      'modalCancelLabel': 'Cancel',
-	      'modalOkLabel': 'Select',
-	      'textUnmatched': 'Hide unmatched',
-	      'textSelected': 'selected',
-	      'searchPlaceholder': 'Search',
-	      'textSelectHierarchy': 'Hierarchical multi-selection'
-	    },
-	    'chosen': {
-	      'multipleText': 'Select Some Options',
-	      'singleText': 'Select an Option',
-	      'noResult': 'No results match'
-	    },
-	    'chosenAjax': {
-	      'multipleText': 'Search some options',
-	      'singleText': 'Search an option',
-	      'noResult': 'No results match',
-	      'typing': 'Keep typing...',
-	      'looking': 'Looking for...'
-	    },
-	    'html5': {
-	      'value': 'Please fill out this field.',
-	      'numberMin': 'Please select a value that is no less than',
-	      'numberMax': 'Please select a value that is no more than',
-	      'url': 'Please fill out this field with a valid url.',
-	      'email': 'Please fill out this field with a valid email.',
-	      'list': 'Please select an item in the list.'
-	    },
-	    'daterange': {
-	      'apply': 'Apply',
-	      'cancel': 'Cancel',
-	      'from': 'From',
-	      'to': 'To',
-	      'january': 'Jan',
-	      'february': 'Feb',
-	      'march': 'Mar',
-	      'april': 'Apr',
-	      'may': 'May',
-	      'june': 'Jun',
-	      'july': 'Jul',
-	      'august': 'Aug',
-	      'september': 'Sep',
-	      'october': 'Oct',
-	      'november': 'Nov',
-	      'december': 'Dec',
-	      'sunday': 'Su',
-	      'monday': 'Mo',
-	      'tuesday': 'Tu',
-	      'wednesday': 'We',
-	      'thursday': 'Th',
-	      'friday': 'Fr',
-	      'saturday': 'Sa'
-	    },
-	    'page': {
-	      'notFound': 'Page not found',
-	      'subHeaderMessage': 'This page has been moved or it doesn\'t exist!',
-	      'adviceTitle': 'Try one of the following:',
-	      'verifyAddress': 'Re-check the url.',
-	      'readFaq': 'Read the frequently asked questions.',
-	      'tellUs': 'Inform us about the problem.',
-	      'wentWrong': 'Refresh the page. Something went wrong.',
-	      'workingOnIt': 'Give it a minute or two. We are working on it!'
-	    }
-	  }
-	};
-
-/***/ },
-/* 57 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {
-	  'ro_RO': {
-	    'welcome': {
-	      'message': 'Autentificat ca',
-	      'messageNoLogin': 'Utilizator neautentificat'
-	    },
-	    'label': {
-	      'logout': 'Deconectare',
-	      'profile': 'Profil',
-	      'home': 'Acasă',
-	      'loginName': 'Autentificare',
-	      'loginRemember': 'Ține-mă minte',
-	      'loginText': 'Autentifică-te',
-	      'userPlaceholder': 'Utilizator',
-	      'passwordPlaceholder': 'Parola',
-	      'filterSubmit': 'Caută',
-	      'filterReset': 'Resetează',
-	      'filterTitle': 'Filtrare',
-	      'submitBarSubmit': 'Salvează',
-	      'submitBarUpload': 'Încarcă',
-	      'submitBarUpdate': 'Modifică',
-	      'submitBarBack': 'Înapoi',
-	      'mandatory': 'Câmpuri obligatorii',
-	      'wizardSubmitBarNext': 'Înainte',
-	      'wizardSubmitBarPrev': 'Înapoi',
-	      'wizardSubmitBarFinish': 'Finalizează',
-	      'wizardSubmitBarCancel': 'Anulează',
-	      'selectNoResults': 'Niciun rezultat',
-	      'fileNoFile': 'Niciun fișier',
-	      'fileChoose': 'Selectează',
-	      'fileChange': 'Schimbă',
-	      'save': 'Salvează',
-	      'cancel': 'Anulează',
-	      'preview': 'Pre-vizualizează',
-	      'close': 'Închide',
-	      'confirm': 'Confirmă',
-	      'change': 'Modifică',
-	      'language': 'Limbă',
-	      'accountSettings': 'Setările contului',
-	      'support': 'Suport tehnic',
-	      'pageSettings': 'Setări pagină',
-	      'yes': 'Da',
-	      'no': 'Nu'
-	    },
-	    'localeName': {
-	      'ro_RO': 'română',
-	      'en_GB': 'engleză',
-	      'bg_BG': 'bulgară',
-	      'hu_HU': 'maghiară',
-	      'pl_PL': 'poloneză',
-	      'ro-RO': 'română',
-	      'en-GB': 'engleză',
-	      'bg-BG': 'bulgară',
-	      'hu-HU': 'maghiară',
-	      'pl-PL': 'poloneză',
-	      'ro': 'română',
-	      'en': 'engleză',
-	      'bg': 'bulgară',
-	      'hu': 'maghiară',
-	      'pl': 'poloneză'
-	    },
-	    'baseNotifications': {
-	      'titleError': 'Verificați următoarele erori',
-	      'titleInfo': 'Info',
-	      'titleNotice': 'Notificări',
-	      'titleSuccess': 'Acțiunea a avut loc cu succes',
-	      'titleDelete': 'Ștergerea a avut loc cu succes',
-	      'viewAll': 'Vizualizează totul'
-	    },
-	    'tree': {
-	      'modalTitle': 'Selectează',
-	      'modalResetLabel': 'Resetează',
-	      'modalCancelLabel': 'Anulează',
-	      'modalOkLabel': 'Selectează',
-	      'textUnmatched': 'Ascunde rezultatele nerelevante',
-	      'textSelectare': 'Selectează toate elementele din categorie',
-	      'textSelected': 'selectate',
-	      'searchPlaceholder': 'Caută',
-	      'textSelectHierarchy': 'Selectare multiplă ierarhică'
-	    },
-	    'chosen': {
-	      'multipleText': 'Selectează o opțiune',
-	      'singleText': 'Selectează o opțiune',
-	      'noResult': 'Niciun rezultat'
-	    },
-	    'chosenAjax': {
-	      'multipleText': 'Caută o opțiune',
-	      'singleText': 'Caută o opțiune',
-	      'noResult': 'Niciun rezultat',
-	      'typing': 'Scrie...',
-	      'looking': 'Se caută...'
-	    },
-	    'html5': {
-	      'value': 'Vă rog să introduceți o valoare.',
-	      'numberMin': 'Valoarea minimă trebuie să fie',
-	      'numberMax': 'Valoarea maximă trebuie să fie',
-	      'url': 'Vă rog să introduceți o adresă url validă.',
-	      'email': 'Vă rog să introduceți o adresă de email validă.',
-	      'list': 'Vă rog să selectați un element din listă.'
-	    },
-	    'daterange': {
-	      'apply': 'Aplică',
-	      'cancel': 'Anulează',
-	      'from': 'De la',
-	      'to': 'Până la',
-	      'january': 'Ian',
-	      'february': 'Feb',
-	      'march': 'Mar',
-	      'april': 'Apr',
-	      'may': 'Mai',
-	      'june': 'Iun',
-	      'july': 'Iul',
-	      'august': 'Aug',
-	      'september': 'Sep',
-	      'october': 'Oct',
-	      'november': 'Noi',
-	      'december': 'Dec',
-	      'sunday': 'Du',
-	      'monday': 'Lu',
-	      'tuesday': 'Ma',
-	      'wednesday': 'Mi',
-	      'thursday': 'Jo',
-	      'friday': 'Vi',
-	      'saturday': 'Sâ'
-	    },
-	    'page': {
-	      'notFound': 'Pagina nu a fost gasită',
-	      'subHeaderMessage': 'Această pagină a fost mutată sau nu mai există!',
-	      'adviceTitle': 'Încearcă următoarele:',
-	      'verifyAddress': 'Verifică adresa',
-	      'readFaq': 'Citește în categoria întrebărilor adresate frecvent',
-	      'tellUs': 'Informează-ne despre problemă',
-	      'wentWrong': 'Ceva nu a funcționat',
-	      'workingOnIt': 'Lucrăm la rezolvarea problemei!'
-	    }
-	  }
-	};
-
-/***/ },
-/* 58 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {
-	  'hu_HU': {
-	    'welcome': {
-	      'message': 'bejelentkezve mint',
-	      'messageNoLogin': 'Hitelesített felhasználó'
-	    },
-	    'label': {
-	      'logout': 'Leválasztás',
-	      'profile': 'Saját fiók',
-	      'home': 'Otthon',
-	      'loginName': 'Bejelentkezés',
-	      'loginRemember': 'Emlékezz rám',
-	      'loginText': 'Bejelentkezés',
-	      'userPlaceholder': 'Használó',
-	      'passwordPlaceholder': 'Jelszó',
-	      'filterSubmit': 'Keresés',
-	      'filterReset': 'újrakezd',
-	      'filterTitle': 'Szűr',
-	      'submitBarSubmit': 'Megóv',
-	      'submitBarUpdate': 'Frissítés',
-	      'submitBarUpload': 'Feltöltés',
-	      'submitBarBack': 'Vissza',
-	      'mandatory': 'kötelező mezők',
-	      'wizardSubmitBarNext': 'következő',
-	      'wizardSubmitBarPrev': 'Előző',
-	      'wizardSubmitBarFinish': 'befejez',
-	      'wizardSubmitBarCancel': 'töröl',
-	      'selectNoResults': 'Nincs eredmény mérkőzés',
-	      'fileNoFile': 'Nincs fájl',
-	      'fileChoose': 'kiválaszt',
-	      'fileChange': 'változik',
-	      'save': 'Megment',
-	      'cancel': 'Visszavonásához',
-	      'preview': 'Előnézet',
-	      'close': 'Közel',
-	      'confirm': 'Erősítse',
-	      'change': 'Változás',
-	      'language': 'Nyelv',
-	      'accountSettings': 'Fiók beállítások',
-	      'support': 'Támogatás',
-	      'pageSettings': 'Oldal beállítások',
-	      'yes': 'Igen',
-	      'no': 'Nem'
-	    },
-	    'localeName': {
-	      'ro_RO': 'román',
-	      'en_GB': 'angol',
-	      'bg_BG': 'bolgár',
-	      'hu_HU': 'magyar',
-	      'pl_PL': 'lengyel',
-	      'ro-RO': 'román',
-	      'en-GB': 'angol',
-	      'bg-BG': 'bolgár',
-	      'hu-HU': 'magyar',
-	      'pl-PL': 'lengyel',
-	      'ro': 'román',
-	      'en': 'angol',
-	      'bg': 'bolgár',
-	      'hu': 'magyar',
-	      'pl': 'lengyel'
-	    },
-	    'baseNotifications': {
-	      'titleError': 'Ellenőrizze a hibákat',
-	      'titleInfo': 'Info',
-	      'titleNotice': 'Értesítések',
-	      'titleSuccess': 'Siker',
-	      'titleDelete': 'Siker',
-	      'viewAll': 'Mindet megnéz'
-	    },
-	    'tree': {
-	      'modalTitle': 'választ',
-	      'modalResetLabel': 'újrakezd',
-	      'modalCancelLabel': 'Tiszta',
-	      'modalOkLabel': 'választ',
-	      'textUnmatched': 'elrejtése páratlan',
-	      'textSelected': 'kiválasztott',
-	      'searchPlaceholder': 'keresés',
-	      'textSelectHierarchy': 'Hierarchikus több választás'
-	    },
-	    'chosen': {
-	      'multipleText': 'Válassza ki néhány opció',
-	      'singleText': 'Válasszon ki egy lehetőséget',
-	      'noResult': 'Nem találtam mérkőzés'
-	    },
-	    'chosenAjax': {
-	      'multipleText': 'Keresés néhány opció',
-	      'singleText': 'Keresés egy lehetőség',
-	      'noResult': 'Nem találtam mérkőzés',
-	      'typing': 'ír...',
-	      'looking': 'Keresés a...'
-	    },
-	    'html5': {
-	      'value': 'Kérem töltse ki ezt mező.',
-	      'numberMin': 'Kérem választ érték hogy van cnagyobb mint',
-	      'numberMax': 'Kérem választ érték hogy van kisebb mint',
-	      'url': 'Kérem töltse ki ezt mező a érvényes url.',
-	      'email': 'Kérem töltse ki ezt mező a érvényes email.',
-	      'list': 'Kérem választ egy tétel -tól lista.'
-	    },
-	    'daterange': {
-	      'apply': 'Alkalmaz',
-	      'cancel': 'Visszavonásához',
-	      'from': 'Tól',
-	      'to': 'Hogy',
-	      'january': 'Jan',
-	      'february': 'Feb',
-	      'march': 'Már',
-	      'april': 'Ápr',
-	      'may': 'Leh',
-	      'june': 'Jún',
-	      'july': 'Júl',
-	      'august': 'Aug',
-	      'september': 'Sze',
-	      'october': 'Okt',
-	      'november': 'Nov',
-	      'december': 'Dec',
-	      'sunday': 'Va',
-	      'monday': 'Hé',
-	      'tuesday': 'Ke',
-	      'wednesday': 'Sz',
-	      'thursday': 'Cs',
-	      'friday': 'Pé',
-	      'saturday': 'Sz'
-	    },
-	    'page': {
-	      'notFound': 'Az oldal nem található',
-	      'subHeaderMessage': 'Ez az oldal áthelyezésre került vagy már nem létezik!',
-	      'adviceTitle': 'Próbáld ki a következő:',
-	      'verifyAddress': 'Ellenőrizze a cím',
-	      'readFaq': 'Olvas gyakran ismételt kérdések',
-	      'tellUs': 'Értesítsen minket a problémát',
-	      'wentWrong': 'Valami elromlott',
-	      'workingOnIt': 'Dolgozunk rajta!'
-	    }
-	  }
-	};
-
-/***/ },
-/* 59 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {
-	  'bg_BG': {
-	    'welcome': {
-	      'message': 'влезли като',
-	      'messageNoLogin': 'Неудостоверен потребител'
-	    },
-	    'label': {
-	      'logout': 'излезете',
-	      'profile': 'моята сметка',
-	      'home': 'вкъщи',
-	      'loginName': 'логин',
-	      'loginRemember': 'запомни ме',
-	      'loginText': 'логин',
-	      'userPlaceholder': 'потребителско име',
-	      'passwordPlaceholder': 'парола',
-	      'filterSubmit': 'търсене',
-	      'filterReset': 'набирам отново',
-	      'filterTitle': 'филтър',
-	      'submitBarSubmit': 'спасявам',
-	      'submitBarUpdate': 'Актуализация',
-	      'submitBarUpload': 'Качи',
-	      'submitBarBack': 'обратно',
-	      'mandatory': 'Задължителни полета',
-	      'wizardSubmitBarNext': 'до',
-	      'wizardSubmitBarPrev': 'визуализации',
-	      'wizardSubmitBarFinish': 'завършеност',
-	      'wizardSubmitBarCancel': 'отмените',
-	      'selectNoResults': 'Няма мач резултати',
-	      'fileNoFile': 'не файл',
-	      'fileChoose': 'избирам',
-	      'fileChange': 'Промяна',
-	      'save': 'Cпасяване',
-	      'cancel': 'Aнулира',
-	      'preview': 'Изглед',
-	      'close': 'близо',
-	      'confirm': 'одобрявам',
-	      'change': 'Промяна',
-	      'language': 'Eзик',
-	      'accountSettings': 'Настройки на профила',
-	      'support': 'Подкрепа',
-	      'pageSettings': 'настройки на страница',
-	      'yes': 'да',
-	      'no': 'Не'
-	    },
-	    'localeName': {
-	      'ro_RO': 'румънски',
-	      'en_GB': 'английски',
-	      'bg_BG': 'български',
-	      'hu_HU': 'унгарски',
-	      'pl_PL': 'полски',
-	      'ro-RO': 'румънски',
-	      'en-GB': 'английски',
-	      'bg-BG': 'български',
-	      'hu-HU': 'унгарски',
-	      'pl-PL': 'полски',
-	      'ro': 'румънски',
-	      'en': 'английски',
-	      'bg': 'български',
-	      'hu': 'унгарски',
-	      'pl': 'полски'
-	    },
-	    'baseNotifications': {
-	      'titleError': 'Проверете грешки',
-	      'titleInfo': 'Информация',
-	      'titleNotice': 'Известия',
-	      'titleSuccess': 'Yспех',
-	      'titleDelete': 'Yспех',
-	      'viewAll': 'Bиж всички'
-	    },
-	    'tree': {
-	      'modalTitle': 'избирам',
-	      'modalResetLabel': 'набирам отново',
-	      'modalCancelLabel': 'Отказ',
-	      'modalOkLabel': 'избирам',
-	      'textUnmatched': 'Скриване несравнимо',
-	      'textSelected': 'подбран',
-	      'searchPlaceholder': 'търсене',
-	      'textSelectHierarchy': 'Йерархично мулти - избор'
-	    },
-	    'chosen': {
-	      'multipleText': 'Изберете Някои Options',
-	      'singleText': 'Изберете опция',
-	      'noResult': 'Няма резултат резултати'
-	    },
-	    'chosenAjax': {
-	      'multipleText': 'Търсене някои опции',
-	      'singleText': 'Търсене опция',
-	      'noResult': 'Няма мач резултати',
-	      'typing': 'пиша...',
-	      'looking': 'Търся...'
-	    },
-	    'html5': {
-	      'value': 'моля попълнете това област.',
-	      'numberMin': 'моля изберете стойност по-голям от',
-	      'numberMax': 'моля изберете стойност по-малък от',
-	      'url': 'моля попълнете това област с валиден Url.',
-	      'email': 'моля попълнете това област с валиден Email.',
-	      'list': 'моля изберете един елемент от списък.'
-	    },
-	    'daterange': {
-	      'apply': 'Прилага',
-	      'cancel': 'Aнулира',
-	      'from': 'Oт',
-	      'to': 'Kъм',
-	      'january': 'Яну',
-	      'february': 'Фев',
-	      'march': 'Мар',
-	      'april': 'Апр',
-	      'may': 'мож',
-	      'june': 'юн',
-	      'july': 'юл',
-	      'august': 'Авг',
-	      'september': 'Сеп',
-	      'october': 'Окт',
-	      'november': 'Ное',
-	      'december': 'Дек',
-	      'sunday': 'Нед',
-	      'monday': 'пон',
-	      'tuesday': 'вто',
-	      'wednesday': 'Cp',
-	      'thursday': 'Че',
-	      'friday': 'Пe',
-	      'saturday': 'Cъ'
-	    },
-	    'page': {
-	      'notFound': 'Cтраницата не е намерена',
-	      'subHeaderMessage': 'Тази страница беше преместена и вече не съществува!',
-	      'adviceTitle': 'Oпитайте следното:',
-	      'verifyAddress': 'Проверка адреса',
-	      'readFaq': 'Чета често задавани въпроси',
-	      'tellUs': 'Информирайте ни за проблема',
-	      'wentWrong': 'Hещо се обърка',
-	      'workingOnIt': 'Ние работим върху него!'
-	    }
-	  }
-	};
-
-/***/ },
-/* 60 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _keys = __webpack_require__(61);
-	
-	var _keys2 = _interopRequireDefault(_keys);
-	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/* eslint-disable no-undef */
-	function getOptions(translationMessages) {
-	  this.id = this._uid;
-	  this.translations = translationMessages.translations[getDefaultLang.call(this)];
-	  return (0, _assign2.default)({}, {
-	    placeholder_text_multiple: this.translations.chosen.multipleText,
-	    placeholder_text_single: this.translations.chosen.singleText,
-	    no_results_text: this.translations.chosen.noResult,
-	    allow_single_deselect: true
-	  }, this.dataOptions);
-	}
-	
-	function initChosen() {
-	  $('#chosen_' + this.id).chosen(this.options);
-	}
-	
-	function updateChosen() {
-	  var self = this;
-	  setTimeout(function () {
-	    $('#chosen_' + self.id).trigger('chosen:updated');
-	  }, 0);
-	}
-	
-	function destroyChosen() {
-	  try {
-	    $('#chosen_' + this.id).chosen('destroy');
-	    this.unwatch();
-	  } catch (ex) {}
-	}
-	
-	function getDefaultLang() {
-	  if (this.$store.state && this.$store.state.lang) {
-	    return this.$store.state.lang;
-	  }
-	  return (0, _keys2.default)(TranslationMessages.translations)[0];
-	}
-	
-	exports.default = {
-	  methods: {
-	    getOptions: getOptions,
-	    getDefaultLang: getDefaultLang,
-	    initChosen: initChosen,
-	    destroyChosen: destroyChosen,
-	    updateChosen: updateChosen
-	  }
-	};
-
-/***/ },
-/* 61 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(62), __esModule: true };
-
-/***/ },
-/* 62 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(63);
-	module.exports = __webpack_require__(24).Object.keys;
-
-/***/ },
-/* 63 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 19.1.2.14 Object.keys(O)
-	var toObject = __webpack_require__(55)
-	  , $keys    = __webpack_require__(38);
-	
-	__webpack_require__(64)('keys', function(){
-	  return function keys(it){
-	    return $keys(toObject(it));
-	  };
-	});
-
-/***/ },
-/* 64 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// most Object methods by ES6 should accept primitives
-	var $export = __webpack_require__(22)
-	  , core    = __webpack_require__(24)
-	  , fails   = __webpack_require__(33);
-	module.exports = function(KEY, exec){
-	  var fn  = (core.Object || {})[KEY] || Object[KEY]
-	    , exp = {};
-	  exp[KEY] = exec(fn);
-	  $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
-	};
-
-/***/ },
-/* 65 */
-/***/ function(module, exports) {
-
-	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"multiple\">\n        <option value=\"\"></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
-
-/***/ },
-/* 66 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(67)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(68)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Header.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Header.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 67 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	// <template>
-	//     <nav class="navbar navbar-default navbar-fixed-top">
-	//         <div class="container-fluid">
-	//             <div class="navbar-header">
-	//                 <div class="nav-controls visible-xs-inline-block pull-left">
-	//                     <button id="toggle-sidebar-btn" type="button" class="btn btn-default navbar-btn"
-	//                             aria-expanded="false">
-	//                         <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
-	//                     </button>
-	//                 </div>
-	//                 <a class="navbar-brand" href="javascript:void(0)">
-	//                     <img v-if="logoPath" :src="logoPath"/>
-	//                 </a>
-	//                 <div class="nav-controls visible-xs-inline-block pull-right">
-	//                     <button id="toggle-nav-btn" type="button" class="btn btn-default navbar-btn" data-toggle="collapse"
-	//                             data-target="#main-nav" aria-expanded="false">
-	//                         <span class="sr-only">Toggle navigation</span><i class="fa fa-angle-down"></i>
-	//                     </button>
-	//                 </div>
-	//             </div>
-	//             <div class="collapse navbar-collapse" id="main-nav">
-	//                 <h4 class="navbar-text" v-if="appName">{{ appName }}</h4>
-	//                 <ul class="nav navbar-nav navbar-right" v-if="headerParts">
-	//                   <component v-bind:is="view.component" v-for="view in currentView" :dataOptions="view.options">
-	//                   </component>
-	//                 </ul>
-	//             </div>
-	//         </div>
-	//     </nav>
-	// </template>
-	// <script>
-	exports.default = {
-	  name: 'header',
-	  props: ['dataOptions', 'headerParts'],
-	  data: function data() {
-	    return {
-	      logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
-	      appName: this.dataOptions ? this.dataOptions.appName : '',
-	      currentView: this.headerParts
-	    };
-	  },
-	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('currentView', function (data) {
-	      this.currentView = this.headerParts;
-	    }, { deep: true });
-	  },
-	  destroy: function destroy() {
-	    this.unwatch();
-	  }
-	};
-	// </script>
-
-/***/ },
-/* 68 */
-/***/ function(module, exports) {
-
-	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <div class=\"nav-controls visible-xs-inline-block pull-left\">\n                    <button id=\"toggle-sidebar-btn\" type=\"button\" class=\"btn btn-default navbar-btn\"\n                            aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle sidepanel</span><i class=\"fa fa-bars\"></i>\n                    </button>\n                </div>\n                <a class=\"navbar-brand\" href=\"javascript:void(0)\">\n                    <img v-if=\"logoPath\" :src=\"logoPath\"/>\n                </a>\n                <div class=\"nav-controls visible-xs-inline-block pull-right\">\n                    <button id=\"toggle-nav-btn\" type=\"button\" class=\"btn btn-default navbar-btn\" data-toggle=\"collapse\"\n                            data-target=\"#main-nav\" aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle navigation</span><i class=\"fa fa-angle-down\"></i>\n                    </button>\n                </div>\n            </div>\n            <div class=\"collapse navbar-collapse\" id=\"main-nav\">\n                <h4 class=\"navbar-text\" v-if=\"appName\">{{ appName }}</h4>\n                <ul class=\"nav navbar-nav navbar-right\" v-if=\"headerParts\">\n                  <component v-bind:is=\"view.component\" v-for=\"view in currentView\" :dataOptions=\"view.options\">\n                  </component>\n                </ul>\n            </div>\n        </div>\n    </nav>";
-
-/***/ },
-/* 69 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(70)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(71)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./JqGrid.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./JqGrid.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 70 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//   <div>
-	//     <table :id="'grid_table_' + id" class="table table-bordered"></table>
-	//     <div :id="'grid_pager_' + id"></div>
-	//   </div>
-	// </template>
-	// <script>
-	exports.default = {
-	  name: 'jqGrid',
-	  props: ['dataOptions'],
-	  beforeCreate: function beforeCreate() {
-	    this.id = this._uid;
-	  },
-	  mounted: function mounted() {
-	    var options = (0, _assign2.default)(this.dataOptions, {
-	      table: '#grid_table_' + this.id,
-	      pager: '#grid_pager_' + this.id
-	    });
-	    /* eslint-disable no-undef */
-	    var photonGrid = new PhotonJqGrid(options);
-	    photonGrid.init();
-	    if (this.dataOptions && this.dataOptions.mountCallback) {
-	      this.dataOptions.mountCallback(photonGrid.grid || {});
-	    }
-	  }
-	};
-	// </script>
-
-/***/ },
-/* 71 */
-/***/ function(module, exports) {
-
-	module.exports = "<div>\n    <table :id=\"'grid_table_' + id\" class=\"table table-bordered\"></table>\n    <div :id=\"'grid_pager_' + id\"></div>\n  </div>";
-
-/***/ },
-/* 72 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(73)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(84)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Sidebar.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Sidebar.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 73 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Submenu = __webpack_require__(74);
-	
-	var _Submenu2 = _interopRequireDefault(_Submenu);
-	
-	var _SidebarItem = __webpack_require__(77);
-	
-	var _SidebarItem2 = _interopRequireDefault(_SidebarItem);
-	
-	var _SidebarControl = __webpack_require__(81);
-	
-	var _SidebarControl2 = _interopRequireDefault(_SidebarControl);
-	
-	var _Sidebar = __webpack_require__(76);
-	
-	var _Sidebar2 = _interopRequireDefault(_Sidebar);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//     <div id="sidebar" class="sidebar sidebar-fixed">
-	//         <div class="sidebar-outer scrollable default-skin" tabindex="-1">
-	//             <div class="viewport">
-	//                 <div class="overview">
-	//                     <ul class="sidebar-inner">
-	//                         <li v-for="item in items"
-	//                             :class="getMenuItemCssClass(item)">
-	//                             <sidebar-item :item="item"></sidebar-item>
-	//                             <div class="menu-item-data">
-	//                                 <sidebar-item :item="item" :collapsed="true"></sidebar-item>
-	//                                 <submenu :item="item" v-if="item.children && item.children.length"></submenu>
-	//                             </div>
-	//                         </li>
-	//                     </ul>
-	//                 </div>
-	//             </div>
-	//         </div>
-	//         <sidebar-control></sidebar-control>
-	//     </div>
-	// </template>
-	
-	// <script>
-	/* eslint-disable no-unused-vars */
-	exports.default = {
-	  name: 'sidebar',
-	  props: ['dataOptions'],
-	  mixins: [_Sidebar2.default],
-	  computed: {
-	    locale: function locale() {
-	      return this.$store.state.config.locale;
-	    },
-	    items: function items() {
-	      return this.getItems();
-	    }
-	  },
-	  components: {
-	    Submenu: _Submenu2.default, SidebarItem: _SidebarItem2.default, SidebarControl: _SidebarControl2.default
-	  },
-	  mounted: function mounted() {
-	    /* eslint-disable no-undef */
-	    try {
-	      var routePath = this.$route.path;
-	      if (this.$router.mode === 'hash') {
-	        routePath = '#' + routePath;
-	      }
-	      // Methods from emag-apps-ui-kit
-	      initSidebarEvents();
-	      staticNavigation(routePath);
-	      initScrollbarForSidebar();
-	    } catch (ex) {}
-	  }
-	};
-	// </script>
-
-/***/ },
-/* 74 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(75)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(80)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Submenu.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Submenu.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 75 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Sidebar = __webpack_require__(76);
-	
-	var _Sidebar2 = _interopRequireDefault(_Sidebar);
-	
-	var _SidebarItem = __webpack_require__(77);
-	
-	var _SidebarItem2 = _interopRequireDefault(_SidebarItem);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//   <ul class="sidebar-submenu">
-	//     <li v-for="child in item.children" :class="getMenuItemCssClass(child)">
-	//       <sidebar-item :item="child" :collapsed="true"></sidebar-item>
-	//       <submenu :item="child"></submenu>
-	//     </li>
-	//   </ul>
-	// </template>
-	// <script>
-	/* eslint-disable no-unused-vars */
-	exports.default = {
-	  name: 'submenu',
-	  props: ['item'],
-	  mixins: [_Sidebar2.default],
-	  components: { SidebarItem: _SidebarItem2.default }
-	};
-	// </script>
-
-/***/ },
-/* 76 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function getHrefForMenuItem(item) {
-	  return item.link || 'javascript:void(0)';
-	}
-	
-	function isAbsolute(item) {
-	  return !!item.absolute;
-	}
-	
-	function hasEmptyLink(item) {
-	  return !(item.link && item.link.length);
-	}
-	
-	function getMenuItemCssClass(item) {
-	  var menuItemCssClass = 'menu-item';
-	  if (item.children && item.children.length) {
-	    menuItemCssClass += ' menu-item-has-children';
-	  }
-	  if (item.open) {
-	    menuItemCssClass += ' active';
-	  }
-	  return menuItemCssClass;
-	}
-	
-	function getCollapsedCssClass(collapsed) {
-	  return collapsed ? 'menu-item-min-link' : '';
-	}
-	
-	function getItems() {
-	  /* eslint-disable no-unused-vars */
-	  var items = this.dataOptions && this.dataOptions.items ? this.dataOptions.items : [];
-	  if (this.$store.state.config && this.$store.state.config.useLocale) {
-	    _appendCurrentLocaleToItems.call(this, items, this.$store.state.config.locale);
-	  }
-	  return items;
-	}
-	
-	function _appendCurrentLocaleToItems(items, locale) {
-	  for (var i = 0; i < items.length; i++) {
-	    if (!hasEmptyLink(items[i])) {
-	      if (!items[i]._baseUrl) {
-	        items[i]._baseUrl = items[i].link;
-	      }
-	      items[i].link = '/' + locale.urlPath + items[i]._baseUrl;
-	    }
-	    if (items[i].children && items[i].children.length) {
-	      _appendCurrentLocaleToItems.call(this, items[i].children, locale);
-	    }
-	  }
-	}
-	
-	exports.default = {
-	  methods: {
-	    getHrefForMenuItem: getHrefForMenuItem,
-	    isAbsolute: isAbsolute,
-	    hasEmptyLink: hasEmptyLink,
-	    getMenuItemCssClass: getMenuItemCssClass,
-	    getCollapsedCssClass: getCollapsedCssClass,
-	    getItems: getItems
-	  }
-	};
-
-/***/ },
-/* 77 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(78)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(79)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarItem.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarItem.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Sidebar = __webpack_require__(76);
-	
-	var _Sidebar2 = _interopRequireDefault(_Sidebar);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  name: 'sidebar-item',
-	  props: ['item', 'collapsed'],
-	  mixins: [_Sidebar2.default]
-	};
-	// </script>
-	// <template>
-	//     <a :href="getHrefForMenuItem(item)" :class="getCollapsedCssClass(collapsed)" v-if="isAbsolute(item) || hasEmptyLink(item)">
-	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
-	//         <span class="menu-text">{{ item.label }}</span>
-	//     </a>
-	//     <router-link :to="item.link" :class="getCollapsedCssClass(collapsed)" v-else>
-	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
-	//         <span class="menu-text">{{ item.label }}</span>
-	//     </router-link>
-	// </template>
-	// <script>
-
-/***/ },
-/* 79 */
-/***/ function(module, exports) {
-
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ item.label }}</span>\n    </a>\n    <router-link :to=\"item.link\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ item.label }}</span>\n    </router-link>";
-
-/***/ },
-/* 80 */
-/***/ function(module, exports) {
-
-	module.exports = "<ul class=\"sidebar-submenu\">\n    <li v-for=\"child in item.children\" :class=\"getMenuItemCssClass(child)\">\n      <sidebar-item :item=\"child\" :collapsed=\"true\"></sidebar-item>\n      <submenu :item=\"child\"></submenu>\n    </li>\n  </ul>";
-
-/***/ },
-/* 81 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(82)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(83)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarControl.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarControl.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 82 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	// <template>
-	//   <div class="sidebar-control">
-	//     <div class="sidebar-toggle">
-	//       <button id="toggle-sidebar-size-btn" class="btn btn-default btn-sm">
-	//         <i class="menu-icon fa fa-arrow-left"></i>
-	//       </button>
-	//     </div>
-	//   </div>
-	// </template>
-	
-	// <script>
-	exports.default = {
-	  name: 'sidebar-control'
-	};
-	// </script>
-
-/***/ },
-/* 83 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"sidebar-control\">\n    <div class=\"sidebar-toggle\">\n      <button id=\"toggle-sidebar-size-btn\" class=\"btn btn-default btn-sm\">\n        <i class=\"menu-icon fa fa-arrow-left\"></i>\n      </button>\n    </div>\n  </div>";
-
-/***/ },
-/* 84 */
-/***/ function(module, exports) {
-
-	module.exports = "<div id=\"sidebar\" class=\"sidebar sidebar-fixed\">\n        <div class=\"sidebar-outer scrollable default-skin\" tabindex=\"-1\">\n            <div class=\"viewport\">\n                <div class=\"overview\">\n                    <ul class=\"sidebar-inner\">\n                        <li v-for=\"item in items\"\n                            :class=\"getMenuItemCssClass(item)\">\n                            <sidebar-item :item=\"item\"></sidebar-item>\n                            <div class=\"menu-item-data\">\n                                <sidebar-item :item=\"item\" :collapsed=\"true\"></sidebar-item>\n                                <submenu :item=\"item\" v-if=\"item.children && item.children.length\"></submenu>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        <sidebar-control></sidebar-control>\n    </div>";
-
-/***/ },
-/* 85 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(86)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(87)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Footer.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Footer.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 86 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//     <div id="main_footer" :class="['footer', fixed ? 'footer-fixed' : '']">
-	//         <div class="footer-inner">
-	//             <div class="footer-content" v-if='fixed'>
-	//                 <div class="container-fluid">
-	//                     <div class="pull-left hidden-xs" v-html="content">
-	//                     </div>
-	//                     <div class="panel-controls pull-right" v-html="actions">
-	//                     </div>
-	//                 </div>
-	//                 <div class="clearfix text-center pad-top-20 visible-xs-block">
-	//                 </div>
-	//             </div>
-	//             <div class="footer-content text-center" v-if="!fixed" v-html="content">
-	//             </div>
-	//         </div>
-	//     </div>
-	// </template>
-	// <script>
-	exports.default = {
-	  name: 'footer',
-	  props: ['dataOptions'],
-	  data: function data() {
-	    return (0, _assign2.default)({ fixed: false, content: '', actions: '' }, this.dataOptions);
-	  }
-	};
-	// </script>
-
-/***/ },
-/* 87 */
-/***/ function(module, exports) {
-
-	module.exports = "<div id=\"main_footer\" :class=\"['footer', fixed ? 'footer-fixed' : '']\">\n        <div class=\"footer-inner\">\n            <div class=\"footer-content\" v-if='fixed'>\n                <div class=\"container-fluid\">\n                    <div class=\"pull-left hidden-xs\" v-html=\"content\">\n                    </div>\n                    <div class=\"panel-controls pull-right\" v-html=\"actions\">\n                    </div>\n                </div>\n                <div class=\"clearfix text-center pad-top-20 visible-xs-block\">\n                </div>\n            </div>\n            <div class=\"footer-content text-center\" v-if=\"!fixed\" v-html=\"content\">\n            </div>\n        </div>\n    </div>";
-
-/***/ },
-/* 88 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(89)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(91)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./TreeType.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./TreeType.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 89 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _TreeType = __webpack_require__(90);
-	
-	var _TreeType2 = _interopRequireDefault(_TreeType);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  name: 'tree-type',
-	  props: ['dataOptions', 'disabled'],
-	  mixins: [_TreeType2.default],
-	  computed: {
-	    options: function options() {
-	      return this.getOptions();
-	    },
-	    translations: function translations() {
-	      return this.getTranslations();
-	    }
-	  },
-	  methods: {
-	    openTree: function openTree() {
-	      try {
-	        this.$el.querySelector('#id_tree_type_' + this._uid).click();
-	      } catch (ex) {}
-	    }
-	  },
-	  watch: {
-	    translations: function translations() {
-	      this.initTreeType();
-	    }
-	  },
-	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      this.options = this.getOptions();
-	      this.initTreeType();
-	    }, { deep: true });
-	  },
-	  destroyed: function destroyed() {
-	    this.unwatch();
-	  },
-	  mounted: function mounted() {
-	    this.initTreeType();
-	  }
-	};
-	// </script>
-	// <template>
-	//   <div>
-	//     <div class="hide-with-opacity">
-	//       <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple">
-	//       </select>
-	//     </div>
-	//     <div class="input-group input-group-no-separation">
-	//       <div class="form-control" :id="'id_tree_type_' + _uid"></div>
-	//       <span class="input-group-addon">
-	//           <i class="fa fa-sitemap" v-on:click="openTree"></i>
-	//       </span>
-	//     </div>
-	//   </div>
-	// </template>
-	// <script>
-
-/***/ },
-/* 90 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/* eslint-disable no-undef */
-	function getOptions() {
-	  return (0, _assign2.default)({}, {
-	    treeData: [],
-	    selectId: 'tree_type_' + this._uid
-	  }, this.translations, this.dataOptions);
-	}
-	
-	function initTreeType() {
-	  $('#id_tree_type_' + this._uid).TreeType(this.options);
-	}
-	
-	function getTranslations() {
-	  return {
-	    modalTitle: this.$t('tree.modalTitle'),
-	    modalResetLabel: this.$t('tree.modalResetLabel'),
-	    modalCancelLabel: this.$t('tree.modalCancelLabel'),
-	    modalOkLabel: this.$t('tree.modalOkLabel'),
-	    textUnmatched: this.$t('tree.textUnmatched'),
-	    textSelectHierarchy: this.$t('tree.textSelectHierarchy'),
-	    noResults: this.$t('label.selectNoResults'),
-	    textSelected: this.$t('tree.textSelected'),
-	    searchPlaceholder: this.$t('tree.searchPlaceholder')
-	  };
-	}
-	
-	exports.default = {
-	  methods: {
-	    getOptions: getOptions,
-	    initTreeType: initTreeType,
-	    getTranslations: getTranslations
-	  }
-	};
-
-/***/ },
-/* 91 */
-/***/ function(module, exports) {
-
-	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\">\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
-
-/***/ },
-/* 92 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(93)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(94)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 93 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _keys = __webpack_require__(61);
-	
-	var _keys2 = _interopRequireDefault(_keys);
-	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	var _messages = __webpack_require__(18);
-	
-	var _messages2 = _interopRequireDefault(_messages);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/* eslint-disable no-undef */
-	exports.default = {
-	  name: 'autocomplete',
-	  props: ['dataOptions', 'multiple'],
-	  updated: function updated() {
-	    $('#autocomplete_' + this.id).trigger('chosen:updated');
-	  },
-	  data: function data() {
-	    this.id = this._uid;
-	    this.translations = _messages2.default.translations[getDefaultLang(this)];
-	
-	    var defaultOptions = {
-	      type: 'GET',
-	      dataType: 'json',
-	      keepTypingMsg: this.translations.chosenAjax.typing,
-	      lookingForMsg: this.translations.chosenAjax.looking,
-	      placeholder_text_multiple: this.translations.chosenAjax.multipleText,
-	      placeholder_text_single: this.translations.chosenAjax.singleText,
-	      no_results_text: this.translations.chosenAjax.noResult,
-	      id: this.id,
-	      filters: {},
-	      allow_single_deselect: true,
-	      dataCallback: function dataCallback() {
-	        var filterValues = {};
-	        try {
-	          if (typeof this.filters === 'string' || this.filters instanceof String) {
-	            this.filters = JSON.parse(this.filters);
-	          }
-	        } catch (ex) {}
-	        for (var prop in this.filters) {
-	          if ($(this.filters[prop]).length) {
-	            filterValues[prop] = $(this.filters[prop]).val();
-	          } else {
-	            filterValues[prop] = this.filters[prop];
-	          }
-	        }
-	        var term = $('#autocomplete_' + this.id + '_chosen').find('input').val();
-	        var dataSend = {
-	          'filters': filterValues,
-	          'term': term
-	        };
-	        return dataSend;
-	      }
-	    };
-	    return {
-	      options: (0, _assign2.default)(defaultOptions, this.dataOptions || {})
-	    };
-	  },
-	  mounted: function mounted() {
-	    $('#autocomplete_' + this.id).ajaxChosen(this.options, function (data) {
-	      var terms = {};
-	      $.each(data.results, function (i, val) {
-	        terms[i] = val;
-	      });
-	      if (data.isError) {
-	        var errorMessage = '';
-	        $.each(data.errors, function (i, val) {
-	          errorMessage += '<li>' + val + '</li>';
-	        });
-	        addNotification('<ul>' + errorMessage + '</ul>', 'danger');
-	      }
-	      return terms;
-	    });
-	  }
-	};
-	
-	// Helpers
-	// <template>
-	//     <select :id="'autocomplete_' + id" class="form-control" :multiple="options.multiple || multiple ? true : false">
-	//         <option value=''></option>
-	//         <option v-for="item in dataOptions.items" :value="item.value" selected>
-	//             {{ item.name }}
-	//         </option>
-	//     </select>
-	// </template>
-	// <script>
-	
-	var getDefaultLang = function getDefaultLang(self) {
-	  if (self.$store.state && self.$store.state.lang) {
-	    return self.$store.state.lang;
-	  }
-	  return (0, _keys2.default)(_messages2.default.translations)[0];
-	};
-	// </script>
-
-/***/ },
-/* 94 */
-/***/ function(module, exports) {
-
-	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" selected>\n            {{ item.name }}\n        </option>\n    </select>";
-
-/***/ },
-/* 95 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(96)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(98)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Datetimepicker.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Datetimepicker.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 96 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Datetimepicker = __webpack_require__(97);
-	
-	var _Datetimepicker2 = _interopRequireDefault(_Datetimepicker);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/* eslint-disable no-undef */
-	exports.default = {
-	  name: 'datetimepicker',
-	  props: ['dataOptions', 'disabled'],
-	  mixins: [_Datetimepicker2.default],
-	  data: function data() {
-	    return { options: this.getOptions(this) };
-	  },
-	  mounted: function mounted() {
-	    this.initDatetimepicker(this);
-	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      this.options = this.getOptions(this);
-	      this.destroyDatetimepicker(this);
-	      this.initDatetimepicker(this);
-	    }, { deep: true });
-	  },
-	
-	  destroyed: function destroyed() {
-	    this.destroyDatetimepicker(this);
-	  }
-	};
-	// </script>
-	
-	// <template>
-	//     <div class="input-group">
-	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled">
-	//         <div class="input-group-addon"><i :class="options.icons.date"></i>
-	//         </div>
-	//     </div>
-	// </template>
-	// <script>
-
-/***/ },
-/* 97 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/* eslint-disable no-undef */
-	var getIcon = function getIcon(format) {
-	  /* eslint-disable no-unused-vars */
-	  var icon = 'fa fa-calendar';
-	  if (typeof format === 'string') {
-	    if (hasDate(format) && hasTime(format)) {
-	      icon = 'fa fa-calendar';
-	    } else if (hasDate(format)) {
-	      icon = 'fa fa-calendar-o';
-	    } else if (hasTime(format)) {
-	      icon = 'fa fa-clock-o';
-	    }
-	  }
-	  return icon;
-	};
-	
-	var hasDate = function hasDate(format) {
-	  var characters = ['Y', 'S', 'd', 'M'];
-	  return hasCharacters(format, characters);
-	};
-	
-	var hasTime = function hasTime(format) {
-	  var characters = ['H', 'h', 'k', 'm', 'S', 's'];
-	  return hasCharacters(format, characters);
-	};
-	
-	var hasCharacters = function hasCharacters(format, characters) {
-	  var regx = new RegExp('[' + characters.join('') + ']', 'g');
-	  var regxResult = format.match(regx);
-	  if (regxResult) {
-	    return regxResult.length > 0;
-	  }
-	  return false;
-	};
-	
-	var getOptions = function getOptions(self) {
-	  self.id = self._uid;
-	  var format = 'YYYY-MM-DD HH:mm:ss';
-	  var options = {
-	    format: format,
-	    icons: {
-	      date: self.getIcon(self.dataOptions.format || format)
-	    }
-	  };
-	  return (0, _assign2.default)({}, options, self.dataOptions);
-	};
-	
-	var initDatetimepicker = function initDatetimepicker(self) {
-	  $('#date_time_' + self.id).datetimepicker(self.options);
-	};
-	
-	var destroyDatetimepicker = function destroyDatetimepicker(self) {
-	  try {
-	    $(self.$el).find('#date_time_' + self.id).data('DateTimePicker').destroy();
-	    self.unwatch();
-	  } catch (ex) {}
-	};
-	
-	exports.default = {
-	  methods: {
-	    getIcon: getIcon,
-	    hasDate: hasDate,
-	    hasTime: hasTime,
-	    hasCharacters: hasCharacters,
-	    getOptions: getOptions,
-	    initDatetimepicker: initDatetimepicker,
-	    destroyDatetimepicker: destroyDatetimepicker
-	  }
-	};
-
-/***/ },
-/* 98 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\">\n        <div class=\"input-group-addon\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
-
-/***/ },
-/* 99 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(100)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(102)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocalePart.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocalePart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocalePart.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocalePart.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocalePart.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 100 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Header = __webpack_require__(101);
-	
-	var _Header2 = _interopRequireDefault(_Header);
-	
-	var _Sidebar = __webpack_require__(76);
-	
-	var _Sidebar2 = _interopRequireDefault(_Sidebar);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//   <li class="dropdown">
-	//     <a href="javascript:void(0)" class="dropdown-toggle dd-language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-	//       <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
-	//       <span><i :class="['flag-icon', locale.icon]"></i>{{ locale.label }}</span><i class="fa fa-angle-down hidden-xs"></i>
-	//     </a>
-	//     <ul class="dropdown-menu dm-language">
-	//       <li v-for="item in items" v-on:click="reloadPage()">
-	//         <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
-	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//             <span class="menu-text">{{ $t(item.label) }}</span>
-	//         </a>
-	//         <router-link :to="item.link" v-on:click="onClick || null" v-else>
-	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//             <span class="menu-text">{{ $t(item.label) }}</span>
-	//         </router-link>
-	//       </li>
-	//     </ul>
-	//   </li>
-	// </template>
-	// <script>
-	exports.default = {
-	  name: 'headerLocalePart',
-	  data: function data() {
-	    return {
-	      locales: this.$store.state.config.locales
-	    };
-	  },
-	
-	  mixins: [_Header2.default, _Sidebar2.default],
-	  computed: {
-	    locale: function locale() {
-	      return this.$store.state.config.locale;
-	    },
-	    items: function items() {
-	      return this.getLocaleItems();
-	    }
-	  },
-	  methods: {
-	    reloadPage: function reloadPage() {
-	      /* eslint-disable no-undef */
-	      location.reload();
-	    }
-	  },
-	  beforeMount: function beforeMount() {
-	    this.setDefaultLocale();
-	    this.setLinksForLocales();
-	  }
-	};
-	// </script>
-
-/***/ },
-/* 101 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	function getLocaleItems() {
-	  var localItems = this.$store.state.config.locales;
-	  var self = this;
-	  localItems.map(function (item) {
-	    if (self.$route.meta.urlWithoutLocale) {
-	      var path = '/' + item.urlPath + self.$route.meta.urlWithoutLocale;
-	      item.link = path;
-	    }
-	    return item;
-	  });
-	  return localItems;
-	}
-	
-	function setDefaultLocale() {
-	  var _this = this;
-	
-	  var locales = this.$store.state.config.locales || [];
-	  locales.forEach(function (item) {
-	    if (_this.$route.params && _this.$route.params.locale && item.urlPath === _this.$route.params.locale) {
-	      _this.$store.commit('setLocale', item);
-	    }
-	  });
-	}
-	
-	function setLinksForLocales() {
-	  var _this2 = this;
-	
-	  this.$router.beforeEach(function (to, from, next) {
-	    _this2.$set(_this2, 'items', _this2.getLocaleItems());
-	    next();
-	  });
-	}
-	
-	exports.default = {
-	  methods: {
-	    getLocaleItems: getLocaleItems,
-	    setDefaultLocale: setDefaultLocale,
-	    setLinksForLocales: setLinksForLocales
-	  }
-	};
-
-/***/ },
-/* 102 */
-/***/ function(module, exports) {
-
-	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
-
-/***/ },
-/* 103 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(104)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(108)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 104 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _LinkItem = __webpack_require__(105);
-	
-	var _LinkItem2 = _interopRequireDefault(_LinkItem);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  name: 'headerNotificationsPart',
-	  computed: {
-	    total: function total() {
-	      return this.$store.state.config.notifications.total;
-	    },
-	    notifications: function notifications() {
-	      return this.$store.state.config.notifications.items;
-	    },
-	    label: function label() {
-	      return this.$store.state.config.notifications.label || 'baseNotifications.titleNotice';
-	    }
-	  },
-	  components: {
-	    LinkItem: _LinkItem2.default
-	  }
-	};
-	// </script>
-	// <template>
-	//     <li class="dropdown">
-	//         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	//             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
-	//             <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
-	//             <span class="jewel" v-if="total != 0">{{ total }} </span>
-	//         </a>
-	//         <ul class="dropdown-menu">
-	//             <li class="dm-header hidden-xs">
-	//                 <span>{{ $t(label) }}</span>
-	//             </li>
-	//             <li v-for="notification in notifications">
-	//               <link-item :item="notification"></link-item>
-	//             </li>
-	//         </ul>
-	//     </li>
-	// </template>
-	// <script>
-
-/***/ },
-/* 105 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(106)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(107)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 106 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Sidebar = __webpack_require__(76);
-	
-	var _Sidebar2 = _interopRequireDefault(_Sidebar);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  name: 'link-item',
-	  props: ['item'],
-	  mixins: [_Sidebar2.default]
-	};
-	// </script>
-	// <template>
-	//     <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
-	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
-	//     </a>
-	//     <router-link :to="item.link" v-on:click="onClick || null" v-else>
-	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
-	//     </router-link>
-	// </template>
-	// <script>
-
-/***/ },
-/* 107 */
-/***/ function(module, exports) {
-
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
-
-/***/ },
-/* 108 */
-/***/ function(module, exports) {
-
-	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span>{{ $t(label) }}</span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
-
-/***/ },
-/* 109 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(110)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(111)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 110 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _LinkItem = __webpack_require__(105);
-	
-	var _LinkItem2 = _interopRequireDefault(_LinkItem);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  name: 'headerUserPart',
-	  computed: {
-	    account: function account() {
-	      return this.$store.state.config.user.account;
-	    },
-	    logout: function logout() {
-	      return this.$store.state.config.user.logout;
-	    },
-	    user: function user() {
-	      return this.$store.state.config.user;
-	    }
-	  },
-	  components: {
-	    LinkItem: _LinkItem2.default
-	  }
-	};
-	// </script>
-	// <template>
-	//     <li class="dropdown">
-	//         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	//             <div class="profile-thumb hidden-xs">
-	//                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="User image" height="36">
-	//             </div>
-	//             <span>
-	//                 {{ $t(user.label) }}
-	//             </span>
-	//             <i class="fa fa-angle-down hidden-xs"></i>
-	//         </a>
-	//         <ul class="dropdown-menu">
-	//             <li v-if="account">
-	//                 <link-item :item="account"></link-item>
-	//             </li>
-	//             <li v-if="logout">
-	//                 <link-item :item="logout"></link-item>
-	//             </li>
-	//         </ul>
-	//     </li>
-	// </template>
-	// <script>
-
-/***/ },
-/* 111 */
-/***/ function(module, exports) {
-
-	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"User image\" height=\"36\">\n            </div>\n            <span>\n                {{ $t(user.label) }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-if=\"logout\">\n                <link-item :item=\"logout\"></link-item>\n            </li>\n        </ul>\n    </li>";
-
-/***/ },
-/* 112 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {
-	  sidebar: {
-	    visible: true
-	  },
-	  notifications: {
-	    total: 0,
-	    items: []
-	  },
-	  user: {
-	    label: 'welcome.messageNoLogin',
-	    imageLink: '',
-	    account: {
-	      label: 'label.accountSettings',
-	      link: '',
-	      onClick: function onClick() {}
-	    },
-	    logout: {
-	      label: 'label.logout',
-	      link: '/logout',
-	      onClick: function onClick() {}
-	    }
-	  },
-	  useLocale: true,
-	  locale: {
-	    label: 'RO',
-	    key: 'ro_RO',
-	    urlPath: 'ro',
-	    icon: 'flag-icon-ro'
-	  },
-	  locales: [{
-	    label: 'RO',
-	    key: 'ro_RO',
-	    urlPath: 'ro',
-	    icon: 'flag-icon-ro'
-	  }, {
-	    label: 'GB',
-	    key: 'en_GB',
-	    urlPath: 'en',
-	    icon: 'flag-icon-gb'
-	  }, {
-	    label: 'BG',
-	    key: 'bg_BG',
-	    urlPath: 'bg',
-	    icon: 'flag-icon-bg'
-	  }, {
-	    label: 'HU',
-	    key: 'hu_HU',
-	    urlPath: 'hu',
-	    icon: 'flag-icon-hu'
-	  }, {
-	    label: 'PL',
-	    key: 'pl_PL',
-	    urlPath: 'pl',
-	    icon: 'flag-icon-pl'
-	  }]
-	};
-
-/***/ },
-/* 113 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	var _vue = __webpack_require__(114);
-	
-	var _vue2 = _interopRequireDefault(_vue);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  showSidebar: function showSidebar(state) {
-	    state.config.sidebar.visible = true;
-	  },
-	  hideSidebar: function hideSidebar(state) {
-	    state.config.sidebar.visible = false;
-	  },
-	  setHeaderNotifications: function setHeaderNotifications(state, headerNotifications) {
-	    state.config.headerNotifications.notifications = headerNotifications.notifications;
-	    state.config.headerNotifications.nrOfNotifications = headerNotifications.nrOfNotifications;
-	  },
-	  setLocale: function setLocale(state, locale) {
-	    console.log(locale);
-	    /* eslint-disable no-undef */
-	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
-	    console.log(state.config.locale);
-	    _vue2.default.config.lang = locale.key;
-	  }
-	};
-
-/***/ },
-/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -11297,6 +8438,4129 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/*!
+	 * vue-i18n v4.9.0
+	 * (c) 2016 kazuya kawaguchi
+	 * Released under the MIT License.
+	 */
+	'use strict';
+	
+	var babelHelpers = {};
+	babelHelpers.typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+	  return typeof obj;
+	} : function (obj) {
+	  return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj;
+	};
+	babelHelpers;
+	
+	/**
+	 * warn
+	 *
+	 * @param {String} msg
+	 * @param {Error} [err]
+	 *
+	 */
+	
+	function warn(msg, err) {
+	  if (window.console) {
+	    console.warn('[vue-i18n] ' + msg);
+	    if (err) {
+	      console.warn(err.stack);
+	    }
+	  }
+	}
+	
+	function Asset (Vue, langVM) {
+	  /**
+	   * Register or retrieve a global locale definition.
+	   *
+	   * @param {String} id
+	   * @param {Object | Function | Promise} definition
+	   * @param {Function} cb
+	   */
+	
+	  Vue.locale = function (id, definition, cb) {
+	    if (definition === undefined) {
+	      // gettter
+	      return langVM.locales[id];
+	    } else {
+	      // setter
+	      if (definition === null) {
+	        langVM.locales[id] = undefined;
+	        delete langVM.locales[id];
+	      } else {
+	        setLocale(id, definition, function (locale) {
+	          if (locale) {
+	            langVM.locales[id] = locale;
+	          } else {
+	            warn('failed set `' + id + '` locale');
+	          }
+	          cb && cb();
+	        });
+	      }
+	    }
+	  };
+	}
+	
+	function setLocale(id, definition, cb) {
+	  var _this = this;
+	
+	  if ((typeof definition === 'undefined' ? 'undefined' : babelHelpers.typeof(definition)) === 'object') {
+	    // sync
+	    cb(definition);
+	  } else {
+	    (function () {
+	      var future = definition.call(_this);
+	      if (typeof future === 'function') {
+	        if (future.resolved) {
+	          // cached
+	          cb(future.resolved);
+	        } else if (future.requested) {
+	          // pool callbacks
+	          future.pendingCallbacks.push(cb);
+	        } else {
+	          (function () {
+	            future.requested = true;
+	            var cbs = future.pendingCallbacks = [cb];
+	            future(function (locale) {
+	              // resolve
+	              future.resolved = locale;
+	              for (var i = 0, l = cbs.length; i < l; i++) {
+	                cbs[i](locale);
+	              }
+	            }, function () {
+	              // reject
+	              cb();
+	            });
+	          })();
+	        }
+	      } else if (isPromise(future)) {
+	        // promise
+	        future.then(function (locale) {
+	          // resolve
+	          cb(locale);
+	        }, function () {
+	          // reject
+	          cb();
+	        }).catch(function (err) {
+	          console.error(err);
+	          cb();
+	        });
+	      }
+	    })();
+	  }
+	}
+	
+	/**
+	 * Forgiving check for a promise
+	 *
+	 * @param {Object} p
+	 * @return {Boolean}
+	 */
+	
+	function isPromise(p) {
+	  return p && typeof p.then === 'function';
+	}
+	
+	function Override (Vue, langVM, version) {
+	  function update(vm) {
+	    if (version > 1) {
+	      vm.$forceUpdate();
+	    } else {
+	      var i = vm._watchers.length;
+	      while (i--) {
+	        vm._watchers[i].update(true); // shallow updates
+	      }
+	    }
+	  }
+	
+	  // override _init
+	  var init = Vue.prototype._init;
+	  Vue.prototype._init = function (options) {
+	    var _this = this;
+	
+	    init.call(this, options);
+	
+	    if (!this.$parent) {
+	      // root
+	      this.$lang = langVM;
+	      this._langUnwatch = this.$lang.$watch('$data', function (val, old) {
+	        update(_this);
+	      }, { deep: true });
+	    }
+	  };
+	
+	  // override _destroy
+	  var destroy = Vue.prototype._destroy;
+	  Vue.prototype._destroy = function () {
+	    if (!this.$parent && this._langUnwatch) {
+	      this._langUnwatch();
+	      this._langUnwatch = null;
+	      this.$lang = null;
+	    }
+	
+	    destroy.apply(this, arguments);
+	  };
+	}
+	
+	/**
+	 * Observer
+	 */
+	
+	var Watcher = void 0;
+	/**
+	 * getWatcher
+	 *
+	 * @param {Vue} vm
+	 * @return {Watcher}
+	 */
+	
+	function getWatcher(vm) {
+	  if (!Watcher) {
+	    var unwatch = vm.$watch('__watcher__', function (a) {});
+	    Watcher = vm._watchers[0].constructor;
+	    unwatch();
+	  }
+	  return Watcher;
+	}
+	
+	var Dep = void 0;
+	/**
+	 * getDep
+	 *
+	 * @param {Vue} vm
+	 * @return {Dep}
+	 */
+	
+	function getDep(vm) {
+	  if (!Dep && vm && vm._data && vm._data.__ob__ && vm._data.__ob__.dep) {
+	    Dep = vm._data.__ob__.dep.constructor;
+	  }
+	  return Dep;
+	}
+	
+	var fallback = void 0; // fallback lang
+	var missingHandler = null; // missing handler
+	var i18nFormatter = null; // custom formatter
+	
+	function Config (Vue, langVM, lang) {
+	  var bind = Vue.util.bind;
+	
+	  var Watcher = getWatcher(langVM);
+	  var Dep = getDep(langVM);
+	
+	  function makeComputedGetter(getter, owner) {
+	    var watcher = new Watcher(owner, getter, null, {
+	      lazy: true
+	    });
+	
+	    return function computedGetter() {
+	      watcher.dirty && watcher.evaluate();
+	      Dep && Dep.target && watcher.depend();
+	      return watcher.value;
+	    };
+	  }
+	
+	  // define Vue.config.lang configration
+	  Object.defineProperty(Vue.config, 'lang', {
+	    enumerable: true,
+	    configurable: true,
+	    get: makeComputedGetter(function () {
+	      return langVM.lang;
+	    }, langVM),
+	    set: bind(function (val) {
+	      langVM.lang = val;
+	    }, langVM)
+	  });
+	
+	  // define Vue.config.fallbackLang configration
+	  fallback = lang;
+	  Object.defineProperty(Vue.config, 'fallbackLang', {
+	    enumerable: true,
+	    configurable: true,
+	    get: function get() {
+	      return fallback;
+	    },
+	    set: function set(val) {
+	      fallback = val;
+	    }
+	  });
+	
+	  // define Vue.config.missingHandler configration
+	  Object.defineProperty(Vue.config, 'missingHandler', {
+	    enumerable: true,
+	    configurable: true,
+	    get: function get() {
+	      return missingHandler;
+	    },
+	    set: function set(val) {
+	      missingHandler = val;
+	    }
+	  });
+	
+	  // define Vue.config.i18Formatter configration
+	  Object.defineProperty(Vue.config, 'i18nFormatter', {
+	    enumerable: true,
+	    configurable: true,
+	    get: function get() {
+	      return i18nFormatter;
+	    },
+	    set: function set(val) {
+	      i18nFormatter = val;
+	    }
+	  });
+	}
+	
+	/**
+	 * utilites
+	 */
+	
+	/**
+	 * isNil
+	 *
+	 * @param {*} val
+	 * @return Boolean
+	 */
+	function isNil(val) {
+	  return val === null || val === undefined;
+	}
+	
+	/**
+	 *  String format template
+	 *  - Inspired:
+	 *    https://github.com/Matt-Esch/string-template/index.js
+	 */
+	
+	var RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
+	
+	function Format (Vue) {
+	  var hasOwn = Vue.util.hasOwn;
+	
+	  /**
+	   * template
+	   *
+	   * @param {String} string
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+	
+	  function template(string) {
+	    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	      args[_key - 1] = arguments[_key];
+	    }
+	
+	    if (args.length === 1 && babelHelpers.typeof(args[0]) === 'object') {
+	      args = args[0];
+	    } else {
+	      args = {};
+	    }
+	
+	    if (!args || !args.hasOwnProperty) {
+	      args = {};
+	    }
+	
+	    return string.replace(RE_NARGS, function (match, prefix, i, index) {
+	      var result = void 0;
+	
+	      if (string[index - 1] === '{' && string[index + match.length] === '}') {
+	        return i;
+	      } else {
+	        result = hasOwn(args, i) ? args[i] : match;
+	        if (isNil(result)) {
+	          return '';
+	        }
+	
+	        return result;
+	      }
+	    });
+	  }
+	
+	  return template;
+	}
+	
+	/**
+	 *  Path paerser
+	 *  - Inspired:  
+	 *    Vue.js Path parser
+	 */
+	
+	// cache
+	var pathCache = Object.create(null);
+	
+	// actions
+	var APPEND = 0;
+	var PUSH = 1;
+	var INC_SUB_PATH_DEPTH = 2;
+	var PUSH_SUB_PATH = 3;
+	
+	// states
+	var BEFORE_PATH = 0;
+	var IN_PATH = 1;
+	var BEFORE_IDENT = 2;
+	var IN_IDENT = 3;
+	var IN_SUB_PATH = 4;
+	var IN_SINGLE_QUOTE = 5;
+	var IN_DOUBLE_QUOTE = 6;
+	var AFTER_PATH = 7;
+	var ERROR = 8;
+	
+	var pathStateMachine = [];
+	
+	pathStateMachine[BEFORE_PATH] = {
+	  'ws': [BEFORE_PATH],
+	  'ident': [IN_IDENT, APPEND],
+	  '[': [IN_SUB_PATH],
+	  'eof': [AFTER_PATH]
+	};
+	
+	pathStateMachine[IN_PATH] = {
+	  'ws': [IN_PATH],
+	  '.': [BEFORE_IDENT],
+	  '[': [IN_SUB_PATH],
+	  'eof': [AFTER_PATH]
+	};
+	
+	pathStateMachine[BEFORE_IDENT] = {
+	  'ws': [BEFORE_IDENT],
+	  'ident': [IN_IDENT, APPEND],
+	  '0': [IN_IDENT, APPEND],
+	  'number': [IN_IDENT, APPEND]
+	};
+	
+	pathStateMachine[IN_IDENT] = {
+	  'ident': [IN_IDENT, APPEND],
+	  '0': [IN_IDENT, APPEND],
+	  'number': [IN_IDENT, APPEND],
+	  'ws': [IN_PATH, PUSH],
+	  '.': [BEFORE_IDENT, PUSH],
+	  '[': [IN_SUB_PATH, PUSH],
+	  'eof': [AFTER_PATH, PUSH]
+	};
+	
+	pathStateMachine[IN_SUB_PATH] = {
+	  "'": [IN_SINGLE_QUOTE, APPEND],
+	  '"': [IN_DOUBLE_QUOTE, APPEND],
+	  '[': [IN_SUB_PATH, INC_SUB_PATH_DEPTH],
+	  ']': [IN_PATH, PUSH_SUB_PATH],
+	  'eof': ERROR,
+	  'else': [IN_SUB_PATH, APPEND]
+	};
+	
+	pathStateMachine[IN_SINGLE_QUOTE] = {
+	  "'": [IN_SUB_PATH, APPEND],
+	  'eof': ERROR,
+	  'else': [IN_SINGLE_QUOTE, APPEND]
+	};
+	
+	pathStateMachine[IN_DOUBLE_QUOTE] = {
+	  '"': [IN_SUB_PATH, APPEND],
+	  'eof': ERROR,
+	  'else': [IN_DOUBLE_QUOTE, APPEND]
+	};
+	
+	/**
+	 * Check if an expression is a literal value.
+	 *
+	 * @param {String} exp
+	 * @return {Boolean}
+	 */
+	
+	var literalValueRE = /^\s?(true|false|-?[\d.]+|'[^']*'|"[^"]*")\s?$/;
+	function isLiteral(exp) {
+	  return literalValueRE.test(exp);
+	}
+	
+	/**
+	 * Strip quotes from a string
+	 *
+	 * @param {String} str
+	 * @return {String | false}
+	 */
+	
+	function stripQuotes(str) {
+	  var a = str.charCodeAt(0);
+	  var b = str.charCodeAt(str.length - 1);
+	  return a === b && (a === 0x22 || a === 0x27) ? str.slice(1, -1) : str;
+	}
+	
+	/**
+	 * Determine the type of a character in a keypath.
+	 *
+	 * @param {Char} ch
+	 * @return {String} type
+	 */
+	
+	function getPathCharType(ch) {
+	  if (ch === undefined) {
+	    return 'eof';
+	  }
+	
+	  var code = ch.charCodeAt(0);
+	
+	  switch (code) {
+	    case 0x5B: // [
+	    case 0x5D: // ]
+	    case 0x2E: // .
+	    case 0x22: // "
+	    case 0x27: // '
+	    case 0x30:
+	      // 0
+	      return ch;
+	
+	    case 0x5F: // _
+	    case 0x24: // $
+	    case 0x2D:
+	      // -
+	      return 'ident';
+	
+	    case 0x20: // Space
+	    case 0x09: // Tab
+	    case 0x0A: // Newline
+	    case 0x0D: // Return
+	    case 0xA0: // No-break space
+	    case 0xFEFF: // Byte Order Mark
+	    case 0x2028: // Line Separator
+	    case 0x2029:
+	      // Paragraph Separator
+	      return 'ws';
+	  }
+	
+	  // a-z, A-Z
+	  if (code >= 0x61 && code <= 0x7A || code >= 0x41 && code <= 0x5A) {
+	    return 'ident';
+	  }
+	
+	  // 1-9
+	  if (code >= 0x31 && code <= 0x39) {
+	    return 'number';
+	  }
+	
+	  return 'else';
+	}
+	
+	/**
+	 * Format a subPath, return its plain form if it is
+	 * a literal string or number. Otherwise prepend the
+	 * dynamic indicator (*).
+	 *
+	 * @param {String} path
+	 * @return {String}
+	 */
+	
+	function formatSubPath(path) {
+	  var trimmed = path.trim();
+	  // invalid leading 0
+	  if (path.charAt(0) === '0' && isNaN(path)) {
+	    return false;
+	  }
+	
+	  return isLiteral(trimmed) ? stripQuotes(trimmed) : '*' + trimmed;
+	}
+	
+	/**
+	 * Parse a string path into an array of segments
+	 *
+	 * @param {String} path
+	 * @return {Array|undefined}
+	 */
+	
+	function parse(path) {
+	  var keys = [];
+	  var index = -1;
+	  var mode = BEFORE_PATH;
+	  var subPathDepth = 0;
+	  var c = void 0,
+	      newChar = void 0,
+	      key = void 0,
+	      type = void 0,
+	      transition = void 0,
+	      action = void 0,
+	      typeMap = void 0;
+	
+	  var actions = [];
+	
+	  actions[PUSH] = function () {
+	    if (key !== undefined) {
+	      keys.push(key);
+	      key = undefined;
+	    }
+	  };
+	
+	  actions[APPEND] = function () {
+	    if (key === undefined) {
+	      key = newChar;
+	    } else {
+	      key += newChar;
+	    }
+	  };
+	
+	  actions[INC_SUB_PATH_DEPTH] = function () {
+	    actions[APPEND]();
+	    subPathDepth++;
+	  };
+	
+	  actions[PUSH_SUB_PATH] = function () {
+	    if (subPathDepth > 0) {
+	      subPathDepth--;
+	      mode = IN_SUB_PATH;
+	      actions[APPEND]();
+	    } else {
+	      subPathDepth = 0;
+	      key = formatSubPath(key);
+	      if (key === false) {
+	        return false;
+	      } else {
+	        actions[PUSH]();
+	      }
+	    }
+	  };
+	
+	  function maybeUnescapeQuote() {
+	    var nextChar = path[index + 1];
+	    if (mode === IN_SINGLE_QUOTE && nextChar === "'" || mode === IN_DOUBLE_QUOTE && nextChar === '"') {
+	      index++;
+	      newChar = '\\' + nextChar;
+	      actions[APPEND]();
+	      return true;
+	    }
+	  }
+	
+	  while (mode != null) {
+	    index++;
+	    c = path[index];
+	
+	    if (c === '\\' && maybeUnescapeQuote()) {
+	      continue;
+	    }
+	
+	    type = getPathCharType(c);
+	    typeMap = pathStateMachine[mode];
+	    transition = typeMap[type] || typeMap['else'] || ERROR;
+	
+	    if (transition === ERROR) {
+	      return; // parse error
+	    }
+	
+	    mode = transition[0];
+	    action = actions[transition[1]];
+	    if (action) {
+	      newChar = transition[2];
+	      newChar = newChar === undefined ? c : newChar;
+	      if (action() === false) {
+	        return;
+	      }
+	    }
+	
+	    if (mode === AFTER_PATH) {
+	      keys.raw = path;
+	      return keys;
+	    }
+	  }
+	}
+	
+	/**
+	 * External parse that check for a cache hit first
+	 *
+	 * @param {String} path
+	 * @return {Array|undefined}
+	 */
+	
+	function parsePath(path) {
+	  var hit = pathCache[path];
+	  if (!hit) {
+	    hit = parse(path);
+	    if (hit) {
+	      pathCache[path] = hit;
+	    }
+	  }
+	  return hit;
+	}
+	
+	function Path (Vue) {
+	  var _Vue$util = Vue.util;
+	  var isObject = _Vue$util.isObject;
+	  var isPlainObject = _Vue$util.isPlainObject;
+	  var hasOwn = _Vue$util.hasOwn;
+	
+	
+	  function empty(target) {
+	    if (target === null || target === undefined) {
+	      return true;
+	    }
+	
+	    if (Array.isArray(target)) {
+	      if (target.length > 0) {
+	        return false;
+	      }
+	      if (target.length === 0) {
+	        return true;
+	      }
+	    } else if (isPlainObject(target)) {
+	      /* eslint-disable prefer-const */
+	      for (var key in target) {
+	        if (hasOwn(target, key)) {
+	          return false;
+	        }
+	      }
+	      /* eslint-enable prefer-const */
+	    }
+	
+	    return true;
+	  }
+	
+	  /**
+	   * Get value from path string
+	   *
+	   * @param {Object} obj
+	   * @param {String} path
+	   * @return value
+	   */
+	
+	  function getValue(obj, path) {
+	    if (!isObject(obj)) {
+	      return null;
+	    }
+	
+	    var paths = parsePath(path);
+	    if (empty(paths)) {
+	      return null;
+	    }
+	
+	    var length = paths.length;
+	    var ret = null;
+	    var last = obj;
+	    var i = 0;
+	    while (i < length) {
+	      var value = last[paths[i]];
+	      if (value === undefined) {
+	        last = null;
+	        break;
+	      }
+	      last = value;
+	      i++;
+	    }
+	
+	    ret = last;
+	    return ret;
+	  }
+	
+	  return getValue;
+	}
+	
+	/**
+	 * extend
+	 *
+	 * @param {Vue} Vue
+	 * @return {Vue}
+	 */
+	
+	function Extend (Vue) {
+	  var _Vue$util = Vue.util;
+	  var isObject = _Vue$util.isObject;
+	  var bind = _Vue$util.bind;
+	
+	  var format = Format(Vue);
+	  var getValue = Path(Vue);
+	
+	  function parseArgs() {
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+	
+	    var lang = Vue.config.lang;
+	    var fallback = Vue.config.fallbackLang;
+	
+	    if (args.length === 1) {
+	      if (isObject(args[0]) || Array.isArray(args[0])) {
+	        args = args[0];
+	      } else if (typeof args[0] === 'string') {
+	        lang = args[0];
+	      }
+	    } else if (args.length === 2) {
+	      if (typeof args[0] === 'string') {
+	        lang = args[0];
+	      }
+	      if (isObject(args[1]) || Array.isArray(args[1])) {
+	        args = args[1];
+	      }
+	    }
+	
+	    return { lang: lang, fallback: fallback, params: args };
+	  }
+	
+	  function exist(locale, key) {
+	    if (!locale || !key) {
+	      return false;
+	    }
+	    return !isNil(getValue(locale, key));
+	  }
+	
+	  function interpolate(locale, key, args) {
+	    if (!locale) {
+	      return null;
+	    }
+	
+	    var val = getValue(locale, key);
+	    if (Array.isArray(val)) {
+	      return val;
+	    }
+	    if (isNil(val)) {
+	      val = locale[key];
+	    }
+	    if (isNil(val)) {
+	      return null;
+	    }
+	    if (typeof val !== 'string') {
+	      warn("Value of key '" + key + "' is not a string!");return null;
+	    }
+	
+	    // Check for the existance of links within the translated string
+	    if (val.indexOf('@:') >= 0) {
+	      // Match all the links within the local
+	      // We are going to replace each of
+	      // them with its translation
+	      var matches = val.match(/(@:[\w|.]+)/g);
+	      for (var idx in matches) {
+	        var link = matches[idx];
+	        // Remove the leading @:
+	        var linkPlaceholder = link.substr(2);
+	        // Translate the link
+	        var translatedstring = interpolate(locale, linkPlaceholder, args);
+	        // Replace the link with the translated string
+	        val = val.replace(link, translatedstring);
+	      }
+	    }
+	
+	    return !args ? val : Vue.config.i18nFormatter ? Vue.config.i18nFormatter.apply(null, [val].concat(args)) : format(val, args);
+	  }
+	
+	  function translate(getter, lang, fallback, key, params) {
+	    var res = null;
+	    res = interpolate(getter(lang), key, params);
+	    if (!isNil(res)) {
+	      return res;
+	    }
+	
+	    res = interpolate(getter(fallback), key, params);
+	    if (!isNil(res)) {
+	      if (process.env.NODE_ENV !== 'production') {
+	        warn('Fall back to translate the keypath "' + key + '" with "' + fallback + '" language.');
+	      }
+	      return res;
+	    } else {
+	      return null;
+	    }
+	  }
+	
+	  function warnDefault(lang, key, vm, result) {
+	    if (!isNil(result)) {
+	      return result;
+	    }
+	    if (Vue.config.missingHandler) {
+	      Vue.config.missingHandler.apply(null, [lang, key, vm]);
+	    } else {
+	      if (process.env.NODE_ENV !== 'production') {
+	        warn('Cannot translate the value of keypath "' + key + '". ' + 'Use the value of keypath as default');
+	      }
+	    }
+	    return key;
+	  }
+	
+	  function getAssetLocale(lang) {
+	    return Vue.locale(lang);
+	  }
+	
+	  function getComponentLocale(lang) {
+	    return this.$options.locales[lang];
+	  }
+	
+	  function getOldChoiceIndexFixed(choice) {
+	    return choice ? choice > 1 ? 1 : 0 : 1;
+	  }
+	
+	  function getChoiceIndex(choice, choicesLength) {
+	    choice = Math.abs(choice);
+	
+	    if (choicesLength === 2) {
+	      return getOldChoiceIndexFixed(choice);
+	    }
+	
+	    return choice ? Math.min(choice, 2) : 0;
+	  }
+	
+	  function fetchChoice(locale, choice) {
+	    if (!locale && typeof locale !== 'string') {
+	      return null;
+	    }
+	    var choices = locale.split('|');
+	
+	    choice = getChoiceIndex(choice, choices.length);
+	    if (!choices[choice]) {
+	      return locale;
+	    }
+	    return choices[choice].trim();
+	  }
+	
+	  /**
+	   * Vue.t
+	   *
+	   * @param {String} key
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+	
+	  Vue.t = function (key) {
+	    for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+	      args[_key2 - 1] = arguments[_key2];
+	    }
+	
+	    if (!key) {
+	      return '';
+	    }
+	
+	    var _parseArgs = parseArgs.apply(undefined, args);
+	
+	    var lang = _parseArgs.lang;
+	    var fallback = _parseArgs.fallback;
+	    var params = _parseArgs.params;
+	
+	    return warnDefault(lang, key, null, translate(getAssetLocale, lang, fallback, key, params));
+	  };
+	
+	  /**
+	   * Vue.tc
+	   *
+	   * @param {String} key
+	   * @param {number|undefined} choice
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+	
+	  Vue.tc = function (key, choice) {
+	    for (var _len3 = arguments.length, args = Array(_len3 > 2 ? _len3 - 2 : 0), _key3 = 2; _key3 < _len3; _key3++) {
+	      args[_key3 - 2] = arguments[_key3];
+	    }
+	
+	    return fetchChoice(Vue.t.apply(Vue, [key].concat(args)), choice);
+	  };
+	
+	  /**
+	   * Vue.te
+	   *
+	   * @param {String} key
+	   * @param {Array} ...args
+	   * @return {Boolean}
+	   */
+	
+	  Vue.te = function (key) {
+	    for (var _len4 = arguments.length, args = Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {
+	      args[_key4 - 1] = arguments[_key4];
+	    }
+	
+	    var _parseArgs2 = parseArgs.apply(undefined, args);
+	
+	    var lang = _parseArgs2.lang;
+	
+	    return exist(getAssetLocale(lang), key);
+	  };
+	
+	  /**
+	   * $t
+	   *
+	   * @param {String} key
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+	
+	  Vue.prototype.$t = function (key) {
+	    if (!key) {
+	      return '';
+	    }
+	
+	    for (var _len5 = arguments.length, args = Array(_len5 > 1 ? _len5 - 1 : 0), _key5 = 1; _key5 < _len5; _key5++) {
+	      args[_key5 - 1] = arguments[_key5];
+	    }
+	
+	    var _parseArgs3 = parseArgs.apply(undefined, args);
+	
+	    var lang = _parseArgs3.lang;
+	    var fallback = _parseArgs3.fallback;
+	    var params = _parseArgs3.params;
+	
+	    var res = null;
+	    if (this.$options.locales) {
+	      res = translate(bind(getComponentLocale, this), lang, fallback, key, params);
+	      if (res) {
+	        return res;
+	      }
+	    }
+	    return warnDefault(lang, key, this, translate(getAssetLocale, lang, fallback, key, params));
+	  };
+	
+	  /**
+	   * $tc
+	   *
+	   * @param {String} key
+	   * @param {number|undefined} choice
+	   * @param {Array} ...args
+	   * @return {String}
+	   */
+	
+	  Vue.prototype.$tc = function (key, choice) {
+	    if (typeof choice !== 'number' && typeof choice !== 'undefined') {
+	      return key;
+	    }
+	
+	    for (var _len6 = arguments.length, args = Array(_len6 > 2 ? _len6 - 2 : 0), _key6 = 2; _key6 < _len6; _key6++) {
+	      args[_key6 - 2] = arguments[_key6];
+	    }
+	
+	    return fetchChoice(this.$t.apply(this, [key].concat(args)), choice);
+	  };
+	
+	  /**
+	   * $te
+	   *
+	   * @param {String} key
+	   * @param {Array} ...args
+	   * @return {Boolean}
+	   *
+	   */
+	
+	  Vue.prototype.$te = function (key) {
+	    for (var _len7 = arguments.length, args = Array(_len7 > 1 ? _len7 - 1 : 0), _key7 = 1; _key7 < _len7; _key7++) {
+	      args[_key7 - 1] = arguments[_key7];
+	    }
+	
+	    var _parseArgs4 = parseArgs.apply(undefined, args);
+	
+	    var lang = _parseArgs4.lang;
+	
+	    var found = false;
+	    if (this.$options.locales) {
+	      // exist component locale
+	      found = exist(bind(getComponentLocale)(lang), key);
+	    }
+	    if (!found) {
+	      found = exist(getAssetLocale(lang), key);
+	    }
+	    return found;
+	  };
+	
+	  return Vue;
+	}
+	
+	var langVM = void 0; // singleton
+	
+	
+	/**
+	 * plugin
+	 *
+	 * @param {Object} Vue
+	 * @param {Object} opts
+	 */
+	
+	function plugin(Vue) {
+	  var opts = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	
+	  var version = Vue.version && Number(Vue.version.split('.')[0]) || -1;
+	
+	  if (process.env.NODE_ENV !== 'production' && plugin.installed) {
+	    warn('already installed.');
+	    return;
+	  }
+	
+	  if (process.env.NODE_ENV !== 'production' && version < 1) {
+	    warn('vue-i18n (' + plugin.version + ') need to use vue version 1.0 or later (vue version: ' + Vue.version + ').');
+	    return;
+	  }
+	
+	  var lang = 'en';
+	  setupLangVM(Vue, lang);
+	
+	  Asset(Vue, langVM);
+	  Override(Vue, langVM, version);
+	  Config(Vue, langVM, lang);
+	  Extend(Vue);
+	}
+	
+	function setupLangVM(Vue, lang) {
+	  var silent = Vue.config.silent;
+	  Vue.config.silent = true;
+	  if (!langVM) {
+	    langVM = new Vue({ data: { lang: lang, locales: {} } });
+	  }
+	  Vue.config.silent = silent;
+	}
+	
+	plugin.version = '__VERSION__';
+	
+	if (typeof window !== 'undefined' && window.Vue) {
+	  window.Vue.use(plugin);
+	}
+	
+	module.exports = plugin;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	// shim for using process in browser
+	var process = module.exports = {};
+	
+	// cached from whatever global is present so that test runners that stub it
+	// don't break things.  But we need to wrap it in a try catch in case it is
+	// wrapped in strict mode code which doesn't define any globals.  It's inside a
+	// function because try/catches deoptimize in certain engines.
+	
+	var cachedSetTimeout;
+	var cachedClearTimeout;
+	
+	function defaultSetTimout() {
+	    throw new Error('setTimeout has not been defined');
+	}
+	function defaultClearTimeout () {
+	    throw new Error('clearTimeout has not been defined');
+	}
+	(function () {
+	    try {
+	        if (typeof setTimeout === 'function') {
+	            cachedSetTimeout = setTimeout;
+	        } else {
+	            cachedSetTimeout = defaultSetTimout;
+	        }
+	    } catch (e) {
+	        cachedSetTimeout = defaultSetTimout;
+	    }
+	    try {
+	        if (typeof clearTimeout === 'function') {
+	            cachedClearTimeout = clearTimeout;
+	        } else {
+	            cachedClearTimeout = defaultClearTimeout;
+	        }
+	    } catch (e) {
+	        cachedClearTimeout = defaultClearTimeout;
+	    }
+	} ())
+	function runTimeout(fun) {
+	    if (cachedSetTimeout === setTimeout) {
+	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
+	    }
+	    // if setTimeout wasn't available but was latter defined
+	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+	        cachedSetTimeout = setTimeout;
+	        return setTimeout(fun, 0);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedSetTimeout(fun, 0);
+	    } catch(e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+	            return cachedSetTimeout.call(null, fun, 0);
+	        } catch(e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+	            return cachedSetTimeout.call(this, fun, 0);
+	        }
+	    }
+	
+	
+	}
+	function runClearTimeout(marker) {
+	    if (cachedClearTimeout === clearTimeout) {
+	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
+	    }
+	    // if clearTimeout wasn't available but was latter defined
+	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+	        cachedClearTimeout = clearTimeout;
+	        return clearTimeout(marker);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedClearTimeout(marker);
+	    } catch (e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+	            return cachedClearTimeout.call(null, marker);
+	        } catch (e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+	            return cachedClearTimeout.call(this, marker);
+	        }
+	    }
+	
+	
+	
+	}
+	var queue = [];
+	var draining = false;
+	var currentQueue;
+	var queueIndex = -1;
+	
+	function cleanUpNextTick() {
+	    if (!draining || !currentQueue) {
+	        return;
+	    }
+	    draining = false;
+	    if (currentQueue.length) {
+	        queue = currentQueue.concat(queue);
+	    } else {
+	        queueIndex = -1;
+	    }
+	    if (queue.length) {
+	        drainQueue();
+	    }
+	}
+	
+	function drainQueue() {
+	    if (draining) {
+	        return;
+	    }
+	    var timeout = runTimeout(cleanUpNextTick);
+	    draining = true;
+	
+	    var len = queue.length;
+	    while(len) {
+	        currentQueue = queue;
+	        queue = [];
+	        while (++queueIndex < len) {
+	            if (currentQueue) {
+	                currentQueue[queueIndex].run();
+	            }
+	        }
+	        queueIndex = -1;
+	        len = queue.length;
+	    }
+	    currentQueue = null;
+	    draining = false;
+	    runClearTimeout(timeout);
+	}
+	
+	process.nextTick = function (fun) {
+	    var args = new Array(arguments.length - 1);
+	    if (arguments.length > 1) {
+	        for (var i = 1; i < arguments.length; i++) {
+	            args[i - 1] = arguments[i];
+	        }
+	    }
+	    queue.push(new Item(fun, args));
+	    if (queue.length === 1 && !draining) {
+	        runTimeout(drainQueue);
+	    }
+	};
+	
+	// v8 likes predictible objects
+	function Item(fun, array) {
+	    this.fun = fun;
+	    this.array = array;
+	}
+	Item.prototype.run = function () {
+	    this.fun.apply(null, this.array);
+	};
+	process.title = 'browser';
+	process.browser = true;
+	process.env = {};
+	process.argv = [];
+	process.version = ''; // empty string to avoid regexp issues
+	process.versions = {};
+	
+	function noop() {}
+	
+	process.on = noop;
+	process.addListener = noop;
+	process.once = noop;
+	process.off = noop;
+	process.removeListener = noop;
+	process.removeAllListeners = noop;
+	process.emit = noop;
+	
+	process.binding = function (name) {
+	    throw new Error('process.binding is not supported');
+	};
+	
+	process.cwd = function () { return '/' };
+	process.chdir = function (dir) {
+	    throw new Error('process.chdir is not supported');
+	};
+	process.umask = function() { return 0; };
+
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(20)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(68)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Chosen.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Chosen.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _messages = __webpack_require__(21);
+	
+	var _messages2 = _interopRequireDefault(_messages);
+	
+	var _Chosen = __webpack_require__(63);
+	
+	var _Chosen2 = _interopRequireDefault(_Chosen);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="multiple">
+	//         <option value=""></option>
+	//         <option :value="item.value" v-for="item in options.items">
+	//             {{ item.name }}
+	//         </option>
+	//     </select>
+	// </template>
+	// <script>
+	exports.default = {
+	  name: 'chosen',
+	  props: ['dataOptions', 'disabled', 'multiple'],
+	  mixins: [_Chosen2.default],
+	  data: function data() {
+	    return { options: this.getOptions(_messages2.default) };
+	  },
+	  beforeMount: function beforeMount() {
+	    this.unwatch = this.$watch('dataOptions', function (data) {
+	      this.options = this.getOptions(_messages2.default);
+	      this.destroyChosen();
+	      this.initChosen();
+	      this.updateChosen();
+	    }, { deep: true });
+	  },
+	  mounted: function mounted() {
+	    this.initChosen();
+	  },
+	  destroy: function destroy() {
+	    this.destroyChosen();
+	  }
+	};
+	// </script>
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _assign = __webpack_require__(22);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	var _messages_en = __webpack_require__(59);
+	
+	var _messages_en2 = _interopRequireDefault(_messages_en);
+	
+	var _messages_ro = __webpack_require__(60);
+	
+	var _messages_ro2 = _interopRequireDefault(_messages_ro);
+	
+	var _messages_hu = __webpack_require__(61);
+	
+	var _messages_hu2 = _interopRequireDefault(_messages_hu);
+	
+	var _messages_bg = __webpack_require__(62);
+	
+	var _messages_bg2 = _interopRequireDefault(_messages_bg);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  'translations': (0, _assign2.default)(_messages_en2.default, _messages_ro2.default, _messages_bg2.default, _messages_hu2.default)
+	};
+
+/***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(23), __esModule: true };
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(24);
+	module.exports = __webpack_require__(27).Object.assign;
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(25);
+	
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(40)});
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(26)
+	  , core      = __webpack_require__(27)
+	  , ctx       = __webpack_require__(28)
+	  , hide      = __webpack_require__(30)
+	  , PROTOTYPE = 'prototype';
+	
+	var $export = function(type, name, source){
+	  var IS_FORCED = type & $export.F
+	    , IS_GLOBAL = type & $export.G
+	    , IS_STATIC = type & $export.S
+	    , IS_PROTO  = type & $export.P
+	    , IS_BIND   = type & $export.B
+	    , IS_WRAP   = type & $export.W
+	    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
+	    , expProto  = exports[PROTOTYPE]
+	    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
+	    , key, own, out;
+	  if(IS_GLOBAL)source = name;
+	  for(key in source){
+	    // contains in native
+	    own = !IS_FORCED && target && target[key] !== undefined;
+	    if(own && key in exports)continue;
+	    // export native or passed
+	    out = own ? target[key] : source[key];
+	    // prevent global pollution for namespaces
+	    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+	    // bind timers to global for call from export context
+	    : IS_BIND && own ? ctx(out, global)
+	    // wrap global constructors for prevent change them in library
+	    : IS_WRAP && target[key] == out ? (function(C){
+	      var F = function(a, b, c){
+	        if(this instanceof C){
+	          switch(arguments.length){
+	            case 0: return new C;
+	            case 1: return new C(a);
+	            case 2: return new C(a, b);
+	          } return new C(a, b, c);
+	        } return C.apply(this, arguments);
+	      };
+	      F[PROTOTYPE] = C[PROTOTYPE];
+	      return F;
+	    // make static versions for prototype methods
+	    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+	    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
+	    if(IS_PROTO){
+	      (exports.virtual || (exports.virtual = {}))[key] = out;
+	      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
+	      if(type & $export.R && expProto && !expProto[key])hide(expProto, key, out);
+	    }
+	  }
+	};
+	// type bitmap
+	$export.F = 1;   // forced
+	$export.G = 2;   // global
+	$export.S = 4;   // static
+	$export.P = 8;   // proto
+	$export.B = 16;  // bind
+	$export.W = 32;  // wrap
+	$export.U = 64;  // safe
+	$export.R = 128; // real proto method for `library` 
+	module.exports = $export;
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+	var global = module.exports = typeof window != 'undefined' && window.Math == Math
+	  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
+
+/***/ },
+/* 27 */
+/***/ function(module, exports) {
+
+	var core = module.exports = {version: '2.4.0'};
+	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// optional / simple context binding
+	var aFunction = __webpack_require__(29);
+	module.exports = function(fn, that, length){
+	  aFunction(fn);
+	  if(that === undefined)return fn;
+	  switch(length){
+	    case 1: return function(a){
+	      return fn.call(that, a);
+	    };
+	    case 2: return function(a, b){
+	      return fn.call(that, a, b);
+	    };
+	    case 3: return function(a, b, c){
+	      return fn.call(that, a, b, c);
+	    };
+	  }
+	  return function(/* ...args */){
+	    return fn.apply(that, arguments);
+	  };
+	};
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	module.exports = function(it){
+	  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
+	  return it;
+	};
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var dP         = __webpack_require__(31)
+	  , createDesc = __webpack_require__(39);
+	module.exports = __webpack_require__(35) ? function(object, key, value){
+	  return dP.f(object, key, createDesc(1, value));
+	} : function(object, key, value){
+	  object[key] = value;
+	  return object;
+	};
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var anObject       = __webpack_require__(32)
+	  , IE8_DOM_DEFINE = __webpack_require__(34)
+	  , toPrimitive    = __webpack_require__(38)
+	  , dP             = Object.defineProperty;
+	
+	exports.f = __webpack_require__(35) ? Object.defineProperty : function defineProperty(O, P, Attributes){
+	  anObject(O);
+	  P = toPrimitive(P, true);
+	  anObject(Attributes);
+	  if(IE8_DOM_DEFINE)try {
+	    return dP(O, P, Attributes);
+	  } catch(e){ /* empty */ }
+	  if('get' in Attributes || 'set' in Attributes)throw TypeError('Accessors not supported!');
+	  if('value' in Attributes)O[P] = Attributes.value;
+	  return O;
+	};
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isObject = __webpack_require__(33);
+	module.exports = function(it){
+	  if(!isObject(it))throw TypeError(it + ' is not an object!');
+	  return it;
+	};
+
+/***/ },
+/* 33 */
+/***/ function(module, exports) {
+
+	module.exports = function(it){
+	  return typeof it === 'object' ? it !== null : typeof it === 'function';
+	};
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = !__webpack_require__(35) && !__webpack_require__(36)(function(){
+	  return Object.defineProperty(__webpack_require__(37)('div'), 'a', {get: function(){ return 7; }}).a != 7;
+	});
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Thank's IE8 for his funny defineProperty
+	module.exports = !__webpack_require__(36)(function(){
+	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+	});
+
+/***/ },
+/* 36 */
+/***/ function(module, exports) {
+
+	module.exports = function(exec){
+	  try {
+	    return !!exec();
+	  } catch(e){
+	    return true;
+	  }
+	};
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isObject = __webpack_require__(33)
+	  , document = __webpack_require__(26).document
+	  // in old IE typeof document.createElement is 'object'
+	  , is = isObject(document) && isObject(document.createElement);
+	module.exports = function(it){
+	  return is ? document.createElement(it) : {};
+	};
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.1 ToPrimitive(input [, PreferredType])
+	var isObject = __webpack_require__(33);
+	// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+	// and the second argument - flag - preferred type is a string
+	module.exports = function(it, S){
+	  if(!isObject(it))return it;
+	  var fn, val;
+	  if(S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
+	  if(typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it)))return val;
+	  if(!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
+	  throw TypeError("Can't convert object to primitive value");
+	};
+
+/***/ },
+/* 39 */
+/***/ function(module, exports) {
+
+	module.exports = function(bitmap, value){
+	  return {
+	    enumerable  : !(bitmap & 1),
+	    configurable: !(bitmap & 2),
+	    writable    : !(bitmap & 4),
+	    value       : value
+	  };
+	};
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	// 19.1.2.1 Object.assign(target, source, ...)
+	var getKeys  = __webpack_require__(41)
+	  , gOPS     = __webpack_require__(56)
+	  , pIE      = __webpack_require__(57)
+	  , toObject = __webpack_require__(58)
+	  , IObject  = __webpack_require__(45)
+	  , $assign  = Object.assign;
+	
+	// should work with symbols and should have deterministic property order (V8 bug)
+	module.exports = !$assign || __webpack_require__(36)(function(){
+	  var A = {}
+	    , B = {}
+	    , S = Symbol()
+	    , K = 'abcdefghijklmnopqrst';
+	  A[S] = 7;
+	  K.split('').forEach(function(k){ B[k] = k; });
+	  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+	  var T     = toObject(target)
+	    , aLen  = arguments.length
+	    , index = 1
+	    , getSymbols = gOPS.f
+	    , isEnum     = pIE.f;
+	  while(aLen > index){
+	    var S      = IObject(arguments[index++])
+	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+	      , length = keys.length
+	      , j      = 0
+	      , key;
+	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+	  } return T;
+	} : $assign;
+
+/***/ },
+/* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+	var $keys       = __webpack_require__(42)
+	  , enumBugKeys = __webpack_require__(55);
+	
+	module.exports = Object.keys || function keys(O){
+	  return $keys(O, enumBugKeys);
+	};
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var has          = __webpack_require__(43)
+	  , toIObject    = __webpack_require__(44)
+	  , arrayIndexOf = __webpack_require__(48)(false)
+	  , IE_PROTO     = __webpack_require__(52)('IE_PROTO');
+	
+	module.exports = function(object, names){
+	  var O      = toIObject(object)
+	    , i      = 0
+	    , result = []
+	    , key;
+	  for(key in O)if(key != IE_PROTO)has(O, key) && result.push(key);
+	  // Don't enum bug & hidden keys
+	  while(names.length > i)if(has(O, key = names[i++])){
+	    ~arrayIndexOf(result, key) || result.push(key);
+	  }
+	  return result;
+	};
+
+/***/ },
+/* 43 */
+/***/ function(module, exports) {
+
+	var hasOwnProperty = {}.hasOwnProperty;
+	module.exports = function(it, key){
+	  return hasOwnProperty.call(it, key);
+	};
+
+/***/ },
+/* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// to indexed object, toObject with fallback for non-array-like ES3 strings
+	var IObject = __webpack_require__(45)
+	  , defined = __webpack_require__(47);
+	module.exports = function(it){
+	  return IObject(defined(it));
+	};
+
+/***/ },
+/* 45 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// fallback for non-array-like ES3 and non-enumerable old V8 strings
+	var cof = __webpack_require__(46);
+	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
+	  return cof(it) == 'String' ? it.split('') : Object(it);
+	};
+
+/***/ },
+/* 46 */
+/***/ function(module, exports) {
+
+	var toString = {}.toString;
+	
+	module.exports = function(it){
+	  return toString.call(it).slice(8, -1);
+	};
+
+/***/ },
+/* 47 */
+/***/ function(module, exports) {
+
+	// 7.2.1 RequireObjectCoercible(argument)
+	module.exports = function(it){
+	  if(it == undefined)throw TypeError("Can't call method on  " + it);
+	  return it;
+	};
+
+/***/ },
+/* 48 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// false -> Array#indexOf
+	// true  -> Array#includes
+	var toIObject = __webpack_require__(44)
+	  , toLength  = __webpack_require__(49)
+	  , toIndex   = __webpack_require__(51);
+	module.exports = function(IS_INCLUDES){
+	  return function($this, el, fromIndex){
+	    var O      = toIObject($this)
+	      , length = toLength(O.length)
+	      , index  = toIndex(fromIndex, length)
+	      , value;
+	    // Array#includes uses SameValueZero equality algorithm
+	    if(IS_INCLUDES && el != el)while(length > index){
+	      value = O[index++];
+	      if(value != value)return true;
+	    // Array#toIndex ignores holes, Array#includes - not
+	    } else for(;length > index; index++)if(IS_INCLUDES || index in O){
+	      if(O[index] === el)return IS_INCLUDES || index || 0;
+	    } return !IS_INCLUDES && -1;
+	  };
+	};
+
+/***/ },
+/* 49 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.15 ToLength
+	var toInteger = __webpack_require__(50)
+	  , min       = Math.min;
+	module.exports = function(it){
+	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+	};
+
+/***/ },
+/* 50 */
+/***/ function(module, exports) {
+
+	// 7.1.4 ToInteger
+	var ceil  = Math.ceil
+	  , floor = Math.floor;
+	module.exports = function(it){
+	  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+	};
+
+/***/ },
+/* 51 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var toInteger = __webpack_require__(50)
+	  , max       = Math.max
+	  , min       = Math.min;
+	module.exports = function(index, length){
+	  index = toInteger(index);
+	  return index < 0 ? max(index + length, 0) : min(index, length);
+	};
+
+/***/ },
+/* 52 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var shared = __webpack_require__(53)('keys')
+	  , uid    = __webpack_require__(54);
+	module.exports = function(key){
+	  return shared[key] || (shared[key] = uid(key));
+	};
+
+/***/ },
+/* 53 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global = __webpack_require__(26)
+	  , SHARED = '__core-js_shared__'
+	  , store  = global[SHARED] || (global[SHARED] = {});
+	module.exports = function(key){
+	  return store[key] || (store[key] = {});
+	};
+
+/***/ },
+/* 54 */
+/***/ function(module, exports) {
+
+	var id = 0
+	  , px = Math.random();
+	module.exports = function(key){
+	  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+	};
+
+/***/ },
+/* 55 */
+/***/ function(module, exports) {
+
+	// IE 8- don't enum bug keys
+	module.exports = (
+	  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
+	).split(',');
+
+/***/ },
+/* 56 */
+/***/ function(module, exports) {
+
+	exports.f = Object.getOwnPropertySymbols;
+
+/***/ },
+/* 57 */
+/***/ function(module, exports) {
+
+	exports.f = {}.propertyIsEnumerable;
+
+/***/ },
+/* 58 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.13 ToObject(argument)
+	var defined = __webpack_require__(47);
+	module.exports = function(it){
+	  return Object(defined(it));
+	};
+
+/***/ },
+/* 59 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  'en_GB': {
+	    'welcome': {
+	      'message': 'logged as',
+	      'messageNoLogin': 'Unauthenticated user'
+	    },
+	    'label': {
+	      'logout': 'Logout',
+	      'profile': 'Profile',
+	      'home': 'Home',
+	      'loginName': 'Login',
+	      'loginRemember': 'Remember me',
+	      'loginText': 'Login',
+	      'userPlaceholder': 'Username',
+	      'passwordPlaceholder': 'Password',
+	      'filterSubmit': 'Search',
+	      'filterReset': 'Reset',
+	      'filterTitle': 'Filter',
+	      'submitBarSubmit': 'Save',
+	      'submitBarUpdate': 'Update',
+	      'submitBarUpload': 'Upload',
+	      'submitBarBack': 'Back',
+	      'mandatory': 'Mandatory fields',
+	      'wizardSubmitBarNext': 'Next',
+	      'wizardSubmitBarPrev': 'Prev',
+	      'wizardSubmitBarFinish': 'Finish',
+	      'wizardSubmitBarCancel': 'Cancel',
+	      'selectNoResults': 'No results match',
+	      'fileNoFile': 'No file',
+	      'fileChoose': 'Choose',
+	      'fileChange': 'Change',
+	      'save': 'Save',
+	      'cancel': 'Cancel',
+	      'preview': 'Preview',
+	      'close': 'Close',
+	      'confirm': 'Confirm',
+	      'change': 'Change',
+	      'language': 'Language',
+	      'accountSettings': 'Account settings',
+	      'support': 'Support',
+	      'pageSettings': 'Page settings',
+	      'yes': 'Yes',
+	      'no': 'No'
+	    },
+	    'localeName': {
+	      'ro_RO': 'romanian',
+	      'en_GB': 'english',
+	      'bg_BG': 'bulgarian',
+	      'hu_HU': 'hungarian',
+	      'pl_PL': 'polish',
+	      'ro-RO': 'romanian',
+	      'en-GB': 'english',
+	      'bg-BG': 'bulgarian',
+	      'hu-HU': 'hungarian',
+	      'pl-PL': 'polish',
+	      'ro': 'romanian',
+	      'en': 'english',
+	      'bg': 'bulgarian',
+	      'hu': 'hungarian',
+	      'pl': 'polish'
+	    },
+	    'baseNotifications': {
+	      'titleError': 'Check errors',
+	      'titleInfo': 'Info',
+	      'titleNotice': 'Notifications',
+	      'titleSuccess': 'Success',
+	      'titleDelete': 'Success',
+	      'viewAll': 'View all'
+	    },
+	    'tree': {
+	      'modalTitle': 'Select',
+	      'modalResetLabel': 'Reset',
+	      'modalCancelLabel': 'Cancel',
+	      'modalOkLabel': 'Select',
+	      'textUnmatched': 'Hide unmatched',
+	      'textSelected': 'selected',
+	      'searchPlaceholder': 'Search',
+	      'textSelectHierarchy': 'Hierarchical multi-selection'
+	    },
+	    'chosen': {
+	      'multipleText': 'Select Some Options',
+	      'singleText': 'Select an Option',
+	      'noResult': 'No results match'
+	    },
+	    'chosenAjax': {
+	      'multipleText': 'Search some options',
+	      'singleText': 'Search an option',
+	      'noResult': 'No results match',
+	      'typing': 'Keep typing...',
+	      'looking': 'Looking for...'
+	    },
+	    'html5': {
+	      'value': 'Please fill out this field.',
+	      'numberMin': 'Please select a value that is no less than',
+	      'numberMax': 'Please select a value that is no more than',
+	      'url': 'Please fill out this field with a valid url.',
+	      'email': 'Please fill out this field with a valid email.',
+	      'list': 'Please select an item in the list.'
+	    },
+	    'daterange': {
+	      'apply': 'Apply',
+	      'cancel': 'Cancel',
+	      'from': 'From',
+	      'to': 'To',
+	      'january': 'Jan',
+	      'february': 'Feb',
+	      'march': 'Mar',
+	      'april': 'Apr',
+	      'may': 'May',
+	      'june': 'Jun',
+	      'july': 'Jul',
+	      'august': 'Aug',
+	      'september': 'Sep',
+	      'october': 'Oct',
+	      'november': 'Nov',
+	      'december': 'Dec',
+	      'sunday': 'Su',
+	      'monday': 'Mo',
+	      'tuesday': 'Tu',
+	      'wednesday': 'We',
+	      'thursday': 'Th',
+	      'friday': 'Fr',
+	      'saturday': 'Sa'
+	    },
+	    'page': {
+	      'notFound': 'Page not found',
+	      'subHeaderMessage': 'This page has been moved or it doesn\'t exist!',
+	      'adviceTitle': 'Try one of the following:',
+	      'verifyAddress': 'Re-check the url.',
+	      'readFaq': 'Read the frequently asked questions.',
+	      'tellUs': 'Inform us about the problem.',
+	      'wentWrong': 'Refresh the page. Something went wrong.',
+	      'workingOnIt': 'Give it a minute or two. We are working on it!'
+	    }
+	  }
+	};
+
+/***/ },
+/* 60 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  'ro_RO': {
+	    'welcome': {
+	      'message': 'Autentificat ca',
+	      'messageNoLogin': 'Utilizator neautentificat'
+	    },
+	    'label': {
+	      'logout': 'Deconectare',
+	      'profile': 'Profil',
+	      'home': 'Acasă',
+	      'loginName': 'Autentificare',
+	      'loginRemember': 'Ține-mă minte',
+	      'loginText': 'Autentifică-te',
+	      'userPlaceholder': 'Utilizator',
+	      'passwordPlaceholder': 'Parola',
+	      'filterSubmit': 'Caută',
+	      'filterReset': 'Resetează',
+	      'filterTitle': 'Filtrare',
+	      'submitBarSubmit': 'Salvează',
+	      'submitBarUpload': 'Încarcă',
+	      'submitBarUpdate': 'Modifică',
+	      'submitBarBack': 'Înapoi',
+	      'mandatory': 'Câmpuri obligatorii',
+	      'wizardSubmitBarNext': 'Înainte',
+	      'wizardSubmitBarPrev': 'Înapoi',
+	      'wizardSubmitBarFinish': 'Finalizează',
+	      'wizardSubmitBarCancel': 'Anulează',
+	      'selectNoResults': 'Niciun rezultat',
+	      'fileNoFile': 'Niciun fișier',
+	      'fileChoose': 'Selectează',
+	      'fileChange': 'Schimbă',
+	      'save': 'Salvează',
+	      'cancel': 'Anulează',
+	      'preview': 'Pre-vizualizează',
+	      'close': 'Închide',
+	      'confirm': 'Confirmă',
+	      'change': 'Modifică',
+	      'language': 'Limbă',
+	      'accountSettings': 'Setările contului',
+	      'support': 'Suport tehnic',
+	      'pageSettings': 'Setări pagină',
+	      'yes': 'Da',
+	      'no': 'Nu'
+	    },
+	    'localeName': {
+	      'ro_RO': 'română',
+	      'en_GB': 'engleză',
+	      'bg_BG': 'bulgară',
+	      'hu_HU': 'maghiară',
+	      'pl_PL': 'poloneză',
+	      'ro-RO': 'română',
+	      'en-GB': 'engleză',
+	      'bg-BG': 'bulgară',
+	      'hu-HU': 'maghiară',
+	      'pl-PL': 'poloneză',
+	      'ro': 'română',
+	      'en': 'engleză',
+	      'bg': 'bulgară',
+	      'hu': 'maghiară',
+	      'pl': 'poloneză'
+	    },
+	    'baseNotifications': {
+	      'titleError': 'Verificați următoarele erori',
+	      'titleInfo': 'Info',
+	      'titleNotice': 'Notificări',
+	      'titleSuccess': 'Acțiunea a avut loc cu succes',
+	      'titleDelete': 'Ștergerea a avut loc cu succes',
+	      'viewAll': 'Vizualizează totul'
+	    },
+	    'tree': {
+	      'modalTitle': 'Selectează',
+	      'modalResetLabel': 'Resetează',
+	      'modalCancelLabel': 'Anulează',
+	      'modalOkLabel': 'Selectează',
+	      'textUnmatched': 'Ascunde rezultatele nerelevante',
+	      'textSelectare': 'Selectează toate elementele din categorie',
+	      'textSelected': 'selectate',
+	      'searchPlaceholder': 'Caută',
+	      'textSelectHierarchy': 'Selectare multiplă ierarhică'
+	    },
+	    'chosen': {
+	      'multipleText': 'Selectează o opțiune',
+	      'singleText': 'Selectează o opțiune',
+	      'noResult': 'Niciun rezultat'
+	    },
+	    'chosenAjax': {
+	      'multipleText': 'Caută o opțiune',
+	      'singleText': 'Caută o opțiune',
+	      'noResult': 'Niciun rezultat',
+	      'typing': 'Scrie...',
+	      'looking': 'Se caută...'
+	    },
+	    'html5': {
+	      'value': 'Vă rog să introduceți o valoare.',
+	      'numberMin': 'Valoarea minimă trebuie să fie',
+	      'numberMax': 'Valoarea maximă trebuie să fie',
+	      'url': 'Vă rog să introduceți o adresă url validă.',
+	      'email': 'Vă rog să introduceți o adresă de email validă.',
+	      'list': 'Vă rog să selectați un element din listă.'
+	    },
+	    'daterange': {
+	      'apply': 'Aplică',
+	      'cancel': 'Anulează',
+	      'from': 'De la',
+	      'to': 'Până la',
+	      'january': 'Ian',
+	      'february': 'Feb',
+	      'march': 'Mar',
+	      'april': 'Apr',
+	      'may': 'Mai',
+	      'june': 'Iun',
+	      'july': 'Iul',
+	      'august': 'Aug',
+	      'september': 'Sep',
+	      'october': 'Oct',
+	      'november': 'Noi',
+	      'december': 'Dec',
+	      'sunday': 'Du',
+	      'monday': 'Lu',
+	      'tuesday': 'Ma',
+	      'wednesday': 'Mi',
+	      'thursday': 'Jo',
+	      'friday': 'Vi',
+	      'saturday': 'Sâ'
+	    },
+	    'page': {
+	      'notFound': 'Pagina nu a fost gasită',
+	      'subHeaderMessage': 'Această pagină a fost mutată sau nu mai există!',
+	      'adviceTitle': 'Încearcă următoarele:',
+	      'verifyAddress': 'Verifică adresa',
+	      'readFaq': 'Citește în categoria întrebărilor adresate frecvent',
+	      'tellUs': 'Informează-ne despre problemă',
+	      'wentWrong': 'Ceva nu a funcționat',
+	      'workingOnIt': 'Lucrăm la rezolvarea problemei!'
+	    }
+	  }
+	};
+
+/***/ },
+/* 61 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  'hu_HU': {
+	    'welcome': {
+	      'message': 'bejelentkezve mint',
+	      'messageNoLogin': 'Hitelesített felhasználó'
+	    },
+	    'label': {
+	      'logout': 'Leválasztás',
+	      'profile': 'Saját fiók',
+	      'home': 'Otthon',
+	      'loginName': 'Bejelentkezés',
+	      'loginRemember': 'Emlékezz rám',
+	      'loginText': 'Bejelentkezés',
+	      'userPlaceholder': 'Használó',
+	      'passwordPlaceholder': 'Jelszó',
+	      'filterSubmit': 'Keresés',
+	      'filterReset': 'újrakezd',
+	      'filterTitle': 'Szűr',
+	      'submitBarSubmit': 'Megóv',
+	      'submitBarUpdate': 'Frissítés',
+	      'submitBarUpload': 'Feltöltés',
+	      'submitBarBack': 'Vissza',
+	      'mandatory': 'kötelező mezők',
+	      'wizardSubmitBarNext': 'következő',
+	      'wizardSubmitBarPrev': 'Előző',
+	      'wizardSubmitBarFinish': 'befejez',
+	      'wizardSubmitBarCancel': 'töröl',
+	      'selectNoResults': 'Nincs eredmény mérkőzés',
+	      'fileNoFile': 'Nincs fájl',
+	      'fileChoose': 'kiválaszt',
+	      'fileChange': 'változik',
+	      'save': 'Megment',
+	      'cancel': 'Visszavonásához',
+	      'preview': 'Előnézet',
+	      'close': 'Közel',
+	      'confirm': 'Erősítse',
+	      'change': 'Változás',
+	      'language': 'Nyelv',
+	      'accountSettings': 'Fiók beállítások',
+	      'support': 'Támogatás',
+	      'pageSettings': 'Oldal beállítások',
+	      'yes': 'Igen',
+	      'no': 'Nem'
+	    },
+	    'localeName': {
+	      'ro_RO': 'román',
+	      'en_GB': 'angol',
+	      'bg_BG': 'bolgár',
+	      'hu_HU': 'magyar',
+	      'pl_PL': 'lengyel',
+	      'ro-RO': 'román',
+	      'en-GB': 'angol',
+	      'bg-BG': 'bolgár',
+	      'hu-HU': 'magyar',
+	      'pl-PL': 'lengyel',
+	      'ro': 'román',
+	      'en': 'angol',
+	      'bg': 'bolgár',
+	      'hu': 'magyar',
+	      'pl': 'lengyel'
+	    },
+	    'baseNotifications': {
+	      'titleError': 'Ellenőrizze a hibákat',
+	      'titleInfo': 'Info',
+	      'titleNotice': 'Értesítések',
+	      'titleSuccess': 'Siker',
+	      'titleDelete': 'Siker',
+	      'viewAll': 'Mindet megnéz'
+	    },
+	    'tree': {
+	      'modalTitle': 'választ',
+	      'modalResetLabel': 'újrakezd',
+	      'modalCancelLabel': 'Tiszta',
+	      'modalOkLabel': 'választ',
+	      'textUnmatched': 'elrejtése páratlan',
+	      'textSelected': 'kiválasztott',
+	      'searchPlaceholder': 'keresés',
+	      'textSelectHierarchy': 'Hierarchikus több választás'
+	    },
+	    'chosen': {
+	      'multipleText': 'Válassza ki néhány opció',
+	      'singleText': 'Válasszon ki egy lehetőséget',
+	      'noResult': 'Nem találtam mérkőzés'
+	    },
+	    'chosenAjax': {
+	      'multipleText': 'Keresés néhány opció',
+	      'singleText': 'Keresés egy lehetőség',
+	      'noResult': 'Nem találtam mérkőzés',
+	      'typing': 'ír...',
+	      'looking': 'Keresés a...'
+	    },
+	    'html5': {
+	      'value': 'Kérem töltse ki ezt mező.',
+	      'numberMin': 'Kérem választ érték hogy van cnagyobb mint',
+	      'numberMax': 'Kérem választ érték hogy van kisebb mint',
+	      'url': 'Kérem töltse ki ezt mező a érvényes url.',
+	      'email': 'Kérem töltse ki ezt mező a érvényes email.',
+	      'list': 'Kérem választ egy tétel -tól lista.'
+	    },
+	    'daterange': {
+	      'apply': 'Alkalmaz',
+	      'cancel': 'Visszavonásához',
+	      'from': 'Tól',
+	      'to': 'Hogy',
+	      'january': 'Jan',
+	      'february': 'Feb',
+	      'march': 'Már',
+	      'april': 'Ápr',
+	      'may': 'Leh',
+	      'june': 'Jún',
+	      'july': 'Júl',
+	      'august': 'Aug',
+	      'september': 'Sze',
+	      'october': 'Okt',
+	      'november': 'Nov',
+	      'december': 'Dec',
+	      'sunday': 'Va',
+	      'monday': 'Hé',
+	      'tuesday': 'Ke',
+	      'wednesday': 'Sz',
+	      'thursday': 'Cs',
+	      'friday': 'Pé',
+	      'saturday': 'Sz'
+	    },
+	    'page': {
+	      'notFound': 'Az oldal nem található',
+	      'subHeaderMessage': 'Ez az oldal áthelyezésre került vagy már nem létezik!',
+	      'adviceTitle': 'Próbáld ki a következő:',
+	      'verifyAddress': 'Ellenőrizze a cím',
+	      'readFaq': 'Olvas gyakran ismételt kérdések',
+	      'tellUs': 'Értesítsen minket a problémát',
+	      'wentWrong': 'Valami elromlott',
+	      'workingOnIt': 'Dolgozunk rajta!'
+	    }
+	  }
+	};
+
+/***/ },
+/* 62 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  'bg_BG': {
+	    'welcome': {
+	      'message': 'влезли като',
+	      'messageNoLogin': 'Неудостоверен потребител'
+	    },
+	    'label': {
+	      'logout': 'излезете',
+	      'profile': 'моята сметка',
+	      'home': 'вкъщи',
+	      'loginName': 'логин',
+	      'loginRemember': 'запомни ме',
+	      'loginText': 'логин',
+	      'userPlaceholder': 'потребителско име',
+	      'passwordPlaceholder': 'парола',
+	      'filterSubmit': 'търсене',
+	      'filterReset': 'набирам отново',
+	      'filterTitle': 'филтър',
+	      'submitBarSubmit': 'спасявам',
+	      'submitBarUpdate': 'Актуализация',
+	      'submitBarUpload': 'Качи',
+	      'submitBarBack': 'обратно',
+	      'mandatory': 'Задължителни полета',
+	      'wizardSubmitBarNext': 'до',
+	      'wizardSubmitBarPrev': 'визуализации',
+	      'wizardSubmitBarFinish': 'завършеност',
+	      'wizardSubmitBarCancel': 'отмените',
+	      'selectNoResults': 'Няма мач резултати',
+	      'fileNoFile': 'не файл',
+	      'fileChoose': 'избирам',
+	      'fileChange': 'Промяна',
+	      'save': 'Cпасяване',
+	      'cancel': 'Aнулира',
+	      'preview': 'Изглед',
+	      'close': 'близо',
+	      'confirm': 'одобрявам',
+	      'change': 'Промяна',
+	      'language': 'Eзик',
+	      'accountSettings': 'Настройки на профила',
+	      'support': 'Подкрепа',
+	      'pageSettings': 'настройки на страница',
+	      'yes': 'да',
+	      'no': 'Не'
+	    },
+	    'localeName': {
+	      'ro_RO': 'румънски',
+	      'en_GB': 'английски',
+	      'bg_BG': 'български',
+	      'hu_HU': 'унгарски',
+	      'pl_PL': 'полски',
+	      'ro-RO': 'румънски',
+	      'en-GB': 'английски',
+	      'bg-BG': 'български',
+	      'hu-HU': 'унгарски',
+	      'pl-PL': 'полски',
+	      'ro': 'румънски',
+	      'en': 'английски',
+	      'bg': 'български',
+	      'hu': 'унгарски',
+	      'pl': 'полски'
+	    },
+	    'baseNotifications': {
+	      'titleError': 'Проверете грешки',
+	      'titleInfo': 'Информация',
+	      'titleNotice': 'Известия',
+	      'titleSuccess': 'Yспех',
+	      'titleDelete': 'Yспех',
+	      'viewAll': 'Bиж всички'
+	    },
+	    'tree': {
+	      'modalTitle': 'избирам',
+	      'modalResetLabel': 'набирам отново',
+	      'modalCancelLabel': 'Отказ',
+	      'modalOkLabel': 'избирам',
+	      'textUnmatched': 'Скриване несравнимо',
+	      'textSelected': 'подбран',
+	      'searchPlaceholder': 'търсене',
+	      'textSelectHierarchy': 'Йерархично мулти - избор'
+	    },
+	    'chosen': {
+	      'multipleText': 'Изберете Някои Options',
+	      'singleText': 'Изберете опция',
+	      'noResult': 'Няма резултат резултати'
+	    },
+	    'chosenAjax': {
+	      'multipleText': 'Търсене някои опции',
+	      'singleText': 'Търсене опция',
+	      'noResult': 'Няма мач резултати',
+	      'typing': 'пиша...',
+	      'looking': 'Търся...'
+	    },
+	    'html5': {
+	      'value': 'моля попълнете това област.',
+	      'numberMin': 'моля изберете стойност по-голям от',
+	      'numberMax': 'моля изберете стойност по-малък от',
+	      'url': 'моля попълнете това област с валиден Url.',
+	      'email': 'моля попълнете това област с валиден Email.',
+	      'list': 'моля изберете един елемент от списък.'
+	    },
+	    'daterange': {
+	      'apply': 'Прилага',
+	      'cancel': 'Aнулира',
+	      'from': 'Oт',
+	      'to': 'Kъм',
+	      'january': 'Яну',
+	      'february': 'Фев',
+	      'march': 'Мар',
+	      'april': 'Апр',
+	      'may': 'мож',
+	      'june': 'юн',
+	      'july': 'юл',
+	      'august': 'Авг',
+	      'september': 'Сеп',
+	      'october': 'Окт',
+	      'november': 'Ное',
+	      'december': 'Дек',
+	      'sunday': 'Нед',
+	      'monday': 'пон',
+	      'tuesday': 'вто',
+	      'wednesday': 'Cp',
+	      'thursday': 'Че',
+	      'friday': 'Пe',
+	      'saturday': 'Cъ'
+	    },
+	    'page': {
+	      'notFound': 'Cтраницата не е намерена',
+	      'subHeaderMessage': 'Тази страница беше преместена и вече не съществува!',
+	      'adviceTitle': 'Oпитайте следното:',
+	      'verifyAddress': 'Проверка адреса',
+	      'readFaq': 'Чета често задавани въпроси',
+	      'tellUs': 'Информирайте ни за проблема',
+	      'wentWrong': 'Hещо се обърка',
+	      'workingOnIt': 'Ние работим върху него!'
+	    }
+	  }
+	};
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _keys = __webpack_require__(64);
+	
+	var _keys2 = _interopRequireDefault(_keys);
+	
+	var _assign = __webpack_require__(22);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* eslint-disable no-undef */
+	function getOptions(translationMessages) {
+	  this.id = this._uid;
+	  this.translations = translationMessages.translations[getDefaultLang.call(this)];
+	  return (0, _assign2.default)({}, {
+	    placeholder_text_multiple: this.translations.chosen.multipleText,
+	    placeholder_text_single: this.translations.chosen.singleText,
+	    no_results_text: this.translations.chosen.noResult,
+	    allow_single_deselect: true
+	  }, this.dataOptions);
+	}
+	
+	function initChosen() {
+	  $('#chosen_' + this.id).chosen(this.options);
+	}
+	
+	function updateChosen() {
+	  var self = this;
+	  setTimeout(function () {
+	    $('#chosen_' + self.id).trigger('chosen:updated');
+	  }, 0);
+	}
+	
+	function destroyChosen() {
+	  try {
+	    $('#chosen_' + this.id).chosen('destroy');
+	    this.unwatch();
+	  } catch (ex) {}
+	}
+	
+	function getDefaultLang() {
+	  if (this.$store.state && this.$store.state.lang) {
+	    return this.$store.state.lang;
+	  }
+	  return (0, _keys2.default)(TranslationMessages.translations)[0];
+	}
+	
+	exports.default = {
+	  methods: {
+	    getOptions: getOptions,
+	    getDefaultLang: getDefaultLang,
+	    initChosen: initChosen,
+	    destroyChosen: destroyChosen,
+	    updateChosen: updateChosen
+	  }
+	};
+
+/***/ },
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(65), __esModule: true };
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(66);
+	module.exports = __webpack_require__(27).Object.keys;
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.14 Object.keys(O)
+	var toObject = __webpack_require__(58)
+	  , $keys    = __webpack_require__(41);
+	
+	__webpack_require__(67)('keys', function(){
+	  return function keys(it){
+	    return $keys(toObject(it));
+	  };
+	});
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// most Object methods by ES6 should accept primitives
+	var $export = __webpack_require__(25)
+	  , core    = __webpack_require__(27)
+	  , fails   = __webpack_require__(36);
+	module.exports = function(KEY, exec){
+	  var fn  = (core.Object || {})[KEY] || Object[KEY]
+	    , exp = {};
+	  exp[KEY] = exec(fn);
+	  $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
+	};
+
+/***/ },
+/* 68 */
+/***/ function(module, exports) {
+
+	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"multiple\">\n        <option value=\"\"></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\">\n            {{ item.name }}\n        </option>\n    </select>";
+
+/***/ },
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(70)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(71)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Header.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Header.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 70 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//     <nav class="navbar navbar-default navbar-fixed-top">
+	//         <div class="container-fluid">
+	//             <div class="navbar-header">
+	//                 <div class="nav-controls visible-xs-inline-block pull-left">
+	//                     <button id="toggle-sidebar-btn" type="button" class="btn btn-default navbar-btn"
+	//                             aria-expanded="false">
+	//                         <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
+	//                     </button>
+	//                 </div>
+	//                 <a class="navbar-brand" href="javascript:void(0)">
+	//                     <img v-if="logoPath" :src="logoPath"/>
+	//                 </a>
+	//                 <div class="nav-controls visible-xs-inline-block pull-right">
+	//                     <button id="toggle-nav-btn" type="button" class="btn btn-default navbar-btn" data-toggle="collapse"
+	//                             data-target="#main-nav" aria-expanded="false">
+	//                         <span class="sr-only">Toggle navigation</span><i class="fa fa-angle-down"></i>
+	//                     </button>
+	//                 </div>
+	//             </div>
+	//             <div class="collapse navbar-collapse" id="main-nav">
+	//                 <h4 class="navbar-text" v-if="appName">{{ appName }}</h4>
+	//                 <ul class="nav navbar-nav navbar-right" v-if="headerParts">
+	//                   <component v-bind:is="view.component" v-for="view in currentView" :dataOptions="view.options">
+	//                   </component>
+	//                 </ul>
+	//             </div>
+	//         </div>
+	//     </nav>
+	// </template>
+	// <script>
+	exports.default = {
+	  name: 'header',
+	  props: ['dataOptions', 'headerParts'],
+	  data: function data() {
+	    return {
+	      logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
+	      appName: this.dataOptions ? this.dataOptions.appName : '',
+	      currentView: this.headerParts
+	    };
+	  },
+	  beforeMount: function beforeMount() {
+	    this.unwatch = this.$watch('currentView', function (data) {
+	      this.currentView = this.headerParts;
+	    }, { deep: true });
+	  },
+	  destroy: function destroy() {
+	    this.unwatch();
+	  }
+	};
+	// </script>
+
+/***/ },
+/* 71 */
+/***/ function(module, exports) {
+
+	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <div class=\"nav-controls visible-xs-inline-block pull-left\">\n                    <button id=\"toggle-sidebar-btn\" type=\"button\" class=\"btn btn-default navbar-btn\"\n                            aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle sidepanel</span><i class=\"fa fa-bars\"></i>\n                    </button>\n                </div>\n                <a class=\"navbar-brand\" href=\"javascript:void(0)\">\n                    <img v-if=\"logoPath\" :src=\"logoPath\"/>\n                </a>\n                <div class=\"nav-controls visible-xs-inline-block pull-right\">\n                    <button id=\"toggle-nav-btn\" type=\"button\" class=\"btn btn-default navbar-btn\" data-toggle=\"collapse\"\n                            data-target=\"#main-nav\" aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle navigation</span><i class=\"fa fa-angle-down\"></i>\n                    </button>\n                </div>\n            </div>\n            <div class=\"collapse navbar-collapse\" id=\"main-nav\">\n                <h4 class=\"navbar-text\" v-if=\"appName\">{{ appName }}</h4>\n                <ul class=\"nav navbar-nav navbar-right\" v-if=\"headerParts\">\n                  <component v-bind:is=\"view.component\" v-for=\"view in currentView\" :dataOptions=\"view.options\">\n                  </component>\n                </ul>\n            </div>\n        </div>\n    </nav>";
+
+/***/ },
+/* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(73)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(74)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./JqGrid.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./JqGrid.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _assign = __webpack_require__(22);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//   <div>
+	//     <table :id="'grid_table_' + id" class="table table-bordered"></table>
+	//     <div :id="'grid_pager_' + id"></div>
+	//   </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  name: 'jqGrid',
+	  props: ['dataOptions'],
+	  beforeCreate: function beforeCreate() {
+	    this.id = this._uid;
+	  },
+	  mounted: function mounted() {
+	    var options = (0, _assign2.default)(this.dataOptions, {
+	      table: '#grid_table_' + this.id,
+	      pager: '#grid_pager_' + this.id
+	    });
+	    /* eslint-disable no-undef */
+	    var photonGrid = new PhotonJqGrid(options);
+	    photonGrid.init();
+	    if (this.dataOptions && this.dataOptions.mountCallback) {
+	      this.dataOptions.mountCallback(photonGrid.grid || {});
+	    }
+	  }
+	};
+	// </script>
+
+/***/ },
+/* 74 */
+/***/ function(module, exports) {
+
+	module.exports = "<div>\n    <table :id=\"'grid_table_' + id\" class=\"table table-bordered\"></table>\n    <div :id=\"'grid_pager_' + id\"></div>\n  </div>";
+
+/***/ },
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(76)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(87)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Sidebar.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Sidebar.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 76 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Submenu = __webpack_require__(77);
+	
+	var _Submenu2 = _interopRequireDefault(_Submenu);
+	
+	var _SidebarItem = __webpack_require__(80);
+	
+	var _SidebarItem2 = _interopRequireDefault(_SidebarItem);
+	
+	var _SidebarControl = __webpack_require__(84);
+	
+	var _SidebarControl2 = _interopRequireDefault(_SidebarControl);
+	
+	var _Sidebar = __webpack_require__(79);
+	
+	var _Sidebar2 = _interopRequireDefault(_Sidebar);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//     <div id="sidebar" class="sidebar sidebar-fixed">
+	//         <div class="sidebar-outer scrollable default-skin" tabindex="-1">
+	//             <div class="viewport">
+	//                 <div class="overview">
+	//                     <ul class="sidebar-inner">
+	//                         <li v-for="item in items"
+	//                             :class="getMenuItemCssClass(item)">
+	//                             <sidebar-item :item="item"></sidebar-item>
+	//                             <div class="menu-item-data">
+	//                                 <sidebar-item :item="item" :collapsed="true"></sidebar-item>
+	//                                 <submenu :item="item" v-if="item.children && item.children.length"></submenu>
+	//                             </div>
+	//                         </li>
+	//                     </ul>
+	//                 </div>
+	//             </div>
+	//         </div>
+	//         <sidebar-control></sidebar-control>
+	//     </div>
+	// </template>
+	
+	// <script>
+	/* eslint-disable no-unused-vars */
+	exports.default = {
+	  name: 'sidebar',
+	  props: ['dataOptions'],
+	  mixins: [_Sidebar2.default],
+	  computed: {
+	    locale: function locale() {
+	      return this.$store.state.config.locale;
+	    },
+	    items: function items() {
+	      return this.getItems();
+	    }
+	  },
+	  components: {
+	    Submenu: _Submenu2.default, SidebarItem: _SidebarItem2.default, SidebarControl: _SidebarControl2.default
+	  },
+	  mounted: function mounted() {
+	    /* eslint-disable no-undef */
+	    try {
+	      var routePath = this.$route.path;
+	      if (this.$router.mode === 'hash') {
+	        routePath = '#' + routePath;
+	      }
+	      // Methods from emag-apps-ui-kit
+	      initSidebarEvents();
+	      staticNavigation(routePath);
+	      initScrollbarForSidebar();
+	    } catch (ex) {}
+	  }
+	};
+	// </script>
+
+/***/ },
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(78)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(83)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Submenu.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Submenu.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 78 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Sidebar = __webpack_require__(79);
+	
+	var _Sidebar2 = _interopRequireDefault(_Sidebar);
+	
+	var _SidebarItem = __webpack_require__(80);
+	
+	var _SidebarItem2 = _interopRequireDefault(_SidebarItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//   <ul class="sidebar-submenu">
+	//     <li v-for="child in item.children" :class="getMenuItemCssClass(child)">
+	//       <sidebar-item :item="child" :collapsed="true"></sidebar-item>
+	//       <submenu :item="child"></submenu>
+	//     </li>
+	//   </ul>
+	// </template>
+	// <script>
+	/* eslint-disable no-unused-vars */
+	exports.default = {
+	  name: 'submenu',
+	  props: ['item'],
+	  mixins: [_Sidebar2.default],
+	  components: { SidebarItem: _SidebarItem2.default }
+	};
+	// </script>
+
+/***/ },
+/* 79 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function getHrefForMenuItem(item) {
+	  return item.link || 'javascript:void(0)';
+	}
+	
+	function isAbsolute(item) {
+	  return !!item.absolute;
+	}
+	
+	function hasEmptyLink(item) {
+	  return !(item.link && item.link.length);
+	}
+	
+	function getMenuItemCssClass(item) {
+	  var menuItemCssClass = 'menu-item';
+	  if (item.children && item.children.length) {
+	    menuItemCssClass += ' menu-item-has-children';
+	  }
+	  if (item.open) {
+	    menuItemCssClass += ' active';
+	  }
+	  return menuItemCssClass;
+	}
+	
+	function getCollapsedCssClass(collapsed) {
+	  return collapsed ? 'menu-item-min-link' : '';
+	}
+	
+	function getItems() {
+	  /* eslint-disable no-unused-vars */
+	  var items = this.dataOptions && this.dataOptions.items ? this.dataOptions.items : [];
+	  if (this.$store.state.config && this.$store.state.config.useLocale) {
+	    _appendCurrentLocaleToItems.call(this, items, this.$store.state.config.locale);
+	  }
+	  return items;
+	}
+	
+	function _appendCurrentLocaleToItems(items, locale) {
+	  for (var i = 0; i < items.length; i++) {
+	    if (!hasEmptyLink(items[i])) {
+	      if (!items[i]._baseUrl) {
+	        items[i]._baseUrl = items[i].link;
+	      }
+	      items[i].link = '/' + locale.urlPath + items[i]._baseUrl;
+	    }
+	    if (items[i].children && items[i].children.length) {
+	      _appendCurrentLocaleToItems.call(this, items[i].children, locale);
+	    }
+	  }
+	}
+	
+	exports.default = {
+	  methods: {
+	    getHrefForMenuItem: getHrefForMenuItem,
+	    isAbsolute: isAbsolute,
+	    hasEmptyLink: hasEmptyLink,
+	    getMenuItemCssClass: getMenuItemCssClass,
+	    getCollapsedCssClass: getCollapsedCssClass,
+	    getItems: getItems
+	  }
+	};
+
+/***/ },
+/* 80 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(81)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(82)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarItem.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarItem.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 81 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Sidebar = __webpack_require__(79);
+	
+	var _Sidebar2 = _interopRequireDefault(_Sidebar);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'sidebar-item',
+	  props: ['item', 'collapsed'],
+	  mixins: [_Sidebar2.default]
+	};
+	// </script>
+	// <template>
+	//     <a :href="getHrefForMenuItem(item)" :class="getCollapsedCssClass(collapsed)" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
+	//         <span class="menu-text">{{ item.label }}</span>
+	//     </a>
+	//     <router-link :to="item.link" :class="getCollapsedCssClass(collapsed)" v-else>
+	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
+	//         <span class="menu-text">{{ item.label }}</span>
+	//     </router-link>
+	// </template>
+	// <script>
+
+/***/ },
+/* 82 */
+/***/ function(module, exports) {
+
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ item.label }}</span>\n    </a>\n    <router-link :to=\"item.link\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ item.label }}</span>\n    </router-link>";
+
+/***/ },
+/* 83 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul class=\"sidebar-submenu\">\n    <li v-for=\"child in item.children\" :class=\"getMenuItemCssClass(child)\">\n      <sidebar-item :item=\"child\" :collapsed=\"true\"></sidebar-item>\n      <submenu :item=\"child\"></submenu>\n    </li>\n  </ul>";
+
+/***/ },
+/* 84 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(85)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(86)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarControl.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarControl.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 85 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	// <template>
+	//   <div class="sidebar-control">
+	//     <div class="sidebar-toggle">
+	//       <button id="toggle-sidebar-size-btn" class="btn btn-default btn-sm">
+	//         <i class="menu-icon fa fa-arrow-left"></i>
+	//       </button>
+	//     </div>
+	//   </div>
+	// </template>
+	
+	// <script>
+	exports.default = {
+	  name: 'sidebar-control'
+	};
+	// </script>
+
+/***/ },
+/* 86 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"sidebar-control\">\n    <div class=\"sidebar-toggle\">\n      <button id=\"toggle-sidebar-size-btn\" class=\"btn btn-default btn-sm\">\n        <i class=\"menu-icon fa fa-arrow-left\"></i>\n      </button>\n    </div>\n  </div>";
+
+/***/ },
+/* 87 */
+/***/ function(module, exports) {
+
+	module.exports = "<div id=\"sidebar\" class=\"sidebar sidebar-fixed\">\n        <div class=\"sidebar-outer scrollable default-skin\" tabindex=\"-1\">\n            <div class=\"viewport\">\n                <div class=\"overview\">\n                    <ul class=\"sidebar-inner\">\n                        <li v-for=\"item in items\"\n                            :class=\"getMenuItemCssClass(item)\">\n                            <sidebar-item :item=\"item\"></sidebar-item>\n                            <div class=\"menu-item-data\">\n                                <sidebar-item :item=\"item\" :collapsed=\"true\"></sidebar-item>\n                                <submenu :item=\"item\" v-if=\"item.children && item.children.length\"></submenu>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        <sidebar-control></sidebar-control>\n    </div>";
+
+/***/ },
+/* 88 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(89)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(90)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Footer.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Footer.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 89 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _assign = __webpack_require__(22);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//     <div id="main_footer" :class="['footer', fixed ? 'footer-fixed' : '']">
+	//         <div class="footer-inner">
+	//             <div class="footer-content" v-if='fixed'>
+	//                 <div class="container-fluid">
+	//                     <div class="pull-left hidden-xs" v-html="content">
+	//                     </div>
+	//                     <div class="panel-controls pull-right" v-html="actions">
+	//                     </div>
+	//                 </div>
+	//                 <div class="clearfix text-center pad-top-20 visible-xs-block">
+	//                 </div>
+	//             </div>
+	//             <div class="footer-content text-center" v-if="!fixed" v-html="content">
+	//             </div>
+	//         </div>
+	//     </div>
+	// </template>
+	// <script>
+	exports.default = {
+	  name: 'footer',
+	  props: ['dataOptions'],
+	  data: function data() {
+	    return (0, _assign2.default)({ fixed: false, content: '', actions: '' }, this.dataOptions);
+	  }
+	};
+	// </script>
+
+/***/ },
+/* 90 */
+/***/ function(module, exports) {
+
+	module.exports = "<div id=\"main_footer\" :class=\"['footer', fixed ? 'footer-fixed' : '']\">\n        <div class=\"footer-inner\">\n            <div class=\"footer-content\" v-if='fixed'>\n                <div class=\"container-fluid\">\n                    <div class=\"pull-left hidden-xs\" v-html=\"content\">\n                    </div>\n                    <div class=\"panel-controls pull-right\" v-html=\"actions\">\n                    </div>\n                </div>\n                <div class=\"clearfix text-center pad-top-20 visible-xs-block\">\n                </div>\n            </div>\n            <div class=\"footer-content text-center\" v-if=\"!fixed\" v-html=\"content\">\n            </div>\n        </div>\n    </div>";
+
+/***/ },
+/* 91 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(92)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(94)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./TreeType.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./TreeType.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 92 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _TreeType = __webpack_require__(93);
+	
+	var _TreeType2 = _interopRequireDefault(_TreeType);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'tree-type',
+	  props: ['dataOptions', 'disabled'],
+	  mixins: [_TreeType2.default],
+	  computed: {
+	    options: function options() {
+	      return this.getOptions();
+	    },
+	    translations: function translations() {
+	      return this.getTranslations();
+	    }
+	  },
+	  methods: {
+	    openTree: function openTree() {
+	      try {
+	        this.$el.querySelector('#id_tree_type_' + this._uid).click();
+	      } catch (ex) {}
+	    }
+	  },
+	  watch: {
+	    translations: function translations() {
+	      this.initTreeType();
+	    }
+	  },
+	  beforeMount: function beforeMount() {
+	    this.unwatch = this.$watch('dataOptions', function (data) {
+	      this.options = this.getOptions();
+	      this.initTreeType();
+	    }, { deep: true });
+	  },
+	  destroyed: function destroyed() {
+	    this.unwatch();
+	  },
+	  mounted: function mounted() {
+	    this.initTreeType();
+	  }
+	};
+	// </script>
+	// <template>
+	//   <div>
+	//     <div class="hide-with-opacity">
+	//       <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple">
+	//       </select>
+	//     </div>
+	//     <div class="input-group input-group-no-separation">
+	//       <div class="form-control" :id="'id_tree_type_' + _uid"></div>
+	//       <span class="input-group-addon">
+	//           <i class="fa fa-sitemap" v-on:click="openTree"></i>
+	//       </span>
+	//     </div>
+	//   </div>
+	// </template>
+	// <script>
+
+/***/ },
+/* 93 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _assign = __webpack_require__(22);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* eslint-disable no-undef */
+	function getOptions() {
+	  return (0, _assign2.default)({}, {
+	    treeData: [],
+	    selectId: 'tree_type_' + this._uid
+	  }, this.translations, this.dataOptions);
+	}
+	
+	function initTreeType() {
+	  $('#id_tree_type_' + this._uid).TreeType(this.options);
+	}
+	
+	function getTranslations() {
+	  return {
+	    modalTitle: this.$t('tree.modalTitle'),
+	    modalResetLabel: this.$t('tree.modalResetLabel'),
+	    modalCancelLabel: this.$t('tree.modalCancelLabel'),
+	    modalOkLabel: this.$t('tree.modalOkLabel'),
+	    textUnmatched: this.$t('tree.textUnmatched'),
+	    textSelectHierarchy: this.$t('tree.textSelectHierarchy'),
+	    noResults: this.$t('label.selectNoResults'),
+	    textSelected: this.$t('tree.textSelected'),
+	    searchPlaceholder: this.$t('tree.searchPlaceholder')
+	  };
+	}
+	
+	exports.default = {
+	  methods: {
+	    getOptions: getOptions,
+	    initTreeType: initTreeType,
+	    getTranslations: getTranslations
+	  }
+	};
+
+/***/ },
+/* 94 */
+/***/ function(module, exports) {
+
+	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\">\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
+
+/***/ },
+/* 95 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(96)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(97)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 96 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _keys = __webpack_require__(64);
+	
+	var _keys2 = _interopRequireDefault(_keys);
+	
+	var _assign = __webpack_require__(22);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	var _messages = __webpack_require__(21);
+	
+	var _messages2 = _interopRequireDefault(_messages);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* eslint-disable no-undef */
+	exports.default = {
+	  name: 'autocomplete',
+	  props: ['dataOptions', 'multiple'],
+	  updated: function updated() {
+	    $('#autocomplete_' + this.id).trigger('chosen:updated');
+	  },
+	  data: function data() {
+	    this.id = this._uid;
+	    this.translations = _messages2.default.translations[getDefaultLang(this)];
+	
+	    var defaultOptions = {
+	      type: 'GET',
+	      dataType: 'json',
+	      keepTypingMsg: this.translations.chosenAjax.typing,
+	      lookingForMsg: this.translations.chosenAjax.looking,
+	      placeholder_text_multiple: this.translations.chosenAjax.multipleText,
+	      placeholder_text_single: this.translations.chosenAjax.singleText,
+	      no_results_text: this.translations.chosenAjax.noResult,
+	      id: this.id,
+	      filters: {},
+	      allow_single_deselect: true,
+	      dataCallback: function dataCallback() {
+	        var filterValues = {};
+	        try {
+	          if (typeof this.filters === 'string' || this.filters instanceof String) {
+	            this.filters = JSON.parse(this.filters);
+	          }
+	        } catch (ex) {}
+	        for (var prop in this.filters) {
+	          if ($(this.filters[prop]).length) {
+	            filterValues[prop] = $(this.filters[prop]).val();
+	          } else {
+	            filterValues[prop] = this.filters[prop];
+	          }
+	        }
+	        var term = $('#autocomplete_' + this.id + '_chosen').find('input').val();
+	        var dataSend = {
+	          'filters': filterValues,
+	          'term': term
+	        };
+	        return dataSend;
+	      }
+	    };
+	    return {
+	      options: (0, _assign2.default)(defaultOptions, this.dataOptions || {})
+	    };
+	  },
+	  mounted: function mounted() {
+	    $('#autocomplete_' + this.id).ajaxChosen(this.options, function (data) {
+	      var terms = {};
+	      $.each(data.results, function (i, val) {
+	        terms[i] = val;
+	      });
+	      if (data.isError) {
+	        var errorMessage = '';
+	        $.each(data.errors, function (i, val) {
+	          errorMessage += '<li>' + val + '</li>';
+	        });
+	        addNotification('<ul>' + errorMessage + '</ul>', 'danger');
+	      }
+	      return terms;
+	    });
+	  }
+	};
+	
+	// Helpers
+	// <template>
+	//     <select :id="'autocomplete_' + id" class="form-control" :multiple="options.multiple || multiple ? true : false">
+	//         <option value=''></option>
+	//         <option v-for="item in dataOptions.items" :value="item.value" selected>
+	//             {{ item.name }}
+	//         </option>
+	//     </select>
+	// </template>
+	// <script>
+	
+	var getDefaultLang = function getDefaultLang(self) {
+	  if (self.$store.state && self.$store.state.lang) {
+	    return self.$store.state.lang;
+	  }
+	  return (0, _keys2.default)(_messages2.default.translations)[0];
+	};
+	// </script>
+
+/***/ },
+/* 97 */
+/***/ function(module, exports) {
+
+	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" selected>\n            {{ item.name }}\n        </option>\n    </select>";
+
+/***/ },
+/* 98 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(99)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(101)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Datetimepicker.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Datetimepicker.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 99 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Datetimepicker = __webpack_require__(100);
+	
+	var _Datetimepicker2 = _interopRequireDefault(_Datetimepicker);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* eslint-disable no-undef */
+	exports.default = {
+	  name: 'datetimepicker',
+	  props: ['dataOptions', 'disabled'],
+	  mixins: [_Datetimepicker2.default],
+	  data: function data() {
+	    return { options: this.getOptions(this) };
+	  },
+	  mounted: function mounted() {
+	    this.initDatetimepicker(this);
+	    this.unwatch = this.$watch('dataOptions', function (data) {
+	      this.options = this.getOptions(this);
+	      this.destroyDatetimepicker(this);
+	      this.initDatetimepicker(this);
+	    }, { deep: true });
+	  },
+	
+	  destroyed: function destroyed() {
+	    this.destroyDatetimepicker(this);
+	  }
+	};
+	// </script>
+	
+	// <template>
+	//     <div class="input-group">
+	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled">
+	//         <div class="input-group-addon"><i :class="options.icons.date"></i>
+	//         </div>
+	//     </div>
+	// </template>
+	// <script>
+
+/***/ },
+/* 100 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _assign = __webpack_require__(22);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/* eslint-disable no-undef */
+	var getIcon = function getIcon(format) {
+	  /* eslint-disable no-unused-vars */
+	  var icon = 'fa fa-calendar';
+	  if (typeof format === 'string') {
+	    if (hasDate(format) && hasTime(format)) {
+	      icon = 'fa fa-calendar';
+	    } else if (hasDate(format)) {
+	      icon = 'fa fa-calendar-o';
+	    } else if (hasTime(format)) {
+	      icon = 'fa fa-clock-o';
+	    }
+	  }
+	  return icon;
+	};
+	
+	var hasDate = function hasDate(format) {
+	  var characters = ['Y', 'S', 'd', 'M'];
+	  return hasCharacters(format, characters);
+	};
+	
+	var hasTime = function hasTime(format) {
+	  var characters = ['H', 'h', 'k', 'm', 'S', 's'];
+	  return hasCharacters(format, characters);
+	};
+	
+	var hasCharacters = function hasCharacters(format, characters) {
+	  var regx = new RegExp('[' + characters.join('') + ']', 'g');
+	  var regxResult = format.match(regx);
+	  if (regxResult) {
+	    return regxResult.length > 0;
+	  }
+	  return false;
+	};
+	
+	var getOptions = function getOptions(self) {
+	  self.id = self._uid;
+	  var format = 'YYYY-MM-DD HH:mm:ss';
+	  var options = {
+	    format: format,
+	    icons: {
+	      date: self.getIcon(self.dataOptions.format || format)
+	    }
+	  };
+	  return (0, _assign2.default)({}, options, self.dataOptions);
+	};
+	
+	var initDatetimepicker = function initDatetimepicker(self) {
+	  $('#date_time_' + self.id).datetimepicker(self.options);
+	};
+	
+	var destroyDatetimepicker = function destroyDatetimepicker(self) {
+	  try {
+	    $(self.$el).find('#date_time_' + self.id).data('DateTimePicker').destroy();
+	    self.unwatch();
+	  } catch (ex) {}
+	};
+	
+	exports.default = {
+	  methods: {
+	    getIcon: getIcon,
+	    hasDate: hasDate,
+	    hasTime: hasTime,
+	    hasCharacters: hasCharacters,
+	    getOptions: getOptions,
+	    initDatetimepicker: initDatetimepicker,
+	    destroyDatetimepicker: destroyDatetimepicker
+	  }
+	};
+
+/***/ },
+/* 101 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\">\n        <div class=\"input-group-addon\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
+
+/***/ },
+/* 102 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(103)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(105)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocalePart.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocalePart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocalePart.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocalePart.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocalePart.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 103 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Header = __webpack_require__(104);
+	
+	var _Header2 = _interopRequireDefault(_Header);
+	
+	var _Sidebar = __webpack_require__(79);
+	
+	var _Sidebar2 = _interopRequireDefault(_Sidebar);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//   <li class="dropdown">
+	//     <a href="javascript:void(0)" class="dropdown-toggle dd-language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+	//       <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
+	//       <span><i :class="['flag-icon', locale.icon]"></i>{{ locale.label }}</span><i class="fa fa-angle-down hidden-xs"></i>
+	//     </a>
+	//     <ul class="dropdown-menu dm-language">
+	//       <li v-for="item in items" v-on:click="reloadPage()">
+	//         <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//             <span class="menu-text">{{ $t(item.label) }}</span>
+	//         </a>
+	//         <router-link :to="item.link" v-on:click="onClick || null" v-else>
+	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//             <span class="menu-text">{{ $t(item.label) }}</span>
+	//         </router-link>
+	//       </li>
+	//     </ul>
+	//   </li>
+	// </template>
+	// <script>
+	exports.default = {
+	  name: 'headerLocalePart',
+	  data: function data() {
+	    return {
+	      locales: this.$store.state.config.locales
+	    };
+	  },
+	
+	  mixins: [_Header2.default, _Sidebar2.default],
+	  computed: {
+	    locale: function locale() {
+	      return this.$store.state.config.locale;
+	    },
+	    items: function items() {
+	      return this.getLocaleItems();
+	    }
+	  },
+	  methods: {
+	    reloadPage: function reloadPage() {
+	      /* eslint-disable no-undef */
+	      location.reload();
+	    }
+	  },
+	  beforeMount: function beforeMount() {
+	    this.setDefaultLocale();
+	    this.setLinksForLocales();
+	  }
+	};
+	// </script>
+
+/***/ },
+/* 104 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	function getLocaleItems() {
+	  var localItems = this.$store.state.config.locales;
+	  var self = this;
+	  localItems.map(function (item) {
+	    if (self.$route.meta.urlWithoutLocale) {
+	      var path = '/' + item.urlPath + self.$route.meta.urlWithoutLocale;
+	      item.link = path;
+	    }
+	    return item;
+	  });
+	  return localItems;
+	}
+	
+	function setDefaultLocale() {
+	  var _this = this;
+	
+	  var locales = this.$store.state.config.locales || [];
+	  locales.forEach(function (item) {
+	    if (_this.$route.params && _this.$route.params.locale && item.urlPath === _this.$route.params.locale) {
+	      _this.$store.commit('setLocale', item);
+	    }
+	  });
+	}
+	
+	function setLinksForLocales() {
+	  var _this2 = this;
+	
+	  this.$router.beforeEach(function (to, from, next) {
+	    _this2.$set(_this2, 'items', _this2.getLocaleItems());
+	    next();
+	  });
+	}
+	
+	exports.default = {
+	  methods: {
+	    getLocaleItems: getLocaleItems,
+	    setDefaultLocale: setDefaultLocale,
+	    setLinksForLocales: setLinksForLocales
+	  }
+	};
+
+/***/ },
+/* 105 */
+/***/ function(module, exports) {
+
+	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
+
+/***/ },
+/* 106 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(107)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(111)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 107 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _LinkItem = __webpack_require__(108);
+	
+	var _LinkItem2 = _interopRequireDefault(_LinkItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'headerNotificationsPart',
+	  computed: {
+	    total: function total() {
+	      return this.$store.state.config.notifications.total;
+	    },
+	    notifications: function notifications() {
+	      return this.$store.state.config.notifications.items;
+	    },
+	    label: function label() {
+	      return this.$store.state.config.notifications.label || 'baseNotifications.titleNotice';
+	    }
+	  },
+	  components: {
+	    LinkItem: _LinkItem2.default
+	  }
+	};
+	// </script>
+	// <template>
+	//     <li class="dropdown">
+	//         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	//             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
+	//             <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
+	//             <span class="jewel" v-if="total != 0">{{ total }} </span>
+	//         </a>
+	//         <ul class="dropdown-menu">
+	//             <li class="dm-header hidden-xs">
+	//                 <span>{{ $t(label) }}</span>
+	//             </li>
+	//             <li v-for="notification in notifications">
+	//               <link-item :item="notification"></link-item>
+	//             </li>
+	//         </ul>
+	//     </li>
+	// </template>
+	// <script>
+
+/***/ },
+/* 108 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(109)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(110)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 109 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Sidebar = __webpack_require__(79);
+	
+	var _Sidebar2 = _interopRequireDefault(_Sidebar);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'link-item',
+	  props: ['item'],
+	  mixins: [_Sidebar2.default]
+	};
+	// </script>
+	// <template>
+	//     <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//     </a>
+	//     <router-link :to="item.link" v-on:click="onClick || null" v-else>
+	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//     </router-link>
+	// </template>
+	// <script>
+
+/***/ },
+/* 110 */
+/***/ function(module, exports) {
+
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
+
+/***/ },
+/* 111 */
+/***/ function(module, exports) {
+
+	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span>{{ $t(label) }}</span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
+
+/***/ },
+/* 112 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(113)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(114)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 113 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _LinkItem = __webpack_require__(108);
+	
+	var _LinkItem2 = _interopRequireDefault(_LinkItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'headerUserPart',
+	  computed: {
+	    account: function account() {
+	      return this.$store.state.config.user.account;
+	    },
+	    logout: function logout() {
+	      return this.$store.state.config.user.logout;
+	    },
+	    user: function user() {
+	      return this.$store.state.config.user;
+	    }
+	  },
+	  components: {
+	    LinkItem: _LinkItem2.default
+	  }
+	};
+	// </script>
+	// <template>
+	//     <li class="dropdown">
+	//         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	//             <div class="profile-thumb hidden-xs">
+	//                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="User image" height="36">
+	//             </div>
+	//             <span>
+	//                 {{ $t(user.label) }}
+	//             </span>
+	//             <i class="fa fa-angle-down hidden-xs"></i>
+	//         </a>
+	//         <ul class="dropdown-menu">
+	//             <li v-if="account">
+	//                 <link-item :item="account"></link-item>
+	//             </li>
+	//             <li v-if="logout">
+	//                 <link-item :item="logout"></link-item>
+	//             </li>
+	//         </ul>
+	//     </li>
+	// </template>
+	// <script>
+
+/***/ },
+/* 114 */
+/***/ function(module, exports) {
+
+	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"User image\" height=\"36\">\n            </div>\n            <span>\n                {{ $t(user.label) }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-if=\"logout\">\n                <link-item :item=\"logout\"></link-item>\n            </li>\n        </ul>\n    </li>";
+
+/***/ },
+/* 115 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  sidebar: {
+	    visible: true
+	  },
+	  notifications: {
+	    total: 0,
+	    items: []
+	  },
+	  user: {
+	    label: 'welcome.messageNoLogin',
+	    imageLink: '',
+	    account: {
+	      label: 'label.accountSettings',
+	      link: '',
+	      onClick: function onClick() {}
+	    },
+	    logout: {
+	      label: 'label.logout',
+	      link: '/logout',
+	      onClick: function onClick() {}
+	    }
+	  },
+	  useLocale: true,
+	  locale: {
+	    label: 'RO',
+	    key: 'ro_RO',
+	    urlPath: 'ro',
+	    icon: 'flag-icon-ro'
+	  },
+	  locales: [{
+	    label: 'RO',
+	    key: 'ro_RO',
+	    urlPath: 'ro',
+	    icon: 'flag-icon-ro'
+	  }, {
+	    label: 'GB',
+	    key: 'en_GB',
+	    urlPath: 'en',
+	    icon: 'flag-icon-gb'
+	  }, {
+	    label: 'BG',
+	    key: 'bg_BG',
+	    urlPath: 'bg',
+	    icon: 'flag-icon-bg'
+	  }, {
+	    label: 'HU',
+	    key: 'hu_HU',
+	    urlPath: 'hu',
+	    icon: 'flag-icon-hu'
+	  }, {
+	    label: 'PL',
+	    key: 'pl_PL',
+	    urlPath: 'pl',
+	    icon: 'flag-icon-pl'
+	  }]
+	};
+
+/***/ },
+/* 116 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _assign = __webpack_require__(22);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	var _vue = __webpack_require__(16);
+	
+	var _vue2 = _interopRequireDefault(_vue);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  showSidebar: function showSidebar(state) {
+	    state.config.sidebar.visible = true;
+	  },
+	  hideSidebar: function hideSidebar(state) {
+	    state.config.sidebar.visible = false;
+	  },
+	  setHeaderNotifications: function setHeaderNotifications(state, headerNotifications) {
+	    state.config.headerNotifications.notifications = headerNotifications.notifications;
+	    state.config.headerNotifications.nrOfNotifications = headerNotifications.nrOfNotifications;
+	  },
+	  setLocale: function setLocale(state, locale) {
+	    /* eslint-disable no-undef */
+	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
+	    _vue2.default.config.lang = locale.key;
+	  }
+	};
 
 /***/ }
 /******/ ])

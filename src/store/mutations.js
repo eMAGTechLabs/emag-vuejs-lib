@@ -12,10 +12,8 @@ export default {
     state.config.headerNotifications.nrOfNotifications = headerNotifications.nrOfNotifications
   },
   setLocale: (state, locale) => {
-    console.log(locale)
     /* eslint-disable no-undef */
     state.config.locale = Object.assign({}, state.config.locale, locale)
-    console.log(state.config.locale)
     Vue.config.lang = locale.key
   }
 }
