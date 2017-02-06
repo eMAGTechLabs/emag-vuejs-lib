@@ -6,13 +6,19 @@
     </a>
     <ul class="dropdown-menu dm-language">
       <li v-for="item in items" v-on:click="reloadPage()">
-        <link-item :item="item"></link-item>
+        <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
+            <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+            <span class="menu-text">{{ $t(item.label) }}</span>
+        </a>
+        <router-link :to="item.link" v-on:click="onClick || null" v-else>
+            <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+            <span class="menu-text">{{ $t(item.label) }}</span>
+        </router-link>
       </li>
     </ul>
   </li>
 </template>
 <script>
-  import LinkItem from './LinkItem'
   import headerMixin from './../mixins/Header'
   import sidebarMixin from './../mixins/Sidebar'
 
@@ -31,9 +37,6 @@
       items () {
         return this.getLocaleItems()
       }
-    },
-    components: {
-      LinkItem
     },
     methods: {
       reloadPage () {

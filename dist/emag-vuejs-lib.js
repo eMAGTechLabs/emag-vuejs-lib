@@ -100,7 +100,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _HeaderLocalePart2 = _interopRequireDefault(_HeaderLocalePart);
 	
-	var _HeaderNotificationsPart = __webpack_require__(106);
+	var _HeaderNotificationsPart = __webpack_require__(103);
 	
 	var _HeaderNotificationsPart2 = _interopRequireDefault(_HeaderNotificationsPart);
 	
@@ -108,7 +108,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _HeaderUserPart2 = _interopRequireDefault(_HeaderUserPart);
 	
-	var _LinkItem = __webpack_require__(101);
+	var _LinkItem = __webpack_require__(105);
 	
 	var _LinkItem2 = _interopRequireDefault(_LinkItem);
 	
@@ -128,7 +128,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Datetimepicker4 = _interopRequireDefault(_Datetimepicker3);
 	
-	var _Header3 = __webpack_require__(104);
+	var _Header3 = __webpack_require__(101);
 	
 	var _Header4 = _interopRequireDefault(_Header3);
 	
@@ -2587,7 +2587,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = __webpack_require__(100)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(105)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(102)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -2614,11 +2614,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _LinkItem = __webpack_require__(101);
-	
-	var _LinkItem2 = _interopRequireDefault(_LinkItem);
-	
-	var _Header = __webpack_require__(104);
+	var _Header = __webpack_require__(101);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
@@ -2628,6 +2624,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//   <li class="dropdown">
+	//     <a href="javascript:void(0)" class="dropdown-toggle dd-language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+	//       <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
+	//       <span><i :class="['flag-icon', locale.icon]"></i>{{ locale.label }}</span><i class="fa fa-angle-down hidden-xs"></i>
+	//     </a>
+	//     <ul class="dropdown-menu dm-language">
+	//       <li v-for="item in items" v-on:click="reloadPage()">
+	//         <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//             <span class="menu-text">{{ $t(item.label) }}</span>
+	//         </a>
+	//         <router-link :to="item.link" v-on:click="onClick || null" v-else>
+	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//             <span class="menu-text">{{ $t(item.label) }}</span>
+	//         </router-link>
+	//       </li>
+	//     </ul>
+	//   </li>
+	// </template>
+	// <script>
 	exports.default = {
 	  name: 'headerLocalePart',
 	  data: function data() {
@@ -2645,9 +2662,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.getLocaleItems();
 	    }
 	  },
-	  components: {
-	    LinkItem: _LinkItem2.default
-	  },
 	  methods: {
 	    reloadPage: function reloadPage() {
 	      /* eslint-disable no-undef */
@@ -2660,87 +2674,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	// </script>
-	// <template>
-	//   <li class="dropdown">
-	//     <a href="javascript:void(0)" class="dropdown-toggle dd-language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-	//       <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
-	//       <span><i :class="['flag-icon', locale.icon]"></i>{{ locale.label }}</span><i class="fa fa-angle-down hidden-xs"></i>
-	//     </a>
-	//     <ul class="dropdown-menu dm-language">
-	//       <li v-for="item in items" v-on:click="reloadPage()">
-	//         <link-item :item="item"></link-item>
-	//       </li>
-	//     </ul>
-	//   </li>
-	// </template>
-	// <script>
 
 /***/ },
 /* 101 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(102)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(103)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 102 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Sidebar = __webpack_require__(76);
-	
-	var _Sidebar2 = _interopRequireDefault(_Sidebar);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  name: 'link-item',
-	  props: ['item'],
-	  mixins: [_Sidebar2.default]
-	};
-	// </script>
-	// <template>
-	//     <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
-	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
-	//     </a>
-	//     <router-link :to="item.link" v-on:click="onClick || null" v-else>
-	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
-	//     </router-link>
-	// </template>
-	// <script>
-
-/***/ },
-/* 103 */
-/***/ function(module, exports) {
-
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
-
-/***/ },
-/* 104 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2790,16 +2726,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 105 */
+/* 102 */
 /***/ function(module, exports) {
 
-	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <link-item :item=\"item\"></link-item>\n      </li>\n    </ul>\n  </li>";
+	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
 
 /***/ },
-/* 106 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(107)
+	module.exports = __webpack_require__(104)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
 	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(108)
@@ -2820,7 +2756,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 107 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2829,7 +2765,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _LinkItem = __webpack_require__(101);
+	var _LinkItem = __webpack_require__(105);
 	
 	var _LinkItem2 = _interopRequireDefault(_LinkItem);
 	
@@ -2873,6 +2809,70 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <script>
 
 /***/ },
+/* 105 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(106)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(107)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 106 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Sidebar = __webpack_require__(76);
+	
+	var _Sidebar2 = _interopRequireDefault(_Sidebar);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'link-item',
+	  props: ['item'],
+	  mixins: [_Sidebar2.default]
+	};
+	// </script>
+	// <template>
+	//     <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//     </a>
+	//     <router-link :to="item.link" v-on:click="onClick || null" v-else>
+	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//     </router-link>
+	// </template>
+	// <script>
+
+/***/ },
+/* 107 */
+/***/ function(module, exports) {
+
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
+
+/***/ },
 /* 108 */
 /***/ function(module, exports) {
 
@@ -2912,7 +2912,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _LinkItem = __webpack_require__(101);
+	var _LinkItem = __webpack_require__(105);
 	
 	var _LinkItem2 = _interopRequireDefault(_LinkItem);
 	
@@ -2979,7 +2979,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    visible: true
 	  },
 	  notifications: {
-	    total: 1,
+	    total: 0,
 	    items: []
 	  },
 	  user: {

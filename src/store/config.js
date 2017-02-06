@@ -3,7 +3,7 @@ export default {
     visible: true
   },
   notifications: {
-    total: 1,
+    total: 0,
     items: []
   },
   user: {
