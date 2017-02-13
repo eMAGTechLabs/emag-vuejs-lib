@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 // Reusable items
 import Chosen from './components/Chosen'
 import Header from './components/Header'
