@@ -3,7 +3,6 @@ import VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
-
 // Reusable items
 import Chosen from './components/Chosen'
 import Header from './components/Header'
@@ -34,6 +33,9 @@ import treetype from './mixins/TreeType'
 // Translations
 import Translations from './translations/messages.js'
 
+// Plugins
+import TranslationsService from './plugins/TranslationsService.js'
+
 const EmagVueLib = {
   Chosen,
   Footer,
@@ -60,6 +62,9 @@ const EmagVueLib = {
     header,
     sidebar,
     treetype
+  },
+  services: {
+    TranslationsService
   }
 }
 

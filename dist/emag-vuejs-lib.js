@@ -152,6 +152,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _messages2 = _interopRequireDefault(_messages);
 	
+	var _TranslationsService = __webpack_require__(117);
+	
+	var _TranslationsService2 = _interopRequireDefault(_TranslationsService);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	_vue2.default.use(_vueI18n2.default);
@@ -166,6 +170,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// Translations
+	
+	
+	// Plugins
 	
 	
 	var EmagVueLib = {
@@ -194,6 +201,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    header: _Header4.default,
 	    sidebar: _Sidebar4.default,
 	    treetype: _TreeType4.default
+	  },
+	  services: {
+	    TranslationsService: _TranslationsService2.default
 	  }
 	};
 	
@@ -12559,11 +12569,58 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  setLocale: function setLocale(state, locale) {
 	    /* eslint-disable no-undef */
-	    console.log(_vue2.default.config);
 	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
 	    _vue2.default.config.lang = locale.key;
 	  }
 	};
+
+/***/ },
+/* 117 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _assign = __webpack_require__(22);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	var _keys = __webpack_require__(64);
+	
+	var _keys2 = _interopRequireDefault(_keys);
+	
+	exports.default = function (Vue, options) {
+	  var translations = options.translations;
+	  var tempTranslations = _getTranslations();
+	
+	  Vue.config.fallbackLang = 'en_GB';
+	  (0, _keys2.default)(tempTranslations).forEach(function (key) {
+	    Vue.locale(key, tempTranslations[key]);
+	  });
+	
+	  if (!Vue.helpers) {
+	    Vue.helpers = {};
+	  }
+	  Vue.helpers.getTranslations = _getTranslations;
+	
+	  // Helpers
+	  function _getTranslations() {
+	    var mergedTranslations = {};
+	    (0, _keys2.default)(_messages2.default.translations).forEach(function (key) {
+	      mergedTranslations[key] = (0, _assign2.default)({}, _messages2.default.translations[key], translations[key]);
+	    });
+	    return mergedTranslations;
+	  }
+	};
+	
+	var _messages = __webpack_require__(21);
+	
+	var _messages2 = _interopRequireDefault(_messages);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }
 /******/ ])

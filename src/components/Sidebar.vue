@@ -30,7 +30,7 @@ import sidebarMixin from './../mixins/Sidebar'
 export default {
   name: 'sidebar',
   props: ['dataOptions'],
-  mixins: [ sidebarMixin ],
+  mixins: [sidebarMixin],
   computed: {
     locale: function () {
       return this.$store.state.config.locale
