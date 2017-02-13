@@ -2714,6 +2714,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  locales.forEach(function (item) {
 	    if (_this.$route.params && _this.$route.params.locale && item.urlPath === _this.$route.params.locale) {
 	      _this.$store.commit('setLocale', item);
+	      Vue.config.lang = item.key;
 	    }
 	  });
 	}
@@ -3075,7 +3076,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  setLocale: function setLocale(state, locale) {
 	    /* eslint-disable no-undef */
 	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
-	    _vue2.default.config.lang = locale.key;
 	  }
 	};
 

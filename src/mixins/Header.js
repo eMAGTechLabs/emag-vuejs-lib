@@ -16,6 +16,7 @@ function setDefaultLocale () {
   locales.forEach((item) => {
     if (this.$route.params && this.$route.params.locale && item.urlPath === this.$route.params.locale) {
       this.$store.commit('setLocale', item)
+      Vue.config.lang = item.key
     }
   })
 }
