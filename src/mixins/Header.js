@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 function getLocaleItems () {
   let localItems = this.$store.state.config.locales
   let self = this

@@ -100,23 +100,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _HeaderLocalePart2 = _interopRequireDefault(_HeaderLocalePart);
 	
-	var _HeaderNotificationsPart = __webpack_require__(103);
+	var _HeaderNotificationsPart = __webpack_require__(104);
 	
 	var _HeaderNotificationsPart2 = _interopRequireDefault(_HeaderNotificationsPart);
 	
-	var _HeaderUserPart = __webpack_require__(109);
+	var _HeaderUserPart = __webpack_require__(110);
 	
 	var _HeaderUserPart2 = _interopRequireDefault(_HeaderUserPart);
 	
-	var _LinkItem = __webpack_require__(105);
+	var _LinkItem = __webpack_require__(106);
 	
 	var _LinkItem2 = _interopRequireDefault(_LinkItem);
 	
-	var _config = __webpack_require__(112);
+	var _config = __webpack_require__(113);
 	
 	var _config2 = _interopRequireDefault(_config);
 	
-	var _mutations = __webpack_require__(113);
+	var _mutations = __webpack_require__(114);
 	
 	var _mutations2 = _interopRequireDefault(_mutations);
 	
@@ -2597,7 +2597,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = __webpack_require__(100)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(102)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(103)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -2687,13 +2687,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 101 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _vue = __webpack_require__(102);
+	
+	var _vue2 = _interopRequireDefault(_vue);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	function getLocaleItems() {
 	  var localItems = this.$store.state.config.locales;
 	  var self = this;
@@ -2714,7 +2721,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  locales.forEach(function (item) {
 	    if (_this.$route.params && _this.$route.params.locale && item.urlPath === _this.$route.params.locale) {
 	      _this.$store.commit('setLocale', item);
-	      Vue.config.lang = item.key;
+	      _vue2.default.config.lang = item.key;
 	    }
 	  });
 	}
@@ -2738,349 +2745,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 102 */
-/***/ function(module, exports) {
-
-	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
-
-/***/ },
-/* 103 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(104)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(108)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 104 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _LinkItem = __webpack_require__(105);
-	
-	var _LinkItem2 = _interopRequireDefault(_LinkItem);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  name: 'headerNotificationsPart',
-	  computed: {
-	    total: function total() {
-	      return this.$store.state.config.notifications.total;
-	    },
-	    notifications: function notifications() {
-	      return this.$store.state.config.notifications.items;
-	    },
-	    label: function label() {
-	      return this.$store.state.config.notifications.label || 'baseNotifications.titleNotice';
-	    }
-	  },
-	  components: {
-	    LinkItem: _LinkItem2.default
-	  }
-	};
-	// </script>
-	// <template>
-	//     <li class="dropdown">
-	//         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	//             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
-	//             <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
-	//             <span class="jewel" v-if="total != 0">{{ total }} </span>
-	//         </a>
-	//         <ul class="dropdown-menu">
-	//             <li class="dm-header hidden-xs">
-	//                 <span>{{ $t(label) }}</span>
-	//             </li>
-	//             <li v-for="notification in notifications">
-	//               <link-item :item="notification"></link-item>
-	//             </li>
-	//         </ul>
-	//     </li>
-	// </template>
-	// <script>
-
-/***/ },
-/* 105 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(106)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(107)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 106 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _Sidebar = __webpack_require__(76);
-	
-	var _Sidebar2 = _interopRequireDefault(_Sidebar);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  name: 'link-item',
-	  props: ['item'],
-	  mixins: [_Sidebar2.default]
-	};
-	// </script>
-	// <template>
-	//     <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
-	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
-	//     </a>
-	//     <router-link :to="item.link" v-on:click="onClick || null" v-else>
-	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
-	//     </router-link>
-	// </template>
-	// <script>
-
-/***/ },
-/* 107 */
-/***/ function(module, exports) {
-
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
-
-/***/ },
-/* 108 */
-/***/ function(module, exports) {
-
-	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span>{{ $t(label) }}</span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
-
-/***/ },
-/* 109 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(110)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(111)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 110 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _LinkItem = __webpack_require__(105);
-	
-	var _LinkItem2 = _interopRequireDefault(_LinkItem);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  name: 'headerUserPart',
-	  computed: {
-	    account: function account() {
-	      return this.$store.state.config.user.account;
-	    },
-	    logout: function logout() {
-	      return this.$store.state.config.user.logout;
-	    },
-	    user: function user() {
-	      return this.$store.state.config.user;
-	    }
-	  },
-	  components: {
-	    LinkItem: _LinkItem2.default
-	  }
-	};
-	// </script>
-	// <template>
-	//     <li class="dropdown">
-	//         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	//             <div class="profile-thumb hidden-xs">
-	//                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="User image" height="36">
-	//             </div>
-	//             <span>
-	//                 {{ $t(user.label) }}
-	//             </span>
-	//             <i class="fa fa-angle-down hidden-xs"></i>
-	//         </a>
-	//         <ul class="dropdown-menu">
-	//             <li v-if="account">
-	//                 <link-item :item="account"></link-item>
-	//             </li>
-	//             <li v-if="logout">
-	//                 <link-item :item="logout"></link-item>
-	//             </li>
-	//         </ul>
-	//     </li>
-	// </template>
-	// <script>
-
-/***/ },
-/* 111 */
-/***/ function(module, exports) {
-
-	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"User image\" height=\"36\">\n            </div>\n            <span>\n                {{ $t(user.label) }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-if=\"logout\">\n                <link-item :item=\"logout\"></link-item>\n            </li>\n        </ul>\n    </li>";
-
-/***/ },
-/* 112 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = {
-	  sidebar: {
-	    visible: true
-	  },
-	  notifications: {
-	    total: 0,
-	    items: []
-	  },
-	  user: {
-	    label: 'welcome.messageNoLogin',
-	    imageLink: '',
-	    account: {
-	      label: 'label.accountSettings',
-	      link: '',
-	      onClick: function onClick() {}
-	    },
-	    logout: {
-	      label: 'label.logout',
-	      link: '/logout',
-	      onClick: function onClick() {}
-	    }
-	  },
-	  useLocale: true,
-	  locale: {
-	    label: 'RO',
-	    key: 'ro_RO',
-	    urlPath: 'ro',
-	    icon: 'flag-icon-ro'
-	  },
-	  locales: [{
-	    label: 'RO',
-	    key: 'ro_RO',
-	    urlPath: 'ro',
-	    icon: 'flag-icon-ro'
-	  }, {
-	    label: 'GB',
-	    key: 'en_GB',
-	    urlPath: 'en',
-	    icon: 'flag-icon-gb'
-	  }, {
-	    label: 'BG',
-	    key: 'bg_BG',
-	    urlPath: 'bg',
-	    icon: 'flag-icon-bg'
-	  }, {
-	    label: 'HU',
-	    key: 'hu_HU',
-	    urlPath: 'hu',
-	    icon: 'flag-icon-hu'
-	  }, {
-	    label: 'PL',
-	    key: 'pl_PL',
-	    urlPath: 'pl',
-	    icon: 'flag-icon-pl'
-	  }]
-	};
-
-/***/ },
-/* 113 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	var _vue = __webpack_require__(114);
-	
-	var _vue2 = _interopRequireDefault(_vue);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  showSidebar: function showSidebar(state) {
-	    state.config.sidebar.visible = true;
-	  },
-	  hideSidebar: function hideSidebar(state) {
-	    state.config.sidebar.visible = false;
-	  },
-	  setHeaderNotifications: function setHeaderNotifications(state, headerNotifications) {
-	    state.config.headerNotifications.notifications = headerNotifications.notifications;
-	    state.config.headerNotifications.nrOfNotifications = headerNotifications.nrOfNotifications;
-	  },
-	  setLocale: function setLocale(state, locale) {
-	    /* eslint-disable no-undef */
-	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
-	  }
-	};
-
-/***/ },
-/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -11305,6 +10969,349 @@ return /******/ (function(modules) { // webpackBootstrap
 	})));
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 103 */
+/***/ function(module, exports) {
+
+	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
+
+/***/ },
+/* 104 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(105)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(109)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 105 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _LinkItem = __webpack_require__(106);
+	
+	var _LinkItem2 = _interopRequireDefault(_LinkItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'headerNotificationsPart',
+	  computed: {
+	    total: function total() {
+	      return this.$store.state.config.notifications.total;
+	    },
+	    notifications: function notifications() {
+	      return this.$store.state.config.notifications.items;
+	    },
+	    label: function label() {
+	      return this.$store.state.config.notifications.label || 'baseNotifications.titleNotice';
+	    }
+	  },
+	  components: {
+	    LinkItem: _LinkItem2.default
+	  }
+	};
+	// </script>
+	// <template>
+	//     <li class="dropdown">
+	//         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	//             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
+	//             <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
+	//             <span class="jewel" v-if="total != 0">{{ total }} </span>
+	//         </a>
+	//         <ul class="dropdown-menu">
+	//             <li class="dm-header hidden-xs">
+	//                 <span>{{ $t(label) }}</span>
+	//             </li>
+	//             <li v-for="notification in notifications">
+	//               <link-item :item="notification"></link-item>
+	//             </li>
+	//         </ul>
+	//     </li>
+	// </template>
+	// <script>
+
+/***/ },
+/* 106 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(107)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(108)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 107 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Sidebar = __webpack_require__(76);
+	
+	var _Sidebar2 = _interopRequireDefault(_Sidebar);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'link-item',
+	  props: ['item'],
+	  mixins: [_Sidebar2.default]
+	};
+	// </script>
+	// <template>
+	//     <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//     </a>
+	//     <router-link :to="item.link" v-on:click="onClick || null" v-else>
+	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//     </router-link>
+	// </template>
+	// <script>
+
+/***/ },
+/* 108 */
+/***/ function(module, exports) {
+
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
+
+/***/ },
+/* 109 */
+/***/ function(module, exports) {
+
+	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span>{{ $t(label) }}</span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
+
+/***/ },
+/* 110 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(111)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(112)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 111 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _LinkItem = __webpack_require__(106);
+	
+	var _LinkItem2 = _interopRequireDefault(_LinkItem);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'headerUserPart',
+	  computed: {
+	    account: function account() {
+	      return this.$store.state.config.user.account;
+	    },
+	    logout: function logout() {
+	      return this.$store.state.config.user.logout;
+	    },
+	    user: function user() {
+	      return this.$store.state.config.user;
+	    }
+	  },
+	  components: {
+	    LinkItem: _LinkItem2.default
+	  }
+	};
+	// </script>
+	// <template>
+	//     <li class="dropdown">
+	//         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	//             <div class="profile-thumb hidden-xs">
+	//                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="User image" height="36">
+	//             </div>
+	//             <span>
+	//                 {{ $t(user.label) }}
+	//             </span>
+	//             <i class="fa fa-angle-down hidden-xs"></i>
+	//         </a>
+	//         <ul class="dropdown-menu">
+	//             <li v-if="account">
+	//                 <link-item :item="account"></link-item>
+	//             </li>
+	//             <li v-if="logout">
+	//                 <link-item :item="logout"></link-item>
+	//             </li>
+	//         </ul>
+	//     </li>
+	// </template>
+	// <script>
+
+/***/ },
+/* 112 */
+/***/ function(module, exports) {
+
+	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"User image\" height=\"36\">\n            </div>\n            <span>\n                {{ $t(user.label) }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-if=\"logout\">\n                <link-item :item=\"logout\"></link-item>\n            </li>\n        </ul>\n    </li>";
+
+/***/ },
+/* 113 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  sidebar: {
+	    visible: true
+	  },
+	  notifications: {
+	    total: 0,
+	    items: []
+	  },
+	  user: {
+	    label: 'welcome.messageNoLogin',
+	    imageLink: '',
+	    account: {
+	      label: 'label.accountSettings',
+	      link: '',
+	      onClick: function onClick() {}
+	    },
+	    logout: {
+	      label: 'label.logout',
+	      link: '/logout',
+	      onClick: function onClick() {}
+	    }
+	  },
+	  useLocale: true,
+	  locale: {
+	    label: 'RO',
+	    key: 'ro_RO',
+	    urlPath: 'ro',
+	    icon: 'flag-icon-ro'
+	  },
+	  locales: [{
+	    label: 'RO',
+	    key: 'ro_RO',
+	    urlPath: 'ro',
+	    icon: 'flag-icon-ro'
+	  }, {
+	    label: 'GB',
+	    key: 'en_GB',
+	    urlPath: 'en',
+	    icon: 'flag-icon-gb'
+	  }, {
+	    label: 'BG',
+	    key: 'bg_BG',
+	    urlPath: 'bg',
+	    icon: 'flag-icon-bg'
+	  }, {
+	    label: 'HU',
+	    key: 'hu_HU',
+	    urlPath: 'hu',
+	    icon: 'flag-icon-hu'
+	  }, {
+	    label: 'PL',
+	    key: 'pl_PL',
+	    urlPath: 'pl',
+	    icon: 'flag-icon-pl'
+	  }]
+	};
+
+/***/ },
+/* 114 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _assign = __webpack_require__(19);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	var _vue = __webpack_require__(102);
+	
+	var _vue2 = _interopRequireDefault(_vue);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  showSidebar: function showSidebar(state) {
+	    state.config.sidebar.visible = true;
+	  },
+	  hideSidebar: function hideSidebar(state) {
+	    state.config.sidebar.visible = false;
+	  },
+	  setHeaderNotifications: function setHeaderNotifications(state, headerNotifications) {
+	    state.config.headerNotifications.notifications = headerNotifications.notifications;
+	    state.config.headerNotifications.nrOfNotifications = headerNotifications.nrOfNotifications;
+	  },
+	  setLocale: function setLocale(state, locale) {
+	    /* eslint-disable no-undef */
+	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
+	  }
+	};
 
 /***/ },
 /* 115 */
