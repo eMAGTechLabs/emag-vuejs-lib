@@ -2720,8 +2720,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var locales = this.$store.state.config.locales || [];
 	  locales.forEach(function (item) {
 	    if (_this.$route.params && _this.$route.params.locale && item.urlPath === _this.$route.params.locale) {
-	      _this.$store.commit('setLocale', item);
 	      _vue2.default.config.lang = item.key;
+	      _this.$store.commit('setLocale', item);
+	      console.log(_vue2.default.config);
+	      console.log(_vue2.default.config.lang);
 	    }
 	  });
 	}
