@@ -1,10 +1,9 @@
-import VueRouter from 'vue-router'
 /* eslint-disable no-unused-vars */
 
 export default function (Vue, options) {
   let router = {}
   let routerMode = {}
-
+  let VueRouter = options.router
   let routes = (options && options.routes) ? options.routes : []
   let finalRoutes = []
   routerMode = options.mode || 'hash'
@@ -23,6 +22,7 @@ export default function (Vue, options) {
   _forwardRequestIfLocale()
   _initStaticNavigation()
 
+  // Helpers
   function _initStaticNavigation () {
     router.afterEach((to, from) => {
       let routePath = to.fullPath
@@ -34,7 +34,6 @@ export default function (Vue, options) {
     })
   }
 
-  // Helpers
   function _setMenuItems (items, useLocale = true) {
     let routerPaths = []
     for (let i = 0; i < items.length; i++) {
