@@ -62,7 +62,7 @@ const EmagVueLib = {
     treetype
   },
   services: {
-    TranslationsService,
+    TranslationService,
     AuthService,
     RoutingService,
     RequestInterceptorService

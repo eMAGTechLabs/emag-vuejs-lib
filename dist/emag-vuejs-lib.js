@@ -198,7 +198,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    treetype: _TreeType4.default
 	  },
 	  services: {
-	    TranslationsService: TranslationsService,
+	    TranslationService: _TranslationService2.default,
 	    AuthService: _AuthService2.default,
 	    RoutingService: _RoutingService2.default,
 	    RequestInterceptorService: _RequestInterceptorService2.default
