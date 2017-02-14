@@ -32,7 +32,7 @@ function getDefaultLang () {
   if (this.$store.state && this.$store.state.lang) {
     return this.$store.state.lang
   }
-  return Object.keys(TranslationMessages.translations)[0]
+  return 'en_GB'
 }
 
 export default {
