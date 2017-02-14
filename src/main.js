@@ -29,7 +29,10 @@ import treetype from './mixins/TreeType'
 import Translations from './translations/messages.js'
 
 // Plugins
-import TranslationsService from './plugins/TranslationsService.js'
+import TranslationService from './plugins/TranslationService.js'
+import AuthService from './plugins/AuthService.js'
+import RoutingService from './plugins/RoutingService.js'
+import RequestInterceptorService from './plugins/RequestInterceptorService.js'
 
 const EmagVueLib = {
   Chosen,
@@ -59,7 +62,10 @@ const EmagVueLib = {
     treetype
   },
   services: {
-    TranslationsService
+    TranslationsService,
+    AuthService,
+    RoutingService,
+    RequestInterceptorService
   }
 }
 
