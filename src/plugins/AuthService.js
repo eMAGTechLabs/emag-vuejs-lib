@@ -2,7 +2,7 @@
 export default function (Vue, options) {
   Vue.helpers.getVueRouter().beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
-      if (localStorage.getItem('access-token').length) {
+      if (!localStorage.getItem('access-token')) {
         next({
           path: options.redirectTo || '/login',
           query: {

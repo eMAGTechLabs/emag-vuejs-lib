@@ -11388,7 +11388,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (to.matched.some(function (record) {
 	      return record.meta.requiresAuth;
 	    })) {
-	      if (localStorage.getItem('access-token').length) {
+	      if (!localStorage.getItem('access-token')) {
 	        next({
 	          path: options.redirectTo || '/login',
 	          query: {
