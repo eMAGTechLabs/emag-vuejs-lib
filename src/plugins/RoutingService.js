@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 export default function (Vue, options) {
   let router = {}
   let routerMode = {}
@@ -38,16 +37,19 @@ export default function (Vue, options) {
     let routerPaths = []
     for (let i = 0; i < items.length; i++) {
       if (items[i].link && items[i].component) {
-        routerPaths.push({
+        let route = {
           path: (useLocale && items[i].link && items[i].link !== '*') ? '/:locale' + items[i].link : items[i].link,
           component: items[i].component,
           redirect: items[i].redirect || null,
-          alias: items[i].alias || '',
           meta: {
             requiresAuth: items[i].requiresAuth || false,
             urlWithoutLocale: items[i].link
           }
-        })
+        }
+        if (items[i].alias) {
+          route.alias = items[i].alias || ''
+        }
+        routerPaths.push(route)
       }
       if (items[i].children) {
         routerPaths.push(..._setMenuItems(items[i].children, useLocale))

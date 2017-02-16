@@ -19,7 +19,7 @@
   import LinkItem from './LinkItem'
 
   export default {
-    name: 'headerNotificationsPart',
+    name: 'headerNotificationsChild',
     computed: {
       total () {
         return this.$store.state.config.notifications.total

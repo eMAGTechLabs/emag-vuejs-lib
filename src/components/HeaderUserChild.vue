@@ -23,7 +23,7 @@
   import LinkItem from './LinkItem'
 
   export default {
-    name: 'headerUserPart',
+    name: 'headerUserChild',
     computed: {
       account () {
         return this.$store.state.config.user.account

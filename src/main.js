@@ -9,9 +9,9 @@ import Submenu from './components/Submenu'
 import SidebarControl from './components/SidebarControl'
 import Autocomplete from './components/Autocomplete'
 import Datetimepicker from './components/Datetimepicker'
-import HeaderLocalePart from './components/HeaderLocalePart'
-import HeaderNotificationsPart from './components/HeaderNotificationsPart'
-import HeaderUserPart from './components/HeaderUserPart'
+import HeaderLocaleChild from './components/HeaderLocaleChild'
+import HeaderNotificationsChild from './components/HeaderNotificationsChild'
+import HeaderUserChild from './components/HeaderUserChild'
 import LinkItem from './components/LinkItem'
 
 // Store
@@ -46,9 +46,9 @@ const EmagVueLib = {
   Translations,
   Autocomplete,
   Datetimepicker,
-  HeaderLocalePart,
-  HeaderNotificationsPart,
-  HeaderUserPart,
+  HeaderLocaleChild,
+  HeaderNotificationsChild,
+  HeaderUserChild,
   LinkItem,
   store: {
     config,

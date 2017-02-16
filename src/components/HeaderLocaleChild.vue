@@ -23,7 +23,7 @@
   import sidebarMixin from './../mixins/Sidebar'
 
   export default {
-    name: 'headerLocalePart',
+    name: 'headerLocaleChild',
     data () {
       return {
         locales: this.$store.state.config.locales

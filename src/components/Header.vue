@@ -20,7 +20,7 @@
             </div>
             <div class="collapse navbar-collapse" id="main-nav">
                 <h4 class="navbar-text" v-if="appName">{{ appName }}</h4>
-                <ul class="nav navbar-nav navbar-right" v-if="headerParts">
+                <ul class="nav navbar-nav navbar-right" v-if="headerChildren">
                   <component v-bind:is="view.component" v-for="view in currentView" :dataOptions="view.options">
                   </component>
                 </ul>
@@ -31,17 +31,17 @@
 <script>
   export default {
     name: 'header',
-    props: ['dataOptions', 'headerParts'],
+    props: ['dataOptions', 'headerChildren'],
     data () {
       return {
         logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
         appName: this.dataOptions ? this.dataOptions.appName : '',
-        currentView: this.headerParts
+        currentView: this.headerChildren
       }
     },
     beforeMount () {
       this.unwatch = this.$watch('currentView', function (data) {
-        this.currentView = this.headerParts
+        this.currentView = this.headerChildren
       }, { deep: true })
     },
     destroy () {

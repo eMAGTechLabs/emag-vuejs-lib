@@ -96,17 +96,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Datetimepicker2 = _interopRequireDefault(_Datetimepicker);
 	
-	var _HeaderLocalePart = __webpack_require__(99);
+	var _HeaderLocaleChild = __webpack_require__(99);
 	
-	var _HeaderLocalePart2 = _interopRequireDefault(_HeaderLocalePart);
+	var _HeaderLocaleChild2 = _interopRequireDefault(_HeaderLocaleChild);
 	
-	var _HeaderNotificationsPart = __webpack_require__(104);
+	var _HeaderNotificationsChild = __webpack_require__(104);
 	
-	var _HeaderNotificationsPart2 = _interopRequireDefault(_HeaderNotificationsPart);
+	var _HeaderNotificationsChild2 = _interopRequireDefault(_HeaderNotificationsChild);
 	
-	var _HeaderUserPart = __webpack_require__(110);
+	var _HeaderUserChild = __webpack_require__(110);
 	
-	var _HeaderUserPart2 = _interopRequireDefault(_HeaderUserPart);
+	var _HeaderUserChild2 = _interopRequireDefault(_HeaderUserChild);
 	
 	var _LinkItem = __webpack_require__(106);
 	
@@ -182,9 +182,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  Translations: _messages2.default,
 	  Autocomplete: _Autocomplete2.default,
 	  Datetimepicker: _Datetimepicker2.default,
-	  HeaderLocalePart: _HeaderLocalePart2.default,
-	  HeaderNotificationsPart: _HeaderNotificationsPart2.default,
-	  HeaderUserPart: _HeaderUserPart2.default,
+	  HeaderLocaleChild: _HeaderLocaleChild2.default,
+	  HeaderNotificationsChild: _HeaderNotificationsChild2.default,
+	  HeaderUserChild: _HeaderUserChild2.default,
 	  LinkItem: _LinkItem2.default,
 	  store: {
 	    config: _config2.default,
@@ -1552,7 +1552,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//             </div>
 	//             <div class="collapse navbar-collapse" id="main-nav">
 	//                 <h4 class="navbar-text" v-if="appName">{{ appName }}</h4>
-	//                 <ul class="nav navbar-nav navbar-right" v-if="headerParts">
+	//                 <ul class="nav navbar-nav navbar-right" v-if="headerChildren">
 	//                   <component v-bind:is="view.component" v-for="view in currentView" :dataOptions="view.options">
 	//                   </component>
 	//                 </ul>
@@ -1563,17 +1563,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <script>
 	exports.default = {
 	  name: 'header',
-	  props: ['dataOptions', 'headerParts'],
+	  props: ['dataOptions', 'headerChildren'],
 	  data: function data() {
 	    return {
 	      logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
 	      appName: this.dataOptions ? this.dataOptions.appName : '',
-	      currentView: this.headerParts
+	      currentView: this.headerChildren
 	    };
 	  },
 	  beforeMount: function beforeMount() {
 	    this.unwatch = this.$watch('currentView', function (data) {
-	      this.currentView = this.headerParts;
+	      this.currentView = this.headerChildren;
 	    }, { deep: true });
 	  },
 	  destroy: function destroy() {
@@ -1586,7 +1586,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 64 */
 /***/ function(module, exports) {
 
-	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <div class=\"nav-controls visible-xs-inline-block pull-left\">\n                    <button id=\"toggle-sidebar-btn\" type=\"button\" class=\"btn btn-default navbar-btn\"\n                            aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle sidepanel</span><i class=\"fa fa-bars\"></i>\n                    </button>\n                </div>\n                <a class=\"navbar-brand\" href=\"javascript:void(0)\">\n                    <img v-if=\"logoPath\" :src=\"logoPath\"/>\n                </a>\n                <div class=\"nav-controls visible-xs-inline-block pull-right\">\n                    <button id=\"toggle-nav-btn\" type=\"button\" class=\"btn btn-default navbar-btn\" data-toggle=\"collapse\"\n                            data-target=\"#main-nav\" aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle navigation</span><i class=\"fa fa-angle-down\"></i>\n                    </button>\n                </div>\n            </div>\n            <div class=\"collapse navbar-collapse\" id=\"main-nav\">\n                <h4 class=\"navbar-text\" v-if=\"appName\">{{ appName }}</h4>\n                <ul class=\"nav navbar-nav navbar-right\" v-if=\"headerParts\">\n                  <component v-bind:is=\"view.component\" v-for=\"view in currentView\" :dataOptions=\"view.options\">\n                  </component>\n                </ul>\n            </div>\n        </div>\n    </nav>";
+	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <div class=\"nav-controls visible-xs-inline-block pull-left\">\n                    <button id=\"toggle-sidebar-btn\" type=\"button\" class=\"btn btn-default navbar-btn\"\n                            aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle sidepanel</span><i class=\"fa fa-bars\"></i>\n                    </button>\n                </div>\n                <a class=\"navbar-brand\" href=\"javascript:void(0)\">\n                    <img v-if=\"logoPath\" :src=\"logoPath\"/>\n                </a>\n                <div class=\"nav-controls visible-xs-inline-block pull-right\">\n                    <button id=\"toggle-nav-btn\" type=\"button\" class=\"btn btn-default navbar-btn\" data-toggle=\"collapse\"\n                            data-target=\"#main-nav\" aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle navigation</span><i class=\"fa fa-angle-down\"></i>\n                    </button>\n                </div>\n            </div>\n            <div class=\"collapse navbar-collapse\" id=\"main-nav\">\n                <h4 class=\"navbar-text\" v-if=\"appName\">{{ appName }}</h4>\n                <ul class=\"nav navbar-nav navbar-right\" v-if=\"headerChildren\">\n                  <component v-bind:is=\"view.component\" v-for=\"view in currentView\" :dataOptions=\"view.options\">\n                  </component>\n                </ul>\n            </div>\n        </div>\n    </nav>";
 
 /***/ },
 /* 65 */
@@ -2615,12 +2615,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocalePart.vue"
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocaleChild.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocalePart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocalePart.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocalePart.vue")
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocaleChild.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocaleChild.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocaleChild.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocalePart.vue")
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocaleChild.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -2668,7 +2668,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </template>
 	// <script>
 	exports.default = {
-	  name: 'headerLocalePart',
+	  name: 'headerLocaleChild',
 	  data: function data() {
 	    return {
 	      locales: this.$store.state.config.locales
@@ -11001,12 +11001,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue"
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsChild.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsPart.vue")
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsChild.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsChild.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsChild.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsPart.vue")
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsChild.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -11029,7 +11029,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	  name: 'headerNotificationsPart',
+	  name: 'headerNotificationsChild',
 	  computed: {
 	    total: function total() {
 	      return this.$store.state.config.notifications.total;
@@ -11148,12 +11148,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue"
+	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserChild.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserPart.vue")
+	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserChild.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserChild.vue"], function () {
+	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserChild.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserPart.vue")
+	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserChild.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -11176,7 +11176,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	  name: 'headerUserPart',
+	  name: 'headerUserChild',
 	  computed: {
 	    account: function account() {
 	      return this.$store.state.config.user.account;
@@ -11458,16 +11458,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var routerPaths = [];
 	    for (var i = 0; i < items.length; i++) {
 	      if (items[i].link && items[i].component) {
-	        routerPaths.push({
+	        var route = {
 	          path: useLocale && items[i].link && items[i].link !== '*' ? '/:locale' + items[i].link : items[i].link,
 	          component: items[i].component,
 	          redirect: items[i].redirect || null,
-	          alias: items[i].alias || '',
 	          meta: {
 	            requiresAuth: items[i].requiresAuth || false,
 	            urlWithoutLocale: items[i].link
 	          }
-	        });
+	        };
+	        if (items[i].alias) {
+	          route.alias = items[i].alias || '';
+	        }
+	        routerPaths.push(route);
 	      }
 	      if (items[i].children) {
 	        routerPaths.push.apply(routerPaths, (0, _toConsumableArray3.default)(_setMenuItems(items[i].children, useLocale)));
