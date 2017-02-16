@@ -2441,6 +2441,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var destroyDatetimepicker = function destroyDatetimepicker(self) {
 	  try {
+	    $(self.$el).find('#date_time_' + self.id).val('');
 	    $(self.$el).find('#date_time_' + self.id).data('DateTimePicker').destroy();
 	    self.unwatch();
 	  } catch (ex) {}
