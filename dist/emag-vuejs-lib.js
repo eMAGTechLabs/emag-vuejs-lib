@@ -2578,6 +2578,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var destroyDatetimepicker = function destroyDatetimepicker(self) {
 	  try {
+	    $(self.$el).find('#date_time_' + self.id).val('');
 	    $(self.$el).find('#date_time_' + self.id).data('DateTimePicker').destroy();
 	    self.unwatch();
 	  } catch (ex) {}
@@ -11387,7 +11388,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (to.matched.some(function (record) {
 	      return record.meta.requiresAuth;
 	    })) {
-	      if (localStorage.getItem('access-token').lenth) {
+	      if (localStorage.getItem('access-token').length) {
 	        next({
 	          path: options.redirectTo || '/login',
 	          query: {
