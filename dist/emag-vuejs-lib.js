@@ -11459,7 +11459,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    for (var i = 0; i < items.length; i++) {
 	      if (items[i].link && items[i].component) {
 	        routerPaths.push({
-	          path: useLocale && items[i].link ? '/:locale' + items[i].link : items[i].link,
+	          path: useLocale && items[i].link && items[i].link !== '*' ? '/:locale' + items[i].link : items[i].link,
 	          component: items[i].component,
 	          redirect: items[i].redirect || null,
 	          alias: items[i].alias || '',
