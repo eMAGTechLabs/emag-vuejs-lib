@@ -22,7 +22,6 @@
       this.id = this._uid
       this.translations = TranslationMessages.translations[this.getDefaultLang()]
       const defaultOptions = this.getDefaultOptions()
-      console.log(defaultOptions)
       return {
         options: Object.assign(defaultOptions, this.dataOptions || {})
       }

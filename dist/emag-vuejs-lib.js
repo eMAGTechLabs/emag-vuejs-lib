@@ -2320,7 +2320,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.id = this._uid;
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
 	    var defaultOptions = this.getDefaultOptions();
-	    console.log(defaultOptions);
 	    return {
 	      options: (0, _assign2.default)(defaultOptions, this.dataOptions || {})
 	    };
