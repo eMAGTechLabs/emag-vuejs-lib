@@ -29,8 +29,8 @@ function destroyChosen () {
 }
 
 function getDefaultLang () {
-  if (this.$store.state && this.$store.state.lang) {
-    return this.$store.state.lang
+  if (this.$store.state.config && this.$store.state.config.locale) {
+    return this.$store.state.config.locale.key
   }
   return 'en_GB'
 }
