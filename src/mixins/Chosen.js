@@ -29,10 +29,10 @@ function destroyChosen () {
 }
 
 function getDefaultLang () {
-  if (this.$store.state && this.$store.state.lang) {
-    return this.$store.state.lang
+  if (this.$store.state.config && this.$store.state.config.locale) {
+    return this.$store.state.config.locale.key
   }
-  return Object.keys(TranslationMessages.translations)[0]
+  return 'en_GB'
 }
 
 export default {

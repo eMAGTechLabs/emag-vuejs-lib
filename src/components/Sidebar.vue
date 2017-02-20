@@ -9,7 +9,7 @@
                             <sidebar-item :item="item"></sidebar-item>
                             <div class="menu-item-data">
                                 <sidebar-item :item="item" :collapsed="true"></sidebar-item>
-                                <submenu :item="item" v-if="item.children.length"></submenu>
+                                <submenu :item="item" v-if="item.children && item.children.length"></submenu>
                             </div>
                         </li>
                     </ul>
@@ -30,27 +30,30 @@ import sidebarMixin from './../mixins/Sidebar'
 export default {
   name: 'sidebar',
   props: ['dataOptions'],
-  mixins: [ sidebarMixin ],
-  data () {
-    return Object.assign({ }, { items: (this.dataOptions && this.dataOptions.items) ? this.dataOptions.items : [] })
+  mixins: [sidebarMixin],
+  computed: {
+    locale: function () {
+      return this.$store.state.config.locale
+    },
+    items: function () {
+      return this.getItems()
+    }
   },
   components: {
     Submenu, SidebarItem, SidebarControl
   },
   mounted () {
+    /* eslint-disable no-undef */
     try {
       let routePath = this.$route.path
       if (this.$router.mode === 'hash') {
         routePath = '#' + routePath
       }
-      /* eslint-disable no-undef */
       // Methods from emag-apps-ui-kit
       initSidebarEvents()
       staticNavigation(routePath)
       initScrollbarForSidebar()
-    } catch (ex) {
-      console.log(ex)
-    }
+    } catch (ex) {}
   }
 }
 </script>
