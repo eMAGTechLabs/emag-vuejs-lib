@@ -11294,13 +11294,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  hideSidebar: function hideSidebar(state) {
 	    state.config.sidebar.visible = false;
 	  },
-	  setHeaderNotifications: function setHeaderNotifications(state, headerNotifications) {
-	    state.config.notifications.items = headerNotifications.items;
-	    state.config.notifications.total = headerNotifications.total;
+	  setHeaderNotifications: function setHeaderNotifications(state, notifications) {
+	    state.config.notifications = notifications;
 	  },
 	  setLocale: function setLocale(state, locale) {
 	    /* eslint-disable no-undef */
 	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
+	  },
+	  setUser: function setUser(state, user) {
+	    state.config.user = (0, _assign2.default)({}, state.config.user, user);
 	  }
 	};
 

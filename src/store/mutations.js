@@ -7,12 +7,14 @@ export default {
   hideSidebar: (state) => {
     state.config.sidebar.visible = false
   },
-  setHeaderNotifications: (state, headerNotifications) => {
-    state.config.notifications.items = headerNotifications.items
-    state.config.notifications.total = headerNotifications.total
+  setHeaderNotifications: (state, notifications) => {
+    state.config.notifications = notifications
   },
   setLocale: (state, locale) => {
     /* eslint-disable no-undef */
     state.config.locale = Object.assign({}, state.config.locale, locale)
+  },
+  setUser: (state, user) => {
+    state.config.user = Object.assign({}, state.config.user, user)
   }
 }
