@@ -2148,7 +2148,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.default = {
 	  name: 'tree-type',
-	  props: ['dataOptions', 'disabled'],
+	  props: ['dataOptions', 'disabled', 'name'],
 	  mixins: [_TreeType2.default],
 	  computed: {
 	    options: function options() {
@@ -2187,7 +2187,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <template>
 	//   <div>
 	//     <div class="hide-with-opacity">
-	//       <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple">
+	//       <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple" :name="name">
 	//       </select>
 	//     </div>
 	//     <div class="input-group input-group-no-separation">
@@ -2254,7 +2254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 87 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\">\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
+	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\" :name=\"name\">\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
 
 /***/ },
 /* 88 */
