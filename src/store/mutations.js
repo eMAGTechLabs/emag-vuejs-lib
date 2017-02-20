@@ -8,8 +8,8 @@ export default {
     state.config.sidebar.visible = false
   },
   setHeaderNotifications: (state, headerNotifications) => {
-    state.config.headerNotifications.notifications = headerNotifications.notifications
-    state.config.headerNotifications.nrOfNotifications = headerNotifications.nrOfNotifications
+    state.config.notifications.items = headerNotifications.items
+    state.config.notifications.total = headerNotifications.total
   },
   setLocale: (state, locale) => {
     /* eslint-disable no-undef */
