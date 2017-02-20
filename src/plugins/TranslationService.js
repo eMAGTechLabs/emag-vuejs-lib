@@ -1,5 +1,11 @@
 import Translations from './../translations/messages.js'
-
+/**
+ * Combines custom and default translations in one Object
+ * It includes the resulted Object in the Vue translation module so when locale changes all translations change as well
+ * Adds helper method getTranslations that is available as Vue.helpers.getTranslations()
+ * @param  {Vue} Vue          Vue instance
+ * @param  {Object} options   Accepts translations key with translations
+ */
 export default function (Vue, options) {
   let translations = options.translations
   let tempTranslations = _getTranslations()

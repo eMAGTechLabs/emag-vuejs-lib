@@ -1,4 +1,19 @@
 /* eslint-disable no-unused-vars */
+/**
+ * Routing service for adding menu and custom routes (that are not in a menu, for example a /edit)
+ * Adds getVueRouter method for adding custom callbacks if needed. The method is available as Vue.helpers.getVueRouter()
+ *
+ * @param  {Vue} Vue     Vue instance
+ * @param  {Object} options
+ */
+/**
+ * options object accepts the following keys:
+ *    {Object}  router      Vue router (mandatory)
+ *    {Boolean} useLocale   Sets if locale is used in URL
+ *    {Object}  routes      Routes (both menu and not seen in menu - for example /edit or /login) (mandatory)
+ *    {Object}  mode        Routing mode (default is hash - it does not work with history for now)
+ *    {Object}  config      Store config file (mandatory)
+ */
 export default function (Vue, options) {
   let router = {}
   let routerMode = {}
