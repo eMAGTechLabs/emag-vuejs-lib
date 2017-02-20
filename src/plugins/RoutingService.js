@@ -9,10 +9,10 @@
 /**
  * options object accepts the following keys:
  *    {Object}  router      Vue router (mandatory)
- *    {Boolean} useLocale   Sets if locale is used in URL
- *    {Object}  routes      Routes (both menu and not seen in menu - for example /edit or /login) (mandatory)
- *    {Object}  mode        Routing mode (default is hash - it does not work with history for now)
+ *    {Object}  routes      Routes (mandatory)
  *    {Object}  config      Store config file (mandatory)
+ *    {Boolean} useLocale   Sets if locale is used in URL or not
+ *    {Object}  mode        Routing mode (default is hash - it does not work with history for now)
  */
 export default function (Vue, options) {
   let router = {}

@@ -12010,7 +12010,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	/**
 	 * RequestInterceptorService sends the 'access-token' to every request after login
-	 * It also exposes you "pushRequestInterceptorCallback " method to push your custom interceptor methods
+	 * It also exposes you 'pushRequestInterceptorCallback' method to push your custom interceptor methods
 	 * To use pushRequestInterceptorCallback method you have to write the following: Vue.helpers.pushRequestInterceptorCallback(<callback>)
 	 * @param {Vue} Vue           Vue instance
 	 * @param {Object} options    You can set useAccessTokenCallback key to false if do not want default behaviour
