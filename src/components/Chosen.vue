@@ -1,43 +1,34 @@
 <template>
-  <select :id="'chosen_' + id" class="form-control">
-    <option value=''></option>
-    <option :value="item.value" v-for="item in options.items">
-      {{ item.name }}
-    </option>
-  </select>
+    <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="multiple">
+        <option value=""></option>
+        <option :value="item.value" v-for="item in options.items" :selected="item.selected">
+            {{ item.name }}
+        </option>
+    </select>
 </template>
 <script>
-  import TranslationMessages from './../translations/messages'
-
+  import translationMessages from './../translations/messages'
+  import chosenMixin from './../mixins/Chosen'
   export default {
     name: 'chosen',
-    props: ['dataOptions'],
+    props: ['dataOptions', 'disabled', 'multiple'],
+    mixins: [ chosenMixin ],
     data () {
-      const defaultOptions = {
-        placeholder_text_multiple: this.translations.chosen.multipleText,
-        placeholder_text_single: this.translations.chosen.singleText,
-        no_results_text: this.translations.chosen.noResult,
-        allow_single_deselect: true
-      }
-      return {
-        options: Object.assign(defaultOptions, this.dataOptions || {})
-      }
+      return { options: this.getOptions(translationMessages) }
     },
-    beforeCreate () {
-      this.id = this._uid
-      this.translations = TranslationMessages.translations[getDefaultLang(this)]
+    beforeMount () {
+      this.unwatch = this.$watch('dataOptions', function (data) {
+        this.options = this.getOptions(translationMessages)
+        this.destroyChosen()
+        this.initChosen()
+        this.updateChosen()
+      }, { deep: true })
     },
     mounted () {
-      /* eslint-disable no-undef */
-      $('#chosen_' + this.id).chosen(this.options)
+      this.initChosen()
+    },
+    destroy () {
+      this.destroyChosen()
     }
-  }
-
-  // Helpers
-  const getDefaultLang = (self) => {
-    if (self.$store.state && self.$store.state.lang) {
-      return self.$store.state.lang
-    }
-    return Object.keys(TranslationMessages.translations)[0]
   }
 </script>
