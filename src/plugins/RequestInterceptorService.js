@@ -1,14 +1,29 @@
 /* eslint-disable no-undef */
+/**
+ * RequestInterceptorService sends the 'access-token' to every request after login
+ * It also exposes you 'pushRequestInterceptorCallback' method to push your custom interceptor methods
+ * To use pushRequestInterceptorCallback method you have to write the following: Vue.helpers.pushRequestInterceptorCallback(<callback>)
+ * @param {Vue} Vue           Vue instance
+ * @param {Object} options    You can set useAccessTokenCallback key to false if do not want default behaviour
+ *                            for setting access-token to every request
+ */
 export default function RequestInterceptorService (Vue, options) {
   if (!Vue.helpers) {
     Vue.helpers = {}
   }
   Vue.helpers.pushRequestInterceptorCallback = _pushRequestInterceptorCallback
 
-  if (localStorage && localStorage['access-token']) {
-    _pushRequestInterceptorCallback((xhr) => {
-      xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage['access-token'])
-    })
+  // Set default useAccessTokenCallback to be true
+  if (options.useAccessTokenCallback === "undefined") {
+    options.useAccessTokenCallback = true
+  }
+
+  if (options.useAccessTokenCallback) {
+    if (localStorage && localStorage['access-token']) {
+      _pushRequestInterceptorCallback((xhr) => {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage['access-token'])
+      })
+    }
   }
 
   function _pushRequestInterceptorCallback (callback) {

@@ -11294,13 +11294,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  hideSidebar: function hideSidebar(state) {
 	    state.config.sidebar.visible = false;
 	  },
-	  setHeaderNotifications: function setHeaderNotifications(state, headerNotifications) {
-	    state.config.headerNotifications.notifications = headerNotifications.notifications;
-	    state.config.headerNotifications.nrOfNotifications = headerNotifications.nrOfNotifications;
+	  setHeaderNotifications: function setHeaderNotifications(state, notifications) {
+	    state.config.notifications = notifications;
 	  },
 	  setLocale: function setLocale(state, locale) {
 	    /* eslint-disable no-undef */
 	    state.config.locale = (0, _assign2.default)({}, state.config.locale, locale);
+	  },
+	  setUser: function setUser(state, user) {
+	    state.config.user = (0, _assign2.default)({}, state.config.user, user);
 	  }
 	};
 
@@ -12006,16 +12008,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = RequestInterceptorService;
 	/* eslint-disable no-undef */
+	/**
+	 * RequestInterceptorService sends the 'access-token' to every request after login
+	 * It also exposes you 'pushRequestInterceptorCallback' method to push your custom interceptor methods
+	 * To use pushRequestInterceptorCallback method you have to write the following: Vue.helpers.pushRequestInterceptorCallback(<callback>)
+	 * @param {Vue} Vue           Vue instance
+	 * @param {Object} options    You can set useAccessTokenCallback key to false if do not want default behaviour
+	 *                            for setting access-token to every request
+	 */
 	function RequestInterceptorService(Vue, options) {
 	  if (!Vue.helpers) {
 	    Vue.helpers = {};
 	  }
 	  Vue.helpers.pushRequestInterceptorCallback = _pushRequestInterceptorCallback;
 	
-	  if (localStorage && localStorage['access-token']) {
-	    _pushRequestInterceptorCallback(function (xhr) {
-	      xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage['access-token']);
-	    });
+	  // Set default useAccessTokenCallback to be true
+	  if (options.useAccessTokenCallback === "undefined") {
+	    options.useAccessTokenCallback = true;
+	  }
+	
+	  if (options.useAccessTokenCallback) {
+	    if (localStorage && localStorage['access-token']) {
+	      _pushRequestInterceptorCallback(function (xhr) {
+	        xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage['access-token']);
+	      });
+	    }
 	  }
 	
 	  function _pushRequestInterceptorCallback(callback) {
