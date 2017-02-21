@@ -22353,7 +22353,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  Vue.helpers.pushRequestInterceptorCallback = _pushRequestInterceptorCallback;
 	
 	  // Set default useAccessTokenCallback to be true
-	  if (options && options.useAccessTokenCallback === "undefined") {
+	  if (!options || options.useAccessTokenCallback === "undefined") {
 	    options = (0, _assign2.default)({}, options, { useAccessTokenCallback: true });
 	  }
 	
