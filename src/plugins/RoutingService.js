@@ -44,7 +44,9 @@ export default function (Vue, options) {
         routePath = '#' + routePath
       }
       /* eslint-disable no-undef */
-      staticNavigation(routePath)
+      try {
+        staticNavigation(routePath)
+      } catch (ex) {}
     })
   }
 

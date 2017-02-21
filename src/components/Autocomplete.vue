@@ -13,10 +13,23 @@
   /* eslint-disable no-undef */
   export default {
     name: 'autocomplete',
-    props: ['dataOptions', 'multiple'],
+    props: {
+      dataOptions: {
+        default: function () {
+          return []
+        }
+      },
+      multiple: {
+        default: function () {
+          return false
+        }
+      }
+    },
     mixins: [ chosenMixin, autocompleteMixin ],
     updated () {
-      $('#autocomplete_' + this.id).trigger('chosen:updated')
+      try {
+        $('#autocomplete_' + this.id).trigger('chosen:updated')
+      } catch(ex) {}
     },
     data () {
       this.id = this._uid
@@ -27,7 +40,9 @@
       }
     },
     mounted () {
-      $('#autocomplete_' + this.id).ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest)
+      try {
+        $('#autocomplete_' + this.id).ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest)
+      } catch (ex) {}
     }
   }
 </script>
