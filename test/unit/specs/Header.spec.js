@@ -80,7 +80,7 @@ describe('HeaderLocaleChild.vue', () => {
     let finalLocaleKey = vm.$store.state.config.locale.key
     expect(initialLocaleKey).to.not.equal(finalLocaleKey)
   })
-  it('should have more +1 beforeEach callbacks on setLinksForLocales method being called ', () => {
+  it('should have +1 beforeEach callbacks on setLinksForLocales method being called ', () => {
     let vm = renderHeader(HeaderLocaleChild)
     let initialNrOfBeforeHooks = vm.$router.beforeHooks.length
     vm.setLinksForLocales()
