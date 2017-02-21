@@ -22321,14 +22321,22 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 147 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _assign = __webpack_require__(19);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
 	exports.default = RequestInterceptorService;
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	/* eslint-disable no-undef */
 	/**
 	 * RequestInterceptorService sends the 'access-token' to every request after login
@@ -22345,8 +22353,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  Vue.helpers.pushRequestInterceptorCallback = _pushRequestInterceptorCallback;
 	
 	  // Set default useAccessTokenCallback to be true
-	  if (options.useAccessTokenCallback === "undefined") {
-	    options.useAccessTokenCallback = true;
+	  if (options && options.useAccessTokenCallback === "undefined") {
+	    options = (0, _assign2.default)({}, options, { useAccessTokenCallback: true });
 	  }
 	
 	  if (options.useAccessTokenCallback) {
