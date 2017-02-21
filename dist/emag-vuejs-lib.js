@@ -12953,12 +12953,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var self = this;
 	  localItems.map(function (item) {
 	    if (self.$route.meta.urlWithoutLocale) {
-	      var path = '/' + item.urlPath + self.$route.meta.urlWithoutLocale;
+	      var path = '/' + item.urlPath + _replaceRouteParameters(self.$route);
 	      item.link = path;
 	    }
 	    return item;
 	  });
 	  return localItems;
+	}
+	
+	function _replaceRouteParameters(route) {
+	  var path = route.meta.urlWithoutLocale;
+	  for (var index in route.params) {
+	    path = path.replace(':' + index, route.params[index]);
+	  }
+	  return path;
 	}
 	
 	function setDefaultLocale() {
