@@ -15,6 +15,11 @@
  *    {Object}  mode        Routing mode (default is hash - it does not work with history for now)
  */
 export default function (Vue, options) {
+  let localesPaths = options.config.locales.map((item) => {
+    return item.urlPath
+  })
+  //Regex used for locales. If do not match locale key it will be redirected to NotFoundComponent used in boilerplate
+  let localesRegexPattern = _getRegexPatternForLocales(localesPaths)
   let router = {}
   let routerMode = {}
   let VueRouter = options.router
@@ -23,7 +28,6 @@ export default function (Vue, options) {
   routerMode = options.mode || 'hash'
   finalRoutes.push(..._setMenuItems(_getRawMenuItems(routes), options.useLocale && true))
   finalRoutes.push(..._setMenuItems(_getItems(routes), options.useLocale && true))
-
   router = new VueRouter({
     routes: finalRoutes,
     mode: routerMode
@@ -55,7 +59,7 @@ export default function (Vue, options) {
     for (let i = 0; i < items.length; i++) {
       if (items[i].link && items[i].component) {
         let route = {
-          path: (useLocale && items[i].link && items[i].link !== '*') ? '/:locale' + items[i].link : items[i].link,
+          path: (useLocale && items[i].link && items[i].link !== '*') ? '/:locale' + localesRegexPattern + items[i].link : items[i].link,
           component: items[i].component,
           redirect: items[i].redirect || null,
           meta: {
@@ -79,6 +83,10 @@ export default function (Vue, options) {
     return router
   }
 
+  function _getRegexPatternForLocales (localesPaths) {
+    return '(' + Array.join(localesPaths, '|') + ')'
+  }
+
   function _getRawMenuItems (routes) {
     return routes.menuItems
   }
@@ -88,12 +96,14 @@ export default function (Vue, options) {
   }
 
   function _forwardRequestIfLocale () {
-    router.beforeEach((to, from, next) => {
+    router.beforeEach(function (to, from, next) {
       let locales = (options.config && options.config.locales) ? options.config.locales : []
+      let hasBeenSentToNext = false
       if (to.params && to.params.locale) {
         locales.forEach((el, index) => {
           if (el.urlPath === to.params.locale) {
             next()
+            hasBeenSentToNext = true
           }
         })
       } else {
