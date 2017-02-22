@@ -18,7 +18,7 @@ export default function (Vue, options) {
   let localesPaths = options.config.locales.map((item) => {
     return item.urlPath
   })
-  //Regex used for locales. If do not match locale key it will be redirected to NotFoundComponent used in boilerplate
+  // Regex used for locales. If do not match locale key it will be redirected to NotFoundComponent used in boilerplate
   let localesRegexPattern = _getRegexPatternForLocales(localesPaths)
   let router = {}
   let routerMode = {}
@@ -26,8 +26,9 @@ export default function (Vue, options) {
   let routes = (options && options.routes) ? options.routes : []
   let finalRoutes = []
   routerMode = options.mode || 'hash'
-  finalRoutes.push(..._setMenuItems(_getRawMenuItems(routes), options.useLocale && true))
-  finalRoutes.push(..._setMenuItems(_getItems(routes), options.useLocale && true))
+
+  finalRoutes.push(..._setMenuItems(_getRawMenuItems(routes), options.config.useLocale))
+  finalRoutes.push(..._setMenuItems(_getItems(routes), options.config.useLocale))
   router = new VueRouter({
     routes: finalRoutes,
     mode: routerMode
@@ -39,7 +40,7 @@ export default function (Vue, options) {
   Vue.helpers.getVueRouter = _getVueRouter
   _forwardRequestIfLocale()
   _initStaticNavigation()
-
+  _refreshIfLocaleChangeInBrowser()
   // Helpers
   function _initStaticNavigation () {
     router.afterEach((to, from) => {
@@ -54,12 +55,12 @@ export default function (Vue, options) {
     })
   }
 
-  function _setMenuItems (items, useLocale = true) {
+  function _setMenuItems (items, useLocale) {
     let routerPaths = []
     for (let i = 0; i < items.length; i++) {
       if (items[i].link && items[i].component) {
         let route = {
-          path: (useLocale && items[i].link && items[i].link !== '*') ? '/:locale' + localesRegexPattern + items[i].link : items[i].link,
+          path: _getPath(useLocale, items[i]),
           component: items[i].component,
           redirect: items[i].redirect || null,
           meta: {
@@ -83,6 +84,13 @@ export default function (Vue, options) {
     return router
   }
 
+  function _getPath (useLocale, item) {
+    if (useLocale && item.link && item.link !== '*') {
+      return '/:locale' + localesRegexPattern + item.link
+    }
+    return item.link
+  }
+
   function _getRegexPatternForLocales (localesPaths) {
     return '(' + Array.join(localesPaths, '|') + ')'
   }
@@ -98,17 +106,26 @@ export default function (Vue, options) {
   function _forwardRequestIfLocale () {
     router.beforeEach(function (to, from, next) {
       let locales = (options.config && options.config.locales) ? options.config.locales : []
-      let hasBeenSentToNext = false
       if (to.params && to.params.locale) {
         locales.forEach((el, index) => {
           if (el.urlPath === to.params.locale) {
             next()
-            hasBeenSentToNext = true
           }
         })
       } else {
         next()
       }
+    })
+  }
+
+  function _refreshIfLocaleChangeInBrowser () {
+    router.beforeEach(function (to, from, next) {
+      if ((to.params && to.params.locale) && (from.params && from.params.locale)) {
+        if (to.params.locale !== from.params.locale) {
+          location.reload()
+        }
+      }
+      next()
     })
   }
 }

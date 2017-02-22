@@ -12960,7 +12960,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	  return localItems;
 	}
-	
+	// If your route is :locale/products it will replace :locale with the current one, so the url will be ro/products
 	function _replaceRouteParameters(route) {
 	  var path = route.meta.urlWithoutLocale;
 	  for (var index in route.params) {
@@ -21713,7 +21713,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var localesPaths = options.config.locales.map(function (item) {
 	    return item.urlPath;
 	  });
-	  //Regex used for locales. If do not match locale key it will be redirected to NotFoundComponent used in boilerplate
+	  // Regex used for locales. If do not match locale key it will be redirected to NotFoundComponent used in boilerplate
 	  var localesRegexPattern = _getRegexPatternForLocales(localesPaths);
 	  var router = {};
 	  var routerMode = {};
@@ -21721,8 +21721,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var routes = options && options.routes ? options.routes : [];
 	  var finalRoutes = [];
 	  routerMode = options.mode || 'hash';
-	  finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(_getRawMenuItems(routes), options.useLocale && true)));
-	  finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(_getItems(routes), options.useLocale && true)));
+	
+	  finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(_getRawMenuItems(routes), options.config.useLocale)));
+	  finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(_getItems(routes), options.config.useLocale)));
 	  router = new VueRouter({
 	    routes: finalRoutes,
 	    mode: routerMode
@@ -21734,7 +21735,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  Vue.helpers.getVueRouter = _getVueRouter;
 	  _forwardRequestIfLocale();
 	  _initStaticNavigation();
-	
+	  _refreshIfLocaleChangeInBrowser();
 	  // Helpers
 	  function _initStaticNavigation() {
 	    router.afterEach(function (to, from) {
@@ -21749,14 +21750,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    });
 	  }
 	
-	  function _setMenuItems(items) {
-	    var useLocale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-	
+	  function _setMenuItems(items, useLocale) {
 	    var routerPaths = [];
 	    for (var i = 0; i < items.length; i++) {
 	      if (items[i].link && items[i].component) {
 	        var route = {
-	          path: useLocale && items[i].link && items[i].link !== '*' ? '/:locale' + localesRegexPattern + items[i].link : items[i].link,
+	          path: _getPath(useLocale, items[i]),
 	          component: items[i].component,
 	          redirect: items[i].redirect || null,
 	          meta: {
@@ -21780,6 +21779,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return router;
 	  }
 	
+	  function _getPath(useLocale, item) {
+	    if (useLocale && item.link && item.link !== '*') {
+	      return '/:locale' + localesRegexPattern + item.link;
+	    }
+	    return item.link;
+	  }
+	
 	  function _getRegexPatternForLocales(localesPaths) {
 	    return '(' + (0, _join2.default)(localesPaths, '|') + ')';
 	  }
@@ -21795,17 +21801,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function _forwardRequestIfLocale() {
 	    router.beforeEach(function (to, from, next) {
 	      var locales = options.config && options.config.locales ? options.config.locales : [];
-	      var hasBeenSentToNext = false;
 	      if (to.params && to.params.locale) {
 	        locales.forEach(function (el, index) {
 	          if (el.urlPath === to.params.locale) {
 	            next();
-	            hasBeenSentToNext = true;
 	          }
 	        });
 	      } else {
 	        next();
 	      }
+	    });
+	  }
+	
+	  function _refreshIfLocaleChangeInBrowser() {
+	    router.beforeEach(function (to, from, next) {
+	      if (to.params && to.params.locale && from.params && from.params.locale) {
+	        if (to.params.locale !== from.params.locale) {
+	          location.reload();
+	        }
+	      }
+	      next();
 	    });
 	  }
 	};

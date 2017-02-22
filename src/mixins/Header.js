@@ -12,7 +12,7 @@ function getLocaleItems () {
   })
   return localItems
 }
-
+// If your route is :locale/products it will replace :locale with the current one, so the url will be ro/products
 function _replaceRouteParameters (route) {
   let path = route.meta.urlWithoutLocale
   for (let index in route.params) {
