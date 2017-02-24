@@ -5,12 +5,20 @@ function getLocaleItems () {
   let self = this
   localItems.map((item) => {
     if (self.$route.meta.urlWithoutLocale) {
-      let path = '/' + item.urlPath + self.$route.meta.urlWithoutLocale
+      let path = '/' + item.urlPath + _replaceRouteParameters(self.$route)
       item.link = path
     }
     return item
   })
   return localItems
+}
+// If your route is :locale/products it will replace :locale with the current one, so the url will be ro/products
+function _replaceRouteParameters (route) {
+  let path = route.meta.urlWithoutLocale
+  for (let index in route.params) {
+    path = path.replace(':' + index, route.params[index])
+  }
+  return path
 }
 
 function setDefaultLocale () {

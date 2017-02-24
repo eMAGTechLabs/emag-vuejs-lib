@@ -14,18 +14,18 @@ export default {
   props: ['dataOptions', 'disabled'],
   mixins: [ datetimeMixin ],
   data () {
-    return { options: this.getOptions(this) }
+    return { options: this.getOptions() }
   },
   mounted () {
-    this.initDatetimepicker(this)
+    this.initDatetimepicker()
     this.unwatch = this.$watch('dataOptions', function (data) {
-      this.options = this.getOptions(this)
-      this.destroyDatetimepicker(this)
-      this.initDatetimepicker(this)
+      this.options = this.getOptions()
+      this.destroyDatetimepicker()
+      this.initDatetimepicker()
     }, { deep: true })
   },
   destroyed: function () {
-    this.destroyDatetimepicker(this)
+    this.destroyDatetimepicker()
   }
 }
 </script>

@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const getIcon = (format) => {
+function getIcon (format) {
   /* eslint-disable no-unused-vars */
   let icon = 'fa fa-calendar'
   if (typeof format === 'string') {
@@ -14,17 +14,17 @@ const getIcon = (format) => {
   return icon
 }
 
-const hasDate = (format) => {
+function hasDate (format) {
   let characters = ['Y', 'S', 'd', 'M']
   return hasCharacters(format, characters)
 }
 
-const hasTime = (format) => {
+function hasTime (format) {
   let characters = ['H', 'h', 'k', 'm', 'S', 's']
   return hasCharacters(format, characters)
 }
 
-const hasCharacters = (format, characters) => {
+function hasCharacters (format, characters) {
   let regx = new RegExp('[' + characters.join('') + ']', 'g')
   let regxResult = format.match(regx)
   if (regxResult) {
@@ -33,27 +33,29 @@ const hasCharacters = (format, characters) => {
   return false
 }
 
-const getOptions = (self) => {
-  self.id = self._uid
+function getOptions () {
+  this.id = this._uid
   let format = 'YYYY-MM-DD HH:mm:ss'
   const options = {
     format: format,
     icons: {
-      date: self.getIcon(self.dataOptions.format || format)
+      date: this.getIcon((this.dataOptions && this.dataOptions.format) ? this.dataOptions.format : format)
     }
   }
-  return Object.assign({}, options, self.dataOptions)
+  return Object.assign({}, options, this.dataOptions)
 }
 
-const initDatetimepicker = (self) => {
-  $('#date_time_' + self.id).datetimepicker(self.options)
-}
-
-const destroyDatetimepicker = (self) => {
+function initDatetimepicker () {
   try {
-    $(self.$el).find('#date_time_' + self.id).val('')
-    $(self.$el).find('#date_time_' + self.id).data('DateTimePicker').destroy()
-    self.unwatch()
+    $('#date_time_' + this.id).datetimepicker(this.options)
+  } catch (ex) {}
+}
+
+function destroyDatetimepicker () {
+  try {
+    $(this.$el).find('#date_time_' + this.id).val('')
+    $(this.$el).find('#date_time_' + this.id).data('DateTimePicker').destroy()
+    this.unwatch()
   } catch (ex) {}
 }
 

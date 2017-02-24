@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+import $ from 'jquery'
+
 function getOptions () {
   return Object.assign({}, {
     treeData: [],
@@ -7,7 +9,9 @@ function getOptions () {
 }
 
 function initTreeType () {
-  $('#id_tree_type_' + this._uid).TreeType(this.options)
+  try {
+    $('#id_tree_type_' + this._uid).TreeType(this.options)
+  } catch (ex) {}
 }
 
 function getTranslations () {

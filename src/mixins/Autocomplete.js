@@ -13,7 +13,10 @@ function getRequestParameters () {
       filterValues[prop] = this.filters[prop]
     }
   }
-  let term = $('#autocomplete_' + this.id + '_chosen').find('input').val()
+  let term = ''
+  try {
+    term = $('#autocomplete_' + this.id + '_chosen').find('input').val()
+  } catch (ex) {}
   let dataSend = {
     'filters': filterValues,
     'term': term
@@ -23,15 +26,19 @@ function getRequestParameters () {
 
 function getAutocompleteResultsAfterRequest (data) {
   let terms = {}
-  $.each(data.results, function (i, val) {
-    terms[i] = val
-  })
+  try {
+    $.each(data.results, function (i, val) {
+      terms[i] = val
+    })
+  } catch (ex) {}
   if (data.isError) {
     let errorMessage = ''
     $.each(data.errors, function (i, val) {
       errorMessage += '<li>' + val + '</li>'
     })
-    addNotification('<ul>' + errorMessage + '</ul>', 'danger')
+    try {
+      addNotification('<ul>' + errorMessage + '</ul>', 'danger')
+    } catch (ex) {}
   }
   return terms
 }

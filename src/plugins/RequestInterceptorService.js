@@ -14,8 +14,8 @@ export default function RequestInterceptorService (Vue, options) {
   Vue.helpers.pushRequestInterceptorCallback = _pushRequestInterceptorCallback
 
   // Set default useAccessTokenCallback to be true
-  if (options.useAccessTokenCallback === "undefined") {
-    options.useAccessTokenCallback = true
+  if (!options || options.useAccessTokenCallback === "undefined") {
+    options = Object.assign({}, options, { useAccessTokenCallback: true })
   }
 
   if (options.useAccessTokenCallback) {
