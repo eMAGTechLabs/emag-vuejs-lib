@@ -296,7 +296,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mounted: function mounted() {
 	    this.initChosen();
 	  },
-	  destroy: function destroy() {
+	  destroyed: function destroyed() {
 	    this.destroyChosen();
 	  }
 	};
@@ -12672,10 +12672,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _assign = __webpack_require__(19);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
 	var _messages = __webpack_require__(18);
 	
 	var _messages2 = _interopRequireDefault(_messages);
@@ -12696,7 +12692,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  props: {
 	    dataOptions: {
 	      default: function _default() {
-	        return [];
+	        return {};
 	      }
 	    },
 	    multiple: {
@@ -12707,22 +12703,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mixins: [_Chosen2.default, _Autocomplete2.default],
 	  updated: function updated() {
-	    try {
-	      $('#autocomplete_' + this.id).trigger('chosen:updated');
-	    } catch (ex) {}
+	    this.updateAutocomplete();
 	  },
 	  data: function data() {
 	    this.id = this._uid;
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
-	    var defaultOptions = this.getDefaultOptions();
 	    return {
-	      options: (0, _assign2.default)(defaultOptions, this.dataOptions || {})
+	      options: this.getAutocompleteOptions()
 	    };
 	  },
+	  beforeMount: function beforeMount() {
+	    this.unwatch = this.$watch('dataOptions', function (data) {
+	      this.options = this.getAutocompleteOptions();
+	      this.destroyAutocomplete();
+	      this.initAutocomplete();
+	    }, { deep: true });
+	  },
 	  mounted: function mounted() {
-	    try {
-	      $('#autocomplete_' + this.id).ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest);
-	    } catch (ex) {}
+	    this.initAutocomplete();
+	  },
+	  destroyed: function destroyed() {
+	    this.destroyAutocomplete();
 	  }
 	};
 	// </script>
@@ -12738,26 +12739,33 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 92 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _assign = __webpack_require__(19);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	/* eslint-disable no-undef */
 	function getRequestParameters() {
 	  var filterValues = {};
 	  try {
-	    if (typeof this.filters === 'string' || this.filters instanceof String) {
-	      this.filters = JSON.parse(this.filters);
+	    if (typeof this.options.filters === 'string' || this.options.filters instanceof String) {
+	      this.options.filters = JSON.parse(this.options.filters);
 	    }
 	  } catch (ex) {}
-	  for (var prop in this.filters) {
-	    if ($(this.filters[prop]).length) {
-	      filterValues[prop] = $(this.filters[prop]).val();
+	  for (var prop in this.options.filters) {
+	    if ($(this.options.filters[prop]).length) {
+	      filterValues[prop] = $(this.options.filters[prop]).val();
 	    } else {
-	      filterValues[prop] = this.filters[prop];
+	      filterValues[prop] = this.options.filters[prop];
 	    }
 	  }
 	  var term = '';
@@ -12769,6 +12777,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    'term': term
 	  };
 	  return dataSend;
+	}
+	
+	function initAutocomplete() {
+	  try {
+	    $('#autocomplete_' + this.id).ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest);
+	  } catch (ex) {}
 	}
 	
 	function getAutocompleteResultsAfterRequest(data) {
@@ -12790,8 +12804,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return terms;
 	}
 	
-	function getDefaultOptions() {
-	  return {
+	function getAutocompleteOptions() {
+	  var defaultOptions = {
 	    type: 'GET',
 	    dataType: 'json',
 	    keepTypingMsg: this.translations.chosenAjax.typing,
@@ -12804,13 +12818,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	    allow_single_deselect: true,
 	    dataCallback: getRequestParameters.bind(this)
 	  };
+	  return (0, _assign2.default)(defaultOptions, this.dataOptions || {});
+	}
+	
+	function destroyAutocomplete() {
+	  try {
+	    $('#autocomplete_' + this.id).chosen('destroy');
+	    this.unwatch();
+	  } catch (ex) {}
+	}
+	
+	function updateAutocomplete() {
+	  var self = this;
+	  setTimeout(function () {
+	    try {
+	      $('#autocomplete_' + self.id).trigger('chosen:updated');
+	    } catch (ex) {}
+	  }, 0);
 	}
 	
 	exports.default = {
 	  methods: {
+	    initAutocomplete: initAutocomplete,
+	    updateAutocomplete: updateAutocomplete,
 	    getRequestParameters: getRequestParameters,
 	    getAutocompleteResultsAfterRequest: getAutocompleteResultsAfterRequest,
-	    getDefaultOptions: getDefaultOptions
+	    getAutocompleteOptions: getAutocompleteOptions,
+	    destroyAutocomplete: destroyAutocomplete
 	  }
 	};
 

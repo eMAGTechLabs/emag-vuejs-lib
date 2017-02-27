@@ -2,15 +2,15 @@
 function getRequestParameters () {
   let filterValues = {}
   try {
-    if (typeof this.filters === 'string' || this.filters instanceof String) {
-      this.filters = JSON.parse(this.filters)
+    if (typeof this.options.filters === 'string' || this.options.filters instanceof String) {
+      this.options.filters = JSON.parse(this.options.filters)
     }
   } catch (ex) {}
-  for (let prop in this.filters) {
-    if ($(this.filters[prop]).length) {
-      filterValues[prop] = $(this.filters[prop]).val()
+  for (let prop in this.options.filters) {
+    if ($(this.options.filters[prop]).length) {
+      filterValues[prop] = $(this.options.filters[prop]).val()
     } else {
-      filterValues[prop] = this.filters[prop]
+      filterValues[prop] = this.options.filters[prop]
     }
   }
   let term = ''
@@ -22,6 +22,12 @@ function getRequestParameters () {
     'term': term
   }
   return dataSend
+}
+
+function initAutocomplete () {
+  try {
+    $('#autocomplete_' + this.id).ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest)
+  } catch (ex) { }
 }
 
 function getAutocompleteResultsAfterRequest (data) {
@@ -43,8 +49,8 @@ function getAutocompleteResultsAfterRequest (data) {
   return terms
 }
 
-function getDefaultOptions () {
-  return {
+function getAutocompleteOptions () {
+  const defaultOptions = {
     type: 'GET',
     dataType: 'json',
     keepTypingMsg: this.translations.chosenAjax.typing,
@@ -57,12 +63,32 @@ function getDefaultOptions () {
     allow_single_deselect: true,
     dataCallback: getRequestParameters.bind(this)
   }
+  return Object.assign(defaultOptions, this.dataOptions || {})
+}
+
+function destroyAutocomplete () {
+  try {
+    $('#autocomplete_' + this.id).chosen('destroy')
+    this.unwatch()
+  } catch (ex) {}
+}
+
+function updateAutocomplete () {
+  let self = this
+  setTimeout(function () {
+    try {
+      $('#autocomplete_' + self.id).trigger('chosen:updated')
+    } catch (ex) {}
+  }, 0)
 }
 
 export default {
   methods: {
+    initAutocomplete,
+    updateAutocomplete,
     getRequestParameters,
     getAutocompleteResultsAfterRequest,
-    getDefaultOptions
+    getAutocompleteOptions,
+    destroyAutocomplete
   }
 }

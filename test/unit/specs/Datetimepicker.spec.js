@@ -31,6 +31,14 @@ describe('Datetimepicker.vue', () => {
     expect(Datetimepicker.props)
       .to.contains('dataOptions')
   })
+  it('should have init method called initDatetimepicker', () => {
+    let vm = renderDatetimepicker()
+    expect(typeof vm.initDatetimepicker).to.equal('function')
+  })
+  it('should have destroy method called destroyDatetimepicker', () => {
+    let vm = renderDatetimepicker()
+    expect(typeof vm.destroyDatetimepicker).to.equal('function')
+  })
   it('should have tag name datetimepicker', () => {
     expect(Datetimepicker.name)
       .to.equal('datetimepicker')
@@ -53,5 +61,14 @@ describe('Datetimepicker.vue', () => {
   it('should return and object with format key on getOptios method being called', () => {
     let vm = renderDatetimepicker()
     expect(vm.getOptions()).to.have.property('format')
+  })
+  it('should set options key "format" dinamically when dataOptions change', (done) => {
+    let vm = renderDatetimepicker()
+    let defaultFormat = vm.options.format
+    vm.$set(vm.options, 'format', 'YYYY-MM-DD')
+    Vue.nextTick(() => {
+      expect(defaultFormat).to.not.equal(vm.options.format)
+      done()
+    })
   })
 })

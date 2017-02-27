@@ -16,7 +16,7 @@
     props: {
       dataOptions: {
         default: function () {
-          return []
+          return {}
         }
       },
       multiple: {
@@ -27,22 +27,27 @@
     },
     mixins: [ chosenMixin, autocompleteMixin ],
     updated () {
-      try {
-        $('#autocomplete_' + this.id).trigger('chosen:updated')
-      } catch(ex) {}
+      this.updateAutocomplete()
     },
     data () {
       this.id = this._uid
       this.translations = TranslationMessages.translations[this.getDefaultLang()]
-      const defaultOptions = this.getDefaultOptions()
       return {
-        options: Object.assign(defaultOptions, this.dataOptions || {})
+        options: this.getAutocompleteOptions()
       }
     },
+    beforeMount () {
+      this.unwatch = this.$watch('dataOptions', function (data) {
+        this.options = this.getAutocompleteOptions()
+        this.destroyAutocomplete()
+        this.initAutocomplete()
+      }, { deep: true })
+    },
     mounted () {
-      try {
-        $('#autocomplete_' + this.id).ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest)
-      } catch (ex) {}
+      this.initAutocomplete()
+    },
+    destroyed () {
+      this.destroyAutocomplete()
     }
   }
 </script>

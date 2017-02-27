@@ -27,7 +27,7 @@
     mounted () {
       this.initChosen()
     },
-    destroy () {
+    destroyed () {
       this.destroyChosen()
     }
   }

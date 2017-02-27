@@ -44,17 +44,17 @@ describe('Autocomplete.vue', () => {
       .to.have.property('methods')
       .that.is.an('object')
   })
-  it('should have getRequestParameters, getAutocompleteResultsAfterRequest, getDefaultOptions object keys on mixin', () => {
+  it('should have getRequestParameters, getAutocompleteResultsAfterRequest, getAutocompleteOptions object keys on mixin', () => {
     expect(autocompleteMixin.methods)
       .to.have.property('getRequestParameters')
     expect(autocompleteMixin.methods)
       .to.have.property('getAutocompleteResultsAfterRequest')
     expect(autocompleteMixin.methods)
-      .to.have.property('getDefaultOptions')
+      .to.have.property('getAutocompleteOptions')
   })
-  it('should return default options on getDefaultOptions method being called', () => {
+  it('should return default options on getAutocompleteOptions method being called', () => {
     let vm = renderAutocomplete()
-    expect(Object.prototype.toString.call(vm.getDefaultOptions())).to.equal('[object Object]')
+    expect(Object.prototype.toString.call(vm.getAutocompleteOptions())).to.equal('[object Object]')
   })
   it('should return an object with request parameters on getRequestParameters method being called', () => {
     let vm = renderAutocomplete()
@@ -63,5 +63,14 @@ describe('Autocomplete.vue', () => {
   it('should return an object on getAutocompleteResultsAfterRequest method being called', () => {
     let vm = renderAutocomplete()
     expect(Object.prototype.toString.call(vm.getAutocompleteResultsAfterRequest({}))).to.equal('[object Object]')
+  })
+  it('should set options key "filters" dinamically when dataOptions change', (done) => {
+    let vm = renderAutocomplete()
+    let defaultFilters = vm.options.filters
+    vm.$set(vm.options, 'filters', { john: 'snow' })
+    Vue.nextTick(() => {
+      expect(defaultFilters).to.not.equal(vm.options.filters)
+      done()
+    })
   })
 })
