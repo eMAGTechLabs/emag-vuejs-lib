@@ -2370,7 +2370,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function getOptions() {
 	  return (0, _assign2.default)({}, {
 	    treeData: [],
-	    selectId: 'id_tree_type_' + this._uid
+	    selectId: 'tree_type_' + this._uid
 	  }, this.translations, this.dataOptions);
 	}
 	

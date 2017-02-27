@@ -2,7 +2,7 @@
 function getOptions () {
   return Object.assign({}, {
     treeData: [],
-    selectId: 'id_tree_type_' + this._uid
+    selectId: 'tree_type_' + this._uid
   }, this.translations, this.dataOptions)
 }
 
