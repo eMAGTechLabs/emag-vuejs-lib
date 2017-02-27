@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="hide-with-opacity">
-      <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple" :name="name">
+      <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple" :name="name" :required="required">
       </select>
     </div>
     <div class="input-group input-group-no-separation">
@@ -16,7 +16,7 @@
   import treeType from './../mixins/TreeType'
   export default {
     name: 'tree-type',
-    props: ['dataOptions', 'disabled', 'name'],
+    props: ['dataOptions', 'disabled', 'name', 'required'],
     mixins: [ treeType ],
     computed: {
       options: function () {
