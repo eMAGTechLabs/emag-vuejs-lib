@@ -2,7 +2,7 @@ export default {
   'en_GB': {
     'welcome': {
       'message': 'logged as',
-      'messageNoLogin': 'Unauthenticated user'
+      'messageNoLogin': 'Not logged in'
     },
     'label': {
       'logout': 'Logout',

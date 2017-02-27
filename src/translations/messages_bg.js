@@ -2,7 +2,7 @@ export default {
   'bg_BG': {
     'welcome': {
       'message': 'влезли като',
-      'messageNoLogin': 'Неудостоверен потребител'
+      'messageNoLogin': 'Не сте влезли в'
     },
     'label': {
       'logout': 'излезете',

@@ -2,7 +2,7 @@ export default {
   'hu_HU': {
     'welcome': {
       'message': 'bejelentkezve mint',
-      'messageNoLogin': 'Hitelesített felhasználó'
+      'messageNoLogin': 'Nincs bejelentkezve'
     },
     'label': {
       'logout': 'Leválasztás',

@@ -1,10 +1,8 @@
 /* eslint-disable no-undef */
-import $ from 'jquery'
-
 function getOptions () {
   return Object.assign({}, {
     treeData: [],
-    selectId: 'tree_type_' + this._uid
+    selectId: 'id_tree_type_' + this._uid
   }, this.translations, this.dataOptions)
 }
 

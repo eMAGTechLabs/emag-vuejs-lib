@@ -2,7 +2,7 @@ export default {
   'pl_PL' : {
     'welcome': {
       'message': 'zalogowany jako',
-      'messageNoLogin': 'Niezidentyfikowany użytkownik'
+      'messageNoLogin': 'Nie zalogowany'
     },
     'label': {
       'logout': 'Wyloguj',
