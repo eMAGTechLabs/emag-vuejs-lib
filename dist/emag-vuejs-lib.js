@@ -2339,6 +2339,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   <div>
 	//     <div class="hide-with-opacity">
 	//       <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple" :name="name" :required="required">
+	//         <option :value="item.key" v-for="item in options.treeData" :selected="item.selected">
+	//             {{ item.title }}
+	//         </option>
 	//       </select>
 	//     </div>
 	//     <div class="input-group input-group-no-separation">
@@ -2378,9 +2381,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function initTreeType() {
 	  var self = this;
 	  try {
-	    setTimeout(function () {
-	      $('#id_tree_type_' + self._uid).TreeType(self.options);
-	    }, 0);
+	    $('#id_tree_type_' + self._uid).TreeType(self.options);
 	  } catch (ex) {}
 	}
 	
@@ -2417,7 +2418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 88 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\" :name=\"name\" :required=\"required\">\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
+	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\" :name=\"name\" :required=\"required\">\n        <option :value=\"item.key\" v-for=\"item in options.treeData\" :selected=\"item.selected\">\n            {{ item.title }}\n        </option>\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
 
 /***/ },
 /* 89 */
