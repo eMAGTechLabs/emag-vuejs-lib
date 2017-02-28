@@ -41,7 +41,8 @@
     beforeMount () {
       this.unwatch = this.$watch('dataOptions', function (data) {
         this.options = this.getOptions()
-        this.initTreeType()
+        /* eslint-disable no-undef */
+        this.updateTreeData(this.options.treeData)
       }, { deep: true })
     },
     destroyed () {

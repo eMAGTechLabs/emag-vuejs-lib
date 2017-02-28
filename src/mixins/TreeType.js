@@ -7,8 +7,9 @@ function getOptions () {
 }
 
 function initTreeType () {
+  let self = this
   try {
-    $('#id_tree_type_' + this._uid).TreeType(this.options)
+    $('#id_tree_type_' + self._uid).TreeType(self.options)
   } catch (ex) {}
 }
 
@@ -26,10 +27,17 @@ function getTranslations () {
   }
 }
 
+function updateTreeData (treeData) {
+  try {
+    $('#id_tree_type_' + this._uid).TreeType('treeData', treeData)
+  } catch (ex) {}
+}
+
 export default {
   methods: {
     getOptions,
     initTreeType,
-    getTranslations
+    getTranslations,
+    updateTreeData
   }
 }

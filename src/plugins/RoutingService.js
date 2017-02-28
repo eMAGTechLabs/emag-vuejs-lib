@@ -33,7 +33,6 @@ export default function (Vue, options) {
     routes: finalRoutes,
     mode: routerMode
   })
-
   if (!Vue.helpers) {
     Vue.helpers = {}
   }
@@ -41,6 +40,8 @@ export default function (Vue, options) {
   _forwardRequestIfLocale()
   _initStaticNavigation()
   _refreshIfLocaleChangeInBrowser()
+  _replacePatternBeforeEnteringPage()
+
   // Helpers
   function _initStaticNavigation () {
     router.afterEach((to, from) => {
@@ -58,11 +59,11 @@ export default function (Vue, options) {
   function _setMenuItems (items, useLocale) {
     let routerPaths = []
     for (let i = 0; i < items.length; i++) {
-      if (items[i].link && items[i].component) {
+      if ((items[i].link && items[i].component) || (items[i].redirect) || (items[i].alias)) {
         let route = {
           path: _getPath(useLocale, items[i]),
           component: items[i].component,
-          redirect: items[i].redirect || null,
+          redirect: items[i].redirect ? _replaceLocalePatternWithCurrent(items[i].redirect) : null,
           meta: {
             requiresAuth: items[i].requiresAuth || false,
             urlWithoutLocale: items[i].link
@@ -85,7 +86,7 @@ export default function (Vue, options) {
   }
 
   function _getPath (useLocale, item) {
-    if (useLocale && item.link && item.link !== '*') {
+    if (useLocale && item.link && item.link !== '*' && !item.redirect) {
       return '/:locale' + localesRegexPattern + item.link
     }
     return item.link
@@ -95,10 +96,17 @@ export default function (Vue, options) {
     return '(' + Array.join(localesPaths, '|') + ')'
   }
 
+  // :locale/add-product will be en/add-product if on english language
+  function _replaceLocalePatternWithCurrent (routePath) {
+    return routePath.replace(':locale', options.config.locale.urlPath)
+  }
+
+  // Menu items
   function _getRawMenuItems (routes) {
     return routes.menuItems
   }
 
+  // Items that will use routing system but not show in menu
   function _getItems (routes) {
     return routes.items
   }
@@ -118,7 +126,17 @@ export default function (Vue, options) {
     })
   }
 
+  function _replacePatternBeforeEnteringPage () {
+    router.beforeEach(function (to, from, next) {
+      if (to.fullPath.search(':locale') !== -1) {
+        next(_replaceLocalePatternWithCurrent(to.fullPath))
+      }
+      next()
+    })
+  }
+
   function _refreshIfLocaleChangeInBrowser () {
+    // Before each route test to see if locale changes and refresh (by default hash mode does not refresh)
     router.beforeEach(function (to, from, next) {
       if ((to.params && to.params.locale) && (from.params && from.params.locale)) {
         if (to.params.locale !== from.params.locale) {

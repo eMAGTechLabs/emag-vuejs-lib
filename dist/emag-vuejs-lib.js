@@ -2323,7 +2323,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  beforeMount: function beforeMount() {
 	    this.unwatch = this.$watch('dataOptions', function (data) {
 	      this.options = this.getOptions();
-	      this.initTreeType();
+	      /* eslint-disable no-undef */
+	      this.updateTreeData(this.options.treeData);
 	    }, { deep: true });
 	  },
 	  destroyed: function destroyed() {
@@ -2375,8 +2376,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function initTreeType() {
+	  var self = this;
 	  try {
-	    $('#id_tree_type_' + this._uid).TreeType(this.options);
+	    setTimeout(function () {
+	      $('#id_tree_type_' + self._uid).TreeType(self.options);
+	    }, 0);
 	  } catch (ex) {}
 	}
 	
@@ -2394,11 +2398,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	}
 	
+	function updateTreeData(treeData) {
+	  try {
+	    $('#id_tree_type_' + this._uid).TreeType('treeData', treeData);
+	  } catch (ex) {}
+	}
+	
 	exports.default = {
 	  methods: {
 	    getOptions: getOptions,
 	    initTreeType: initTreeType,
-	    getTranslations: getTranslations
+	    getTranslations: getTranslations,
+	    updateTreeData: updateTreeData
 	  }
 	};
 
@@ -11682,7 +11693,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    routes: finalRoutes,
 	    mode: routerMode
 	  });
-	
 	  if (!Vue.helpers) {
 	    Vue.helpers = {};
 	  }
@@ -11690,6 +11700,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _forwardRequestIfLocale();
 	  _initStaticNavigation();
 	  _refreshIfLocaleChangeInBrowser();
+	  _replacePatternBeforeEnteringPage();
+	
 	  // Helpers
 	  function _initStaticNavigation() {
 	    router.afterEach(function (to, from) {
@@ -11707,11 +11719,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function _setMenuItems(items, useLocale) {
 	    var routerPaths = [];
 	    for (var i = 0; i < items.length; i++) {
-	      if (items[i].link && items[i].component) {
+	      if (items[i].link && items[i].component || items[i].redirect || items[i].alias) {
 	        var route = {
 	          path: _getPath(useLocale, items[i]),
 	          component: items[i].component,
-	          redirect: items[i].redirect || null,
+	          redirect: items[i].redirect ? _replaceLocalePatternWithCurrent(items[i].redirect) : null,
 	          meta: {
 	            requiresAuth: items[i].requiresAuth || false,
 	            urlWithoutLocale: items[i].link
@@ -11734,7 +11746,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	
 	  function _getPath(useLocale, item) {
-	    if (useLocale && item.link && item.link !== '*') {
+	    if (useLocale && item.link && item.link !== '*' && !item.redirect) {
 	      return '/:locale' + localesRegexPattern + item.link;
 	    }
 	    return item.link;
@@ -11744,10 +11756,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return '(' + (0, _join2.default)(localesPaths, '|') + ')';
 	  }
 	
+	  // :locale/add-product will be en/add-product if on english language
+	  function _replaceLocalePatternWithCurrent(routePath) {
+	    return routePath.replace(':locale', options.config.locale.urlPath);
+	  }
+	
+	  // Menu items
 	  function _getRawMenuItems(routes) {
 	    return routes.menuItems;
 	  }
 	
+	  // Items that will use routing system but not show in menu
 	  function _getItems(routes) {
 	    return routes.items;
 	  }
@@ -11767,7 +11786,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    });
 	  }
 	
+	  function _replacePatternBeforeEnteringPage() {
+	    router.beforeEach(function (to, from, next) {
+	      if (to.fullPath.search(':locale') !== -1) {
+	        next(_replaceLocalePatternWithCurrent(to.fullPath));
+	      }
+	      next();
+	    });
+	  }
+	
 	  function _refreshIfLocaleChangeInBrowser() {
+	    // Before each route test to see if locale changes and refresh (by default hash mode does not refresh)
 	    router.beforeEach(function (to, from, next) {
 	      if (to.params && to.params.locale && from.params && from.params.locale) {
 	        if (to.params.locale !== from.params.locale) {
