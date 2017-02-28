@@ -1,7 +1,7 @@
 
 <template>
     <div class="input-group">
-        <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled">
+        <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name">
         <div class="input-group-addon"><i :class="options.icons.date"></i>
         </div>
     </div>
@@ -11,7 +11,7 @@ import datetimeMixin from './../mixins/Datetimepicker'
 /* eslint-disable no-undef */
 export default {
   name: 'datetimepicker',
-  props: ['dataOptions', 'disabled'],
+  props: ['dataOptions', 'disabled', 'name'],
   mixins: [ datetimeMixin ],
   data () {
     return { options: this.getOptions() }
