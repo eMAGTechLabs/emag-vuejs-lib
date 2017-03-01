@@ -2403,6 +2403,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	function updateTreeData(treeData) {
 	  try {
 	    $('#id_tree_type_' + this._uid).TreeType('treeData', treeData);
+	    var self = this;
+	    setTimeout(function () {
+	      $('#tree_type_' + self._uid).trigger('change');
+	    }, 0);
 	  } catch (ex) {}
 	}
 	
