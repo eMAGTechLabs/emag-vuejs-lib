@@ -30,8 +30,7 @@ function getTranslations () {
 function updateTreeData (treeData) {
   try {
     $('#id_tree_type_' + this._uid).TreeType('treeData', treeData)
-    $('#tree_type_' + this._uid).trigger('update')
-    console.log($('#tree_type_' + this._uid))
+    $('#tree_type_' + this._uid).trigger('change')
   } catch (ex) {}
 }
 
