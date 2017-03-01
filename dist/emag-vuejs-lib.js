@@ -238,12 +238,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Chosen.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Chosen.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Chosen.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Chosen.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Chosen.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -1660,12 +1660,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Header.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Header.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Header.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Header.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Header.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -1751,12 +1751,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./JqGrid.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./JqGrid.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./JqGrid.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./JqGrid.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./JqGrid.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -1825,12 +1825,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Sidebar.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Sidebar.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Sidebar.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Sidebar.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Sidebar.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -1932,12 +1932,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Submenu.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Submenu.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Submenu.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Submenu.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Submenu.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -2064,12 +2064,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarItem.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarItem.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarItem.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarItem.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarItem.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -2134,12 +2134,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarControl.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarControl.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./SidebarControl.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarControl.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./SidebarControl.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -2195,12 +2195,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Footer.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Footer.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Footer.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Footer.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Footer.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -2269,12 +2269,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./TreeType.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./TreeType.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./TreeType.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./TreeType.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./TreeType.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -2402,6 +2402,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function updateTreeData(treeData) {
 	  try {
 	    $('#id_tree_type_' + this._uid).TreeType('treeData', treeData);
+	    $('#tree_type_' + this._uid).trigger('update');
 	  } catch (ex) {}
 	}
 	
@@ -2433,12 +2434,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Autocomplete.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Autocomplete.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -2649,12 +2650,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Datetimepicker.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Datetimepicker.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Datetimepicker.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Datetimepicker.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Datetimepicker.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -2816,12 +2817,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocaleChild.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocaleChild.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocaleChild.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocaleChild.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocaleChild.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocaleChild.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocaleChild.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderLocaleChild.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocaleChild.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderLocaleChild.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -11210,12 +11211,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsChild.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsChild.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsChild.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsChild.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsChild.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsChild.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsChild.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderNotificationsChild.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsChild.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderNotificationsChild.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -11287,12 +11288,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./LinkItem.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./LinkItem.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
@@ -11357,12 +11358,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	var hotAPI = require("vue-hot-reload-api")
 	hotAPI.install(require("vue"))
 	if (!hotAPI.compatible) return
-	var id = "-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserChild.vue"
+	var id = "-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserChild.vue"
 	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserChild.vue","-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserChild.vue"], function () {
-	var newOptions = require("-!babel!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserChild.vue")
+	module.hot.accept(["-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserChild.vue","-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserChild.vue"], function () {
+	var newOptions = require("-!babel!../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./HeaderUserChild.vue")
 	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserChild.vue")
+	var newTemplate = require("-!vue-html-loader!../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./HeaderUserChild.vue")
 	hotAPI.update(id, newOptions, newTemplate)
 	})
 	})()
