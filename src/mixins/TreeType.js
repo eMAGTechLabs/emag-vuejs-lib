@@ -31,11 +31,6 @@ function updateTreeData (treeData) {
   let self = this
   try {
     $('#id_tree_type_' + this._uid).TreeType('treeData', treeData)
-    setTimeout( function () {
-      $('#tree_type_' + self._uid).trigger('change')
-      console.log($('#tree_type_' + self._uid))
-      console.log('#tree_type_' + self._uid)
-    }, 2000)
   } catch (ex) {}
 }
 

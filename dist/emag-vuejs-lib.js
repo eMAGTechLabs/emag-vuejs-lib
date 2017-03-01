@@ -2339,6 +2339,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   <div>
 	//     <div class="hide-with-opacity">
 	//       <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple" :name="name" :required="required">
+	//         <option value=""></option>
 	//         <option :value="item.key" v-for="item in options.treeData" :selected="item.selected">
 	//             {{ item.title }}
 	//         </option>
@@ -2403,11 +2404,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var self = this;
 	  try {
 	    $('#id_tree_type_' + this._uid).TreeType('treeData', treeData);
-	    setTimeout(function () {
-	      $('#tree_type_' + self._uid).trigger('change');
-	      console.log($('#tree_type_' + self._uid));
-	      console.log('#tree_type_' + self._uid);
-	    }, 2000);
 	  } catch (ex) {}
 	}
 	
@@ -2424,7 +2420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 88 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\" :name=\"name\" :required=\"required\">\n        <option :value=\"item.key\" v-for=\"item in options.treeData\" :selected=\"item.selected\">\n            {{ item.title }}\n        </option>\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
+	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\" :name=\"name\" :required=\"required\">\n        <option value=\"\"></option>\n        <option :value=\"item.key\" v-for=\"item in options.treeData\" :selected=\"item.selected\">\n            {{ item.title }}\n        </option>\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
 
 /***/ },
 /* 89 */

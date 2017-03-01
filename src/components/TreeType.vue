@@ -2,6 +2,7 @@
   <div>
     <div class="hide-with-opacity">
       <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple" :name="name" :required="required">
+        <option value=""></option>
         <option :value="item.key" v-for="item in options.treeData" :selected="item.selected">
             {{ item.title }}
         </option>
