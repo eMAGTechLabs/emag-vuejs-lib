@@ -10,7 +10,8 @@ function initTreeType () {
   let self = this
   try {
     $('#id_tree_type_' + self._uid).TreeType(self.options)
-  } catch (ex) {}
+  } catch (ex) {
+  }
 }
 
 function getTranslations () {
@@ -30,8 +31,12 @@ function getTranslations () {
 function updateTreeData (treeData) {
   try {
     $('#id_tree_type_' + this._uid).TreeType('treeData', treeData)
-    $('#tree_type_' + this._uid).trigger('update')
-  } catch (ex) {}
+    let self = this
+    setTimeout(function () {
+      $('#tree_type_' + self._uid).trigger('change')
+    }, 0)
+  } catch (ex) {
+  }
 }
 
 export default {
