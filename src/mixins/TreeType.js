@@ -28,7 +28,6 @@ function getTranslations () {
 }
 
 function updateTreeData (treeData) {
-  let self = this
   try {
     $('#id_tree_type_' + this._uid).TreeType('treeData', treeData)
   } catch (ex) {}

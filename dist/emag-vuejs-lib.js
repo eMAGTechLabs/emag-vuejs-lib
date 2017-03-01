@@ -2401,7 +2401,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function updateTreeData(treeData) {
-	  var self = this;
 	  try {
 	    $('#id_tree_type_' + this._uid).TreeType('treeData', treeData);
 	  } catch (ex) {}
