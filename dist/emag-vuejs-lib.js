@@ -11735,9 +11735,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	            urlWithoutLocale: items[i].link
 	          }
 	        };
-	        if (items[i].alias) {
-	          route.alias = items[i].alias || '';
-	        }
+	        route.alias = items[i].alias || '';
+	        route.name = items[i].name || '';
 	        routerPaths.push(route);
 	      }
 	      if (items[i].children) {
