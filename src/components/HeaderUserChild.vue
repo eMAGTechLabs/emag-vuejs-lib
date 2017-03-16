@@ -5,7 +5,7 @@
                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="user.label" onerror="this.src='{{ require('static/css/icons/default_user.png') }}'" height="36">
                 <img v-else class="nav-user-photo" :src="{{ require('static/css/icons/default_user.png') }}" alt="user.label" height="36">
             </div>
-            {{#if user.label}}
+            <template v-if="ok">
               <span class="visible-lg-inline">
                 {{ $t(welcome.message) }}
               </span>
@@ -14,11 +14,12 @@
                       {{ $t(user.label) }}
                   </strong>
               </span>
-            {{#else}}
+            </template>
+            <template v-else>
               <span>
                 {{ $t(welcome.messageNoLogin) }}
               </span>
-            {{/if}}
+            </template>
 
             <i class="fa fa-angle-down hidden-xs"></i>
         </a>
