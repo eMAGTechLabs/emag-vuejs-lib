@@ -42,8 +42,8 @@ module.exports = {
         loader: 'file-loader',
         query: {
           name: '[name].[ext]',
-          publicPath: '/static/css/icons/',
-          outputPath: './dist/images/'
+          emitFile: false,
+          outputPath: '/static/css/icons/'
         }
       }
     ]
