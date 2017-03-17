@@ -35,11 +35,16 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./dist/fonts/[name].[ext]'
+        loader: 'file-loader?name=./static/css/fonts/[name].[ext]'
       },
       {
         test: /\.(jpe?g|png|gif|ico|tiff|bmp)$/,
-        loader: 'file-loader?name=./dist/images/[name].[ext]&publicPath=EmagVueLib/dist/images/&outputPath=./dist/images/'
+        loader: 'file-loader',
+        query: {
+          name: '[name].[ext]',
+          publicPath: '/static/css/icons/',
+          outputPath: './dist/images/'
+        }
       }
     ]
   },

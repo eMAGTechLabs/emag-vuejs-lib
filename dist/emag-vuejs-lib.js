@@ -11412,7 +11412,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 	//             <div class="profile-thumb hidden-xs">
 	//                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="user.label" onerror="this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'" height="36">
-	//                 <img v-else class="nav-user-photo" src="~emag-apps-ui-kit/dist/css/icons/default_user.png" alt="user.label" height="36">
+	//                 <img v-else class="nav-user-photo" src="~emag-apps-ui-kit/dist/css/icons/default_user.png" alt="{{ $t(user.label) }}" height="36">
 	//             </div>
 	//             <template v-if="user.label">
 	//               <span>
@@ -11446,13 +11446,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"user.label\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(111) + "\" alt=\"user.label\" height=\"36\">\n            </div>\n            <template v-if=\"user.label\">\n              <span>\n                  <strong>\n                      {{ $t(user.label) }}\n                  </strong>\n              </span>\n                <i class=\"fa fa-angle-down hidden-xs\"></i>\n            </template>\n            <template v-else>\n              <span>\n                {{ $t('welcome.messageNoLogin') }}\n              </span>\n            </template>\n        </a>\n        <template v-if=\"user.label\">\n            <ul class=\"dropdown-menu\">\n                <li v-if=\"account\">\n                    <link-item :item=\"account\"></link-item>\n                </li>\n                <li v-if=\"logout\">\n                    <link-item :item=\"logout\"></link-item>\n                </li>\n            </ul>\n        </template>\n    </li>";
+	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"user.label\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(111) + "\" alt=\"{{ $t(user.label) }}\" height=\"36\">\n            </div>\n            <template v-if=\"user.label\">\n              <span>\n                  <strong>\n                      {{ $t(user.label) }}\n                  </strong>\n              </span>\n                <i class=\"fa fa-angle-down hidden-xs\"></i>\n            </template>\n            <template v-else>\n              <span>\n                {{ $t('welcome.messageNoLogin') }}\n              </span>\n            </template>\n        </a>\n        <template v-if=\"user.label\">\n            <ul class=\"dropdown-menu\">\n                <li v-if=\"account\">\n                    <link-item :item=\"account\"></link-item>\n                </li>\n                <li v-if=\"logout\">\n                    <link-item :item=\"logout\"></link-item>\n                </li>\n            </ul>\n        </template>\n    </li>";
 
 /***/ },
 /* 111 */
 /***/ function(module, exports) {
 
-	module.exports = "EmagVueLib/dist/images/./dist/images/default_user.png";
+	module.exports = "/static/css/icons/default_user.png";
 
 /***/ },
 /* 112 */

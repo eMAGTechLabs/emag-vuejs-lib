@@ -3,7 +3,7 @@
         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <div class="profile-thumb hidden-xs">
                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="user.label" onerror="this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'" height="36">
-                <img v-else class="nav-user-photo" src="~emag-apps-ui-kit/dist/css/icons/default_user.png" alt="user.label" height="36">
+                <img v-else class="nav-user-photo" src="~emag-apps-ui-kit/dist/css/icons/default_user.png" alt="{{ $t(user.label) }}" height="36">
             </div>
             <template v-if="user.label">
               <span>
