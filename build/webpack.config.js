@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|ico|tiff|bmp)$/,
-        loader: 'file-loader?name=./dist/images/[name].[ext]'
+        loader: 'file-loader?name=./dist/images/[name].[ext]&publicPath=EmagVueLib/dist/images/&outputPath=./dist/images/'
       }
     ]
   },

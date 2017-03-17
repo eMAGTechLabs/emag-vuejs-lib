@@ -7,7 +7,7 @@ export default {
     items: []
   },
   user: {
-    label: 'welcome.messageNoLogin',
+    label: '',
     imageLink: '',
     account: {
       label: 'label.accountSettings',

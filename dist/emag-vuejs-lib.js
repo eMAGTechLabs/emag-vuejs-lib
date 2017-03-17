@@ -11450,9 +11450,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 111 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = __webpack_require__.p + "./dist/images/default_user.png";
+	module.exports = "EmagVueLib/dist/images/./dist/images/default_user.png";
 
 /***/ },
 /* 112 */
@@ -11472,7 +11472,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    items: []
 	  },
 	  user: {
-	    label: 'welcome.messageNoLogin',
+	    label: '',
 	    imageLink: '',
 	    account: {
 	      label: 'label.accountSettings',
