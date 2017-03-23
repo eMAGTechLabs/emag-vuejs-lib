@@ -11452,7 +11452,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "default_user.png";
+	module.exports = __webpack_require__.p + "/static/css/icons/default_user.png";
 
 /***/ },
 /* 112 */
