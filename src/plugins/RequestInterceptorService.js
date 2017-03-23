@@ -19,11 +19,11 @@ export default function RequestInterceptorService (Vue, options) {
   }
 
   if (options.useAccessTokenCallback) {
-    if (localStorage && localStorage['access-token']) {
-      _pushRequestInterceptorCallback((xhr) => {
+    _pushRequestInterceptorCallback((xhr) => {
+      if (localStorage && localStorage['access-token']) {
         xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage['access-token'])
-      })
-    }
+      }
+    })
   }
 
   function _pushRequestInterceptorCallback (callback) {
