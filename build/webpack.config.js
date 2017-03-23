@@ -43,8 +43,7 @@ module.exports = {
         query: {
           name: '[name].[ext]',
           emitFile: false,
-          path: '/static/css/icons/',
-          outputPath: '/static/css/icons/'
+          p: '/static/css/icons/'
         }
       }
     ]
