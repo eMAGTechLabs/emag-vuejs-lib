@@ -2878,8 +2878,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  data: function data() {
 	    return {
 	      locales: this.$store.state.config.locales,
-	      locale: this.$store.state.config.locale,
-	      items: []
+	      locale: this.$store.state.config.locale
 	    };
 	  },
 	
