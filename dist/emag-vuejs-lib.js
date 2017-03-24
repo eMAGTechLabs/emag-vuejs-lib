@@ -2877,7 +2877,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'headerLocaleChild',
 	  data: function data() {
 	    return {
-	      locales: this.$store.state.config.locales
+	      locales: this.$store.state.config.locales,
+	      locale: this.$store.state.config.locale,
+	      items: []
 	    };
 	  },
 	
