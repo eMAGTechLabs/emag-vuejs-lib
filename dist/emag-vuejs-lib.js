@@ -2878,7 +2878,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  data: function data() {
 	    return {
 	      locales: this.$store.state.config.locales,
-	      locale: this.$store.state.config.locale
+	      locale: this.$store.state.config.locale,
+	      items: this.getLocaleItems()
 	    };
 	  },
 	
@@ -11392,12 +11393,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.default = {
 	  name: 'headerUserChild',
-	  data: function data() {
-	    return {
-	      user: this.$store.state.config.user
-	    };
-	  },
-	
 	  computed: {
 	    account: function account() {
 	      return this.$store.state.config.user.account;

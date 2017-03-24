@@ -36,11 +36,6 @@
 
   export default {
     name: 'headerUserChild',
-    data () {
-      return {
-        user: this.$store.state.config.user
-      }
-    },
     computed: {
       account () {
         return this.$store.state.config.user.account

@@ -27,7 +27,8 @@
     data () {
       return {
         locales: this.$store.state.config.locales,
-        locale: this.$store.state.config.locale
+        locale: this.$store.state.config.locale,
+        items: this.getLocaleItems()
       }
     },
     mixins: [ headerMixin, sidebarMixin ],
