@@ -8,7 +8,7 @@
             <template v-if="user.label">
               <span>
                   <strong>
-                      {{ $t(user.label) }}
+                      {{ user.label }}
                   </strong>
               </span>
                 <i class="fa fa-angle-down hidden-xs"></i>

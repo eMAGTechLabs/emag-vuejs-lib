@@ -16,8 +16,7 @@ export default {
     },
     logout: {
       label: 'label.logout',
-      link: '/logout',
-      onClick: () => {}
+      link: {name: 'logout'}
     }
   },
   useLocale: true,
