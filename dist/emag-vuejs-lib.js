@@ -11492,7 +11492,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    logout: {
 	      label: 'label.logout',
-	      link: { name: 'logout' }
+	      link: '{name: \'logout\'}'
 	    }
 	  },
 	  useLocale: true,
