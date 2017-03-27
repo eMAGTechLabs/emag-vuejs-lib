@@ -25,7 +25,7 @@
                     <link-item :item="account"></link-item>
                 </li>
                 <li v-if="logout">
-                    <link-item :item="logout"></link-item>
+                    <router-link :to="{name: 'logout'}">{{ $t(logout.label) }}</router-link>
                 </li>
             </ul>
         </template>

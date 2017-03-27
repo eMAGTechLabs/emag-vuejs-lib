@@ -16,7 +16,6 @@ export default {
     },
     logout: {
       label: 'label.logout',
-      link: '{name: \'logout\'}'
     }
   },
   useLocale: true,
