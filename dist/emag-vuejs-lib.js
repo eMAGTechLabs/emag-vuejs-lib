@@ -11406,9 +11406,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  beforeMount: function beforeMount() {
 	    var username = localStorage.getItem('username');
+	    var userImageLink = localStorage.getItem('user-image-link');
 	    if (username) {
 	      this.$store.commit('setUser', {
 	        label: username
+	      });
+	    }
+	    if (userImageLink) {
+	      this.$store.commit('setUser', {
+	        imageLink: userImageLink
 	      });
 	    }
 	  },
