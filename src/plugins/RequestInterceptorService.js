@@ -14,16 +14,16 @@ export default function RequestInterceptorService (Vue, options) {
   Vue.helpers.pushRequestInterceptorCallback = _pushRequestInterceptorCallback
 
   // Set default useAccessTokenCallback to be true
-  if (!options || options.useAccessTokenCallback === "undefined") {
+  if (!options || options.useAccessTokenCallback === 'undefined') {
     options = Object.assign({}, options, { useAccessTokenCallback: true })
   }
 
   if (options.useAccessTokenCallback) {
-    if (localStorage && localStorage['access-token']) {
-      _pushRequestInterceptorCallback((xhr) => {
+    _pushRequestInterceptorCallback((xhr) => {
+      if (localStorage && localStorage['access-token']) {
         xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage['access-token'])
-      })
-    }
+      }
+    })
   }
 
   function _pushRequestInterceptorCallback (callback) {

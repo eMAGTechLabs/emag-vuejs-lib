@@ -7,7 +7,7 @@ export default {
     items: []
   },
   user: {
-    label: 'welcome.messageNoLogin',
+    label: '',
     imageLink: '',
     account: {
       label: 'label.accountSettings',
@@ -16,8 +16,6 @@ export default {
     },
     logout: {
       label: 'label.logout',
-      link: '/logout',
-      onClick: () => {}
     }
   },
   useLocale: true,

@@ -35,7 +35,19 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file'
+        loader: 'file-loader',
+        query: {
+          name: '/static/css/fonts/[name].[ext]',
+          emitFile: false
+        }
+      },
+      {
+        test: /\.(jpe?g|png|gif|ico|tiff|bmp)$/,
+        loader: 'file-loader',
+        query: {
+          name: '/static/css/icons/[name].[ext]',
+          emitFile: false
+        }
       }
     ]
   },

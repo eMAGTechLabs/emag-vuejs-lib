@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="main-nav">
                 <h4 class="navbar-text" v-if="appName">{{ appName }}</h4>
                 <ul class="nav navbar-nav navbar-right" v-if="headerChildren">
-                  <component v-bind:is="view.component" v-for="view in currentView" :dataOptions="view.options">
+                  <component v-bind:is="view.component" v-for="view in currentView" :key="view.name" :dataOptions="view.options">
                   </component>
                 </ul>
             </div>
