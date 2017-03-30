@@ -26,9 +26,7 @@
     name: 'headerLocaleChild',
     data () {
       return {
-        locales: this.$store.state.config.locales,
-        locale: this.$store.state.config.locale,
-        items: this.getLocaleItems()
+        locales: this.$store.state.config.locales
       }
     },
     mixins: [ headerMixin, sidebarMixin ],
