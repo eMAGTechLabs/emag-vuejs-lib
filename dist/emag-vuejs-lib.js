@@ -11253,8 +11253,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    label: function label() {
 	      return this.$store.state.config.notifications.label || 'baseNotifications.titleNotice';
+	    },
+	    user: function user() {
+	      return this.$store.state.config.user;
 	    }
 	  },
+	  beforeMount: function beforeMount() {
+	    var username = localStorage.getItem('username');
+	    if (username) {
+	      this.$store.commit('setUser', {
+	        label: username
+	      });
+	    }
+	  },
+	
 	  components: {
 	    LinkItem: _LinkItem2.default
 	  }
@@ -11423,37 +11435,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	// </script>
 	// <template>
+	//   <template v-if="user.label">
 	//     <li class="dropdown">
 	//         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 	//             <div class="profile-thumb hidden-xs">
 	//                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="" onerror="this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'" height="36">
 	//                 <img v-else class="nav-user-photo" src="~emag-apps-ui-kit/dist/css/icons/default_user.png" alt="" height="36">
 	//             </div>
-	//             <template v-if="user.label">
-	//               <span>
-	//                   <strong>
-	//                       {{ user.label }}
-	//                   </strong>
-	//               </span>
-	//                 <i class="fa fa-angle-down hidden-xs"></i>
-	//             </template>
-	//             <template v-else>
-	//               <span>
-	//                 {{ $t('welcome.messageNoLogin') }}
-	//               </span>
-	//             </template>
+	//             <span>
+	//               {{ user.label }}
+	//             </span>
+	//             <i class="fa fa-angle-down hidden-xs"></i>
 	//         </a>
-	//         <template v-if="user.label">
-	//             <ul class="dropdown-menu">
-	//                 <li v-if="account">
-	//                     <link-item :item="account"></link-item>
-	//                 </li>
-	//                 <li v-if="logout">
-	//                     <router-link :to="{name: 'logout'}">{{ $t(logout.label) }}</router-link>
-	//                 </li>
-	//             </ul>
-	//         </template>
+	//         <ul class="dropdown-menu">
+	//             <li v-if="account">
+	//                 <link-item :item="account"></link-item>
+	//             </li>
+	//             <li v-if="logout">
+	//                 <router-link :to="{name: 'logout'}">{{ $t(logout.label) }}</router-link>
+	//             </li>
+	//         </ul>
 	//     </li>
+	//   </template>
 	// </template>
 	// <script>
 
@@ -11461,7 +11464,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(111) + "\" alt=\"\" height=\"36\">\n            </div>\n            <template v-if=\"user.label\">\n              <span>\n                  <strong>\n                      {{ user.label }}\n                  </strong>\n              </span>\n                <i class=\"fa fa-angle-down hidden-xs\"></i>\n            </template>\n            <template v-else>\n              <span>\n                {{ $t('welcome.messageNoLogin') }}\n              </span>\n            </template>\n        </a>\n        <template v-if=\"user.label\">\n            <ul class=\"dropdown-menu\">\n                <li v-if=\"account\">\n                    <link-item :item=\"account\"></link-item>\n                </li>\n                <li v-if=\"logout\">\n                    <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\n                </li>\n            </ul>\n        </template>\n    </li>";
+	module.exports = "<template v-if=\"user.label\">\n    <li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(111) + "\" alt=\"\" height=\"36\">\n            </div>\n            <span>\n              {{ user.label }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-if=\"logout\">\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\n            </li>\n        </ul>\n    </li>\n  </template>";
 
 /***/ },
 /* 111 */

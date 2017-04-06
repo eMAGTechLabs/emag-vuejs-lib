@@ -29,6 +29,17 @@
       },
       label () {
         return this.$store.state.config.notifications.label || 'baseNotifications.titleNotice'
+      },
+      user () {
+        return this.$store.state.config.user
+      }
+    },
+    beforeMount () {
+      let username = localStorage.getItem('username');
+      if (username) {
+        this.$store.commit('setUser', {
+          label: username
+        })
       }
     },
     components: {
