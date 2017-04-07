@@ -1,5 +1,4 @@
-<template>
-  <template v-if="user.label">
+<template v-if="user.label">
     <li class="dropdown">
         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <div class="profile-thumb hidden-xs">
@@ -20,7 +19,6 @@
             </li>
         </ul>
     </li>
-  </template>
 </template>
 <script>
   import LinkItem from './LinkItem'
