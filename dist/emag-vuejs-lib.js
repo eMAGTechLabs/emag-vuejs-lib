@@ -1721,7 +1721,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      currentView: this.headerChildren
 	    };
 	  },
-	  beforeMount: function beforeMount() {
+	  created: function created() {
 	    this.unwatch = this.$watch('currentView', function (data) {
 	      this.currentView = this.headerChildren;
 	    }, { deep: true });
@@ -11258,7 +11258,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.$store.state.config.user;
 	    }
 	  },
-	  beforeMount: function beforeMount() {
+	  created: function created() {
 	    var username = localStorage.getItem('username');
 	    if (username) {
 	      this.$store.commit('setUser', {
