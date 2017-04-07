@@ -11272,8 +11272,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	// </script>
-	// <template v-if="user.label">
-	//     <li class="dropdown">
+	// <template>
+	//     <li v-if="user.label" class="dropdown">
 	//         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 	//             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
 	//             <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
@@ -11359,7 +11359,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 107 */
 /***/ function(module, exports) {
 
-	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span>{{ $t(label) }}</span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span>{{ $t(label) }}</span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
 
 /***/ },
 /* 108 */
@@ -11434,8 +11434,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	// </script>
-	// <template v-if="user.label">
-	//     <li class="dropdown">
+	// <template>
+	//     <li v-if="user.label" class="dropdown">
 	//         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 	//             <div class="profile-thumb hidden-xs">
 	//                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="" onerror="this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'" height="36">
@@ -11462,7 +11462,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<li class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(111) + "\" alt=\"\" height=\"36\">\n            </div>\n            <span>\n              {{ user.label }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-if=\"logout\">\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\n            </li>\n        </ul>\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(111) + "\" alt=\"\" height=\"36\">\n            </div>\n            <span>\n              {{ user.label }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-if=\"logout\">\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\n            </li>\n        </ul>\n    </li>";
 
 /***/ },
 /* 111 */

@@ -1,5 +1,5 @@
-<template v-if="user.label">
-    <li class="dropdown">
+<template>
+    <li v-if="user.label" class="dropdown">
         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
             <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
