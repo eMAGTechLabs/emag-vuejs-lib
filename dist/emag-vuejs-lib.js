@@ -2898,7 +2898,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  beforeMount: function beforeMount() {
 	    this.setDefaultLocale();
-	    this.setLinksForLocales();
 	  }
 	};
 	// </script>
