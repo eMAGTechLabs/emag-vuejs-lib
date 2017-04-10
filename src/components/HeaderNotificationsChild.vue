@@ -1,5 +1,5 @@
 <template>
-    <li class="dropdown">
+    <li v-if="user.label" class="dropdown">
         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
             <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
@@ -29,6 +29,17 @@
       },
       label () {
         return this.$store.state.config.notifications.label || 'baseNotifications.titleNotice'
+      },
+      user () {
+        return this.$store.state.config.user
+      }
+    },
+    beforeMount () {
+      let username = localStorage.getItem('username');
+      if (username) {
+        this.$store.commit('setUser', {
+          label: username
+        })
       }
     },
     components: {

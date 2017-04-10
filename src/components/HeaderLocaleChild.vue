@@ -46,7 +46,6 @@
     },
     beforeMount () {
       this.setDefaultLocale()
-      this.setLinksForLocales()
     }
   }
 </script>
