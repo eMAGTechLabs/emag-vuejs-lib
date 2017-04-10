@@ -11258,7 +11258,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.$store.state.config.user;
 	    }
 	  },
-	  created: function created() {
+	  beforeMount: function beforeMount() {
 	    var username = localStorage.getItem('username');
 	    if (username) {
 	      this.$store.commit('setUser', {

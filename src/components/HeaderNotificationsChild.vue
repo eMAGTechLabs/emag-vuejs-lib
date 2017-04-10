@@ -34,7 +34,7 @@
         return this.$store.state.config.user
       }
     },
-    created () {
+    beforeMount () {
       let username = localStorage.getItem('username');
       if (username) {
         this.$store.commit('setUser', {
