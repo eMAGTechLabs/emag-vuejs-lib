@@ -1721,7 +1721,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      currentView: this.headerChildren
 	    };
 	  },
-	  created: function created() {
+	  beforeMount: function beforeMount() {
 	    this.unwatch = this.$watch('currentView', function (data) {
 	      this.currentView = this.headerChildren;
 	    }, { deep: true });

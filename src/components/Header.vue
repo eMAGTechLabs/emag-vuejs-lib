@@ -39,7 +39,7 @@
         currentView: this.headerChildren
       }
     },
-    created () {
+    beforeMount () {
       this.unwatch = this.$watch('currentView', function (data) {
         this.currentView = this.headerChildren
       }, { deep: true })
