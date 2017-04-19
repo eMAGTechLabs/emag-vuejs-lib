@@ -11778,6 +11778,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  function _getPath(useLocale, item) {
 	    if (useLocale && item.link && item.link !== '*' && !item.redirect) {
+	      if (item.dontAlterLink === true) {
+	        return item.link;
+	      }
 	      return '/:locale' + localesRegexPattern + item.link;
 	    }
 	    return item.link;
