@@ -11489,11 +11489,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  user: {
 	    label: '',
 	    imageLink: '',
-	    account: {
-	      label: 'label.accountSettings',
-	      link: '',
-	      onClick: function onClick() {}
-	    },
 	    logout: {
 	      label: 'label.logout'
 	    }

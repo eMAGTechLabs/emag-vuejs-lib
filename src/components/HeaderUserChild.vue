@@ -37,8 +37,8 @@
       }
     },
     beforeMount () {
-      let username = localStorage.getItem('username');
-      let userImageLink = localStorage.getItem('user-image-link');
+      let username = localStorage.getItem('username')
+      let userImageLink = localStorage.getItem('user-image-link')
       if (username) {
         this.$store.commit('setUser', {
           label: username
