@@ -11489,11 +11489,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  user: {
 	    label: '',
 	    imageLink: '',
-	    account: {
-	      label: 'label.accountSettings',
-	      link: '',
-	      onClick: function onClick() {}
-	    },
 	    logout: {
 	      label: 'label.logout'
 	    }
@@ -11721,6 +11716,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var routerMode = {};
 	  var VueRouter = options.router;
 	  var routes = options && options.routes ? options.routes : [];
+	  var rootPage = options && options.rootPage ? options.rootPage : '/login';
 	  var finalRoutes = [];
 	  routerMode = options.mode || 'hash';
 	
@@ -11735,6 +11731,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  Vue.helpers.getVueRouter = _getVueRouter;
 	  _forwardRequestIfLocale();
+	  _rootPageRedirectToDashboard();
 	  _initStaticNavigation();
 	  _refreshIfLocaleChangeInBrowser();
 	  _replacePatternBeforeEnteringPage();
@@ -11783,6 +11780,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  function _getPath(useLocale, item) {
 	    if (useLocale && item.link && item.link !== '*' && !item.redirect) {
+	      if (item.useLocale && item.useLocale === false) {
+	        return item.link;
+	      }
 	      return '/:locale' + localesRegexPattern + item.link;
 	    }
 	    return item.link;
@@ -11819,6 +11819,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	      } else {
 	        next();
 	      }
+	    });
+	  }
+	
+	  function _rootPageRedirectToDashboard() {
+	    // When user enter on "/" it is redirected to page set on rootPage
+	    router.beforeEach(function (to, from, next) {
+	      if (to.path === '/' && to.matched.length === 0) {
+	        next(rootPage);
+	      }
+	      next();
 	    });
 	  }
 	

@@ -24,6 +24,7 @@ export default function (Vue, options) {
   let routerMode = {}
   let VueRouter = options.router
   let routes = (options && options.routes) ? options.routes : []
+  let rootPage = (options && options.rootPage) ? options.rootPage : '/login'
   let finalRoutes = []
   routerMode = options.mode || 'hash'
 
@@ -38,6 +39,7 @@ export default function (Vue, options) {
   }
   Vue.helpers.getVueRouter = _getVueRouter
   _forwardRequestIfLocale()
+  _rootPageRedirectToDashboard()
   _initStaticNavigation()
   _refreshIfLocaleChangeInBrowser()
   _replacePatternBeforeEnteringPage()
@@ -86,6 +88,9 @@ export default function (Vue, options) {
 
   function _getPath (useLocale, item) {
     if (useLocale && item.link && item.link !== '*' && !item.redirect) {
+      if (item.useLocale && item.useLocale === false) {
+        return item.link
+      }
       return '/:locale' + localesRegexPattern + item.link
     }
     return item.link
@@ -122,6 +127,16 @@ export default function (Vue, options) {
       } else {
         next()
       }
+    })
+  }
+
+  function _rootPageRedirectToDashboard () {
+    // When user enter on "/" it is redirected to page set on rootPage
+    router.beforeEach(function (to, from, next) {
+      if (to.path === '/' && to.matched.length === 0) {
+        next(rootPage)
+      }
+      next()
     })
   }
 

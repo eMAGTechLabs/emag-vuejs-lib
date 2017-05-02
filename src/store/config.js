@@ -9,11 +9,6 @@ export default {
   user: {
     label: '',
     imageLink: '',
-    account: {
-      label: 'label.accountSettings',
-      link: '',
-      onClick: () => {}
-    },
     logout: {
       label: 'label.logout',
     }
