@@ -2684,7 +2684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	exports.default = {
 	  name: 'datetimepicker',
-	  props: ['dataOptions', 'disabled', 'name'],
+	  props: ['dataOptions', 'disabled', 'name', 'required'],
 	  mixins: [_Datetimepicker2.default],
 	  data: function data() {
 	    return { options: this.getOptions() };
@@ -2706,7 +2706,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	// <template>
 	//     <div class="input-group">
-	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name">
+	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
 	//         <div class="input-group-addon"><i :class="options.icons.date"></i>
 	//         </div>
 	//     </div>
@@ -2806,7 +2806,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 96 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\">\n        <div class=\"input-group-addon\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
+	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\n        <div class=\"input-group-addon\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
 
 /***/ },
 /* 97 */
