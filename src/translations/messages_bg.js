@@ -64,7 +64,7 @@ export default {
       'titleInfo': 'Информация',
       'titleNotice': 'Известия',
       'titleSuccess': 'Yспех',
-      'titleDelete': 'Yспех',
+      'titleDelete': 'Изтрий',
       'viewAll': 'Bиж всички'
     },
     'tree': {

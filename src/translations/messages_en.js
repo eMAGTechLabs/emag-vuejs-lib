@@ -64,7 +64,7 @@ export default {
       'titleInfo': 'Info',
       'titleNotice': 'Notifications',
       'titleSuccess': 'Success',
-      'titleDelete': 'Success',
+      'titleDelete': 'Delete',
       'viewAll': 'View all'
     },
     'tree': {
@@ -78,8 +78,8 @@ export default {
       'textSelectHierarchy': 'Hierarchical multi-selection'
     },
     'chosen': {
-      'multipleText': 'Select Some Options',
-      'singleText': 'Select an Option',
+      'multipleText': 'Select some options',
+      'singleText': 'Select an option',
       'noResult': 'No results match'
     },
     'chosenAjax': {

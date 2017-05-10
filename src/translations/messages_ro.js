@@ -63,8 +63,8 @@ export default {
       'titleError': 'Verificați următoarele erori',
       'titleInfo': 'Info',
       'titleNotice': 'Notificări',
-      'titleSuccess': 'Acțiunea a avut loc cu succes',
-      'titleDelete': 'Ștergerea a avut loc cu succes',
+      'titleSuccess': 'Succes',
+      'titleDelete': 'Șterge',
       'viewAll': 'Vizualizează totul'
     },
     'tree': {

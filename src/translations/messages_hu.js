@@ -64,7 +64,7 @@ export default {
       'titleInfo': 'Info',
       'titleNotice': 'Értesítések',
       'titleSuccess': 'Siker',
-      'titleDelete': 'Siker',
+      'titleDelete': 'Töröl',
       'viewAll': 'Mindet megnéz'
     },
     'tree': {

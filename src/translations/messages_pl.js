@@ -64,7 +64,7 @@ export default {
       'titleInfo': 'Informacje',
       'titleNotice': 'Powiadomienia',
       'titleSuccess': 'Sukces',
-      'titleDelete': 'Sukces',
+      'titleDelete': 'Kasować',
       'viewAll': 'Zobacz wszystko'
     },
     'tree': {
