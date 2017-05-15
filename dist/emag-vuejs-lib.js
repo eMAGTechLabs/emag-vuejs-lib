@@ -2495,9 +2495,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <template>
 	//     <select :id="'autocomplete_' + id" class="form-control" :multiple="options.multiple || multiple ? true : false">
 	//         <option value=''></option>
-	//         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected">
-	//             {{ item.name }}
-	//         </option>
+	//         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected">{{ item.name }}</option>
 	//     </select>
 	// </template>
 	// <script>
@@ -2657,7 +2655,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 93 */
 /***/ (function(module, exports) {
 
-	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\">\n            {{ item.name }}\n        </option>\n    </select>";
+	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\">{{ item.name }}</option>\n    </select>";
 
 /***/ }),
 /* 94 */
