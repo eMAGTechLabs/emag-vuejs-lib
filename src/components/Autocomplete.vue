@@ -1,9 +1,7 @@
 <template>
     <select :id="'autocomplete_' + id" class="form-control" :multiple="options.multiple || multiple ? true : false">
         <option value=''></option>
-        <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected">
-            {{ item.name }}
-        </option>
+        <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected">{{ item.name }}</option>
     </select>
 </template>
 <script>
