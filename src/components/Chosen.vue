@@ -15,8 +15,6 @@
     props: ['dataOptions', 'disabled', 'multiple'],
     mixins: [ generalMixin, chosenMixin ],
     data () {
-      console.log('Chosen - data')
-      console.log(this.getDefaultLang())
       this.translations = translationMessages.translations[this.getDefaultLang()]
       return { options: this.getOptions() }
     },

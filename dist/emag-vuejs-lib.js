@@ -278,8 +278,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  props: ['dataOptions', 'disabled', 'multiple'],
 	  mixins: [_General2.default, _Chosen2.default],
 	  data: function data() {
-	    console.log('Chosen - data');
-	    console.log(this.getDefaultLang());
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
 	    return { options: this.getOptions() };
 	  },
@@ -2329,8 +2327,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  props: ['dataOptions', 'disabled', 'name', 'required'],
 	  mixins: [_General2.default, _TreeType2.default],
 	  data: function data() {
-	    console.log('TreeType - data');
-	    console.log(this.getDefaultLang());
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
 	    return {
 	      options: this.getOptions()
@@ -2397,21 +2393,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	/* eslint-disable no-undef */
 	function getOptions() {
-	  return (0, _assign2.default)({}, {
+	  return (0, _assign2.default)({
 	    treeData: [],
-	    selectId: 'tree_type_' + this._uid
-	  }, this.translations, this.dataOptions);
-	}
-	
-	function initTreeType() {
-	  var self = this;
-	  try {
-	    $('#id_tree_type_' + self._uid).TreeType(self.options);
-	  } catch (ex) {}
-	}
-	
-	function getTranslations() {
-	  return {
+	    selectId: 'tree_type_' + this._uid,
 	    modalTitle: this.translations.tree.modalTitle,
 	    modalResetLabel: this.translations.tree.modalResetLabel,
 	    modalCancelLabel: this.translations.tree.modalCancelLabel,
@@ -2421,7 +2405,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    noResults: this.translations.label.selectNoResults,
 	    textSelected: this.translations.tree.textSelected,
 	    searchPlaceholder: this.translations.tree.searchPlaceholder
-	  };
+	  }, this.dataOptions);
+	}
+	
+	function initTreeType() {
+	  var self = this;
+	  try {
+	    $('#id_tree_type_' + self._uid).TreeType(self.options);
+	  } catch (ex) {}
 	}
 	
 	function updateTreeData(treeData) {
@@ -2438,7 +2429,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  methods: {
 	    getOptions: getOptions,
 	    initTreeType: initTreeType,
-	    getTranslations: getTranslations,
 	    updateTreeData: updateTreeData
 	  }
 	};
@@ -2531,8 +2521,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  data: function data() {
 	    this.id = this._uid;
-	    console.log('Autocomplete - data');
-	    console.log(this.getDefaultLang());
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
 	    return {
 	      options: this.getAutocompleteOptions()

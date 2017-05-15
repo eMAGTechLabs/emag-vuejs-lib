@@ -1,21 +1,8 @@
 /* eslint-disable no-undef */
 function getOptions () {
-  return Object.assign({}, {
+  return Object.assign({
     treeData: [],
-    selectId: 'tree_type_' + this._uid
-  }, this.translations, this.dataOptions)
-}
-
-function initTreeType () {
-  let self = this
-  try {
-    $('#id_tree_type_' + self._uid).TreeType(self.options)
-  } catch (ex) {
-  }
-}
-
-function getTranslations () {
-  return {
+    selectId: 'tree_type_' + this._uid,
     modalTitle: this.translations.tree.modalTitle,
     modalResetLabel: this.translations.tree.modalResetLabel,
     modalCancelLabel: this.translations.tree.modalCancelLabel,
@@ -25,6 +12,14 @@ function getTranslations () {
     noResults: this.translations.label.selectNoResults,
     textSelected: this.translations.tree.textSelected,
     searchPlaceholder: this.translations.tree.searchPlaceholder
+  }, this.dataOptions)
+}
+
+function initTreeType () {
+  let self = this
+  try {
+    $('#id_tree_type_' + self._uid).TreeType(self.options)
+  } catch (ex) {
   }
 }
 
@@ -43,7 +38,6 @@ export default {
   methods: {
     getOptions,
     initTreeType,
-    getTranslations,
     updateTreeData
   }
 }
