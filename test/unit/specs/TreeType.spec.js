@@ -40,21 +40,14 @@ describe('TreeType.vue', () => {
   })
 
   it('should have data method', () => {
-    expect(typeof TreeType.data).to.not.equal('function')
+    expect(typeof TreeType.data).to.equal('function')
   })
 
-  it('should have getTranslations, getOptions, initTreeType object keys on mixin', () => {
-    expect(treeTypeMixins.methods)
-      .to.have.property('getTranslations')
+  it('should have getOptions, initTreeType object keys on mixin', () => {
     expect(treeTypeMixins.methods)
       .to.have.property('getOptions')
     expect(treeTypeMixins.methods)
       .to.have.property('initTreeType')
-  })
-
-  it('should return an translation object on getTranslations method being called', () => {
-    let vm = renderTreeType()
-    expect(Object.prototype.toString.call(vm.getTranslations())).to.equal('[object Object]')
   })
 
   it('should return an object on getOptions method being called', () => {

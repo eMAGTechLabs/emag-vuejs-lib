@@ -1,9 +1,18 @@
 /* eslint-disable no-undef */
 function getOptions () {
-  return Object.assign({}, {
+  return Object.assign({
     treeData: [],
-    selectId: 'tree_type_' + this._uid
-  }, this.translations, this.dataOptions)
+    selectId: 'tree_type_' + this._uid,
+    modalTitle: this.translations.tree.modalTitle,
+    modalResetLabel: this.translations.tree.modalResetLabel,
+    modalCancelLabel: this.translations.tree.modalCancelLabel,
+    modalOkLabel: this.translations.tree.modalOkLabel,
+    textUnmatched: this.translations.tree.textUnmatched,
+    textSelectHierarchy: this.translations.tree.textSelectHierarchy,
+    noResults: this.translations.label.selectNoResults,
+    textSelected: this.translations.tree.textSelected,
+    searchPlaceholder: this.translations.tree.searchPlaceholder
+  }, this.dataOptions)
 }
 
 function initTreeType () {
@@ -11,20 +20,6 @@ function initTreeType () {
   try {
     $('#id_tree_type_' + self._uid).TreeType(self.options)
   } catch (ex) {
-  }
-}
-
-function getTranslations () {
-  return {
-    modalTitle: this.$t('tree.modalTitle'),
-    modalResetLabel: this.$t('tree.modalResetLabel'),
-    modalCancelLabel: this.$t('tree.modalCancelLabel'),
-    modalOkLabel: this.$t('tree.modalOkLabel'),
-    textUnmatched: this.$t('tree.textUnmatched'),
-    textSelectHierarchy: this.$t('tree.textSelectHierarchy'),
-    noResults: this.$t('label.selectNoResults'),
-    textSelected: this.$t('tree.textSelected'),
-    searchPlaceholder: this.$t('tree.searchPlaceholder')
   }
 }
 
@@ -43,7 +38,6 @@ export default {
   methods: {
     getOptions,
     initTreeType,
-    getTranslations,
     updateTreeData
   }
 }

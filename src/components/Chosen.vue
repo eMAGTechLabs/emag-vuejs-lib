@@ -8,17 +8,19 @@
 </template>
 <script>
   import translationMessages from './../translations/messages'
+  import generalMixin from './../mixins/General'
   import chosenMixin from './../mixins/Chosen'
   export default {
     name: 'chosen',
     props: ['dataOptions', 'disabled', 'multiple'],
-    mixins: [ chosenMixin ],
+    mixins: [ generalMixin, chosenMixin ],
     data () {
-      return { options: this.getOptions(translationMessages) }
+      this.translations = translationMessages.translations[this.getDefaultLang()]
+      return { options: this.getOptions() }
     },
     beforeMount () {
       this.unwatch = this.$watch('dataOptions', function (data) {
-        this.options = this.getOptions(translationMessages)
+        this.options = this.getOptions()
         this.destroyChosen()
         this.initChosen()
         this.updateChosen()
