@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-  import TranslationMessages from './../translations/messages'
+  import translationMessages from './../translations/messages'
   import generalMixin from './../mixins/General'
   import treeType from './../mixins/TreeType'
   export default {
@@ -25,7 +25,8 @@
     props: ['dataOptions', 'disabled', 'name', 'required'],
     mixins: [ generalMixin, treeType ],
     data () {
-      this.translations = TranslationMessages.translations[this.getDefaultLang()]
+      this.translations = translationMessages.translations[this.getDefaultLang()]
+      return {}
     },
     computed: {
       options: function () {

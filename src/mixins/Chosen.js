@@ -1,9 +1,6 @@
-import chosenMixin from './General'
-
 /* eslint-disable no-undef */
-function getOptions (translationMessages) {
+function getOptions () {
   this.id = this._uid
-  this.translations = translationMessages.translations[getDefaultLang.call(this)]
   return Object.assign({}, {
     placeholder_text_multiple: this.translations.chosen.multipleText,
     placeholder_text_single: this.translations.chosen.singleText,

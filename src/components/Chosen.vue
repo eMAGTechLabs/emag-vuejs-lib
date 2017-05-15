@@ -15,11 +15,12 @@
     props: ['dataOptions', 'disabled', 'multiple'],
     mixins: [ generalMixin, chosenMixin ],
     data () {
-      return { options: this.getOptions(translationMessages) }
+      this.translations = translationMessages.translations[this.getDefaultLang()]
+      return { options: this.getOptions() }
     },
     beforeMount () {
       this.unwatch = this.$watch('dataOptions', function (data) {
-        this.options = this.getOptions(translationMessages)
+        this.options = this.getOptions()
         this.destroyChosen()
         this.initChosen()
         this.updateChosen()

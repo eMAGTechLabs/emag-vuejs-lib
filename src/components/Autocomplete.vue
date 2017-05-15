@@ -7,7 +7,7 @@
     </select>
 </template>
 <script>
-  import TranslationMessages from './../translations/messages'
+  import translationMessages from './../translations/messages'
   import generalMixin from './../mixins/General'
   import chosenMixin from '../mixins/Chosen'
   import autocompleteMixin from '../mixins/Autocomplete'
@@ -32,7 +32,7 @@
     },
     data () {
       this.id = this._uid
-      this.translations = TranslationMessages.translations[this.getDefaultLang()]
+      this.translations = translationMessages.translations[this.getDefaultLang()]
       return {
         options: this.getAutocompleteOptions()
       }

@@ -278,11 +278,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  props: ['dataOptions', 'disabled', 'multiple'],
 	  mixins: [_General2.default, _Chosen2.default],
 	  data: function data() {
-	    return { options: this.getOptions(_messages2.default) };
+	    this.translations = _messages2.default.translations[this.getDefaultLang()];
+	    return { options: this.getOptions() };
 	  },
 	  beforeMount: function beforeMount() {
 	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      this.options = this.getOptions(_messages2.default);
+	      this.options = this.getOptions();
 	      this.destroyChosen();
 	      this.initChosen();
 	      this.updateChosen();
@@ -1618,16 +1619,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _General = __webpack_require__(61);
-	
-	var _General2 = _interopRequireDefault(_General);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	/* eslint-disable no-undef */
-	function getOptions(translationMessages) {
+	function getOptions() {
 	  this.id = this._uid;
-	  this.translations = translationMessages.translations[getDefaultLang.call(this)];
 	  return (0, _assign2.default)({}, {
 	    placeholder_text_multiple: this.translations.chosen.multipleText,
 	    placeholder_text_single: this.translations.chosen.singleText,
@@ -2332,6 +2328,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [_General2.default, _TreeType2.default],
 	  data: function data() {
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
+	    return {};
 	  },
 	
 	  computed: {
