@@ -278,6 +278,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  props: ['dataOptions', 'disabled', 'multiple'],
 	  mixins: [_General2.default, _Chosen2.default],
 	  data: function data() {
+	    console.log('data');
+	    console.log(this.getDefaultLang());
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
 	    return { options: this.getOptions() };
 	  },
@@ -2327,6 +2329,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  props: ['dataOptions', 'disabled', 'name', 'required'],
 	  mixins: [_General2.default, _TreeType2.default],
 	  data: function data() {
+	    console.log('data');
+	    console.log(this.getDefaultLang());
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
 	    return {};
 	  },
@@ -2530,6 +2534,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  data: function data() {
 	    this.id = this._uid;
+	    console.log('data');
+	    console.log(this.getDefaultLang());
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
 	    return {
 	      options: this.getAutocompleteOptions()
