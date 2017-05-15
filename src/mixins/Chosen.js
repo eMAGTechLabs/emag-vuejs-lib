@@ -1,3 +1,5 @@
+import chosenMixin from './General'
+
 /* eslint-disable no-undef */
 function getOptions (translationMessages) {
   this.id = this._uid

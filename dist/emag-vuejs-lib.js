@@ -1618,6 +1618,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
+	var _General = __webpack_require__(61);
+	
+	var _General2 = _interopRequireDefault(_General);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	/* eslint-disable no-undef */
