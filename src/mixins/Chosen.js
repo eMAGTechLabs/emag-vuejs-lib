@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
-function getOptions (translationMessages) {
+function getOptions () {
   this.id = this._uid
-  this.translations = translationMessages.translations[getDefaultLang.call(this)]
   return Object.assign({}, {
     placeholder_text_multiple: this.translations.chosen.multipleText,
     placeholder_text_single: this.translations.chosen.singleText,
@@ -28,17 +27,9 @@ function destroyChosen () {
   } catch (ex) {}
 }
 
-function getDefaultLang () {
-  if (this.$store.state.config && this.$store.state.config.locale) {
-    return this.$store.state.config.locale.key
-  }
-  return 'en_GB'
-}
-
 export default {
   methods: {
     getOptions: getOptions,
-    getDefaultLang: getDefaultLang,
     initChosen: initChosen,
     destroyChosen: destroyChosen,
     updateChosen: updateChosen
