@@ -25,14 +25,11 @@
     props: ['dataOptions', 'disabled', 'name', 'required'],
     mixins: [ generalMixin, treeType ],
     data () {
-      console.log('data')
+      console.log('TreeType - data')
       console.log(this.getDefaultLang())
       this.translations = translationMessages.translations[this.getDefaultLang()]
-      return {}
-    },
-    computed: {
-      options: function () {
-        return this.getOptions()
+      return {
+          options: this.getOptions()
       }
     },
     methods: {
