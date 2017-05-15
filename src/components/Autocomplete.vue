@@ -32,6 +32,8 @@
     },
     data () {
       this.id = this._uid
+      console.log('data')
+      console.log(this.getDefaultLang())
       this.translations = translationMessages.translations[this.getDefaultLang()]
       return {
         options: this.getAutocompleteOptions()

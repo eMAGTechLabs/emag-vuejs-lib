@@ -25,6 +25,8 @@
     props: ['dataOptions', 'disabled', 'name', 'required'],
     mixins: [ generalMixin, treeType ],
     data () {
+      console.log('data')
+      console.log(this.getDefaultLang())
       this.translations = translationMessages.translations[this.getDefaultLang()]
       return {}
     },
