@@ -40,7 +40,7 @@ describe('TreeType.vue', () => {
   })
 
   it('should have data method', () => {
-    expect(typeof TreeType.data).to.not.equal('function')
+    expect(typeof TreeType.data).to.equal('function')
   })
 
   it('should have getTranslations, getOptions, initTreeType object keys on mixin', () => {

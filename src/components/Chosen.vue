@@ -8,11 +8,12 @@
 </template>
 <script>
   import translationMessages from './../translations/messages'
+  import generalMixin from './../mixins/General'
   import chosenMixin from './../mixins/Chosen'
   export default {
     name: 'chosen',
     props: ['dataOptions', 'disabled', 'multiple'],
-    mixins: [ chosenMixin ],
+    mixins: [ generalMixin, chosenMixin ],
     data () {
       return { options: this.getOptions(translationMessages) }
     },

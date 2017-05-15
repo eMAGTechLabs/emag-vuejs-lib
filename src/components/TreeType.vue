@@ -17,17 +17,19 @@
   </div>
 </template>
 <script>
+  import TranslationMessages from './../translations/messages'
+  import generalMixin from './../mixins/General'
   import treeType from './../mixins/TreeType'
   export default {
     name: 'tree-type',
     props: ['dataOptions', 'disabled', 'name', 'required'],
-    mixins: [ treeType ],
+    mixins: [ generalMixin, treeType ],
+    data () {
+      this.translations = TranslationMessages.translations[this.getDefaultLang()]
+    },
     computed: {
       options: function () {
         return this.getOptions()
-      },
-      translations: function () {
-        return this.getTranslations()
       }
     },
     methods: {
@@ -35,11 +37,6 @@
         try {
           this.$el.querySelector('#id_tree_type_' + this._uid).click()
         } catch (ex) {}
-      }
-    },
-    watch: {
-      translations: function () {
-        this.initTreeType()
       }
     },
     beforeMount () {

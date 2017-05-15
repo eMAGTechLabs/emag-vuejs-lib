@@ -8,6 +8,7 @@
 </template>
 <script>
   import TranslationMessages from './../translations/messages'
+  import generalMixin from './../mixins/General'
   import chosenMixin from '../mixins/Chosen'
   import autocompleteMixin from '../mixins/Autocomplete'
   /* eslint-disable no-undef */
@@ -25,7 +26,7 @@
         }
       }
     },
-    mixins: [ chosenMixin, autocompleteMixin ],
+    mixins: [ generalMixin, chosenMixin, autocompleteMixin ],
     updated () {
       this.updateAutocomplete()
     },
