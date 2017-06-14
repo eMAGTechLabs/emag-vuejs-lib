@@ -8,7 +8,7 @@
                         <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
                     </button>
                 </div>
-                <a class="navbar-brand" href="javascript:void(0)">
+                <a class="navbar-brand" :href="logoLink">
                     <img v-if="logoPath" :src="logoPath"/>
                 </a>
                 <div class="nav-controls visible-xs-inline-block pull-right">
@@ -35,6 +35,7 @@
     data () {
       return {
         logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
+        logoLink: this.dataOptions ? this.dataOptions.logoLink : '/',
         appName: this.dataOptions ? this.dataOptions.appName : '',
         currentView: this.headerChildren
       }
