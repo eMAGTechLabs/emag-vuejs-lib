@@ -8,7 +8,7 @@
                         <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
                     </button>
                 </div>
-                <a class="navbar-brand" href="#" v-on:click.stop="changeRoute(logoRoute)">
+                <a class="navbar-brand" href="#">
                     <img v-if="logoPath" :src="logoPath"/>
                 </a>
                 <div class="nav-controls visible-xs-inline-block pull-right">
