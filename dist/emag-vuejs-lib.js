@@ -1600,8 +1600,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function changeRoute(newRoute) {
-	  var router = Vue.helpers.getVueRouter();
-	  router.push({ name: newRoute });
+	  this.$router.push({ name: newRoute });
 	}
 	
 	exports.default = {
@@ -1743,7 +1742,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//                         <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
 	//                     </button>
 	//                 </div>
-	//                 <a class="navbar-brand" href="#">
+	//                 <a class="navbar-brand" href="#" v-on:click.stop="changeRoute(logoRoute)">
 	//                     <img v-if="logoPath" :src="logoPath"/>
 	//                 </a>
 	//                 <div class="nav-controls visible-xs-inline-block pull-right">
@@ -1769,7 +1768,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 66 */
 /***/ (function(module, exports) {
 
-	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <div class=\"nav-controls visible-xs-inline-block pull-left\">\n                    <button id=\"toggle-sidebar-btn\" type=\"button\" class=\"btn btn-default navbar-btn\"\n                            aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle sidepanel</span><i class=\"fa fa-bars\"></i>\n                    </button>\n                </div>\n                <a class=\"navbar-brand\" href=\"#\">\n                    <img v-if=\"logoPath\" :src=\"logoPath\"/>\n                </a>\n                <div class=\"nav-controls visible-xs-inline-block pull-right\">\n                    <button id=\"toggle-nav-btn\" type=\"button\" class=\"btn btn-default navbar-btn\" data-toggle=\"collapse\"\n                            data-target=\"#main-nav\" aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle navigation</span><i class=\"fa fa-angle-down\"></i>\n                    </button>\n                </div>\n            </div>\n            <div class=\"collapse navbar-collapse\" id=\"main-nav\">\n                <h4 class=\"navbar-text\" v-if=\"appName\">{{ appName }}</h4>\n                <ul class=\"nav navbar-nav navbar-right\" v-if=\"headerChildren\">\n                  <component v-bind:is=\"view.component\" v-for=\"view in currentView\" :key=\"view.name\" :dataOptions=\"view.options\">\n                  </component>\n                </ul>\n            </div>\n        </div>\n    </nav>";
+	module.exports = "<nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <div class=\"nav-controls visible-xs-inline-block pull-left\">\n                    <button id=\"toggle-sidebar-btn\" type=\"button\" class=\"btn btn-default navbar-btn\"\n                            aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle sidepanel</span><i class=\"fa fa-bars\"></i>\n                    </button>\n                </div>\n                <a class=\"navbar-brand\" href=\"#\" v-on:click.stop=\"changeRoute(logoRoute)\">\n                    <img v-if=\"logoPath\" :src=\"logoPath\"/>\n                </a>\n                <div class=\"nav-controls visible-xs-inline-block pull-right\">\n                    <button id=\"toggle-nav-btn\" type=\"button\" class=\"btn btn-default navbar-btn\" data-toggle=\"collapse\"\n                            data-target=\"#main-nav\" aria-expanded=\"false\">\n                        <span class=\"sr-only\">Toggle navigation</span><i class=\"fa fa-angle-down\"></i>\n                    </button>\n                </div>\n            </div>\n            <div class=\"collapse navbar-collapse\" id=\"main-nav\">\n                <h4 class=\"navbar-text\" v-if=\"appName\">{{ appName }}</h4>\n                <ul class=\"nav navbar-nav navbar-right\" v-if=\"headerChildren\">\n                  <component v-bind:is=\"view.component\" v-for=\"view in currentView\" :key=\"view.name\" :dataOptions=\"view.options\">\n                  </component>\n                </ul>\n            </div>\n        </div>\n    </nav>";
 
 /***/ }),
 /* 67 */

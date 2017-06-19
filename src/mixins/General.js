@@ -6,13 +6,12 @@ function getDefaultLang () {
 }
 
 function changeRoute (newRoute) {
-  let router = Vue.helpers.getVueRouter()
-  router.push({name: newRoute})
+  this.$router.push({name: newRoute})
 }
 
 export default {
   methods: {
-    getDefaultLang: getDefaultLang,
-    changeRoute: changeRoute
+    getDefaultLang,
+    changeRoute
   }
 }
