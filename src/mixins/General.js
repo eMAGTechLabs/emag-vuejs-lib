@@ -5,8 +5,13 @@ function getDefaultLang () {
   return 'en_GB'
 }
 
+function changeRoute (newRoute) {
+  this.$router.push({name: newRoute})
+}
+
 export default {
   methods: {
-    getDefaultLang: getDefaultLang
+    getDefaultLang: getDefaultLang,
+    changeRoute: changeRoute
   }
 }
