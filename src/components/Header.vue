@@ -29,9 +29,11 @@
     </nav>
 </template>
 <script>
+  import generalMixin from './../mixins/General'
   export default {
     name: 'header',
     props: ['dataOptions', 'headerChildren'],
+    mixins: [ generalMixin ],
     data () {
       return {
         logoPath: this.dataOptions ? this.dataOptions.logoPath : '',

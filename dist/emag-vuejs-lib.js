@@ -1696,13 +1696,42 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ }),
 /* 65 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _General = __webpack_require__(61);
+	
+	var _General2 = _interopRequireDefault(_General);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  name: 'header',
+	  props: ['dataOptions', 'headerChildren'],
+	  mixins: [_General2.default],
+	  data: function data() {
+	    return {
+	      logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
+	      logoRoute: this.dataOptions ? this.dataOptions.logoRoute : '',
+	      appName: this.dataOptions ? this.dataOptions.appName : '',
+	      currentView: this.headerChildren
+	    };
+	  },
+	  beforeMount: function beforeMount() {
+	    this.unwatch = this.$watch('currentView', function (data) {
+	      this.currentView = this.headerChildren;
+	    }, { deep: true });
+	  },
+	  destroy: function destroy() {
+	    this.unwatch();
+	  }
+	};
+	// </script>
 	// <template>
 	//     <nav class="navbar navbar-default navbar-fixed-top">
 	//         <div class="container-fluid">
@@ -1734,27 +1763,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     </nav>
 	// </template>
 	// <script>
-	exports.default = {
-	  name: 'header',
-	  props: ['dataOptions', 'headerChildren'],
-	  data: function data() {
-	    return {
-	      logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
-	      logoRoute: this.dataOptions ? this.dataOptions.logoRoute : '',
-	      appName: this.dataOptions ? this.dataOptions.appName : '',
-	      currentView: this.headerChildren
-	    };
-	  },
-	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('currentView', function (data) {
-	      this.currentView = this.headerChildren;
-	    }, { deep: true });
-	  },
-	  destroy: function destroy() {
-	    this.unwatch();
-	  }
-	};
-	// </script>
 
 /***/ }),
 /* 66 */
