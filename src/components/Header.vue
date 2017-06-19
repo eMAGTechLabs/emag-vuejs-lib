@@ -8,7 +8,7 @@
                         <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
                     </button>
                 </div>
-                <a class="navbar-brand" href="#" v-on:click.stop="changeRoute(logoRoute)">
+                <a class="navbar-brand" href="#" v-on:click.stop="this.$router.push({name: logoRoute})">
                     <img v-if="logoPath" :src="logoPath"/>
                 </a>
                 <div class="nav-controls visible-xs-inline-block pull-right">
@@ -39,21 +39,6 @@
         appName: this.dataOptions ? this.dataOptions.appName : '',
         currentView: this.headerChildren
       }
-    },
-    methods: {
-
-      changeRoute (newRoute) {
-
-        if(newRoute === 'undefined')
-          return
-
-        let router = this.$router
-        let route = this.$route
-
-        router.push('/' + route.params.locale + '/' + newRoute)
-
-      }
-
     },
     beforeMount () {
       this.unwatch = this.$watch('currentView', function (data) {
