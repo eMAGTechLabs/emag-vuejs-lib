@@ -1600,7 +1600,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function changeRoute(newRoute) {
-	  this.$router.push({ name: newRoute });
+	  var router = Vue.helpers.getVueRouter();
+	  router.push({ name: newRoute });
 	}
 	
 	exports.default = {
