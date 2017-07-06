@@ -8,7 +8,7 @@
                         <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
                     </button>
                 </div>
-                <a class="navbar-brand" href="javascript:void(0)">
+                <a class="navbar-brand" href="javascript:void(0)" @click.stop.prevent="changeRoute(logoRoute)">
                     <img v-if="logoPath" :src="logoPath"/>
                 </a>
                 <div class="nav-controls visible-xs-inline-block pull-right">
@@ -29,12 +29,15 @@
     </nav>
 </template>
 <script>
+  import generalMixin from './../mixins/General'
   export default {
     name: 'header',
     props: ['dataOptions', 'headerChildren'],
+    mixins: [ generalMixin ],
     data () {
       return {
         logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
+        logoRoute: this.dataOptions ? this.dataOptions.logoRoute : '',
         appName: this.dataOptions ? this.dataOptions.appName : '',
         currentView: this.headerChildren
       }
