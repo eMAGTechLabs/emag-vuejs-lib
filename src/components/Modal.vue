@@ -16,7 +16,7 @@
                     <div class="pull-right panel-controls">
                         <slot name="footerButtons">
                             <template v-if="type === 'form'">
-                                <button type="button" class="btn btn-success btnSubmit"><span>{{ $t("label.save") }}</span></button>
+                                <button type="button" class="btn btn-success modal-btn-submit"><span>{{ $t("label.save") }}</span></button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal"><span><i class="fa fa-times"></i> {{ $t("label.cancel") }}</span></button>
                             </template>
                             <template v-else-if="type === 'preview'">
