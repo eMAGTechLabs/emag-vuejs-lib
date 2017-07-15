@@ -1,13 +1,13 @@
 <template>
-    <div class="modal fade" :id="'modal_' + id" tabindex="-1" role="dialog" :aria-labelledby="'autocomplete_' + id + 'Label'" :data-backdrop="dataBackdrop" :data-keyboard="dataKeyboard">
-        <div :class="modal-dialog ' + modalDialogClass" role="document">
+    <div class="modal fade" :id="'modal_' + id" tabindex="-1" role="dialog" :data-modal-identifier="modalIdentifier" :aria-labelledby="'modal_' + id + 'Label'" :data-backdrop="dataBackdrop" :data-keyboard="dataKeyboard">
+        <div :class="'modal-dialog ' + modalDialogClass" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button v-if="showCloseButton" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-remove"></i></span></button>
-                    <h4 class="modal-title" :id="'autocomplete_' + id + 'Label'"><slot name="title"></slot></h4>
+                    <h4 class="modal-title" :id="'modal_' + id + 'Label'"><slot name="title"></slot></h4>
                 </div>
                 <div class="modal-body">
-                    <slot name="content"></slot>
+                    <slot></slot>
                 </div>
                 <div class="modal-footer">
                     <div class="pull-left">
@@ -31,39 +31,39 @@
     </div>
 </template>
 <script>
-  import translationMessages from './../translations/messages'
-  import generalMixin from './../mixins/General'
-  import modalMixin from './../mixins/Modal'
+    import translationMessages from './../translations/messages'
+    import generalMixin from './../mixins/General'
+    import modalMixin from './../mixins/Modal'
 
-  export default {
-    name: 'modal',
-    props: {
-        closeOnClickOutside: { type: Boolean, default: true },
-        recreateOnShow: { type: Boolean, default: true },
-        showCloseButton: { type: Boolean, default: true },
-        size: { type: String, default: '' },
-        type: { type: String, default: 'default' }
-    },
-    mixins: [ generalMixin, modalMixin ],
-    updated () {
-      this.updateAutocomplete()
-    },
+    export default {
+        name: 'modal',
+        props: {
+            closeOnClickOutside: { type: Boolean, default: true },
+            customClass: { type: String, default: '' },
+            modalIdentifier: { type: String, default: '' },
+            recreateOnShow: { type: Boolean, default: true },
+            showCloseButton: { type: Boolean, default: true },
+            size: { type: String, default: '' },
+            type: { type: String, default: 'default' }
+        },
+        mixins: [ generalMixin, modalMixin ],
+        updated () {},
     data () {
-      this.id = this._uid
-      this.translations = translationMessages.translations[this.getDefaultLang()]
+        this.id = this._uid
+        this.translations = translationMessages.translations[this.getDefaultLang()]
 
-      return {
-          modalDialogClass: this.getModalDialogClass(),
-          dataBackdrop: closeOnClickOutside === false ? 'static' : 'true',
-          dataKeyboard: closeOnClickOutside === false ? 'false' : 'true'
-      }
+        return {
+            modalDialogClass: this.getModalDialogClass(),
+            dataBackdrop: this.closeOnClickOutside === false ? 'static' : 'true',
+            dataKeyboard: this.closeOnClickOutside === false ? 'false' : 'true'
+        }
     },
     beforeMount () {},
     mounted () {
-      this.moveModalToPopSpace()
+        this.moveModalToPopSpace()
     },
     destroyed () {
-      this.destroyModal()
+        this.destroyModal()
     }
-  }
+    }
 </script>

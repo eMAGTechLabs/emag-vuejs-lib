@@ -2708,7 +2708,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	
 	var _messages = __webpack_require__(19);
@@ -2726,42 +2726,42 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	  name: 'modal',
-	  props: {
-	    closeOnClickOutside: { type: Boolean, default: true },
-	    recreateOnShow: { type: Boolean, default: true },
-	    showCloseButton: { type: Boolean, default: true },
-	    size: { type: String, default: '' },
-	    type: { type: String, default: 'default' }
-	  },
-	  mixins: [_General2.default, _Modal2.default],
-	  updated: function updated() {
-	    this.updateAutocomplete();
-	  },
-	  data: function data() {
-	    this.id = this._uid;
-	    this.translations = _messages2.default.translations[this.getDefaultLang()];
+	    name: 'modal',
+	    props: {
+	        closeOnClickOutside: { type: Boolean, default: true },
+	        customClass: { type: String, default: '' },
+	        modalIdentifier: { type: String, default: '' },
+	        recreateOnShow: { type: Boolean, default: true },
+	        showCloseButton: { type: Boolean, default: true },
+	        size: { type: String, default: '' },
+	        type: { type: String, default: 'default' }
+	    },
+	    mixins: [_General2.default, _Modal2.default],
+	    updated: function updated() {},
+	    data: function data() {
+	        this.id = this._uid;
+	        this.translations = _messages2.default.translations[this.getDefaultLang()];
 	
-	    return {
-	      modalDialogClass: this.getModalDialogClass(),
-	      dataBackdrop: closeOnClickOutside === false ? 'static' : 'true',
-	      dataKeyboard: closeOnClickOutside === false ? 'false' : 'true'
-	    };
-	  },
-	  beforeMount: function beforeMount() {},
-	  mounted: function mounted() {
-	    this.moveModalToPopSpace();
-	  },
-	  destroyed: function destroyed() {
-	    this.destroyModal();
-	  }
+	        return {
+	            modalDialogClass: this.getModalDialogClass(),
+	            dataBackdrop: this.closeOnClickOutside === false ? 'static' : 'true',
+	            dataKeyboard: this.closeOnClickOutside === false ? 'false' : 'true'
+	        };
+	    },
+	    beforeMount: function beforeMount() {},
+	    mounted: function mounted() {
+	        this.moveModalToPopSpace();
+	    },
+	    destroyed: function destroyed() {
+	        this.destroyModal();
+	    }
 	};
 	// </script>
 	// <template>
 	
-	//     <div class="modal fade" :id="'modal_' + id" tabindex="-1" role="dialog" :aria-labelledby="'autocomplete_' + id + 'Label'" :data-backdrop="dataBackdrop" :data-keyboard="dataKeyboard">
+	//     <div class="modal fade" :id="'modal_' + id" tabindex="-1" role="dialog" :data-modal-identifier="modalIdentifier" :aria-labelledby="'modal_' + id + 'Label'" :data-backdrop="dataBackdrop" :data-keyboard="dataKeyboard">
 	
-	//         <div :class="modal-dialog ' + modalDialogClass" role="document">
+	//         <div :class="'modal-dialog ' + modalDialogClass" role="document">
 	
 	//             <div class="modal-content">
 	
@@ -2769,13 +2769,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//                     <button v-if="showCloseButton" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-remove"></i></span></button>
 	
-	//                     <h4 class="modal-title" :id="'autocomplete_' + id + 'Label'"><slot name="title"></slot></h4>
+	//                     <h4 class="modal-title" :id="'modal_' + id + 'Label'"><slot name="title"></slot></h4>
 	
 	//                 </div>
 	
 	//                 <div class="modal-body">
 	
-	//                     <slot name="content"></slot>
+	//                     <slot></slot>
 	
 	//                 </div>
 	
@@ -2832,12 +2832,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	/* eslint-disable no-undef */
 	function moveModalToPopSpace() {
-	  $('#modal_' + this.id).detach().appendTo('pop_space');
+	  $('#modal_' + this.id).detach().appendTo('#pop_space');
 	}
 	
 	function getModalDialogClass() {
-	  return getSizeCssClass();
+	  var dialogClasses = [];
+	  var sizeCssClass = this.getSizeCssClass();
+	
+	  if (this.customClass) {
+	    dialogClasses.push(this.customClass);
+	  }
+	
+	  if (sizeCssClass) {
+	    dialogClasses.push(sizeCssClass);
+	  }
+	
+	  return '' + dialogClasses.join(' ');
 	}
 	
 	function destroyModal() {
@@ -2859,7 +2871,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  methods: {
 	    moveModalToPopSpace: moveModalToPopSpace,
 	    getModalDialogClass: getModalDialogClass,
-	    destroyModal: destroyModal
+	    destroyModal: destroyModal,
+	    getSizeCssClass: getSizeCssClass
 	  }
 	};
 
@@ -2867,7 +2880,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 98 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"modal fade\" :id=\"'modal_' + id\" tabindex=\"-1\" role=\"dialog\" :aria-labelledby=\"'autocomplete_' + id + 'Label'\" :data-backdrop=\"dataBackdrop\" :data-keyboard=\"dataKeyboard\">\r\n        <div :class=\"modal-dialog ' + modalDialogClass\" role=\"document\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <button v-if=\"showCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\"><i class=\"fa fa-remove\"></i></span></button>\r\n                    <h4 class=\"modal-title\" :id=\"'autocomplete_' + id + 'Label'\"><slot name=\"title\"></slot></h4>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <slot name=\"content\"></slot>\r\n                </div>\r\n                <div class=\"modal-footer\">\r\n                    <div class=\"pull-left\">\r\n                        <slot name=\"footerText\"></slot>\r\n                    </div>\r\n                    <div class=\"pull-right panel-controls\">\r\n                        <slot name=\"footerButtons\">\r\n                            <template v-if=\"type === 'form'\">\r\n                                <button type=\"button\" class=\"btn btn-success btnSubmit\"><span>{{ $t(\"label.save\") }}</span></button>\r\n                                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> {{ $t(\"label.cancel\") }}</span></button>\r\n                            </template>\r\n                            <template v-else-if=\"type === 'preview'\">\r\n                                <button type=\"button\" class=\"btn btn-link\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> {{ $t(\"label.cancel\") }}</span></button>\r\n                            </template>\r\n                        </slot>\r\n                    </div>\r\n                </div>\r\n                <div class=\"pull-left\"></div>\r\n            </div>\r\n        </div>\r\n    </div>";
+	module.exports = "<div class=\"modal fade\" :id=\"'modal_' + id\" tabindex=\"-1\" role=\"dialog\" :data-modal-identifier=\"modalIdentifier\" :aria-labelledby=\"'modal_' + id + 'Label'\" :data-backdrop=\"dataBackdrop\" :data-keyboard=\"dataKeyboard\">\r\n        <div :class=\"'modal-dialog ' + modalDialogClass\" role=\"document\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <button v-if=\"showCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\"><i class=\"fa fa-remove\"></i></span></button>\r\n                    <h4 class=\"modal-title\" :id=\"'modal_' + id + 'Label'\"><slot name=\"title\"></slot></h4>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <slot></slot>\r\n                </div>\r\n                <div class=\"modal-footer\">\r\n                    <div class=\"pull-left\">\r\n                        <slot name=\"footerText\"></slot>\r\n                    </div>\r\n                    <div class=\"pull-right panel-controls\">\r\n                        <slot name=\"footerButtons\">\r\n                            <template v-if=\"type === 'form'\">\r\n                                <button type=\"button\" class=\"btn btn-success btnSubmit\"><span>{{ $t(\"label.save\") }}</span></button>\r\n                                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> {{ $t(\"label.cancel\") }}</span></button>\r\n                            </template>\r\n                            <template v-else-if=\"type === 'preview'\">\r\n                                <button type=\"button\" class=\"btn btn-link\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> {{ $t(\"label.cancel\") }}</span></button>\r\n                            </template>\r\n                        </slot>\r\n                    </div>\r\n                </div>\r\n                <div class=\"pull-left\"></div>\r\n            </div>\r\n        </div>\r\n    </div>";
 
 /***/ },
 /* 99 */
