@@ -2708,7 +2708,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _messages = __webpack_require__(19);
@@ -2726,35 +2726,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
-	    name: 'modal',
-	    props: {
-	        closeOnClickOutside: { type: Boolean, default: true },
-	        customClass: { type: String, default: '' },
-	        modalIdentifier: { type: String, default: '' },
-	        recreateOnShow: { type: Boolean, default: true },
-	        showCloseButton: { type: Boolean, default: true },
-	        size: { type: String, default: '' },
-	        type: { type: String, default: 'default' }
-	    },
-	    mixins: [_General2.default, _Modal2.default],
-	    updated: function updated() {},
-	    data: function data() {
-	        this.id = this._uid;
-	        this.translations = _messages2.default.translations[this.getDefaultLang()];
+	  name: 'modal',
+	  props: {
+	    closeOnClickOutside: { type: Boolean, default: true },
+	    customClass: { type: String, default: '' },
+	    modalIdentifier: { type: String, default: '' },
+	    recreateOnShow: { type: Boolean, default: true },
+	    showCloseButton: { type: Boolean, default: true },
+	    size: { type: String, default: '' },
+	    type: { type: String, default: 'default' }
+	  },
+	  mixins: [_General2.default, _Modal2.default],
+	  data: function data() {
+	    this.id = this._uid;
+	    this.translations = _messages2.default.translations[this.getDefaultLang()];
 	
-	        return {
-	            modalDialogClass: this.getModalDialogClass(),
-	            dataBackdrop: this.closeOnClickOutside === false ? 'static' : 'true',
-	            dataKeyboard: this.closeOnClickOutside === false ? 'false' : 'true'
-	        };
-	    },
-	    beforeMount: function beforeMount() {},
-	    mounted: function mounted() {
-	        this.moveModalToPopSpace();
-	    },
-	    destroyed: function destroyed() {
-	        this.destroyModal();
-	    }
+	    return {
+	      modalDialogClass: this.getModalDialogClass(),
+	      dataBackdrop: this.closeOnClickOutside ? 'true' : 'static',
+	      dataKeyboard: this.closeOnClickOutside ? 'true' : 'false'
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.moveModalToPopSpace();
+	  },
+	  destroyed: function destroyed() {
+	    this.destroyModal();
+	  }
 	};
 	// </script>
 	// <template>

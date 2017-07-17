@@ -31,39 +31,37 @@
     </div>
 </template>
 <script>
-    import translationMessages from './../translations/messages'
-    import generalMixin from './../mixins/General'
-    import modalMixin from './../mixins/Modal'
+  import translationMessages from './../translations/messages'
+  import generalMixin from './../mixins/General'
+  import modalMixin from './../mixins/Modal'
 
-    export default {
-        name: 'modal',
-        props: {
-            closeOnClickOutside: { type: Boolean, default: true },
-            customClass: { type: String, default: '' },
-            modalIdentifier: { type: String, default: '' },
-            recreateOnShow: { type: Boolean, default: true },
-            showCloseButton: { type: Boolean, default: true },
-            size: { type: String, default: '' },
-            type: { type: String, default: 'default' }
-        },
-        mixins: [ generalMixin, modalMixin ],
-        updated () {},
-    data () {
-        this.id = this._uid
-        this.translations = translationMessages.translations[this.getDefaultLang()]
-
-        return {
-            modalDialogClass: this.getModalDialogClass(),
-            dataBackdrop: this.closeOnClickOutside === false ? 'static' : 'true',
-            dataKeyboard: this.closeOnClickOutside === false ? 'false' : 'true'
-        }
+  export default {
+    name: 'modal',
+    props: {
+      closeOnClickOutside: { type: Boolean, default: true },
+      customClass: { type: String, default: '' },
+      modalIdentifier: { type: String, default: '' },
+      recreateOnShow: { type: Boolean, default: true },
+      showCloseButton: { type: Boolean, default: true },
+      size: { type: String, default: '' },
+      type: { type: String, default: 'default' }
     },
-    beforeMount () {},
+    mixins: [ generalMixin, modalMixin ],
+    data () {
+      this.id = this._uid
+      this.translations = translationMessages.translations[this.getDefaultLang()]
+
+      return {
+        modalDialogClass: this.getModalDialogClass(),
+        dataBackdrop: this.closeOnClickOutside ? 'true' : 'static',
+        dataKeyboard: this.closeOnClickOutside ? 'true' : 'false'
+      }
+    },
     mounted () {
-        this.moveModalToPopSpace()
+      this.moveModalToPopSpace()
     },
     destroyed () {
-        this.destroyModal()
+      this.destroyModal()
     }
-    }
+  }
 </script>
