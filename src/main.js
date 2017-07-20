@@ -8,6 +8,7 @@ import TreeType from './components/TreeType'
 import Submenu from './components/Submenu'
 import SidebarControl from './components/SidebarControl'
 import Autocomplete from './components/Autocomplete'
+import Modal from './components/Modal'
 import Datetimepicker from './components/Datetimepicker'
 import HeaderLocaleChild from './components/HeaderLocaleChild'
 import HeaderNotificationsChild from './components/HeaderNotificationsChild'
@@ -45,6 +46,7 @@ const EmagVueLib = {
   TreeType,
   Translations,
   Autocomplete,
+  Modal,
   Datetimepicker,
   HeaderLocaleChild,
   HeaderNotificationsChild,
