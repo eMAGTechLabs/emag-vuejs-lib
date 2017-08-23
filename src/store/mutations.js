@@ -16,5 +16,8 @@ export default {
   },
   setUser: (state, user) => {
     state.config.user = Object.assign({}, state.config.user, user)
+  },
+  setMenuItems: (state, menuItems) => {
+    state.config.menu.items = Object.assign({}, state.config.menu.items, menuItems)
   }
 }

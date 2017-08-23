@@ -11803,6 +11803,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  setUser: function setUser(state, user) {
 	    state.config.user = (0, _assign2.default)({}, state.config.user, user);
+	  },
+	  setMenuItems: function setMenuItems(state, menuItems) {
+	    state.config.menu.items = (0, _assign2.default)({}, state.config.menu.items, menuItems);
 	  }
 	};
 
