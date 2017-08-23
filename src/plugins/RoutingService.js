@@ -28,8 +28,10 @@ export default function (Vue, options) {
   let finalRoutes = []
   routerMode = options.mode || 'hash'
 
-  finalRoutes.push(..._setMenuItems(_getRawMenuItems(routes), options.config.useLocale))
-  finalRoutes.push(..._setMenuItems(_getItems(routes), options.config.useLocale))
+  for (let routesGroups in routes) {
+    finalRoutes.push(..._setMenuItems(routes[routesGroups], options.config.useLocale))
+  }
+
   router = new VueRouter({
     routes: finalRoutes,
     mode: routerMode
@@ -103,16 +105,6 @@ export default function (Vue, options) {
   // :locale/add-product will be en/add-product if on english language
   function _replaceLocalePatternWithCurrent (routePath) {
     return routePath.replace(':locale', options.config.locale.urlPath)
-  }
-
-  // Menu items
-  function _getRawMenuItems (routes) {
-    return routes.menuItems
-  }
-
-  // Items that will use routing system but not show in menu
-  function _getItems (routes) {
-    return routes.items
   }
 
   function _forwardRequestIfLocale () {

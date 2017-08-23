@@ -11962,8 +11962,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var finalRoutes = [];
 	  routerMode = options.mode || 'hash';
 	
-	  finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(_getRawMenuItems(routes), options.config.useLocale)));
-	  finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(_getItems(routes), options.config.useLocale)));
+	  for (routesGroups in routes) {
+	    finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(routes[routesGroups], options.config.useLocale)));
+	  }
+	
 	  router = new VueRouter({
 	    routes: finalRoutes,
 	    mode: routerMode
@@ -12037,16 +12039,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // :locale/add-product will be en/add-product if on english language
 	  function _replaceLocalePatternWithCurrent(routePath) {
 	    return routePath.replace(':locale', options.config.locale.urlPath);
-	  }
-	
-	  // Menu items
-	  function _getRawMenuItems(routes) {
-	    return routes.menuItems;
-	  }
-	
-	  // Items that will use routing system but not show in menu
-	  function _getItems(routes) {
-	    return routes.items;
 	  }
 	
 	  function _forwardRequestIfLocale() {
