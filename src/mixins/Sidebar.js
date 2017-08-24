@@ -35,6 +35,8 @@ function getItems () {console.log('getItems')
 }
 
 function _appendCurrentLocaleToItems (items, locale) {console.log('_appendCurrentLocaleToItems')
+  console.log(items)
+  console.log(locale)
   for (let i = 0; i < items.length; i++) {
     if (!hasEmptyLink(items[i])) {
       if (!items[i]._baseUrl) {
