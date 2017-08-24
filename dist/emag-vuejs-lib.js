@@ -2067,6 +2067,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _appendCurrentLocaleToItems(items, locale) {
 	  console.log('_appendCurrentLocaleToItems');
+	  console.log(items);
+	  console.log(locale);
 	  for (var i = 0; i < items.length; i++) {
 	    if (!hasEmptyLink(items[i])) {
 	      if (!items[i]._baseUrl) {
