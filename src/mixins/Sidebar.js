@@ -25,7 +25,7 @@ function getCollapsedCssClass (collapsed) {
   return collapsed ? 'menu-item-min-link' : ''
 }
 
-function getItems () {
+function getItems () {console.log('getItems')
   /* eslint-disable no-unused-vars */
   let items = (this.dataOptions && this.dataOptions.items) ? this.dataOptions.items : []
   if (this.$store.state.config && this.$store.state.config.useLocale) {
@@ -34,7 +34,7 @@ function getItems () {
   return items
 }
 
-function _appendCurrentLocaleToItems (items, locale) {
+function _appendCurrentLocaleToItems (items, locale) {console.log('_appendCurrentLocaleToItems')
   for (let i = 0; i < items.length; i++) {
     if (!hasEmptyLink(items[i])) {
       if (!items[i]._baseUrl) {
