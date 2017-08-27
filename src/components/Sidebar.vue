@@ -54,6 +54,18 @@ export default {
       staticNavigation(routePath)
       initScrollbarForSidebar()
     } catch (ex) {}
+  },
+  updated () {
+    /* eslint-disable no-undef */
+    try {
+      let routePath = this.$route.path
+      if (this.$router.mode === 'hash') {
+        routePath = '#' + routePath
+      }
+
+      // Methods from emag-apps-ui-kit
+      staticNavigation(routePath)
+    } catch (ex) {}
   }
 }
 </script>

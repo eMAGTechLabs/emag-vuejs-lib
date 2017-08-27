@@ -19,13 +19,5 @@ export default {
   },
   setMenuItems: (state, menuItems) => {
     state.config.menu.items = menuItems
-
-    let routePath = this.$route.path
-
-    if (this.$router.mode === 'hash') {
-      routePath = '#' + routePath
-    }
-
-    staticNavigation(routePath)
   }
 }

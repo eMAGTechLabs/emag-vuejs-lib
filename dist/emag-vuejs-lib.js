@@ -1953,6 +1953,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	      staticNavigation(routePath);
 	      initScrollbarForSidebar();
 	    } catch (ex) {}
+	  },
+	  updated: function updated() {
+	    /* eslint-disable no-undef */
+	    try {
+	      var routePath = this.$route.path;
+	      if (this.$router.mode === 'hash') {
+	        routePath = '#' + routePath;
+	      }
+	
+	      // Methods from emag-apps-ui-kit
+	      staticNavigation(routePath);
+	    } catch (ex) {}
 	  }
 	};
 	// </script>
@@ -11806,14 +11818,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  setMenuItems: function setMenuItems(state, menuItems) {
 	    state.config.menu.items = menuItems;
-	
-	    var routePath = undefined.$route.path;
-	
-	    if (undefined.$router.mode === 'hash') {
-	      routePath = '#' + routePath;
-	    }
-	
-	    staticNavigation(routePath);
 	  }
 	};
 
