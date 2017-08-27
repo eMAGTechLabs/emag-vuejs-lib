@@ -11806,6 +11806,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  setMenuItems: function setMenuItems(state, menuItems) {
 	    state.config.menu.items = menuItems;
+	
+	    var routePath = undefined.$route.path;
+	
+	    if (undefined.$router.mode === 'hash') {
+	      routePath = '#' + routePath;
+	    }
+	
+	    staticNavigation(routePath);
 	  }
 	};
 
