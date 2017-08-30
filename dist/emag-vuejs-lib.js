@@ -1953,6 +1953,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	      staticNavigation(routePath);
 	      initScrollbarForSidebar();
 	    } catch (ex) {}
+	  },
+	  updated: function updated() {
+	    /* eslint-disable no-undef */
+	    try {
+	      var routePath = this.$route.path;
+	      if (this.$router.mode === 'hash') {
+	        routePath = '#' + routePath;
+	      }
+	
+	      // Methods from emag-apps-ui-kit
+	      staticNavigation(routePath);
+	    } catch (ex) {}
 	  }
 	};
 	// </script>
@@ -11803,6 +11815,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  setUser: function setUser(state, user) {
 	    state.config.user = (0, _assign2.default)({}, state.config.user, user);
+	  },
+	  setMenuItems: function setMenuItems(state, menuItems) {
+	    state.config.menu.items = menuItems;
 	  }
 	};
 
@@ -11959,16 +11974,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var finalRoutes = [];
 	  routerMode = options.mode || 'hash';
 	
-	  finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(_getRawMenuItems(routes), options.config.useLocale)));
-	  finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(_getItems(routes), options.config.useLocale)));
+	  for (var routesGroup in routes) {
+	    finalRoutes.push.apply(finalRoutes, (0, _toConsumableArray3.default)(_setMenuItems(routes[routesGroup], options.config.useLocale)));
+	  }
+	
 	  router = new VueRouter({
 	    routes: finalRoutes,
 	    mode: routerMode
 	  });
+	
 	  if (!Vue.helpers) {
 	    Vue.helpers = {};
 	  }
 	  Vue.helpers.getVueRouter = _getVueRouter;
+	
 	  _forwardRequestIfLocale();
 	  _rootPageRedirectToDashboard();
 	  _initStaticNavigation();
@@ -12034,16 +12053,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // :locale/add-product will be en/add-product if on english language
 	  function _replaceLocalePatternWithCurrent(routePath) {
 	    return routePath.replace(':locale', options.config.locale.urlPath);
-	  }
-	
-	  // Menu items
-	  function _getRawMenuItems(routes) {
-	    return routes.menuItems;
-	  }
-	
-	  // Items that will use routing system but not show in menu
-	  function _getItems(routes) {
-	    return routes.items;
 	  }
 	
 	  function _forwardRequestIfLocale() {
