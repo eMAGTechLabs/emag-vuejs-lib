@@ -2958,7 +2958,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <template>
 	//     <div class="input-group">
 	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
-	//         <div class="input-group-addon"><i :class="options.icons.date"></i>
+	//         <div class="input-group-addon cursor-pointer"><i :class="options.icons.date"></i>
 	//         </div>
 	//     </div>
 	// </template>
@@ -3031,7 +3031,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  try {
 	    $('#date_time_' + this.id).datetimepicker(this.options);
 	    $('#date_time_' + this.id).next().on('click', function () {
-	      $('#date_time_' + this.id).focus();
+	      $('#date_time_' + this.id).data("DateTimePicker").show();
 	    });
 	  } catch (ex) {}
 	}
@@ -3060,7 +3060,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 102 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\n        <div class=\"input-group-addon\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
+	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\n        <div class=\"input-group-addon cursor-pointer\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
 
 /***/ },
 /* 103 */
