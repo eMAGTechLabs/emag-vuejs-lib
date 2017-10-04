@@ -47,9 +47,11 @@ function getOptions () {
 
 function initDatetimepicker () {
   try {
+    let self = this
+
     $('#date_time_' + this.id).datetimepicker(this.options)
     $('#date_time_' + this.id).next().on('click', function () {
-      $('#date_time_' + this.id).data("DateTimePicker").show()
+      $('#date_time_' + self.id).data('DateTimePicker').show()
     })
   } catch (ex) {}
 }
