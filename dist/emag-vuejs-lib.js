@@ -1659,6 +1659,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	function getOptions() {
 	  this.id = this._uid;
+	  console.log('getoptions - this.dataOptions', this.dataOptions);
 	  return (0, _assign2.default)({}, {
 	    placeholder_text_multiple: this.translations.chosen.multipleText,
 	    placeholder_text_single: this.translations.chosen.singleText,

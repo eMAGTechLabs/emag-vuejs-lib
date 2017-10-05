@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 function getOptions () {
   this.id = this._uid
+  console.log('getoptions - this.dataOptions', this.dataOptions)
   return Object.assign({}, {
     placeholder_text_multiple: this.translations.chosen.multipleText,
     placeholder_text_single: this.translations.chosen.singleText,
