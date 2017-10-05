@@ -310,7 +310,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  beforeMount: function beforeMount() {
 	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      console.log('before mount - component updated');
+	      console.log('before mount - component updated - dataOptions');
+	      this.options = this.getOptions();
+	      this.destroyChosen();
+	      this.initChosen();
+	      this.updateChosen();
+	    }, { deep: true });
+	    this.unwatch = this.$watch('disabled', function (data) {
+	      console.log('before mount - component updated - disabled');
+	      this.options = this.getOptions();
+	      this.destroyChosen();
+	      this.initChosen();
+	      this.updateChosen();
+	    }, { deep: true });
+	    this.unwatch = this.$watch('multiple', function (data) {
+	      console.log('before mount - component updated - multiple');
 	      this.options = this.getOptions();
 	      this.destroyChosen();
 	      this.initChosen();
