@@ -12,7 +12,23 @@
   import chosenMixin from './../mixins/Chosen'
   export default {
     name: 'chosen',
-    props: ['dataOptions', 'disabled', 'multiple'],
+    props: {
+      dataOptions: {
+        default: function () {
+          return {}
+        }
+      },
+      disabled: {
+        default: function () {
+          return false
+        }
+      },
+      multiple: {
+        default: function () {
+          return false
+        }
+      }
+    },
     mixins: [ generalMixin, chosenMixin ],
     data () {
       this.translations = translationMessages.translations[this.getDefaultLang()]

@@ -281,7 +281,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.default = {
 	  name: 'chosen',
-	  props: ['dataOptions', 'disabled', 'multiple'],
+	  props: {
+	    dataOptions: {
+	      default: function _default() {
+	        return {};
+	      }
+	    },
+	    disabled: {
+	      default: function _default() {
+	        return false;
+	      }
+	    },
+	    multiple: {
+	      default: function _default() {
+	        return false;
+	      }
+	    }
+	  },
 	  mixins: [_General2.default, _Chosen2.default],
 	  data: function data() {
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
