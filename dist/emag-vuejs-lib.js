@@ -300,14 +300,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mixins: [_General2.default, _Chosen2.default],
 	  updated: function updated() {
+	    console.log('component updated');
 	    this.updateChosen();
 	  },
 	  data: function data() {
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
+	    console.log('data - this.getOptions()', this.getOptions());
 	    return { options: this.getOptions() };
 	  },
 	  beforeMount: function beforeMount() {
 	    this.unwatch = this.$watch('dataOptions', function (data) {
+	      console.log('before mount - component updated');
 	      this.options = this.getOptions();
 	      this.destroyChosen();
 	      this.initChosen();
@@ -315,9 +318,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, { deep: true });
 	  },
 	  mounted: function mounted() {
+	    console.log('component mounted');
 	    this.initChosen();
 	  },
 	  destroyed: function destroyed() {
+	    console.log('component destroyed');
 	    this.destroyChosen();
 	  }
 	};
