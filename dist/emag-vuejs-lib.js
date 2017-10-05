@@ -299,6 +299,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  mixins: [_General2.default, _Chosen2.default],
+	  updated: function updated() {
+	    this.updateChosen();
+	  },
 	  data: function data() {
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
 	    return { options: this.getOptions() };

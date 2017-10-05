@@ -30,6 +30,9 @@
       }
     },
     mixins: [ generalMixin, chosenMixin ],
+    updated () {
+      this.updateChosen()
+    },
     data () {
       this.translations = translationMessages.translations[this.getDefaultLang()]
       return { options: this.getOptions() }
