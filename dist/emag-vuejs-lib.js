@@ -1660,12 +1660,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	function getOptions() {
 	  this.id = this._uid;
 	  console.log('getoptions - this.dataOptions', this.dataOptions);
-	  return (0, _assign2.default)({}, {
+	  var resulted = (0, _assign2.default)({}, {
 	    placeholder_text_multiple: this.translations.chosen.multipleText,
 	    placeholder_text_single: this.translations.chosen.singleText,
 	    no_results_text: this.translations.chosen.noResult,
 	    allow_single_deselect: true
 	  }, this.dataOptions);
+	  console.log('getOptions - resulted', resulted);
+	  return resulted;
 	}
 	
 	function initChosen() {
