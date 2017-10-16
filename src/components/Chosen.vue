@@ -58,7 +58,7 @@
         this.updateChosen()
       }, { deep: true, immediate: true })
     },
-    mounted () {console.log('component mounted')
+    mounted () {console.log('component mounted'),console.log('this.dataOptions', this.dataOptions, 'this.options', this.options)
       this.initChosen()
     },
     destroyed () {console.log('component destroyed')

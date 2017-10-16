@@ -332,7 +332,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, { deep: true, immediate: true });
 	  },
 	  mounted: function mounted() {
-	    console.log('component mounted');
+	    console.log('component mounted'), console.log('this.dataOptions', this.dataOptions, 'this.options', this.options);
 	    this.initChosen();
 	  },
 	  destroyed: function destroyed() {
