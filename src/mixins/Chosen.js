@@ -1,13 +1,15 @@
 /* eslint-disable no-undef */
 function getOptions () {
   this.id = this._uid
-  console.log('getoptions - this.dataOptions', this.dataOptions)
-  let resulted = Object.assign({}, {
+  const defaultOptions = {
     placeholder_text_multiple: this.translations.chosen.multipleText,
     placeholder_text_single: this.translations.chosen.singleText,
     no_results_text: this.translations.chosen.noResult,
     allow_single_deselect: true
-  }, this.dataOptions)
+  }
+  console.log('getoptions - defaultOptions', defaultOptions)
+  console.log('getoptions - this.dataOptions', this.dataOptions)
+  let resulted = Object.assign(defaultOptions, this.dataOptions || {})
   console.log('getOptions - resulted', resulted)
   return resulted
 }

@@ -1673,13 +1673,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	function getOptions() {
 	  this.id = this._uid;
-	  console.log('getoptions - this.dataOptions', this.dataOptions);
-	  var resulted = (0, _assign2.default)({}, {
+	  var defaultOptions = {
 	    placeholder_text_multiple: this.translations.chosen.multipleText,
 	    placeholder_text_single: this.translations.chosen.singleText,
 	    no_results_text: this.translations.chosen.noResult,
 	    allow_single_deselect: true
-	  }, this.dataOptions);
+	  };
+	  console.log('getoptions - defaultOptions', defaultOptions);
+	  console.log('getoptions - this.dataOptions', this.dataOptions);
+	  var resulted = (0, _assign2.default)(defaultOptions, this.dataOptions || {});
 	  console.log('getOptions - resulted', resulted);
 	  return resulted;
 	}
