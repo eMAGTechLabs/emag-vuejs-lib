@@ -6,11 +6,14 @@ function getOptions () {
     placeholder_text_single: this.translations.chosen.singleText,
     no_results_text: this.translations.chosen.noResult,
     allow_single_deselect: true,
-    items: {}
+    items: []
   }
   console.log('getoptions - defaultOptions', defaultOptions)
   console.log('getoptions - this.dataOptions', this.dataOptions)
   let resulted = Object.assign(defaultOptions, this.dataOptions || {})
+  if (this.dataOptions.items) {
+    resulted.items = this.dataOptions.items
+  }
   console.log('getOptions - resulted', resulted)
   return resulted
 }
