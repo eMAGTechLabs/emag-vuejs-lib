@@ -31,6 +31,9 @@
     },
     mixins: [ generalMixin, chosenMixin ],
     updated () {console.log('component updated')
+      this.options = this.getOptions()
+      this.destroyChosen()
+      this.initChosen()
       this.updateChosen()
     },
     data () {

@@ -301,6 +301,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  mixins: [_General2.default, _Chosen2.default],
 	  updated: function updated() {
 	    console.log('component updated');
+	    this.options = this.getOptions();
+	    this.destroyChosen();
+	    this.initChosen();
 	    this.updateChosen();
 	  },
 	  data: function data() {
