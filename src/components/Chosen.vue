@@ -31,9 +31,6 @@
     },
     mixins: [ generalMixin, chosenMixin ],
     updated () {console.log('component updated')
-      this.options = this.getOptions()
-      this.destroyChosen()
-      this.initChosen()
       this.updateChosen()
     },
     data () {
@@ -47,19 +44,19 @@
         this.destroyChosen()
         this.initChosen()
         this.updateChosen()
-      }, { deep: true })
+      }, { deep: true, immediate: true })
       this.unwatch = this.$watch('disabled', function (data) {console.log('before mount - component updated - disabled')
         this.options = this.getOptions()
         this.destroyChosen()
         this.initChosen()
         this.updateChosen()
-      }, { deep: true })
+      }, { deep: true, immediate: true })
       this.unwatch = this.$watch('multiple', function (data) {console.log('before mount - component updated - multiple')
         this.options = this.getOptions()
         this.destroyChosen()
         this.initChosen()
         this.updateChosen()
-      }, { deep: true })
+      }, { deep: true, immediate: true })
     },
     mounted () {console.log('component mounted')
       this.initChosen()
