@@ -300,31 +300,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mixins: [_General2.default, _Chosen2.default],
 	  updated: function updated() {
-	    console.log('component updated');
 	    this.updateChosen();
 	  },
 	  data: function data() {
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
-	    console.log('data - this.getOptions()', this.getOptions());
+	
 	    return { options: this.getOptions() };
 	  },
 	  beforeMount: function beforeMount() {
 	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      console.log('before mount - component updated - dataOptions');
 	      this.options = this.getOptions();
 	      this.destroyChosen();
 	      this.initChosen();
 	      this.updateChosen();
 	    }, { deep: true, immediate: true });
 	    this.unwatch = this.$watch('disabled', function (data) {
-	      console.log('before mount - component updated - disabled');
 	      this.options = this.getOptions();
 	      this.destroyChosen();
 	      this.initChosen();
 	      this.updateChosen();
 	    }, { deep: true, immediate: true });
 	    this.unwatch = this.$watch('multiple', function (data) {
-	      console.log('before mount - component updated - multiple');
 	      this.options = this.getOptions();
 	      this.destroyChosen();
 	      this.initChosen();
@@ -332,11 +328,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, { deep: true, immediate: true });
 	  },
 	  mounted: function mounted() {
-	    console.log('component mounted'), console.log('this.dataOptions', this.dataOptions, 'this.options', this.options);
 	    this.initChosen();
 	  },
 	  destroyed: function destroyed() {
-	    console.log('component destroyed');
 	    this.destroyChosen();
 	  }
 	};
@@ -1680,14 +1674,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    allow_single_deselect: true,
 	    items: []
 	  };
-	  console.log('getoptions - defaultOptions', defaultOptions);
-	  console.log('getoptions - this.dataOptions', this.dataOptions);
-	  var resulted = (0, _assign2.default)(defaultOptions, this.dataOptions || {});
-	  if (this.dataOptions.items) {
-	    resulted.items = this.dataOptions.items;
-	  }
-	  console.log('getOptions - resulted', resulted);
-	  return resulted;
+	
+	  return (0, _assign2.default)(defaultOptions, this.dataOptions || {});
 	}
 	
 	function initChosen() {

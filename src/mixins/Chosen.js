@@ -8,14 +8,8 @@ function getOptions () {
     allow_single_deselect: true,
     items: []
   }
-  console.log('getoptions - defaultOptions', defaultOptions)
-  console.log('getoptions - this.dataOptions', this.dataOptions)
-  let resulted = Object.assign(defaultOptions, this.dataOptions || {})
-  if (this.dataOptions.items) {
-    resulted.items = this.dataOptions.items
-  }
-  console.log('getOptions - resulted', resulted)
-  return resulted
+
+  return Object.assign(defaultOptions, this.dataOptions || {})
 }
 
 function initChosen () {

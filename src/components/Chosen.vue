@@ -30,38 +30,38 @@
       }
     },
     mixins: [ generalMixin, chosenMixin ],
-    updated () {console.log('component updated')
+    updated () {
       this.updateChosen()
     },
     data () {
       this.translations = translationMessages.translations[this.getDefaultLang()]
-      console.log('data - this.getOptions()', this.getOptions())
+
       return { options: this.getOptions() }
     },
     beforeMount () {
-      this.unwatch = this.$watch('dataOptions', function (data) {console.log('before mount - component updated - dataOptions')
+      this.unwatch = this.$watch('dataOptions', function (data) {
         this.options = this.getOptions()
         this.destroyChosen()
         this.initChosen()
         this.updateChosen()
       }, { deep: true, immediate: true })
-      this.unwatch = this.$watch('disabled', function (data) {console.log('before mount - component updated - disabled')
+      this.unwatch = this.$watch('disabled', function (data) {
         this.options = this.getOptions()
         this.destroyChosen()
         this.initChosen()
         this.updateChosen()
       }, { deep: true, immediate: true })
-      this.unwatch = this.$watch('multiple', function (data) {console.log('before mount - component updated - multiple')
+      this.unwatch = this.$watch('multiple', function (data) {
         this.options = this.getOptions()
         this.destroyChosen()
         this.initChosen()
         this.updateChosen()
       }, { deep: true, immediate: true })
     },
-    mounted () {console.log('component mounted'),console.log('this.dataOptions', this.dataOptions, 'this.options', this.options)
+    mounted () {
       this.initChosen()
     },
-    destroyed () {console.log('component destroyed')
+    destroyed () {
       this.destroyChosen()
     }
   }
