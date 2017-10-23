@@ -1,7 +1,7 @@
 <template>
-    <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="multiple">
+    <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="options.multiple || multiple ? true : false">
         <option value=""></option>
-        <option :value="item.value" v-for="item in options.items" :selected="item.selected">
+        <option :value="item.value" v-for="item in dataOptions.items" :selected="item.selected">
             {{ item.name }}
         </option>
     </select>
@@ -12,10 +12,30 @@
   import chosenMixin from './../mixins/Chosen'
   export default {
     name: 'chosen',
-    props: ['dataOptions', 'disabled', 'multiple'],
+    props: {
+      dataOptions: {
+        default: function () {
+          return {}
+        }
+      },
+      disabled: {
+        default: function () {
+          return false
+        }
+      },
+      multiple: {
+        default: function () {
+          return false
+        }
+      }
+    },
     mixins: [ generalMixin, chosenMixin ],
+    updated () {
+      this.updateChosen()
+    },
     data () {
       this.translations = translationMessages.translations[this.getDefaultLang()]
+
       return { options: this.getOptions() }
     },
     beforeMount () {
@@ -24,7 +44,19 @@
         this.destroyChosen()
         this.initChosen()
         this.updateChosen()
-      }, { deep: true })
+      }, { deep: true, immediate: true })
+      this.unwatch = this.$watch('disabled', function (data) {
+        this.options = this.getOptions()
+        this.destroyChosen()
+        this.initChosen()
+        this.updateChosen()
+      }, { deep: true, immediate: true })
+      this.unwatch = this.$watch('multiple', function (data) {
+        this.options = this.getOptions()
+        this.destroyChosen()
+        this.initChosen()
+        this.updateChosen()
+      }, { deep: true, immediate: true })
     },
     mounted () {
       this.initChosen()

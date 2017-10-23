@@ -281,10 +281,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.default = {
 	  name: 'chosen',
-	  props: ['dataOptions', 'disabled', 'multiple'],
+	  props: {
+	    dataOptions: {
+	      default: function _default() {
+	        return {};
+	      }
+	    },
+	    disabled: {
+	      default: function _default() {
+	        return false;
+	      }
+	    },
+	    multiple: {
+	      default: function _default() {
+	        return false;
+	      }
+	    }
+	  },
 	  mixins: [_General2.default, _Chosen2.default],
+	  updated: function updated() {
+	    this.updateChosen();
+	  },
 	  data: function data() {
 	    this.translations = _messages2.default.translations[this.getDefaultLang()];
+	
 	    return { options: this.getOptions() };
 	  },
 	  beforeMount: function beforeMount() {
@@ -293,7 +313,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.destroyChosen();
 	      this.initChosen();
 	      this.updateChosen();
-	    }, { deep: true });
+	    }, { deep: true, immediate: true });
+	    this.unwatch = this.$watch('disabled', function (data) {
+	      this.options = this.getOptions();
+	      this.destroyChosen();
+	      this.initChosen();
+	      this.updateChosen();
+	    }, { deep: true, immediate: true });
+	    this.unwatch = this.$watch('multiple', function (data) {
+	      this.options = this.getOptions();
+	      this.destroyChosen();
+	      this.initChosen();
+	      this.updateChosen();
+	    }, { deep: true, immediate: true });
 	  },
 	  mounted: function mounted() {
 	    this.initChosen();
@@ -304,9 +336,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	// </script>
 	// <template>
-	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="multiple">
+	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="options.multiple || multiple ? true : false">
 	//         <option value=""></option>
-	//         <option :value="item.value" v-for="item in options.items" :selected="item.selected">
+	//         <option :value="item.value" v-for="item in dataOptions.items" :selected="item.selected">
 	//             {{ item.name }}
 	//         </option>
 	//     </select>
@@ -1635,12 +1667,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	function getOptions() {
 	  this.id = this._uid;
-	  return (0, _assign2.default)({}, {
+	  var defaultOptions = {
 	    placeholder_text_multiple: this.translations.chosen.multipleText,
 	    placeholder_text_single: this.translations.chosen.singleText,
 	    no_results_text: this.translations.chosen.noResult,
-	    allow_single_deselect: true
-	  }, this.dataOptions);
+	    allow_single_deselect: true,
+	    items: []
+	  };
+	
+	  return (0, _assign2.default)(defaultOptions, this.dataOptions || {});
 	}
 	
 	function initChosen() {
@@ -1674,7 +1709,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 64 */
 /***/ function(module, exports) {
 
-	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"multiple\">\n        <option value=\"\"></option>\n        <option :value=\"item.value\" v-for=\"item in options.items\" :selected=\"item.selected\">\n            {{ item.name }}\n        </option>\n    </select>";
+	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=\"\"></option>\n        <option :value=\"item.value\" v-for=\"item in dataOptions.items\" :selected=\"item.selected\">\n            {{ item.name }}\n        </option>\n    </select>";
 
 /***/ },
 /* 65 */
@@ -2958,7 +2993,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <template>
 	//     <div class="input-group">
 	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
-	//         <div class="input-group-addon"><i :class="options.icons.date"></i>
+	//         <div class="input-group-addon cursor-pointer"><i :class="options.icons.date"></i>
 	//         </div>
 	//     </div>
 	// </template>
@@ -3029,7 +3064,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function initDatetimepicker() {
 	  try {
+	    var self = this;
+	
 	    $('#date_time_' + this.id).datetimepicker(this.options);
+	    $('#date_time_' + this.id).next().on('click', function () {
+	      $('#date_time_' + self.id).data('DateTimePicker').show();
+	    });
 	  } catch (ex) {}
 	}
 	
@@ -3057,7 +3097,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 102 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\n        <div class=\"input-group-addon\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
+	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\n        <div class=\"input-group-addon cursor-pointer\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
 
 /***/ },
 /* 103 */

@@ -1,12 +1,15 @@
 /* eslint-disable no-undef */
 function getOptions () {
   this.id = this._uid
-  return Object.assign({}, {
+  const defaultOptions = {
     placeholder_text_multiple: this.translations.chosen.multipleText,
     placeholder_text_single: this.translations.chosen.singleText,
     no_results_text: this.translations.chosen.noResult,
-    allow_single_deselect: true
-  }, this.dataOptions)
+    allow_single_deselect: true,
+    items: []
+  }
+
+  return Object.assign(defaultOptions, this.dataOptions || {})
 }
 
 function initChosen () {
