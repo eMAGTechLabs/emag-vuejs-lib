@@ -14,7 +14,7 @@
             <li v-if="account">
                 <link-item :item="account"></link-item>
             </li>
-            <li v-for="link in links">
+            <li v-for="link in user.links">
                 <router-link :to="{name: link.route}">{{ $t(link.label) }}</router-link>
             </li>
             <li v-if="logout">
@@ -37,9 +37,6 @@
       },
       user () {
         return this.$store.state.config.user
-      },
-      links () {
-        return this.$store.state.config.user.links
       }
     },
     beforeMount () {

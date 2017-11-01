@@ -11746,9 +11746,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    user: function user() {
 	      return this.$store.state.config.user;
-	    },
-	    links: function links() {
-	      return this.$store.state.config.user.links;
 	    }
 	  },
 	  beforeMount: function beforeMount() {
@@ -11787,7 +11784,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//             <li v-if="account">
 	//                 <link-item :item="account"></link-item>
 	//             </li>
-	//             <li v-for="link in links">
+	//             <li v-for="link in user.links">
 	//                 <router-link :to="{name: link.route}">{{ $t(link.label) }}</router-link>
 	//             </li>
 	//             <li v-if="logout">
@@ -11802,7 +11799,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(117) + "\" alt=\"\" height=\"36\">\n            </div>\n            <span>\n              {{ user.label }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-for=\"link in links\">\n                <router-link :to=\"{name: link.route}\">{{ $t(link.label) }}</router-link>\n            </li>\n            <li v-if=\"logout\">\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\n            </li>\n        </ul>\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(117) + "\" alt=\"\" height=\"36\">\n            </div>\n            <span>\n              {{ user.label }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-for=\"link in user.links\">\n                <router-link :to=\"{name: link.route}\">{{ $t(link.label) }}</router-link>\n            </li>\n            <li v-if=\"logout\">\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\n            </li>\n        </ul>\n    </li>";
 
 /***/ }),
 /* 117 */
