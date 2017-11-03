@@ -14,6 +14,9 @@
             <li v-if="account">
                 <link-item :item="account"></link-item>
             </li>
+            <li v-for="link in user.links">
+                <router-link :to="{name: link.route}">{{ $t(link.label) }}</router-link>
+            </li>
             <li v-if="logout">
                 <router-link :to="{name: 'logout'}">{{ $t(logout.label) }}</router-link>
             </li>
