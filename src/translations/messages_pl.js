@@ -68,14 +68,14 @@ export default {
       'viewAll': 'Zobacz wszystko'
     },
     'tree': {
-      'modalTitle': 'wybierać',
+      'modalTitle': 'Wybierz',
       'modalResetLabel': 'Resetowanie',
       'modalCancelLabel': 'Anuluj',
-      'modalOkLabel': 'wybierać',
-      'textUnmatched': 'Ukryj niezrównany',
+      'modalOkLabel': 'Wybierz',
+      'textUnmatched': 'Ukryj niedopasowane',
       'textSelected': 'wybrany',
-      'searchPlaceholder': 'poszukiwanie',
-      'textSelectHierarchy': 'Hierarchiczna wielokrotnego wyboru'
+      'searchPlaceholder': 'Szukaj',
+      'textSelectHierarchy': 'Hierarchicznie wielokrotnego wyboru'
     },
     'chosen': {
       'multipleText': 'Sprawdź',
