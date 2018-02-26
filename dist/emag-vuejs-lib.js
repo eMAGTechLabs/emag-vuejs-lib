@@ -336,21 +336,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	// </script>
 	// <template>
-	
 	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="options.multiple || multiple ? true : false">
-	
 	//         <option value=""></option>
-	
 	//         <option :value="item.value" v-for="item in dataOptions.items" :selected="item.selected">
-	
 	//             {{ item.name }}
-	
 	//         </option>
-	
 	//     </select>
-	
 	// </template>
-	
 	// <script>
 
 /***/ }),
@@ -500,7 +492,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 25 */
 /***/ (function(module, exports) {
 
-	var core = module.exports = { version: '2.5.1' };
+	var core = module.exports = { version: '2.5.3' };
 	if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -1759,7 +1751,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 64 */
 /***/ (function(module, exports) {
 
-	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"options.multiple || multiple ? true : false\">\r\n        <option value=\"\"></option>\r\n        <option :value=\"item.value\" v-for=\"item in dataOptions.items\" :selected=\"item.selected\">\r\n            {{ item.name }}\r\n        </option>\r\n    </select>";
+	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=\"\"></option>\n        <option :value=\"item.value\" v-for=\"item in dataOptions.items\" :selected=\"item.selected\">\n            {{ item.name }}\n        </option>\n    </select>";
 
 /***/ }),
 /* 65 */
@@ -2164,6 +2156,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _appendCurrentLocaleToItems(items, locale) {
 	  for (var i = 0; i < items.length; i++) {
+	    if (isAbsolute(items[i])) {
+	      continue;
+	    }
 	    if (!hasEmptyLink(items[i])) {
 	      if (!items[i]._baseUrl) {
 	        items[i]._baseUrl = items[i].link;
@@ -2236,11 +2231,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	}; // <template>
 	//     <a :href="getHrefForMenuItem(item)" :class="getCollapsedCssClass(collapsed)" v-if="isAbsolute(item) || hasEmptyLink(item)">
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
-	//         <span class="menu-text">{{ item.label }}</span>
+	//         <span class="menu-text">{{ $t(item.label) }}</span>
 	//     </a>
 	//     <router-link :to="item.link" :class="getCollapsedCssClass(collapsed)" v-else>
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
-	//         <span class="menu-text">{{ item.label }}</span>
+	//         <span class="menu-text">{{ $t(item.label) }}</span>
 	//     </router-link>
 	// </template>
 	// <script>
@@ -2249,7 +2244,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 78 */
 /***/ (function(module, exports) {
 
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ item.label }}</span>\n    </a>\n    <router-link :to=\"item.link\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ item.label }}</span>\n    </router-link>";
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"item.link\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
 
 /***/ }),
 /* 79 */
@@ -3042,21 +3037,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // </script>
 	
 	};
-	
 	// <template>
-	
 	//     <div class="input-group">
-	
 	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
-	
 	//         <div class="input-group-addon cursor-pointer"><i :class="options.icons.date"></i>
-	
 	//         </div>
-	
 	//     </div>
-	
 	// </template>
-	
 	// <script>
 
 /***/ }),
@@ -3157,7 +3144,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 102 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"input-group\">\r\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\r\n        <div class=\"input-group-addon cursor-pointer\"><i :class=\"options.icons.date\"></i>\r\n        </div>\r\n    </div>";
+	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\n        <div class=\"input-group-addon cursor-pointer\"><i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
 
 /***/ }),
 /* 103 */
@@ -11785,62 +11772,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // </script>
 	
 	}; // <template>
-	
 	//     <li v-if="user.label" class="dropdown">
-	
 	//         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	
 	//             <div class="profile-thumb hidden-xs">
-	
 	//                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="" onerror="this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'" height="36">
-	
 	//                 <img v-else class="nav-user-photo" src="~emag-apps-ui-kit/dist/css/icons/default_user.png" alt="" height="36">
-	
 	//             </div>
-	
 	//             <span>
-	
 	//               {{ user.label }}
-	
 	//             </span>
-	
 	//             <i class="fa fa-angle-down hidden-xs"></i>
-	
 	//         </a>
-	
 	//         <ul class="dropdown-menu">
-	
 	//             <li v-if="account">
-	
 	//                 <link-item :item="account"></link-item>
-	
 	//             </li>
-	
 	//             <li v-for="link in user.links">
-	
 	//                 <router-link :to="{name: link.route}">{{ $t(link.label) }}</router-link>
-	
 	//             </li>
-	
 	//             <li v-if="logout">
-	
 	//                 <router-link :to="{name: 'logout'}">{{ $t(logout.label) }}</router-link>
-	
 	//             </li>
-	
 	//         </ul>
-	
 	//     </li>
-	
 	// </template>
-	
 	// <script>
 
 /***/ }),
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\r\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <div class=\"profile-thumb hidden-xs\">\r\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\r\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(117) + "\" alt=\"\" height=\"36\">\r\n            </div>\r\n            <span>\r\n              {{ user.label }}\r\n            </span>\r\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n            <li v-if=\"account\">\r\n                <link-item :item=\"account\"></link-item>\r\n            </li>\r\n            <li v-for=\"link in user.links\">\r\n                <router-link :to=\"{name: link.route}\">{{ $t(link.label) }}</router-link>\r\n            </li>\r\n            <li v-if=\"logout\">\r\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\r\n            </li>\r\n        </ul>\r\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(117) + "\" alt=\"\" height=\"36\">\n            </div>\n            <span>\n              {{ user.label }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-for=\"link in user.links\">\n                <router-link :to=\"{name: link.route}\">{{ $t(link.label) }}</router-link>\n            </li>\n            <li v-if=\"logout\">\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\n            </li>\n        </ul>\n    </li>";
 
 /***/ }),
 /* 117 */
@@ -12405,7 +12367,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var VALUES_BUG = false;
 	  var proto = Base.prototype;
 	  var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
-	  var $default = $native || getMethod(DEFAULT);
+	  var $default = (!BUGGY && $native) || getMethod(DEFAULT);
 	  var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
 	  var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
 	  var methods, key, IteratorPrototype;

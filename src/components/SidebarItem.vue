@@ -1,11 +1,11 @@
 <template>
     <a :href="getHrefForMenuItem(item)" :class="getCollapsedCssClass(collapsed)" v-if="isAbsolute(item) || hasEmptyLink(item)">
         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
-        <span class="menu-text">{{ item.label }}</span>
+        <span class="menu-text">{{ $t(item.label) }}</span>
     </a>
     <router-link :to="item.link" :class="getCollapsedCssClass(collapsed)" v-else>
         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
-        <span class="menu-text">{{ item.label }}</span>
+        <span class="menu-text">{{ $t(item.label) }}</span>
     </router-link>
 </template>
 <script>
