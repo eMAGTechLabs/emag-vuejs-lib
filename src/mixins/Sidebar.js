@@ -36,7 +36,7 @@ function getItems () {
 
 function _appendCurrentLocaleToItems (items, locale) {
   for (let i = 0; i < items.length; i++) {
-    if (isAbsolute(items[i])) {
+    if (isAbsolute(items[i]) || items[i].params) {
       continue
     }
     if (!hasEmptyLink(items[i])) {

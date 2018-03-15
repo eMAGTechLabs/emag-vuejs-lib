@@ -2156,7 +2156,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _appendCurrentLocaleToItems(items, locale) {
 	  for (var i = 0; i < items.length; i++) {
-	    if (isAbsolute(items[i])) {
+	    if (isAbsolute(items[i]) || items[i].params) {
 	      continue;
 	    }
 	    if (!hasEmptyLink(items[i])) {
@@ -2233,7 +2233,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
 	//         <span class="menu-text">{{ $t(item.label) }}</span>
 	//     </a>
-	//     <router-link :to="item.link" :class="getCollapsedCssClass(collapsed)" v-else>
+	//     <router-link :to="{name: item.link, params: item.params }" :class="getCollapsedCssClass(collapsed)" v-else-if="item.params">
+	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
+	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//     </router-link>
+	//     <router-link :to="{path: item.link}" :class="getCollapsedCssClass(collapsed)" v-else>
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
 	//         <span class="menu-text">{{ $t(item.label) }}</span>
 	//     </router-link>
@@ -2244,7 +2248,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 78 */
 /***/ (function(module, exports) {
 
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"item.link\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"{name: item.link, params: item.params }\" :class=\"getCollapsedCssClass(collapsed)\" v-else-if=\"item.params\">\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>\n    <router-link :to=\"{path: item.link}\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
 
 /***/ }),
 /* 79 */
