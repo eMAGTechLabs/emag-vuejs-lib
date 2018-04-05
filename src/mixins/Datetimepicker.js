@@ -53,6 +53,15 @@ function initDatetimepicker () {
     $('#date_time_' + this.id).next().on('click', function () {
       $('#date_time_' + self.id).data('DateTimePicker').show()
     })
+
+    $('#date_time_' + this.id).on('input change dp.hide dp.show dp.change dp.error dp.update', function (event) {
+      let eventType = event.type
+      if (eventType === 'dp' && event.namespace) {
+        eventType += event.namespace
+      }
+      
+      self.$emit(eventType, event)
+    })
   } catch (ex) {}
 }
 
