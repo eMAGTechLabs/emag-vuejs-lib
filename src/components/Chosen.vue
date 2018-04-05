@@ -1,9 +1,7 @@
 <template>
     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="options.multiple || multiple ? true : false">
         <option value=""></option>
-        <option :value="item.value" v-for="item in dataOptions.items" :selected="item.selected">
-            {{ item.name }}
-        </option>
+        <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected" :disabled="item.disabled" :class="item.class">{{ item.name }}</option>
     </select>
 </template>
 <script>
