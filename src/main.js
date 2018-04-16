@@ -10,6 +10,7 @@ import SidebarControl from './components/SidebarControl'
 import Autocomplete from './components/Autocomplete'
 import Modal from './components/Modal'
 import Datetimepicker from './components/Datetimepicker'
+import Daterangepicker from './components/Daterangepicker'
 import HeaderLocaleChild from './components/HeaderLocaleChild'
 import HeaderNotificationsChild from './components/HeaderNotificationsChild'
 import HeaderUserChild from './components/HeaderUserChild'
@@ -22,6 +23,7 @@ import mutations from './store/mutations'
 // Mixins
 import chosen from './mixins/Chosen'
 import datetimepicker from './mixins/Datetimepicker'
+import daterangepicker from './mixins/Daterangepicker'
 import header from './mixins/Header'
 import sidebar from './mixins/Sidebar'
 import treetype from './mixins/TreeType'
@@ -48,6 +50,7 @@ const EmagVueLib = {
   Autocomplete,
   Modal,
   Datetimepicker,
+  Daterangepicker,
   HeaderLocaleChild,
   HeaderNotificationsChild,
   HeaderUserChild,
@@ -59,6 +62,7 @@ const EmagVueLib = {
   mixins: {
     chosen,
     datetimepicker,
+    daterangepicker,
     header,
     sidebar,
     treetype

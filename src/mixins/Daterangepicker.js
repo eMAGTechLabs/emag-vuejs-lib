@@ -49,12 +49,13 @@ function initDatetimepicker () {
   try {
     let self = this
 
-    $('#date_time_' + this.id).datetimepicker(this.options)
-    $('#date_time_' + this.id).next().on('click', function () {
-      $('#date_time_' + self.id).data('DateTimePicker').show()
+    $('#date_range_' + this.id).daterangepicker(this.options)
+    $('#date_range_' + this.id).next().on('click', function () {
+      alert(1);
+      $('#date_range_' + self.id).data('DateTimePicker').show()
     })
 
-    $('#date_time_' + this.id).on('input change dp.hide dp.show dp.change dp.error dp.update', function (event) {
+    $('#date_range_' + this.id).on('input change dp.hide dp.show dp.change dp.error dp.update', function (event) {
       let eventType = event.type
       if (eventType === 'dp' && event.namespace) {
         eventType += event.namespace
@@ -67,8 +68,8 @@ function initDatetimepicker () {
 
 function destroyDatetimepicker () {
   try {
-    $(this.$el).find('#date_time_' + this.id).val('')
-    $(this.$el).find('#date_time_' + this.id).data('DateTimePicker').destroy()
+    $(this.$el).find('#date_range_' + this.id).val('')
+    $(this.$el).find('#date_range_' + this.id).data('DateTimePicker').destroy()
     this.unwatch()
   } catch (ex) {}
 }

@@ -1,16 +1,16 @@
 <template>
     <div class="input-group">
-        <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
+        <input type="text" :id="'date_range_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
         <div class="input-group-addon cursor-pointer"><i :class="options.icons.date"></i></div>
     </div>
 </template>
 <script>
-import datetimeMixin from './../mixins/Datetimepicker'
+import daterangeMixin from './../mixins/Daterangepicker'
 /* eslint-disable no-undef */
 export default {
-  name: 'datetimepicker',
+  name: 'daterangepicker',
   props: ['dataOptions', 'disabled', 'name', 'required'],
-  mixins: [ datetimeMixin ],
+  mixins: [ daterangeMixin ],
   data () {
     return { options: this.getOptions() }
   },
