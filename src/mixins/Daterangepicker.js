@@ -19,7 +19,9 @@ export default {
 
         // show picker on click
         $picker.next().on('click', () => {
-          $('#date_range_' + self.id).data('DateRangePicker').show()
+          $picker.data('daterangepicker').show()
+
+          return;
         })
 
         // attach jquery events on change
@@ -37,7 +39,7 @@ export default {
 
         // remove value, destroy and unwatch
         $picker.val('')
-        $picker.data('DateRangePicker').destroy()
+        $picker.data('daterangepicker').destroy()
         this.unwatch()
       } catch(e) {}
     }

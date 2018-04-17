@@ -3289,7 +3289,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        // show picker on click
 	        $picker.next().on('click', function () {
-	          $('#date_range_' + self.id).data('DateRangePicker').show();
+	          $picker.data('daterangepicker').show();
+	
+	          return;
 	        });
 	
 	        // attach jquery events on change
@@ -3307,7 +3309,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        // remove value, destroy and unwatch
 	        $picker.val('');
-	        $picker.data('DateRangePicker').destroy();
+	        $picker.data('daterangepicker').destroy();
 	        this.unwatch();
 	      } catch (e) {}
 	    }
