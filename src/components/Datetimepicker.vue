@@ -1,6 +1,6 @@
 <template>
     <div class="input-group">
-        <input v-model="rangepicker" @change="readRefs" type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
+        <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
         <div class="input-group-addon cursor-pointer"><i :class="options.icons.date"></i></div>
     </div>
 </template>
@@ -9,7 +9,7 @@ import datetimeMixin from './../mixins/Datetimepicker'
 /* eslint-disable no-undef */
 export default {
   name: 'datetimepicker',
-  props: ['dataOptions', 'disabled', 'name', 'required', 'rangepicker'],
+  props: ['dataOptions', 'disabled', 'name', 'required'],
   mixins: [ datetimeMixin ],
   data () {
     return { options: this.getOptions() }
@@ -25,10 +25,6 @@ export default {
   destroyed: function () {
     this.destroyDatetimepicker()
   },
-  methods: {
-    readRefs() {
-      console.log(this.$refs);
-    }
-  }
+  methods: {}
 }
 </script>
