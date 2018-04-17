@@ -23,6 +23,7 @@ import mutations from './store/mutations'
 // Mixins
 import chosen from './mixins/Chosen'
 import datetimepicker from './mixins/Datetimepicker'
+import daterangepicker from './mixins/Daterangepicker'
 import header from './mixins/Header'
 import sidebar from './mixins/Sidebar'
 import treetype from './mixins/TreeType'
@@ -61,6 +62,7 @@ const EmagVueLib = {
   mixins: {
     chosen,
     datetimepicker,
+    daterangepicker,
     header,
     sidebar,
     treetype
