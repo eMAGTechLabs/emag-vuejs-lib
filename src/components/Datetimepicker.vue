@@ -1,4 +1,3 @@
-
 <template>
     <div class="input-group">
         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
@@ -26,7 +25,6 @@ export default {
   destroyed: function () {
     this.destroyDatetimepicker()
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
