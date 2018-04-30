@@ -1,6 +1,6 @@
 <template>
     <select class="form-control" :id="'autocomplete_' + id" :multiple="options.multiple || multiple ? true : false" :disabled="options.disabled || disabled ? true : false">
-        <option value=''></option>
+        <option value=""></option>
         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected" :disabled="item.disabled" :class="item.class">{{ item.name }}</option>
     </select>
 </template>

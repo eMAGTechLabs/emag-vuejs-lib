@@ -294,16 +294,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'chosen',
 	  props: {
 	    dataOptions: {
+	      type: Object,
 	      default: function _default() {
 	        return {};
 	      }
 	    },
-	    disabled: {
+	    multiple: {
+	      type: Boolean,
 	      default: function _default() {
 	        return false;
 	      }
 	    },
-	    multiple: {
+	    disabled: {
+	      type: Boolean,
 	      default: function _default() {
 	        return false;
 	      }
@@ -318,24 +321,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    return { options: this.getOptions() };
 	  },
+	
+	  methods: {
+	    setValue: function setValue(value) {
+	      $('#chosen_' + this.id).val(value).trigger('change').trigger('chosen:updated');
+	    },
+	    getValue: function getValue() {
+	      return $('#chosen_' + this.id).val();
+	    }
+	  },
 	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      this.options = this.getOptions();
-	      this.destroyChosen();
-	      this.initChosen();
-	      this.updateChosen();
-	    }, { deep: true, immediate: true });
-	    this.unwatch = this.$watch('disabled', function (data) {
-	      this.options = this.getOptions();
-	      this.destroyChosen();
-	      this.initChosen();
-	      this.updateChosen();
-	    }, { deep: true, immediate: true });
-	    this.unwatch = this.$watch('multiple', function (data) {
-	      this.options = this.getOptions();
-	      this.destroyChosen();
-	      this.initChosen();
-	      this.updateChosen();
+	    var _this = this;
+	
+	    this.unwatch = this.$watch('dataOptions.multiple.disabled', function (data) {
+	      _this.options = _this.getOptions();
+	      _this.destroyChosen();
+	      _this.initChosen();
+	      _this.updateChosen();
 	    }, { deep: true, immediate: true });
 	  },
 	  mounted: function mounted() {
@@ -347,7 +349,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	// </script>
 	// <template>
-	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="options.multiple || multiple ? true : false">
+	//     <select class="form-control" :id="'chosen_' + id" :multiple="options.multiple || multiple ? true : false" :disabled="options.disabled || disabled ? true : false">
 	//         <option value=""></option>
 	//         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected" :disabled="item.disabled" :class="item.class">{{ item.name }}</option>
 	//     </select>
@@ -1731,7 +1733,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function initChosen() {
-	  $('#chosen_' + this.id).chosen(this.options);
+	  try {
+	    var $chosen = $('#chosen_' + this.id);
+	    var self = this;
+	
+	    $chosen.chosen(this.options);
+	
+	    $chosen.on('change', function () {
+	      var selectedValues = [];
+	      self.$emit('input', $(this).val());
+	
+	      if ($.isArray($(this).val())) {
+	        selectedValues = $(this).val();
+	      } else {
+	        selectedValues.push($(this).val());
+	      }
+	
+	      self.dataOptions.selected = selectedValues;
+	      self.dataOptions.items = [];
+	      $(this).find('option').each(function (index, option) {
+	        var $option = $(option);
+	        var selected = $.inArray($option.attr('value'), selectedValues) === -1 ? false : true;
+	        self.dataOptions.items.push({
+	          name: $option.html(),
+	          value: $option.attr('value'),
+	          disabled: $option.attr('disabled'),
+	          class: $option.attr('class'),
+	          selected: selected
+	        });
+	      });
+	    });
+	  } catch (ex) {}
 	}
 	
 	function updateChosen() {
@@ -1761,7 +1793,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 65 */
 /***/ (function(module, exports) {
 
-	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=\"\"></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\n    </select>";
+	module.exports = "<select class=\"form-control\" :id=\"'chosen_' + id\" :multiple=\"options.multiple || multiple ? true : false\" :disabled=\"options.disabled || disabled ? true : false\">\n        <option value=\"\"></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\n    </select>";
 
 /***/ }),
 /* 66 */
@@ -2622,7 +2654,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	// <template>
 	//     <select class="form-control" :id="'autocomplete_' + id" :multiple="options.multiple || multiple ? true : false" :disabled="options.disabled || disabled ? true : false">
-	//         <option value=''></option>
+	//         <option value=""></option>
 	//         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected" :disabled="item.disabled" :class="item.class">{{ item.name }}</option>
 	//     </select>
 	// </template>
@@ -2830,7 +2862,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 95 */
 /***/ (function(module, exports) {
 
-	module.exports = "<select class=\"form-control\" :id=\"'autocomplete_' + id\" :multiple=\"options.multiple || multiple ? true : false\" :disabled=\"options.disabled || disabled ? true : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\n    </select>";
+	module.exports = "<select class=\"form-control\" :id=\"'autocomplete_' + id\" :multiple=\"options.multiple || multiple ? true : false\" :disabled=\"options.disabled || disabled ? true : false\">\n        <option value=\"\"></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\n    </select>";
 
 /***/ }),
 /* 96 */

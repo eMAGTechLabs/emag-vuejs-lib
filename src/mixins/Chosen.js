@@ -13,7 +13,37 @@ function getOptions () {
 }
 
 function initChosen () {
-  $('#chosen_' + this.id).chosen(this.options)
+  try {
+    let $chosen = $('#chosen_' + this.id)
+    let self = this
+
+    $chosen.chosen(this.options)
+
+    $chosen.on('change', function() {
+      let selectedValues = [];
+      self.$emit('input', $(this).val())
+
+      if($.isArray($(this).val())) {
+        selectedValues = $(this).val()
+      } else {
+        selectedValues.push($(this).val())
+      }
+
+      self.dataOptions.selected = selectedValues;
+      self.dataOptions.items = []
+      $(this).find('option').each( function(index, option) {
+        let $option = $(option);
+        let selected = $.inArray($option.attr('value'), selectedValues) === -1 ? false : true;
+        self.dataOptions.items.push({
+          name: $option.html(),
+          value: $option.attr('value'),
+          disabled: $option.attr('disabled'),
+          class: $option.attr('class'),
+          selected: selected
+        })
+      })
+    })
+  } catch (ex) { }
 }
 
 function updateChosen () {
