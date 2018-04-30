@@ -2621,7 +2621,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	/* eslint-disable no-undef */
 	// <template>
-	//     <select :id="'autocomplete_' + id" class="form-control" :multiple="options.multiple || multiple ? true : false">
+	//     <select class="form-control" :id="'autocomplete_' + id" :multiple="options.multiple || multiple ? true : false" :disabled="options.disabled || disabled ? true : false">
 	//         <option value=''></option>
 	//         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected" :disabled="item.disabled" :class="item.class">{{ item.name }}</option>
 	//     </select>
@@ -2631,11 +2631,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'autocomplete',
 	  props: {
 	    dataOptions: {
+	      type: Object,
 	      default: function _default() {
 	        return {};
 	      }
 	    },
 	    multiple: {
+	      type: Boolean,
+	      default: function _default() {
+	        return false;
+	      }
+	    },
+	    disabled: {
+	      type: Boolean,
 	      default: function _default() {
 	        return false;
 	      }
@@ -2652,11 +2660,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	      options: this.getAutocompleteOptions()
 	    };
 	  },
+	
+	  methods: {
+	    setValue: function setValue(value) {
+	      $('#autocomplete_' + this.id).val(value).trigger('change').trigger('chosen:updated');
+	    },
+	    getValue: function getValue() {
+	      return $('#autocomplete_' + this.id).val();
+	    }
+	  },
 	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      this.options = this.getAutocompleteOptions();
-	      this.destroyAutocomplete();
-	      this.initAutocomplete();
+	    var _this = this;
+	
+	    this.unwatch = this.$watch('dataOptions.multiple.disabled', function (data) {
+	      _this.options = _this.getAutocompleteOptions();
+	      _this.destroyAutocomplete();
+	      _this.initAutocomplete();
 	    }, { deep: true });
 	  },
 	  mounted: function mounted() {
@@ -2712,7 +2731,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function initAutocomplete() {
 	  try {
-	    $('#autocomplete_' + this.id).ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest);
+	    var $autoComplete = $('#autocomplete_' + this.id);
+	    var self = this;
+	
+	    $autoComplete.ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest);
+	
+	    $autoComplete.on('change', function () {
+	      var selectedValues = [];
+	      self.$emit('input', $(this).val());
+	
+	      if ($.isArray($(this).val())) {
+	        selectedValues = $(this).val();
+	      } else {
+	        selectedValues.push($(this).val());
+	      }
+	
+	      self.dataOptions.selected = selectedValues;
+	      self.dataOptions.items = [];
+	      $(this).find('option').each(function (index, option) {
+	        var $option = $(option);
+	        var selected = $.inArray($option.attr('value'), selectedValues) === -1 ? false : true;
+	        self.dataOptions.items.push({
+	          name: $option.html(),
+	          value: $option.attr('value'),
+	          disabled: $option.attr('disabled'),
+	          class: $option.attr('class'),
+	          selected: selected
+	        });
+	      });
+	    });
 	  } catch (ex) {}
 	}
 	
@@ -2783,7 +2830,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 95 */
 /***/ (function(module, exports) {
 
-	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\n    </select>";
+	module.exports = "<select class=\"form-control\" :id=\"'autocomplete_' + id\" :multiple=\"options.multiple || multiple ? true : false\" :disabled=\"options.disabled || disabled ? true : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\n    </select>";
 
 /***/ }),
 /* 96 */
@@ -3031,7 +3078,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	exports.default = {
 	  name: 'datetimepicker',
-	  props: ['dataOptions', 'disabled', 'name', 'required', 'rangepicker'],
+	  props: ['dataOptions', 'disabled', 'name', 'required'],
 	  mixins: [_Datetimepicker2.default],
 	  data: function data() {
 	    return { options: this.getOptions() };
@@ -3048,16 +3095,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  destroyed: function destroyed() {
 	    this.destroyDatetimepicker();
 	  },
-	  methods: {
-	    readRefs: function readRefs() {
-	      console.log(this.$refs);
-	    }
-	  }
+	  methods: {}
 	  // </script>
 	
 	}; // <template>
 	//     <div class="input-group">
-	//         <input v-model="rangepicker" @change="readRefs" type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
+	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
 	//         <div class="input-group-addon cursor-pointer"><i :class="options.icons.date"></i></div>
 	//     </div>
 	// </template>
@@ -3170,7 +3213,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 103 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"input-group\">\n        <input v-model=\"rangepicker\" @change=\"readRefs\" type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\n        <div class=\"input-group-addon cursor-pointer\"><i :class=\"options.icons.date\"></i></div>\n    </div>";
+	module.exports = "<div class=\"input-group\">\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\n        <div class=\"input-group-addon cursor-pointer\"><i :class=\"options.icons.date\"></i></div>\n    </div>";
 
 /***/ }),
 /* 104 */
