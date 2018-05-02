@@ -1,6 +1,6 @@
 <template>
-    <select :id="'autocomplete_' + id" class="form-control" :multiple="options.multiple || multiple ? true : false">
-        <option value=''></option>
+    <select class="form-control" :id="'autocomplete_' + id" :multiple="options.multiple || multiple ? true : false" :disabled="options.disabled || disabled ? true : false">
+        <option value=""></option>
         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected" :disabled="item.disabled" :class="item.class">{{ item.name }}</option>
     </select>
 </template>
@@ -14,14 +14,16 @@
     name: 'autocomplete',
     props: {
       dataOptions: {
-        default: function () {
-          return {}
-        }
+        type: Object,
+        default: () => { return {} }
       },
       multiple: {
-        default: function () {
-          return false
-        }
+        type: Boolean,
+        default: () => { return false }
+      },
+      disabled: {
+        type: Boolean,
+        default: () => { return false }
       }
     },
     mixins: [ generalMixin, chosenMixin, autocompleteMixin ],
@@ -35,8 +37,16 @@
         options: this.getAutocompleteOptions()
       }
     },
+    methods: {
+      setValue(value) {
+        $('#autocomplete_' + this.id).val(value).trigger('change').trigger('chosen:updated');
+      },
+      getValue() {
+        return $('#autocomplete_' + this.id).val();
+      }
+    },
     beforeMount () {
-      this.unwatch = this.$watch('dataOptions', function (data) {
+      this.unwatch = this.$watch('dataOptions.multiple.disabled', (data) => {
         this.options = this.getAutocompleteOptions()
         this.destroyAutocomplete()
         this.initAutocomplete()

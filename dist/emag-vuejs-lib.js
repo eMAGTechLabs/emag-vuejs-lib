@@ -294,16 +294,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  name: 'chosen',
 	  props: {
 	    dataOptions: {
+	      type: Object,
 	      default: function _default() {
 	        return {};
 	      }
 	    },
-	    disabled: {
+	    multiple: {
+	      type: Boolean,
 	      default: function _default() {
 	        return false;
 	      }
 	    },
-	    multiple: {
+	    disabled: {
+	      type: Boolean,
 	      default: function _default() {
 	        return false;
 	      }
@@ -318,24 +321,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    return { options: this.getOptions() };
 	  },
+	
+	  methods: {
+	    setValue: function setValue(value) {
+	      $('#chosen_' + this.id).val(value).trigger('change').trigger('chosen:updated');
+	    },
+	    getValue: function getValue() {
+	      return $('#chosen_' + this.id).val();
+	    }
+	  },
 	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      this.options = this.getOptions();
-	      this.destroyChosen();
-	      this.initChosen();
-	      this.updateChosen();
-	    }, { deep: true, immediate: true });
-	    this.unwatch = this.$watch('disabled', function (data) {
-	      this.options = this.getOptions();
-	      this.destroyChosen();
-	      this.initChosen();
-	      this.updateChosen();
-	    }, { deep: true, immediate: true });
-	    this.unwatch = this.$watch('multiple', function (data) {
-	      this.options = this.getOptions();
-	      this.destroyChosen();
-	      this.initChosen();
-	      this.updateChosen();
+	    var _this = this;
+	
+	    this.unwatch = this.$watch('dataOptions.multiple.disabled', function (data) {
+	      _this.options = _this.getOptions();
+	      _this.destroyChosen();
+	      _this.initChosen();
+	      _this.updateChosen();
 	    }, { deep: true, immediate: true });
 	  },
 	  mounted: function mounted() {
@@ -347,11 +349,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	// </script>
 	// <template>
-	//     <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="options.multiple || multiple ? true : false">
+	
+	//     <select class="form-control" :id="'chosen_' + id" :multiple="options.multiple || multiple ? true : false" :disabled="options.disabled || disabled ? true : false">
+	
 	//         <option value=""></option>
+	
 	//         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected" :disabled="item.disabled" :class="item.class">{{ item.name }}</option>
+	
 	//     </select>
+	
 	// </template>
+	
 	// <script>
 
 /***/ }),
@@ -415,7 +423,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// 19.1.3.1 Object.assign(target, source)
 	var $export = __webpack_require__(24);
 	
-	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(40) });
+	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(39) });
 
 
 /***/ }),
@@ -426,7 +434,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var core = __webpack_require__(26);
 	var ctx = __webpack_require__(27);
 	var hide = __webpack_require__(29);
-	var has = __webpack_require__(39);
 	var PROTOTYPE = 'prototype';
 	
 	var $export = function (type, name, source) {
@@ -444,7 +451,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  for (key in source) {
 	    // contains in native
 	    own = !IS_FORCED && target && target[key] !== undefined;
-	    if (own && has(exports, key)) continue;
+	    if (own && key in exports) continue;
 	    // export native or passed
 	    out = own ? target[key] : source[key];
 	    // prevent global pollution for namespaces
@@ -502,7 +509,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 26 */
 /***/ (function(module, exports) {
 
-	var core = module.exports = { version: '2.5.5' };
+	var core = module.exports = { version: '2.5.1' };
 	if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -677,21 +684,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ }),
 /* 39 */
-/***/ (function(module, exports) {
-
-	var hasOwnProperty = {}.hasOwnProperty;
-	module.exports = function (it, key) {
-	  return hasOwnProperty.call(it, key);
-	};
-
-
-/***/ }),
-/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
-	var getKeys = __webpack_require__(41);
+	var getKeys = __webpack_require__(40);
 	var gOPS = __webpack_require__(55);
 	var pIE = __webpack_require__(56);
 	var toObject = __webpack_require__(57);
@@ -726,11 +723,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-	var $keys = __webpack_require__(42);
+	var $keys = __webpack_require__(41);
 	var enumBugKeys = __webpack_require__(54);
 	
 	module.exports = Object.keys || function keys(O) {
@@ -739,10 +736,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var has = __webpack_require__(39);
+	var has = __webpack_require__(42);
 	var toIObject = __webpack_require__(43);
 	var arrayIndexOf = __webpack_require__(47)(false);
 	var IE_PROTO = __webpack_require__(51)('IE_PROTO');
@@ -758,6 +755,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    ~arrayIndexOf(result, key) || result.push(key);
 	  }
 	  return result;
+	};
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports) {
+
+	var hasOwnProperty = {}.hasOwnProperty;
+	module.exports = function (it, key) {
+	  return hasOwnProperty.call(it, key);
 	};
 
 
@@ -1731,7 +1738,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function initChosen() {
-	  $('#chosen_' + this.id).chosen(this.options);
+	  try {
+	    var $chosen = $('#chosen_' + this.id);
+	    var self = this;
+	
+	    $chosen.chosen(this.options);
+	
+	    $chosen.on('change', function () {
+	      var selectedValues = [];
+	      self.$emit('input', $(this).val());
+	
+	      if ($.isArray($(this).val())) {
+	        selectedValues = $(this).val();
+	      } else {
+	        selectedValues.push($(this).val());
+	      }
+	
+	      self.dataOptions.selected = selectedValues;
+	    });
+	  } catch (ex) {}
 	}
 	
 	function updateChosen() {
@@ -1761,7 +1786,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 65 */
 /***/ (function(module, exports) {
 
-	module.exports = "<select :id=\"'chosen_' + id\" class=\"form-control\" :disabled=\"disabled\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=\"\"></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\n    </select>";
+	module.exports = "<select class=\"form-control\" :id=\"'chosen_' + id\" :multiple=\"options.multiple || multiple ? true : false\" :disabled=\"options.disabled || disabled ? true : false\">\r\n        <option value=\"\"></option>\r\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\r\n    </select>";
 
 /***/ }),
 /* 66 */
@@ -2239,26 +2264,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // </script>
 	
 	}; // <template>
+	
 	//     <a :href="getHrefForMenuItem(item)" :class="getCollapsedCssClass(collapsed)" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
+	
 	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	
 	//     </a>
+	
 	//     <router-link :to="{name: item.link, params: item.params }" :class="getCollapsedCssClass(collapsed)" v-else-if="item.params">
+	
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
+	
 	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	
 	//     </router-link>
+	
 	//     <router-link :to="{path: item.link}" :class="getCollapsedCssClass(collapsed)" v-else>
+	
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
+	
 	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	
 	//     </router-link>
+	
 	// </template>
+	
 	// <script>
 
 /***/ }),
 /* 79 */
 /***/ (function(module, exports) {
 
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"{name: item.link, params: item.params }\" :class=\"getCollapsedCssClass(collapsed)\" v-else-if=\"item.params\">\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>\n    <router-link :to=\"{path: item.link}\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\r\n    </a>\r\n    <router-link :to=\"{name: item.link, params: item.params }\" :class=\"getCollapsedCssClass(collapsed)\" v-else-if=\"item.params\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\r\n    </router-link>\r\n    <router-link :to=\"{path: item.link}\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\r\n    </router-link>";
 
 /***/ }),
 /* 80 */
@@ -2621,21 +2660,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	/* eslint-disable no-undef */
 	// <template>
-	//     <select :id="'autocomplete_' + id" class="form-control" :multiple="options.multiple || multiple ? true : false">
-	//         <option value=''></option>
+	
+	//     <select class="form-control" :id="'autocomplete_' + id" :multiple="options.multiple || multiple ? true : false" :disabled="options.disabled || disabled ? true : false">
+	
+	//         <option value=""></option>
+	
 	//         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected" :disabled="item.disabled" :class="item.class">{{ item.name }}</option>
+	
 	//     </select>
+	
 	// </template>
+	
 	// <script>
 	exports.default = {
 	  name: 'autocomplete',
 	  props: {
 	    dataOptions: {
+	      type: Object,
 	      default: function _default() {
 	        return {};
 	      }
 	    },
 	    multiple: {
+	      type: Boolean,
+	      default: function _default() {
+	        return false;
+	      }
+	    },
+	    disabled: {
+	      type: Boolean,
 	      default: function _default() {
 	        return false;
 	      }
@@ -2652,11 +2705,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	      options: this.getAutocompleteOptions()
 	    };
 	  },
+	
+	  methods: {
+	    setValue: function setValue(value) {
+	      $('#autocomplete_' + this.id).val(value).trigger('change').trigger('chosen:updated');
+	    },
+	    getValue: function getValue() {
+	      return $('#autocomplete_' + this.id).val();
+	    }
+	  },
 	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      this.options = this.getAutocompleteOptions();
-	      this.destroyAutocomplete();
-	      this.initAutocomplete();
+	    var _this = this;
+	
+	    this.unwatch = this.$watch('dataOptions.multiple.disabled', function (data) {
+	      _this.options = _this.getAutocompleteOptions();
+	      _this.destroyAutocomplete();
+	      _this.initAutocomplete();
 	    }, { deep: true });
 	  },
 	  mounted: function mounted() {
@@ -2712,7 +2776,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function initAutocomplete() {
 	  try {
-	    $('#autocomplete_' + this.id).ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest);
+	    var $autoComplete = $('#autocomplete_' + this.id);
+	    var self = this;
+	
+	    $autoComplete.ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest);
+	
+	    $autoComplete.on('change', function () {
+	      var selectedValues = [];
+	      self.$emit('input', $(this).val());
+	
+	      if ($.isArray($(this).val())) {
+	        selectedValues = $(this).val();
+	      } else {
+	        selectedValues.push($(this).val());
+	      }
+	
+	      self.dataOptions.selected = selectedValues;
+	    });
 	  } catch (ex) {}
 	}
 	
@@ -2783,7 +2863,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 95 */
 /***/ (function(module, exports) {
 
-	module.exports = "<select :id=\"'autocomplete_' + id\" class=\"form-control\" :multiple=\"options.multiple || multiple ? true : false\">\n        <option value=''></option>\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\n    </select>";
+	module.exports = "<select class=\"form-control\" :id=\"'autocomplete_' + id\" :multiple=\"options.multiple || multiple ? true : false\" :disabled=\"options.disabled || disabled ? true : false\">\r\n        <option value=\"\"></option>\r\n        <option v-for=\"item in dataOptions.items\" :value=\"item.value\" :selected=\"item.selected\" :disabled=\"item.disabled\" :class=\"item.class\">{{ item.name }}</option>\r\n    </select>";
 
 /***/ }),
 /* 96 */
@@ -3031,7 +3111,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* eslint-disable no-undef */
 	exports.default = {
 	  name: 'datetimepicker',
-	  props: ['dataOptions', 'disabled', 'name', 'required', 'rangepicker'],
+	  props: ['dataOptions', 'disabled', 'name', 'required'],
 	  mixins: [_Datetimepicker2.default],
 	  data: function data() {
 	    return { options: this.getOptions() };
@@ -3048,19 +3128,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	  destroyed: function destroyed() {
 	    this.destroyDatetimepicker();
 	  },
-	  methods: {
-	    readRefs: function readRefs() {
-	      console.log(this.$refs);
-	    }
-	  }
+	  methods: {}
 	  // </script>
 	
 	}; // <template>
+	
 	//     <div class="input-group">
-	//         <input v-model="rangepicker" @change="readRefs" type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
+	
+	//         <input type="text" :id="'date_time_' + id" class="form-control" autocomplete="off" :disabled="disabled" :name="name" :required="required">
+	
 	//         <div class="input-group-addon cursor-pointer"><i :class="options.icons.date"></i></div>
+	
 	//     </div>
+	
 	// </template>
+	
 	// <script>
 
 /***/ }),
@@ -3170,7 +3252,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 103 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"input-group\">\n        <input v-model=\"rangepicker\" @change=\"readRefs\" type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\n        <div class=\"input-group-addon cursor-pointer\"><i :class=\"options.icons.date\"></i></div>\n    </div>";
+	module.exports = "<div class=\"input-group\">\r\n        <input type=\"text\" :id=\"'date_time_' + id\" class=\"form-control\" autocomplete=\"off\" :disabled=\"disabled\" :name=\"name\" :required=\"required\">\r\n        <div class=\"input-group-addon cursor-pointer\"><i :class=\"options.icons.date\"></i></div>\r\n    </div>";
 
 /***/ }),
 /* 104 */
@@ -3235,21 +3317,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // </script>
 	
 	}; // <template>
+	
 	//     <div class="input-group">
+	
 	//         <input
+	
 	//           class="form-control"
+	
 	//           autocomplete="off"
+	
 	//           type="text"
+	
 	//           :id="'date_range_' + id"
+	
 	//           :disabled="disabled"
+	
 	//           :name="name"
+	
 	//           :required="required"
+	
 	//         >
+	
 	//         <div class="input-group-addon cursor-pointer">
+	
 	//             <i :class="options.icons.date"></i>
+	
 	//         </div>
+	
 	//     </div>
+	
 	// </template>
+	
 	// <script>
 
 /***/ }),
@@ -3320,7 +3418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 107 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"input-group\">\n        <input\n          class=\"form-control\"\n          autocomplete=\"off\"\n          type=\"text\"\n          :id=\"'date_range_' + id\"\n          :disabled=\"disabled\"\n          :name=\"name\"\n          :required=\"required\"\n        >\n        <div class=\"input-group-addon cursor-pointer\">\n            <i :class=\"options.icons.date\"></i>\n        </div>\n    </div>";
+	module.exports = "<div class=\"input-group\">\r\n        <input\r\n          class=\"form-control\"\r\n          autocomplete=\"off\"\r\n          type=\"text\"\r\n          :id=\"'date_range_' + id\"\r\n          :disabled=\"disabled\"\r\n          :name=\"name\"\r\n          :required=\"required\"\r\n        >\r\n        <div class=\"input-group-addon cursor-pointer\">\r\n            <i :class=\"options.icons.date\"></i>\r\n        </div>\r\n    </div>";
 
 /***/ }),
 /* 108 */
@@ -11948,37 +12046,62 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // </script>
 	
 	}; // <template>
+	
 	//     <li v-if="user.label" class="dropdown">
+	
 	//         <a href="javascript:void(0)" class="dropdown-toggle dd-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	
 	//             <div class="profile-thumb hidden-xs">
+	
 	//                 <img v-if="user.imageLink" class="nav-user-photo" :src="user.imageLink" alt="" onerror="this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'" height="36">
+	
 	//                 <img v-else class="nav-user-photo" src="~emag-apps-ui-kit/dist/css/icons/default_user.png" alt="" height="36">
+	
 	//             </div>
+	
 	//             <span>
+	
 	//               {{ user.label }}
+	
 	//             </span>
+	
 	//             <i class="fa fa-angle-down hidden-xs"></i>
+	
 	//         </a>
+	
 	//         <ul class="dropdown-menu">
+	
 	//             <li v-if="account">
+	
 	//                 <link-item :item="account"></link-item>
+	
 	//             </li>
+	
 	//             <li v-for="link in user.links">
+	
 	//                 <router-link :to="{name: link.route}">{{ $t(link.label) }}</router-link>
+	
 	//             </li>
+	
 	//             <li v-if="logout">
+	
 	//                 <router-link :to="{name: 'logout'}">{{ $t(logout.label) }}</router-link>
+	
 	//             </li>
+	
 	//         </ul>
+	
 	//     </li>
+	
 	// </template>
+	
 	// <script>
 
 /***/ }),
 /* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <div class=\"profile-thumb hidden-xs\">\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(122) + "\" alt=\"\" height=\"36\">\n            </div>\n            <span>\n              {{ user.label }}\n            </span>\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li v-if=\"account\">\n                <link-item :item=\"account\"></link-item>\n            </li>\n            <li v-for=\"link in user.links\">\n                <router-link :to=\"{name: link.route}\">{{ $t(link.label) }}</router-link>\n            </li>\n            <li v-if=\"logout\">\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\n            </li>\n        </ul>\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\r\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <div class=\"profile-thumb hidden-xs\">\r\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\r\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(122) + "\" alt=\"\" height=\"36\">\r\n            </div>\r\n            <span>\r\n              {{ user.label }}\r\n            </span>\r\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n            <li v-if=\"account\">\r\n                <link-item :item=\"account\"></link-item>\r\n            </li>\r\n            <li v-for=\"link in user.links\">\r\n                <router-link :to=\"{name: link.route}\">{{ $t(link.label) }}</router-link>\r\n            </li>\r\n            <li v-if=\"logout\">\r\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\r\n            </li>\r\n        </ul>\r\n    </li>";
 
 /***/ }),
 /* 122 */
@@ -12155,7 +12278,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// 19.1.2.14 Object.keys(O)
 	var toObject = __webpack_require__(57);
-	var $keys = __webpack_require__(41);
+	var $keys = __webpack_require__(40);
 	
 	__webpack_require__(129)('keys', function () {
 	  return function keys(it) {
@@ -12516,6 +12639,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var $export = __webpack_require__(24);
 	var redefine = __webpack_require__(143);
 	var hide = __webpack_require__(29);
+	var has = __webpack_require__(42);
 	var Iterators = __webpack_require__(144);
 	var $iterCreate = __webpack_require__(145);
 	var setToStringTag = __webpack_require__(149);
@@ -12553,7 +12677,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // Set @@toStringTag to native iterators
 	      setToStringTag(IteratorPrototype, TAG, true);
 	      // fix for some old engines
-	      if (!LIBRARY && typeof IteratorPrototype[ITERATOR] != 'function') hide(IteratorPrototype, ITERATOR, returnThis);
+	      if (!LIBRARY && !has(IteratorPrototype, ITERATOR)) hide(IteratorPrototype, ITERATOR, returnThis);
 	    }
 	  }
 	  // fix Array#{values, @@iterator}.name in V8 / FF
@@ -12675,7 +12799,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var dP = __webpack_require__(30);
 	var anObject = __webpack_require__(31);
-	var getKeys = __webpack_require__(41);
+	var getKeys = __webpack_require__(40);
 	
 	module.exports = __webpack_require__(34) ? Object.defineProperties : function defineProperties(O, Properties) {
 	  anObject(O);
@@ -12701,7 +12825,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	var def = __webpack_require__(30).f;
-	var has = __webpack_require__(39);
+	var has = __webpack_require__(42);
 	var TAG = __webpack_require__(150)('toStringTag');
 	
 	module.exports = function (it, tag, stat) {
@@ -12731,7 +12855,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-	var has = __webpack_require__(39);
+	var has = __webpack_require__(42);
 	var toObject = __webpack_require__(57);
 	var IE_PROTO = __webpack_require__(51)('IE_PROTO');
 	var ObjectProto = Object.prototype;

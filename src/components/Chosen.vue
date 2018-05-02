@@ -1,5 +1,5 @@
 <template>
-    <select :id="'chosen_' + id" class="form-control" :disabled="disabled" :multiple="options.multiple || multiple ? true : false">
+    <select class="form-control" :id="'chosen_' + id" :multiple="options.multiple || multiple ? true : false" :disabled="options.disabled || disabled ? true : false">
         <option value=""></option>
         <option v-for="item in dataOptions.items" :value="item.value" :selected="item.selected" :disabled="item.disabled" :class="item.class">{{ item.name }}</option>
     </select>
@@ -12,19 +12,16 @@
     name: 'chosen',
     props: {
       dataOptions: {
-        default: function () {
-          return {}
-        }
-      },
-      disabled: {
-        default: function () {
-          return false
-        }
+        type: Object,
+        default: () => { return {} }
       },
       multiple: {
-        default: function () {
-          return false
-        }
+        type: Boolean,
+        default: () => { return false }
+      },
+      disabled: {
+        type: Boolean,
+        default: () => { return false }
       }
     },
     mixins: [ generalMixin, chosenMixin ],
@@ -36,20 +33,16 @@
 
       return { options: this.getOptions() }
     },
+    methods: {
+      setValue(value) {
+        $('#chosen_' + this.id).val(value).trigger('change').trigger('chosen:updated');
+      },
+      getValue() {
+        return $('#chosen_' + this.id).val();
+      }
+    },
     beforeMount () {
-      this.unwatch = this.$watch('dataOptions', function (data) {
-        this.options = this.getOptions()
-        this.destroyChosen()
-        this.initChosen()
-        this.updateChosen()
-      }, { deep: true, immediate: true })
-      this.unwatch = this.$watch('disabled', function (data) {
-        this.options = this.getOptions()
-        this.destroyChosen()
-        this.initChosen()
-        this.updateChosen()
-      }, { deep: true, immediate: true })
-      this.unwatch = this.$watch('multiple', function (data) {
+      this.unwatch = this.$watch('dataOptions.multiple.disabled', (data) => {
         this.options = this.getOptions()
         this.destroyChosen()
         this.initChosen()

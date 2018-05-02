@@ -26,7 +26,23 @@ function getRequestParameters () {
 
 function initAutocomplete () {
   try {
-    $('#autocomplete_' + this.id).ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest)
+    let $autoComplete = $('#autocomplete_' + this.id)
+    let self = this
+
+    $autoComplete.ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest)
+
+    $autoComplete.on('change', function() {
+      let selectedValues = [];
+      self.$emit('input', $(this).val())
+
+      if($.isArray($(this).val())) {
+        selectedValues = $(this).val()
+      } else {
+        selectedValues.push($(this).val())
+      }
+
+      self.dataOptions.selected = selectedValues;
+    })
   } catch (ex) { }
 }
 

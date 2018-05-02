@@ -13,7 +13,25 @@ function getOptions () {
 }
 
 function initChosen () {
-  $('#chosen_' + this.id).chosen(this.options)
+  try {
+    let $chosen = $('#chosen_' + this.id)
+    let self = this
+
+    $chosen.chosen(this.options)
+
+    $chosen.on('change', function() {
+      let selectedValues = [];
+      self.$emit('input', $(this).val())
+
+      if($.isArray($(this).val())) {
+        selectedValues = $(this).val()
+      } else {
+        selectedValues.push($(this).val())
+      }
+
+      self.dataOptions.selected = selectedValues;
+    })
+  } catch (ex) { }
 }
 
 function updateChosen () {
