@@ -45,14 +45,17 @@ function initAutocomplete () {
       self.dataOptions.items = []
       $(this).find('option').each( function(index, option) {
         let $option = $(option);
-        let selected = $.inArray($option.attr('value'), selectedValues) === -1 ? false : true;
-        self.dataOptions.items.push({
-          name: $option.html(),
-          value: $option.attr('value'),
-          disabled: $option.attr('disabled'),
-          class: $option.attr('class'),
-          selected: selected
-        })
+        let value = $option.attr('value')
+        if (value) {
+          let selected = $.inArray(value, selectedValues) === -1 ? false : true;
+          self.dataOptions.items.push({
+            name: $option.html(),
+            value: value,
+            disabled: ($option.attr('disabled') === 'disabled'),
+            class: $option.attr('class'),
+            selected: selected
+          })
+        }
       })
     })
   } catch (ex) { }
