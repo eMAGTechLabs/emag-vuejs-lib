@@ -42,21 +42,6 @@ function initAutocomplete () {
       }
 
       self.dataOptions.selected = selectedValues;
-      self.dataOptions.items = []
-      $(this).find('option').each( function(index, option) {
-        let $option = $(option);
-        let value = $option.attr('value')
-        if (value) {
-          let selected = $.inArray(value, selectedValues) === -1 ? false : true;
-          self.dataOptions.items.push({
-            name: $option.html(),
-            value: value,
-            disabled: ($option.attr('disabled') === 'disabled'),
-            class: $option.attr('class'),
-            selected: selected
-          })
-        }
-      })
     })
   } catch (ex) { }
 }
