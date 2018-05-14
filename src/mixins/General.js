@@ -9,9 +9,14 @@ function changeRoute (newRoute) {
   this.$router.push({name: newRoute})
 }
 
+function isFunction (testFunction) {
+  return typeof testFunction === 'function'
+}
+
 export default {
   methods: {
     getDefaultLang,
-    changeRoute
+    changeRoute,
+    isFunction
   }
 }

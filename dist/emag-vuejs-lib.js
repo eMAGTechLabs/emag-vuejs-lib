@@ -1700,10 +1700,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.$router.push({ name: newRoute });
 	}
 	
+	function isFunction(testFunction) {
+	  return typeof testFunction === 'function';
+	}
+	
 	exports.default = {
 	  methods: {
 	    getDefaultLang: getDefaultLang,
-	    changeRoute: changeRoute
+	    changeRoute: changeRoute,
+	    isFunction: isFunction
 	  }
 	};
 
@@ -2248,8 +2253,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
+	
+	var _General = __webpack_require__(63);
+	
+	var _General2 = _interopRequireDefault(_General);
 	
 	var _Sidebar = __webpack_require__(76);
 	
@@ -2257,19 +2266,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = {
-	  name: 'sidebar-item',
-	  props: ['item', 'collapsed'],
-	  mixins: [_Sidebar2.default]
-	  // </script>
-	
-	}; // <template>
+	// <template>
 	
 	//     <a :href="getHrefForMenuItem(item)" :class="getCollapsedCssClass(collapsed)" v-if="isAbsolute(item) || hasEmptyLink(item)">
 	
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
 	
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//     </a>
 	
@@ -2277,7 +2280,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
 	
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//     </router-link>
 	
@@ -2285,19 +2288,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
 	
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//     </router-link>
 	
 	// </template>
 	
 	// <script>
+	exports.default = {
+	    name: 'sidebar-item',
+	    props: ['item', 'collapsed'],
+	    mixins: [_General2.default, _Sidebar2.default]
+	    // </script>
+	
+	};
 
 /***/ }),
 /* 79 */
 /***/ (function(module, exports) {
 
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\r\n    </a>\r\n    <router-link :to=\"{name: item.link, params: item.params }\" :class=\"getCollapsedCssClass(collapsed)\" v-else-if=\"item.params\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\r\n    </router-link>\r\n    <router-link :to=\"{path: item.link}\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\r\n    </router-link>";
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </a>\r\n    <router-link :to=\"{name: item.link, params: item.params }\" :class=\"getCollapsedCssClass(collapsed)\" v-else-if=\"item.params\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </router-link>\r\n    <router-link :to=\"{path: item.link}\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </router-link>";
 
 /***/ }),
 /* 80 */
@@ -2899,10 +2909,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _messages = __webpack_require__(20);
-	
-	var _messages2 = _interopRequireDefault(_messages);
-	
 	var _General = __webpack_require__(63);
 	
 	var _General2 = _interopRequireDefault(_General);
@@ -2913,36 +2919,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = {
-	  name: 'modal',
-	  props: {
-	    closeOnClickOutside: { type: Boolean, default: true },
-	    customClass: { type: String, default: '' },
-	    modalIdentifier: { type: String, default: '' },
-	    recreateOnShow: { type: Boolean, default: true },
-	    showCloseButton: { type: Boolean, default: true },
-	    size: { type: String, default: '' },
-	    type: { type: String, default: 'default' }
-	  },
-	  mixins: [_General2.default, _Modal2.default],
-	  data: function data() {
-	    this.id = this._uid;
-	    this.translations = _messages2.default.translations[this.getDefaultLang()];
-	
-	    return {
-	      modalDialogClass: this.getModalDialogClass(),
-	      dataBackdrop: this.closeOnClickOutside ? 'true' : 'static',
-	      dataKeyboard: this.closeOnClickOutside ? 'true' : 'false'
-	    };
-	  },
-	  mounted: function mounted() {
-	    this.moveModalToPopSpace();
-	  },
-	  destroyed: function destroyed() {
-	    this.destroyModal();
-	  }
-	};
-	// </script>
 	// <template>
 	
 	//     <div class="modal fade" :id="'modal_' + id" tabindex="-1" role="dialog" :data-modal-identifier="modalIdentifier" :aria-labelledby="'modal_' + id + 'Label'" :data-backdrop="dataBackdrop" :data-keyboard="dataKeyboard">
@@ -2979,15 +2955,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//                             <template v-if="type === 'form'">
 	
-	//                                 <button type="button" class="btn btn-success modal-btn-submit"><span>{{ $t("label.save") }}</span></button>
+	//                                 <button type="button" class="btn btn-success modal-btn-submit"><span><template v-if="isFunction($t)">{{ $t("label.save") }}</template><template v-else>Save</template></span></button>
 	
-	//                                 <button type="button" class="btn btn-default" data-dismiss="modal"><span><i class="fa fa-times"></i> {{ $t("label.cancel") }}</span></button>
+	//                                 <button type="button" class="btn btn-default" data-dismiss="modal"><span><i class="fa fa-times"></i> <template v-if="isFunction($t)">{{ $t("label.cancel") }}</template><template v-else>Cancel</template></span></button>
 	
 	//                             </template>
 	
 	//                             <template v-else-if="type === 'preview'">
 	
-	//                                 <button type="button" class="btn btn-link" data-dismiss="modal"><span><i class="fa fa-times"></i> {{ $t("label.cancel") }}</span></button>
+	//                                 <button type="button" class="btn btn-link" data-dismiss="modal"><span><i class="fa fa-times"></i> <template v-if="isFunction($t)">{{ $t("label.cancel") }}</template><template v-else>Cancel</template></span></button>
 	
 	//                             </template>
 	
@@ -3008,6 +2984,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </template>
 	
 	// <script>
+	exports.default = {
+	  name: 'modal',
+	  props: {
+	    closeOnClickOutside: { type: Boolean, default: true },
+	    customClass: { type: String, default: '' },
+	    modalIdentifier: { type: String, default: '' },
+	    recreateOnShow: { type: Boolean, default: true },
+	    showCloseButton: { type: Boolean, default: true },
+	    size: { type: String, default: '' },
+	    type: { type: String, default: 'default' }
+	  },
+	  mixins: [_General2.default, _Modal2.default],
+	  data: function data() {
+	    this.id = this._uid;
+	
+	    return {
+	      modalDialogClass: this.getModalDialogClass(),
+	      dataBackdrop: this.closeOnClickOutside ? 'true' : 'static',
+	      dataKeyboard: this.closeOnClickOutside ? 'true' : 'false'
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.moveModalToPopSpace();
+	  },
+	  destroyed: function destroyed() {
+	    this.destroyModal();
+	  }
+	};
+	// </script>
 
 /***/ }),
 /* 98 */
@@ -3066,7 +3071,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 99 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"modal fade\" :id=\"'modal_' + id\" tabindex=\"-1\" role=\"dialog\" :data-modal-identifier=\"modalIdentifier\" :aria-labelledby=\"'modal_' + id + 'Label'\" :data-backdrop=\"dataBackdrop\" :data-keyboard=\"dataKeyboard\">\r\n        <div :class=\"'modal-dialog ' + modalDialogClass\" role=\"document\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <button v-if=\"showCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\"><i class=\"fa fa-remove\"></i></span></button>\r\n                    <h4 class=\"modal-title\" :id=\"'modal_' + id + 'Label'\"><slot name=\"title\"></slot></h4>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <slot></slot>\r\n                </div>\r\n                <div class=\"modal-footer\">\r\n                    <div class=\"pull-left\">\r\n                        <slot name=\"footerText\"></slot>\r\n                    </div>\r\n                    <div class=\"pull-right panel-controls\">\r\n                        <slot name=\"footerButtons\">\r\n                            <template v-if=\"type === 'form'\">\r\n                                <button type=\"button\" class=\"btn btn-success modal-btn-submit\"><span>{{ $t(\"label.save\") }}</span></button>\r\n                                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> {{ $t(\"label.cancel\") }}</span></button>\r\n                            </template>\r\n                            <template v-else-if=\"type === 'preview'\">\r\n                                <button type=\"button\" class=\"btn btn-link\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> {{ $t(\"label.cancel\") }}</span></button>\r\n                            </template>\r\n                        </slot>\r\n                    </div>\r\n                </div>\r\n                <div class=\"pull-left\"></div>\r\n            </div>\r\n        </div>\r\n    </div>";
+	module.exports = "<div class=\"modal fade\" :id=\"'modal_' + id\" tabindex=\"-1\" role=\"dialog\" :data-modal-identifier=\"modalIdentifier\" :aria-labelledby=\"'modal_' + id + 'Label'\" :data-backdrop=\"dataBackdrop\" :data-keyboard=\"dataKeyboard\">\r\n        <div :class=\"'modal-dialog ' + modalDialogClass\" role=\"document\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <button v-if=\"showCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\"><i class=\"fa fa-remove\"></i></span></button>\r\n                    <h4 class=\"modal-title\" :id=\"'modal_' + id + 'Label'\"><slot name=\"title\"></slot></h4>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <slot></slot>\r\n                </div>\r\n                <div class=\"modal-footer\">\r\n                    <div class=\"pull-left\">\r\n                        <slot name=\"footerText\"></slot>\r\n                    </div>\r\n                    <div class=\"pull-right panel-controls\">\r\n                        <slot name=\"footerButtons\">\r\n                            <template v-if=\"type === 'form'\">\r\n                                <button type=\"button\" class=\"btn btn-success modal-btn-submit\"><span><template v-if=\"isFunction($t)\">{{ $t(\"label.save\") }}</template><template v-else>Save</template></span></button>\r\n                                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> <template v-if=\"isFunction($t)\">{{ $t(\"label.cancel\") }}</template><template v-else>Cancel</template></span></button>\r\n                            </template>\r\n                            <template v-else-if=\"type === 'preview'\">\r\n                                <button type=\"button\" class=\"btn btn-link\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> <template v-if=\"isFunction($t)\">{{ $t(\"label.cancel\") }}</template><template v-else>Cancel</template></span></button>\r\n                            </template>\r\n                        </slot>\r\n                    </div>\r\n                </div>\r\n                <div class=\"pull-left\"></div>\r\n            </div>\r\n        </div>\r\n    </div>";
 
 /***/ }),
 /* 100 */
@@ -3454,6 +3459,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
+	var _General = __webpack_require__(63);
+	
+	var _General2 = _interopRequireDefault(_General);
+	
 	var _Header = __webpack_require__(110);
 	
 	var _Header2 = _interopRequireDefault(_Header);
@@ -3464,27 +3473,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template>
-	//   <li class="dropdown">
-	//     <a href="javascript:void(0)" class="dropdown-toggle dd-language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-	//       <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
-	//       <span><i :class="['flag-icon', locale.icon]"></i>{{ locale.label }}</span><i class="fa fa-angle-down hidden-xs"></i>
-	//     </a>
-	//     <ul class="dropdown-menu dm-language">
-	//       <li v-for="item in items" v-on:click="reloadPage()">
-	//         <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
-	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//             <span class="menu-text">{{ $t(item.label) }}</span>
-	//         </a>
-	//         <router-link :to="item.link" v-on:click="onClick || null" v-else>
-	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//             <span class="menu-text">{{ $t(item.label) }}</span>
-	//         </router-link>
-	//       </li>
-	//     </ul>
-	//   </li>
-	// </template>
-	// <script>
 	exports.default = {
 	  name: 'headerLocaleChild',
 	  data: function data() {
@@ -3493,7 +3481,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	  },
 	
-	  mixins: [_Header2.default, _Sidebar2.default],
+	  mixins: [_General2.default, _Header2.default, _Sidebar2.default],
 	  computed: {
 	    locale: function locale() {
 	      return this.$store.state.config.locale;
@@ -3513,6 +3501,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	// </script>
+	// <template>
+	//   <li class="dropdown">
+	//     <a href="javascript:void(0)" class="dropdown-toggle dd-language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+	//       <span class="visible-xs-inline"><template v-if="isFunction($t)">{{ $t('label.language') }}</template><template v-else>Language</template></span>
+	//       <span><i :class="['flag-icon', locale.icon]"></i>{{ locale.label }}</span><i class="fa fa-angle-down hidden-xs"></i>
+	//     </a>
+	//     <ul class="dropdown-menu dm-language">
+	//       <li v-for="item in items" v-on:click="reloadPage()">
+	//         <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//             <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//         </a>
+	//         <router-link :to="item.link" v-on:click="onClick || null" v-else>
+	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	//             <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//         </router-link>
+	//       </li>
+	//     </ul>
+	//   </li>
+	// </template>
+	// <script>
 
 /***/ }),
 /* 110 */
@@ -11811,7 +11820,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 112 */
 /***/ (function(module, exports) {
 
-	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\">{{ $t(item.label) }}</span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
+	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\"><template v-if=\"isFunction($t)\">{{ $t('label.language') }}</template><template v-else>Language</template></span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
 
 /***/ }),
 /* 113 */
@@ -11847,14 +11856,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
+	var _General = __webpack_require__(63);
+	
+	var _General2 = _interopRequireDefault(_General);
+	
 	var _LinkItem = __webpack_require__(115);
 	
 	var _LinkItem2 = _interopRequireDefault(_LinkItem);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//     <li v-if="user.label" class="dropdown">
+	//         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	//             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
+	//             <span class="visible-xs-inline"><template v-if="isFunction($t)">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>
+	//             <span class="jewel" v-if="total != 0">{{ total }} </span>
+	//         </a>
+	//         <ul class="dropdown-menu">
+	//             <li class="dm-header hidden-xs">
+	//                 <span><template v-if="isFunction($t)">{{ $t(label) }}</template><template v-else>Notifications</template></span>
+	//             </li>
+	//             <li v-for="notification in notifications">
+	//               <link-item :item="notification"></link-item>
+	//             </li>
+	//         </ul>
+	//     </li>
+	// </template>
+	// <script>
 	exports.default = {
 	  name: 'headerNotificationsChild',
+	  mixins: [_General2.default],
 	  computed: {
 	    total: function total() {
 	      return this.$store.state.config.notifications.total;
@@ -11883,24 +11915,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  // </script>
 	
-	}; // <template>
-	//     <li v-if="user.label" class="dropdown">
-	//         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	//             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
-	//             <span class="visible-xs-inline">{{ $t('baseNotifications.titleNotice') }}</span>
-	//             <span class="jewel" v-if="total != 0">{{ total }} </span>
-	//         </a>
-	//         <ul class="dropdown-menu">
-	//             <li class="dm-header hidden-xs">
-	//                 <span>{{ $t(label) }}</span>
-	//             </li>
-	//             <li v-for="notification in notifications">
-	//               <link-item :item="notification"></link-item>
-	//             </li>
-	//         </ul>
-	//     </li>
-	// </template>
-	// <script>
+	};
 
 /***/ }),
 /* 115 */
@@ -11933,8 +11948,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
+	
+	var _General = __webpack_require__(63);
+	
+	var _General2 = _interopRequireDefault(_General);
 	
 	var _Sidebar = __webpack_require__(76);
 	
@@ -11942,35 +11961,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = {
-	  name: 'link-item',
-	  props: ['item'],
-	  mixins: [_Sidebar2.default]
-	  // </script>
-	
-	}; // <template>
+	// <template>
 	//     <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
 	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	//     </a>
 	//     <router-link :to="item.link" v-on:click="onClick || null" v-else>
 	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//         <span class="menu-text">{{ $t(item.label) }}</span>
+	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	//     </router-link>
 	// </template>
 	// <script>
+	exports.default = {
+	    name: 'link-item',
+	    props: ['item'],
+	    mixins: [_General2.default, _Sidebar2.default]
+	    // </script>
+	
+	};
 
 /***/ }),
 /* 117 */
 /***/ (function(module, exports) {
 
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </a>\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\">{{ $t(item.label) }}</span>\n    </router-link>";
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n    </a>\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n    </router-link>";
 
 /***/ }),
 /* 118 */
 /***/ (function(module, exports) {
 
-	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\">{{ $t('baseNotifications.titleNotice') }}</span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span>{{ $t(label) }}</span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\"><template v-if=\"isFunction($t)\">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span><template v-if=\"isFunction($t)\">{{ $t(label) }}</template><template v-else>Notifications</template></span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
 
 /***/ }),
 /* 119 */
@@ -12006,46 +12026,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
+	var _General = __webpack_require__(63);
+	
+	var _General2 = _interopRequireDefault(_General);
+	
 	var _LinkItem = __webpack_require__(115);
 	
 	var _LinkItem2 = _interopRequireDefault(_LinkItem);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = {
-	  name: 'headerUserChild',
-	  computed: {
-	    account: function account() {
-	      return this.$store.state.config.user.account;
-	    },
-	    logout: function logout() {
-	      return this.$store.state.config.user.logout;
-	    },
-	    user: function user() {
-	      return this.$store.state.config.user;
-	    }
-	  },
-	  beforeMount: function beforeMount() {
-	    var username = localStorage.getItem('username');
-	    var userImageLink = localStorage.getItem('user-image-link');
-	    if (username) {
-	      this.$store.commit('setUser', {
-	        label: username
-	      });
-	    }
-	    if (userImageLink) {
-	      this.$store.commit('setUser', {
-	        imageLink: userImageLink
-	      });
-	    }
-	  },
-	
-	  components: {
-	    LinkItem: _LinkItem2.default
-	  }
-	  // </script>
-	
-	}; // <template>
+	// <template>
 	
 	//     <li v-if="user.label" class="dropdown">
 	
@@ -12079,13 +12070,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//             <li v-for="link in user.links">
 	
-	//                 <router-link :to="{name: link.route}">{{ $t(link.label) }}</router-link>
+	//                 <router-link :to="{name: link.route}"><template v-if="isFunction($t)">{{ $t(link.label) }}</template><template v-else>{{ link.label }}</template></router-link>
 	
 	//             </li>
 	
 	//             <li v-if="logout">
 	
-	//                 <router-link :to="{name: 'logout'}">{{ $t(logout.label) }}</router-link>
+	//                 <router-link :to="{name: 'logout'}"><template v-if="isFunction($t)">{{ $t(logout.label) }}</template><template v-else>{{ logout.label }}</template></router-link>
 	
 	//             </li>
 	
@@ -12096,12 +12087,47 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </template>
 	
 	// <script>
+	exports.default = {
+	  name: 'headerUserChild',
+	  mixins: [_General2.default],
+	  computed: {
+	    account: function account() {
+	      return this.$store.state.config.user.account;
+	    },
+	    logout: function logout() {
+	      return this.$store.state.config.user.logout;
+	    },
+	    user: function user() {
+	      return this.$store.state.config.user;
+	    }
+	  },
+	  beforeMount: function beforeMount() {
+	    var username = localStorage.getItem('username');
+	    var userImageLink = localStorage.getItem('user-image-link');
+	    if (username) {
+	      this.$store.commit('setUser', {
+	        label: username
+	      });
+	    }
+	    if (userImageLink) {
+	      this.$store.commit('setUser', {
+	        imageLink: userImageLink
+	      });
+	    }
+	  },
+	
+	  components: {
+	    LinkItem: _LinkItem2.default
+	  }
+	  // </script>
+	
+	};
 
 /***/ }),
 /* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\r\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <div class=\"profile-thumb hidden-xs\">\r\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\r\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(122) + "\" alt=\"\" height=\"36\">\r\n            </div>\r\n            <span>\r\n              {{ user.label }}\r\n            </span>\r\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n            <li v-if=\"account\">\r\n                <link-item :item=\"account\"></link-item>\r\n            </li>\r\n            <li v-for=\"link in user.links\">\r\n                <router-link :to=\"{name: link.route}\">{{ $t(link.label) }}</router-link>\r\n            </li>\r\n            <li v-if=\"logout\">\r\n                <router-link :to=\"{name: 'logout'}\">{{ $t(logout.label) }}</router-link>\r\n            </li>\r\n        </ul>\r\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\r\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <div class=\"profile-thumb hidden-xs\">\r\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\r\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(122) + "\" alt=\"\" height=\"36\">\r\n            </div>\r\n            <span>\r\n              {{ user.label }}\r\n            </span>\r\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n            <li v-if=\"account\">\r\n                <link-item :item=\"account\"></link-item>\r\n            </li>\r\n            <li v-for=\"link in user.links\">\r\n                <router-link :to=\"{name: link.route}\"><template v-if=\"isFunction($t)\">{{ $t(link.label) }}</template><template v-else>{{ link.label }}</template></router-link>\r\n            </li>\r\n            <li v-if=\"logout\">\r\n                <router-link :to=\"{name: 'logout'}\"><template v-if=\"isFunction($t)\">{{ $t(logout.label) }}</template><template v-else>{{ logout.label }}</template></router-link>\r\n            </li>\r\n        </ul>\r\n    </li>";
 
 /***/ }),
 /* 122 */

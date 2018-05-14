@@ -15,19 +15,21 @@
                 <link-item :item="account"></link-item>
             </li>
             <li v-for="link in user.links">
-                <router-link :to="{name: link.route}">{{ $t(link.label) }}</router-link>
+                <router-link :to="{name: link.route}"><template v-if="isFunction($t)">{{ $t(link.label) }}</template><template v-else>{{ link.label }}</template></router-link>
             </li>
             <li v-if="logout">
-                <router-link :to="{name: 'logout'}">{{ $t(logout.label) }}</router-link>
+                <router-link :to="{name: 'logout'}"><template v-if="isFunction($t)">{{ $t(logout.label) }}</template><template v-else>{{ logout.label }}</template></router-link>
             </li>
         </ul>
     </li>
 </template>
 <script>
+  import generalMixin from './../mixins/General'
   import LinkItem from './LinkItem'
 
   export default {
     name: 'headerUserChild',
+    mixins: [ generalMixin ],
     computed: {
       account () {
         return this.$store.state.config.user.account

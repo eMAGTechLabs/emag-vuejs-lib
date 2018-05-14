@@ -16,11 +16,11 @@
                     <div class="pull-right panel-controls">
                         <slot name="footerButtons">
                             <template v-if="type === 'form'">
-                                <button type="button" class="btn btn-success modal-btn-submit"><span>{{ $t("label.save") }}</span></button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><span><i class="fa fa-times"></i> {{ $t("label.cancel") }}</span></button>
+                                <button type="button" class="btn btn-success modal-btn-submit"><span><template v-if="isFunction($t)">{{ $t("label.save") }}</template><template v-else>Save</template></span></button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><span><i class="fa fa-times"></i> <template v-if="isFunction($t)">{{ $t("label.cancel") }}</template><template v-else>Cancel</template></span></button>
                             </template>
                             <template v-else-if="type === 'preview'">
-                                <button type="button" class="btn btn-link" data-dismiss="modal"><span><i class="fa fa-times"></i> {{ $t("label.cancel") }}</span></button>
+                                <button type="button" class="btn btn-link" data-dismiss="modal"><span><i class="fa fa-times"></i> <template v-if="isFunction($t)">{{ $t("label.cancel") }}</template><template v-else>Cancel</template></span></button>
                             </template>
                         </slot>
                     </div>
@@ -31,7 +31,6 @@
     </div>
 </template>
 <script>
-  import translationMessages from './../translations/messages'
   import generalMixin from './../mixins/General'
   import modalMixin from './../mixins/Modal'
 
@@ -49,8 +48,7 @@
     mixins: [ generalMixin, modalMixin ],
     data () {
       this.id = this._uid
-      this.translations = translationMessages.translations[this.getDefaultLang()]
-
+      
       return {
         modalDialogClass: this.getModalDialogClass(),
         dataBackdrop: this.closeOnClickOutside ? 'true' : 'static',
