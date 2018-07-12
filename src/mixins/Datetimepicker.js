@@ -48,19 +48,26 @@ function getOptions () {
 function initDatetimepicker () {
   try {
     let self = this
+    let $dateTimePicker = $('#date_time_' + this.id)
 
-    $('#date_time_' + this.id).datetimepicker(this.options)
-    $('#date_time_' + this.id).next().on('click', function () {
-      $('#date_time_' + self.id).data('DateTimePicker').show()
+    $dateTimePicker.datetimepicker(this.options)
+    $dateTimePicker.next().on('click', function () {
+      $dateTimePicker.data('DateTimePicker').show()
     })
 
-    $('#date_time_' + this.id).on('input change dp.hide dp.show dp.change dp.error dp.update', function (event) {
+    // attach jquery events on change
+    $dateTimePicker.on('input change paste dp.hide dp.show dp.change dp.error dp.update', function (event) {
       let eventType = event.type
       if (eventType === 'dp' && event.namespace) {
         eventType += '-' + event.namespace
       }
 
       self.$emit(eventType, event)
+    })
+
+    // attach events for v-model
+    $dateTimePicker.on('input change paste dp.change dp.update', function (event) {
+      self.$emit('input', $(this).val())
     })
   } catch (ex) {}
 }

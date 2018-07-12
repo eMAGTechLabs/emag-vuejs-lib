@@ -3281,19 +3281,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	function initDatetimepicker() {
 	  try {
 	    var self = this;
+	    var $dateTimePicker = $('#date_time_' + this.id);
 	
-	    $('#date_time_' + this.id).datetimepicker(this.options);
-	    $('#date_time_' + this.id).next().on('click', function () {
-	      $('#date_time_' + self.id).data('DateTimePicker').show();
+	    $dateTimePicker.datetimepicker(this.options);
+	    $dateTimePicker.next().on('click', function () {
+	      $dateTimePicker.data('DateTimePicker').show();
 	    });
 	
-	    $('#date_time_' + this.id).on('input change dp.hide dp.show dp.change dp.error dp.update', function (event) {
+	    // attach jquery events on change
+	    $dateTimePicker.on('input change paste dp.hide dp.show dp.change dp.error dp.update', function (event) {
 	      var eventType = event.type;
 	      if (eventType === 'dp' && event.namespace) {
 	        eventType += '-' + event.namespace;
 	      }
 	
 	      self.$emit(eventType, event);
+	    });
+	
+	    // attach events for v-model
+	    $dateTimePicker.on('input change paste dp.change dp.update', function (event) {
+	      self.$emit('input', $(this).val());
 	    });
 	  } catch (ex) {}
 	}
@@ -3448,6 +3455,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return (0, _assign2.default)({}, options, this.dataOptions);
 	    },
 	    initDaterangepicker: function initDaterangepicker() {
+	      var _this = this;
+	
 	      try {
 	        var self = this;
 	        var $picker = $('#date_range_' + this.id);
@@ -3463,11 +3472,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	
 	        // attach jquery events on change
-	        $picker.on('input change paste show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker apply.daterangepicker cancel.daterangepicker', function (e) {
-	          if (e.namespace === 'daterangepicker') {
-	            e.type = 'drp-' + e.type;
+	        $picker.on('input change paste show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker apply.daterangepicker cancel.daterangepicker', function (event) {
+	          if (event.namespace === 'daterangepicker') {
+	            event.type = 'drp-' + event.type;
 	          }
-	          self.$emit(e.type, e);
+	          self.$emit(event.type, event);
+	        });
+	
+	        // attach events for v-model
+	        $picker.on('input change paste apply.daterangepicker', function (event) {
+	          self.$emit('input', $(_this).val());
 	        });
 	      } catch (e) {}
 	    },
