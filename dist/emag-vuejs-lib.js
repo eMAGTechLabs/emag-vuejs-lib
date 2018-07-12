@@ -3289,7 +3289,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    });
 	
 	    // attach jquery events on change
-	    $dateTimePicker.on('input change paste dp.hide dp.show dp.change dp.error dp.update', function (event) {
+	    $dateTimePicker.on('dp.hide dp.show dp.error', function (event) {
 	      var eventType = event.type;
 	      if (eventType === 'dp' && event.namespace) {
 	        eventType += '-' + event.namespace;
@@ -3472,7 +3472,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	
 	        // attach jquery events on change
-	        $picker.on('input change paste show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker apply.daterangepicker cancel.daterangepicker', function (event) {
+	        $picker.on('show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker cancel.daterangepicker', function (event) {
 	          if (event.namespace === 'daterangepicker') {
 	            event.type = 'drp-' + event.type;
 	          }

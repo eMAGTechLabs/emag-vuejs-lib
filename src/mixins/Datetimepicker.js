@@ -56,7 +56,7 @@ function initDatetimepicker () {
     })
 
     // attach jquery events on change
-    $dateTimePicker.on('input change paste dp.hide dp.show dp.change dp.error dp.update', function (event) {
+    $dateTimePicker.on('dp.hide dp.show dp.error', function (event) {
       let eventType = event.type
       if (eventType === 'dp' && event.namespace) {
         eventType += '-' + event.namespace

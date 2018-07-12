@@ -25,7 +25,7 @@ export default {
         })
 
         // attach jquery events on change
-        $picker.on('input change paste show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker apply.daterangepicker cancel.daterangepicker', (event) => {
+        $picker.on('show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker cancel.daterangepicker', (event) => {
           if (event.namespace === 'daterangepicker') {
             event.type = 'drp-' + event.type
           }
