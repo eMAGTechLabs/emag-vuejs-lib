@@ -2272,7 +2272,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
 	
-	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//         <span class="menu-text"><template v-if="isFunction(this.$t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//     </a>
 	
@@ -2280,7 +2280,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
 	
-	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//         <span class="menu-text"><template v-if="isFunction(this.$t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//     </router-link>
 	
@@ -2288,7 +2288,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//         <i :class="['menu-icon', item.icon]" v-if="!collapsed"></i>
 	
-	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//         <span class="menu-text"><template v-if="isFunction(this.$t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//     </router-link>
 	
@@ -2307,7 +2307,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 79 */
 /***/ (function(module, exports) {
 
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </a>\r\n    <router-link :to=\"{name: item.link, params: item.params }\" :class=\"getCollapsedCssClass(collapsed)\" v-else-if=\"item.params\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </router-link>\r\n    <router-link :to=\"{path: item.link}\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </router-link>";
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" :class=\"getCollapsedCssClass(collapsed)\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction(this.$t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </a>\r\n    <router-link :to=\"{name: item.link, params: item.params }\" :class=\"getCollapsedCssClass(collapsed)\" v-else-if=\"item.params\">\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction(this.$t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </router-link>\r\n    <router-link :to=\"{path: item.link}\" :class=\"getCollapsedCssClass(collapsed)\" v-else>\r\n        <i :class=\"['menu-icon', item.icon]\" v-if=\"!collapsed\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction(this.$t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </router-link>";
 
 /***/ }),
 /* 80 */
@@ -2956,15 +2956,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//                             <template v-if="type === 'form'">
 	
-	//                                 <button type="button" class="btn btn-success modal-btn-submit"><span><template v-if="isFunction($t)">{{ $t("label.save") }}</template><template v-else>Save</template></span></button>
+	//                                 <button type="button" class="btn btn-success modal-btn-submit"><span><template v-if="isFunction(this.$t)">{{ $t("label.save") }}</template><template v-else>Save</template></span></button>
 	
-	//                                 <button type="button" class="btn btn-default" data-dismiss="modal"><span><i class="fa fa-times"></i> <template v-if="isFunction($t)">{{ $t("label.cancel") }}</template><template v-else>Cancel</template></span></button>
+	//                                 <button type="button" class="btn btn-default" data-dismiss="modal"><span><i class="fa fa-times"></i> <template v-if="isFunction(this.$t)">{{ $t("label.cancel") }}</template><template v-else>Cancel</template></span></button>
 	
 	//                             </template>
 	
 	//                             <template v-else-if="type === 'preview'">
 	
-	//                                 <button type="button" class="btn btn-link" data-dismiss="modal"><span><i class="fa fa-times"></i> <template v-if="isFunction($t)">{{ $t("label.cancel") }}</template><template v-else>Cancel</template></span></button>
+	//                                 <button type="button" class="btn btn-link" data-dismiss="modal"><span><i class="fa fa-times"></i> <template v-if="isFunction(this.$t)">{{ $t("label.cancel") }}</template><template v-else>Cancel</template></span></button>
 	
 	//                             </template>
 	
@@ -3072,7 +3072,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 99 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"modal fade\" :id=\"'modal_' + id\" tabindex=\"-1\" role=\"dialog\" :data-modal-identifier=\"modalIdentifier\" :aria-labelledby=\"'modal_' + id + 'Label'\" :data-backdrop=\"dataBackdrop\" :data-keyboard=\"dataKeyboard\">\r\n        <div :class=\"'modal-dialog ' + modalDialogClass\" role=\"document\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <button v-if=\"showCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\"><i class=\"fa fa-remove\"></i></span></button>\r\n                    <h4 class=\"modal-title\" :id=\"'modal_' + id + 'Label'\"><slot name=\"title\"></slot></h4>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <slot></slot>\r\n                </div>\r\n                <div class=\"modal-footer\">\r\n                    <div class=\"pull-left\">\r\n                        <slot name=\"footerText\"></slot>\r\n                    </div>\r\n                    <div class=\"pull-right panel-controls\">\r\n                        <slot name=\"footerButtons\">\r\n                            <template v-if=\"type === 'form'\">\r\n                                <button type=\"button\" class=\"btn btn-success modal-btn-submit\"><span><template v-if=\"isFunction($t)\">{{ $t(\"label.save\") }}</template><template v-else>Save</template></span></button>\r\n                                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> <template v-if=\"isFunction($t)\">{{ $t(\"label.cancel\") }}</template><template v-else>Cancel</template></span></button>\r\n                            </template>\r\n                            <template v-else-if=\"type === 'preview'\">\r\n                                <button type=\"button\" class=\"btn btn-link\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> <template v-if=\"isFunction($t)\">{{ $t(\"label.cancel\") }}</template><template v-else>Cancel</template></span></button>\r\n                            </template>\r\n                        </slot>\r\n                    </div>\r\n                </div>\r\n                <div class=\"pull-left\"></div>\r\n            </div>\r\n        </div>\r\n    </div>";
+	module.exports = "<div class=\"modal fade\" :id=\"'modal_' + id\" tabindex=\"-1\" role=\"dialog\" :data-modal-identifier=\"modalIdentifier\" :aria-labelledby=\"'modal_' + id + 'Label'\" :data-backdrop=\"dataBackdrop\" :data-keyboard=\"dataKeyboard\">\r\n        <div :class=\"'modal-dialog ' + modalDialogClass\" role=\"document\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <button v-if=\"showCloseButton\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\"><i class=\"fa fa-remove\"></i></span></button>\r\n                    <h4 class=\"modal-title\" :id=\"'modal_' + id + 'Label'\"><slot name=\"title\"></slot></h4>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <slot></slot>\r\n                </div>\r\n                <div class=\"modal-footer\">\r\n                    <div class=\"pull-left\">\r\n                        <slot name=\"footerText\"></slot>\r\n                    </div>\r\n                    <div class=\"pull-right panel-controls\">\r\n                        <slot name=\"footerButtons\">\r\n                            <template v-if=\"type === 'form'\">\r\n                                <button type=\"button\" class=\"btn btn-success modal-btn-submit\"><span><template v-if=\"isFunction(this.$t)\">{{ $t(\"label.save\") }}</template><template v-else>Save</template></span></button>\r\n                                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> <template v-if=\"isFunction(this.$t)\">{{ $t(\"label.cancel\") }}</template><template v-else>Cancel</template></span></button>\r\n                            </template>\r\n                            <template v-else-if=\"type === 'preview'\">\r\n                                <button type=\"button\" class=\"btn btn-link\" data-dismiss=\"modal\"><span><i class=\"fa fa-times\"></i> <template v-if=\"isFunction(this.$t)\">{{ $t(\"label.cancel\") }}</template><template v-else>Cancel</template></span></button>\r\n                            </template>\r\n                        </slot>\r\n                    </div>\r\n                </div>\r\n                <div class=\"pull-left\"></div>\r\n            </div>\r\n        </div>\r\n    </div>";
 
 /***/ }),
 /* 100 */
@@ -3217,19 +3217,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	function initDatetimepicker() {
 	  try {
 	    var self = this;
+	    var $dateTimePicker = $('#date_time_' + this.id);
 	
-	    $('#date_time_' + this.id).datetimepicker(this.options);
-	    $('#date_time_' + this.id).next().on('click', function () {
-	      $('#date_time_' + self.id).data('DateTimePicker').show();
+	    $dateTimePicker.datetimepicker(this.options);
+	    $dateTimePicker.next().on('click', function () {
+	      $dateTimePicker.data('DateTimePicker').show();
 	    });
 	
-	    $('#date_time_' + this.id).on('input change dp.hide dp.show dp.change dp.error dp.update', function (event) {
+	    // attach jquery events on change
+	    $dateTimePicker.on('dp.hide dp.show dp.error', function (event) {
 	      var eventType = event.type;
 	      if (eventType === 'dp' && event.namespace) {
 	        eventType += '-' + event.namespace;
 	      }
 	
 	      self.$emit(eventType, event);
+	    });
+	
+	    // attach events for v-model
+	    $dateTimePicker.on('input change paste dp.change dp.update', function (event) {
+	      self.$emit('input', $(this).val());
 	    });
 	  } catch (ex) {}
 	}
@@ -3384,6 +3391,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return (0, _assign2.default)({}, options, this.dataOptions);
 	    },
 	    initDaterangepicker: function initDaterangepicker() {
+	      var _this = this;
+	
 	      try {
 	        var self = this;
 	        var $picker = $('#date_range_' + this.id);
@@ -3399,11 +3408,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	
 	        // attach jquery events on change
-	        $picker.on('input change paste show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker apply.daterangepicker cancel.daterangepicker', function (e) {
-	          if (e.namespace === 'daterangepicker') {
-	            e.type = 'drp-' + e.type;
+	        $picker.on('show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker cancel.daterangepicker', function (event) {
+	          if (event.namespace === 'daterangepicker') {
+	            event.type = 'drp-' + event.type;
 	          }
-	          self.$emit(e.type, e);
+	          self.$emit(event.type, event);
+	        });
+	
+	        // attach events for v-model
+	        $picker.on('input change paste apply.daterangepicker', function (event) {
+	          self.$emit('input', $(_this).val());
 	        });
 	      } catch (e) {}
 	    },
@@ -3508,7 +3522,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//     <a href="javascript:void(0)" class="dropdown-toggle dd-language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
 	
-	//       <span class="visible-xs-inline"><template v-if="isFunction($t)">{{ $t('label.language') }}</template><template v-else>Language</template></span>
+	//       <span class="visible-xs-inline"><template v-if="isFunction(this.$t)">{{ $t('label.language') }}</template><template v-else>Language</template></span>
 	
 	//       <span><i :class="['flag-icon', locale.icon]"></i>{{ locale.label }}</span><i class="fa fa-angle-down hidden-xs"></i>
 	
@@ -3522,7 +3536,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
 	
-	//             <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//             <span class="menu-text"><template v-if="isFunction(this.$t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//         </a>
 	
@@ -3530,7 +3544,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
 	
-	//             <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//             <span class="menu-text"><template v-if="isFunction(this.$t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//         </router-link>
 	
@@ -11841,7 +11855,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 112 */
 /***/ (function(module, exports) {
 
-	module.exports = "<li class=\"dropdown\">\r\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\r\n      <span class=\"visible-xs-inline\"><template v-if=\"isFunction($t)\">{{ $t('label.language') }}</template><template v-else>Language</template></span>\r\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\r\n    </a>\r\n    <ul class=\"dropdown-menu dm-language\">\r\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\r\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n            <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n        </a>\r\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\r\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n            <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n        </router-link>\r\n      </li>\r\n    </ul>\r\n  </li>";
+	module.exports = "<li class=\"dropdown\">\r\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\r\n      <span class=\"visible-xs-inline\"><template v-if=\"isFunction(this.$t)\">{{ $t('label.language') }}</template><template v-else>Language</template></span>\r\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\r\n    </a>\r\n    <ul class=\"dropdown-menu dm-language\">\r\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\r\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n            <span class=\"menu-text\"><template v-if=\"isFunction(this.$t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n        </a>\r\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\r\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n            <span class=\"menu-text\"><template v-if=\"isFunction(this.$t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n        </router-link>\r\n      </li>\r\n    </ul>\r\n  </li>";
 
 /***/ }),
 /* 113 */
@@ -11895,7 +11909,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
 	
-	//             <span class="visible-xs-inline"><template v-if="isFunction($t)">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>
+	//             <span class="visible-xs-inline"><template v-if="isFunction(this.$t)">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>
 	
 	//             <span class="jewel" v-if="total != 0">{{ total }} </span>
 	
@@ -11905,7 +11919,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//             <li class="dm-header hidden-xs">
 	
-	//                 <span><template v-if="isFunction($t)">{{ $t(label) }}</template><template v-else>Notifications</template></span>
+	//                 <span><template v-if="isFunction(this.$t)">{{ $t(label) }}</template><template v-else>Notifications</template></span>
 	
 	//             </li>
 	
@@ -12005,7 +12019,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
 	
-	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//         <span class="menu-text"><template v-if="isFunction(this.$t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//     </a>
 	
@@ -12013,7 +12027,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
 	
-	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//         <span class="menu-text"><template v-if="isFunction(this.$t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	
 	//     </router-link>
 	
@@ -12032,13 +12046,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 117 */
 /***/ (function(module, exports) {
 
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </a>\r\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\r\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </router-link>";
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction(this.$t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </a>\r\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\r\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction(this.$t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </router-link>";
 
 /***/ }),
 /* 118 */
 /***/ (function(module, exports) {
 
-	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\r\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\r\n            <span class=\"visible-xs-inline\"><template v-if=\"isFunction($t)\">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>\r\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n            <li class=\"dm-header hidden-xs\">\r\n                <span><template v-if=\"isFunction($t)\">{{ $t(label) }}</template><template v-else>Notifications</template></span>\r\n            </li>\r\n            <li v-for=\"notification in notifications\">\r\n              <link-item :item=\"notification\"></link-item>\r\n            </li>\r\n        </ul>\r\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\r\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\r\n            <span class=\"visible-xs-inline\"><template v-if=\"isFunction(this.$t)\">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>\r\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n            <li class=\"dm-header hidden-xs\">\r\n                <span><template v-if=\"isFunction(this.$t)\">{{ $t(label) }}</template><template v-else>Notifications</template></span>\r\n            </li>\r\n            <li v-for=\"notification in notifications\">\r\n              <link-item :item=\"notification\"></link-item>\r\n            </li>\r\n        </ul>\r\n    </li>";
 
 /***/ }),
 /* 119 */
@@ -12118,13 +12132,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//             <li v-for="link in user.links">
 	
-	//                 <router-link :to="{name: link.route}"><template v-if="isFunction($t)">{{ $t(link.label) }}</template><template v-else>{{ link.label }}</template></router-link>
+	//                 <router-link :to="{name: link.route}"><template v-if="isFunction(this.$t)">{{ $t(link.label) }}</template><template v-else>{{ link.label }}</template></router-link>
 	
 	//             </li>
 	
 	//             <li v-if="logout">
 	
-	//                 <router-link :to="{name: 'logout'}"><template v-if="isFunction($t)">{{ $t(logout.label) }}</template><template v-else>{{ logout.label }}</template></router-link>
+	//                 <router-link :to="{name: 'logout'}"><template v-if="isFunction(this.$t)">{{ $t(logout.label) }}</template><template v-else>{{ logout.label }}</template></router-link>
 	
 	//             </li>
 	
@@ -12175,7 +12189,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\r\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <div class=\"profile-thumb hidden-xs\">\r\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\r\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(122) + "\" alt=\"\" height=\"36\">\r\n            </div>\r\n            <span>\r\n              {{ user.label }}\r\n            </span>\r\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n            <li v-if=\"account\">\r\n                <link-item :item=\"account\"></link-item>\r\n            </li>\r\n            <li v-for=\"link in user.links\">\r\n                <router-link :to=\"{name: link.route}\"><template v-if=\"isFunction($t)\">{{ $t(link.label) }}</template><template v-else>{{ link.label }}</template></router-link>\r\n            </li>\r\n            <li v-if=\"logout\">\r\n                <router-link :to=\"{name: 'logout'}\"><template v-if=\"isFunction($t)\">{{ $t(logout.label) }}</template><template v-else>{{ logout.label }}</template></router-link>\r\n            </li>\r\n        </ul>\r\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\r\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-user\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <div class=\"profile-thumb hidden-xs\">\r\n                <img v-if=\"user.imageLink\" class=\"nav-user-photo\" :src=\"user.imageLink\" alt=\"\" onerror=\"this.src='~emag-apps-ui-kit/dist/css/icons/default_user.png'\" height=\"36\">\r\n                <img v-else class=\"nav-user-photo\" src=\"" + __webpack_require__(122) + "\" alt=\"\" height=\"36\">\r\n            </div>\r\n            <span>\r\n              {{ user.label }}\r\n            </span>\r\n            <i class=\"fa fa-angle-down hidden-xs\"></i>\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n            <li v-if=\"account\">\r\n                <link-item :item=\"account\"></link-item>\r\n            </li>\r\n            <li v-for=\"link in user.links\">\r\n                <router-link :to=\"{name: link.route}\"><template v-if=\"isFunction(this.$t)\">{{ $t(link.label) }}</template><template v-else>{{ link.label }}</template></router-link>\r\n            </li>\r\n            <li v-if=\"logout\">\r\n                <router-link :to=\"{name: 'logout'}\"><template v-if=\"isFunction(this.$t)\">{{ $t(logout.label) }}</template><template v-else>{{ logout.label }}</template></router-link>\r\n            </li>\r\n        </ul>\r\n    </li>";
 
 /***/ }),
 /* 122 */

@@ -15,10 +15,10 @@
                 <link-item :item="account"></link-item>
             </li>
             <li v-for="link in user.links">
-                <router-link :to="{name: link.route}"><template v-if="isFunction($t)">{{ $t(link.label) }}</template><template v-else>{{ link.label }}</template></router-link>
+                <router-link :to="{name: link.route}"><template v-if="isFunction(this.$t)">{{ $t(link.label) }}</template><template v-else>{{ link.label }}</template></router-link>
             </li>
             <li v-if="logout">
-                <router-link :to="{name: 'logout'}"><template v-if="isFunction($t)">{{ $t(logout.label) }}</template><template v-else>{{ logout.label }}</template></router-link>
+                <router-link :to="{name: 'logout'}"><template v-if="isFunction(this.$t)">{{ $t(logout.label) }}</template><template v-else>{{ logout.label }}</template></router-link>
             </li>
         </ul>
     </li>
