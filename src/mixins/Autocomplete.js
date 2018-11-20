@@ -29,7 +29,7 @@ function initAutocomplete () {
     let $autoComplete = $('#autocomplete_' + this.id)
     let self = this
 
-    $autoComplete.ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest)
+    $autoComplete.ajaxChosen(this.options, this.options.afterRequestCallback)
 
     $autoComplete.on('change', function() {
       let selectedValues = [];
@@ -77,7 +77,8 @@ function getAutocompleteOptions () {
     id: this.id,
     filters: {},
     allow_single_deselect: true,
-    dataCallback: getRequestParameters.bind(this)
+    dataCallback: getRequestParameters.bind(this),
+    afterRequestCallback: this.getAutocompleteResultsAfterRequest
   }
   return Object.assign(defaultOptions, this.dataOptions || {})
 }

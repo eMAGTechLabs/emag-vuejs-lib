@@ -2789,7 +2789,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var $autoComplete = $('#autocomplete_' + this.id);
 	    var self = this;
 	
-	    $autoComplete.ajaxChosen(this.options, this.getAutocompleteResultsAfterRequest);
+	    $autoComplete.ajaxChosen(this.options, this.options.afterRequestCallback);
 	
 	    $autoComplete.on('change', function () {
 	      var selectedValues = [];
@@ -2837,7 +2837,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    id: this.id,
 	    filters: {},
 	    allow_single_deselect: true,
-	    dataCallback: getRequestParameters.bind(this)
+	    dataCallback: getRequestParameters.bind(this),
+	    afterRequestCallback: this.getAutocompleteResultsAfterRequest
 	  };
 	  return (0, _assign2.default)(defaultOptions, this.dataOptions || {});
 	}
@@ -3502,25 +3503,45 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	// </script>
 	// <template>
+	
 	//   <li class="dropdown">
+	
 	//     <a href="javascript:void(0)" class="dropdown-toggle dd-language" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+	
 	//       <span class="visible-xs-inline"><template v-if="isFunction($t)">{{ $t('label.language') }}</template><template v-else>Language</template></span>
+	
 	//       <span><i :class="['flag-icon', locale.icon]"></i>{{ locale.label }}</span><i class="fa fa-angle-down hidden-xs"></i>
+	
 	//     </a>
+	
 	//     <ul class="dropdown-menu dm-language">
+	
 	//       <li v-for="item in items" v-on:click="reloadPage()">
+	
 	//         <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	
 	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	
 	//             <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	
 	//         </a>
+	
 	//         <router-link :to="item.link" v-on:click="onClick || null" v-else>
+	
 	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	
 	//             <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	
 	//         </router-link>
+	
 	//       </li>
+	
 	//     </ul>
+	
 	//   </li>
+	
 	// </template>
+	
 	// <script>
 
 /***/ }),
@@ -11820,7 +11841,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 112 */
 /***/ (function(module, exports) {
 
-	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\"><template v-if=\"isFunction($t)\">{{ $t('label.language') }}</template><template v-else>Language</template></span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
+	module.exports = "<li class=\"dropdown\">\r\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\r\n      <span class=\"visible-xs-inline\"><template v-if=\"isFunction($t)\">{{ $t('label.language') }}</template><template v-else>Language</template></span>\r\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\r\n    </a>\r\n    <ul class=\"dropdown-menu dm-language\">\r\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\r\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n            <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n        </a>\r\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\r\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n            <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n        </router-link>\r\n      </li>\r\n    </ul>\r\n  </li>";
 
 /***/ }),
 /* 113 */
@@ -11867,22 +11888,39 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
+	
 	//     <li v-if="user.label" class="dropdown">
+	
 	//         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	
 	//             <i class="fa fa-bell nav-icon-lg hidden-xs"></i>
+	
 	//             <span class="visible-xs-inline"><template v-if="isFunction($t)">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>
+	
 	//             <span class="jewel" v-if="total != 0">{{ total }} </span>
+	
 	//         </a>
+	
 	//         <ul class="dropdown-menu">
+	
 	//             <li class="dm-header hidden-xs">
+	
 	//                 <span><template v-if="isFunction($t)">{{ $t(label) }}</template><template v-else>Notifications</template></span>
+	
 	//             </li>
+	
 	//             <li v-for="notification in notifications">
+	
 	//               <link-item :item="notification"></link-item>
+	
 	//             </li>
+	
 	//         </ul>
+	
 	//     </li>
+	
 	// </template>
+	
 	// <script>
 	exports.default = {
 	  name: 'headerNotificationsChild',
@@ -11962,15 +12000,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
+	
 	//     <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
+	
 	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	
 	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	
 	//     </a>
+	
 	//     <router-link :to="item.link" v-on:click="onClick || null" v-else>
+	
 	//         <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
+	
 	//         <span class="menu-text"><template v-if="isFunction($t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	
 	//     </router-link>
+	
 	// </template>
+	
 	// <script>
 	exports.default = {
 	    name: 'link-item',
@@ -11984,13 +12032,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 117 */
 /***/ (function(module, exports) {
 
-	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n    </a>\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n    </router-link>";
+	module.exports = "<a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\r\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </a>\r\n    <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\r\n        <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\r\n        <span class=\"menu-text\"><template v-if=\"isFunction($t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\r\n    </router-link>";
 
 /***/ }),
 /* 118 */
 /***/ (function(module, exports) {
 
-	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\"><template v-if=\"isFunction($t)\">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span><template v-if=\"isFunction($t)\">{{ $t(label) }}</template><template v-else>Notifications</template></span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\r\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\r\n            <span class=\"visible-xs-inline\"><template v-if=\"isFunction($t)\">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>\r\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n            <li class=\"dm-header hidden-xs\">\r\n                <span><template v-if=\"isFunction($t)\">{{ $t(label) }}</template><template v-else>Notifications</template></span>\r\n            </li>\r\n            <li v-for=\"notification in notifications\">\r\n              <link-item :item=\"notification\"></link-item>\r\n            </li>\r\n        </ul>\r\n    </li>";
 
 /***/ }),
 /* 119 */
