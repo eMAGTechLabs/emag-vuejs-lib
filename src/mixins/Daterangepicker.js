@@ -25,7 +25,7 @@ export default {
         })
 
         // attach jquery events on change
-        $picker.on('show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker cancel.daterangepicker', (event) => {
+        $picker.on('show.daterangepicker hide.daterangepicker showCalendar.daterangepicker hideCalendar.daterangepicker cancel.daterangepicker apply.daterangepicker', (event) => {
           if (event.namespace === 'daterangepicker') {
             event.type = 'drp-' + event.type
           }
@@ -33,8 +33,8 @@ export default {
         })
 
         // attach events for v-model
-        $picker.on('input change paste apply.daterangepicker', (event) => {
-          self.$emit('input', $(this).val())
+        $picker.on('input change paste', (event) => {
+          self.$emit('input', $picker.val())
         })
       } catch(e) {}
     },
