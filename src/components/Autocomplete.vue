@@ -45,8 +45,13 @@
         return $('#autocomplete_' + this.id).val();
       }
     },
+    computed: {
+      watchProperties() {
+        return [JSON.stringify(this.dataOptions), this.multiple, this.disabled].join()
+      }
+    },
     beforeMount () {
-      this.unwatch = this.$watch('dataOptions.multiple.disabled', (data) => {
+      this.unwatch = this.$watch('watchProperties', (data) => {
         this.options = this.getAutocompleteOptions()
         this.destroyAutocomplete()
         this.initAutocomplete()
