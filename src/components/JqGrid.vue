@@ -21,14 +21,15 @@ export default {
   },
   beforeMount () {
     this.unwatch = this.$watch('watchProperties', function (data) {
-      
+      this.destroyJqGrid()
+      this.initJqGrid()
     }, { deep: true })
   },
   mounted () {
     this.initJqGrid()
   },
   destroyed: function () {
-
+    this.destroyJqGrid()
   }
 }
 </script>

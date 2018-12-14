@@ -13,7 +13,7 @@ function initJqGrid () {
 
 function destroyJqGrid () {
   try {
-    $(this.photonGrid.grid).jqGrid('GridUnload')
+    $.jgrid.gridUnload('#grid_table_' + this.id)
     this.unwatch()
   } catch (ex) {}
 }

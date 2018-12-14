@@ -1977,13 +1977,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('watchProperties', function (data) {}, { deep: true });
+	    this.unwatch = this.$watch('watchProperties', function (data) {
+	      this.destroyJqGrid();
+	      this.initJqGrid();
+	    }, { deep: true });
 	  },
 	  mounted: function mounted() {
 	    this.initJqGrid();
 	  },
 	
-	  destroyed: function destroyed() {}
+	  destroyed: function destroyed() {
+	    this.destroyJqGrid();
+	  }
 	  // </script>
 	
 	}; // <template>
@@ -2025,7 +2030,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function destroyJqGrid() {
 	  try {
-	    $(this.photonGrid.grid).jqGrid('GridUnload');
+	    $.jgrid.gridUnload('#grid_table_' + this.id);
 	    this.unwatch();
 	  } catch (ex) {}
 	}
