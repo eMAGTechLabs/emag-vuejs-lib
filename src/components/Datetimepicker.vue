@@ -6,6 +6,7 @@
 </template>
 <script>
 import datetimeMixin from './../mixins/Datetimepicker'
+
 /* eslint-disable no-undef */
 export default {
   name: 'datetimepicker',
@@ -14,13 +15,20 @@ export default {
   data () {
     return { options: this.getOptions() }
   },
-  mounted () {
-    this.initDatetimepicker()
-    this.unwatch = this.$watch('dataOptions', function (data) {
+  computed: {
+      watchProperties() {
+        return [JSON.stringify(this.dataOptions), this.disabled, this.name, this.required].join()
+      }
+    },
+  beforeMount () {
+    this.unwatch = this.$watch('watchProperties', function (data) {
       this.options = this.getOptions()
       this.destroyDatetimepicker()
       this.initDatetimepicker()
     }, { deep: true })
+  },
+  mounted () {
+    this.initDatetimepicker()
   },
   destroyed: function () {
     this.destroyDatetimepicker()

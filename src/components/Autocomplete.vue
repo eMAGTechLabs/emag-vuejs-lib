@@ -9,6 +9,7 @@
   import generalMixin from './../mixins/General'
   import chosenMixin from '../mixins/Chosen'
   import autocompleteMixin from '../mixins/Autocomplete'
+  
   /* eslint-disable no-undef */
   export default {
     name: 'autocomplete',

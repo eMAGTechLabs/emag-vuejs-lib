@@ -8,6 +8,7 @@
   import translationMessages from './../translations/messages'
   import generalMixin from './../mixins/General'
   import chosenMixin from './../mixins/Chosen'
+  
   export default {
     name: 'chosen',
     props: {
