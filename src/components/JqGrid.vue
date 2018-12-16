@@ -5,18 +5,19 @@
   </div>
 </template>
 <script>
+import generalMixin from './../mixins/General'
 import jqGridMixin from './../mixins/JqGrid'
 
 export default {
   name: 'jqGrid',
-  mixins: [ jqGridMixin ],
+  mixins: [ generalMixin, jqGridMixin ],
   props: ['dataOptions'],
   beforeCreate () {
     this.id = this._uid
   },
   computed: {
     watchProperties() {
-      return [JSON.stringify(this.dataOptions)].join()
+      return this.generateWatchProperties( [ this.dataOptions ] )
     }
   },
   beforeMount () {

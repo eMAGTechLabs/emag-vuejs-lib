@@ -44,7 +44,7 @@
     },
     computed: {
       watchProperties() {
-        return [JSON.stringify(this.dataOptions), this.multiple, this.disabled].join()
+        return this.generateWatchProperties( [this.dataOptions, this.multiple, this.disabled ] )
       }
     },
     beforeMount () {
