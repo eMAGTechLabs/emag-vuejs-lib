@@ -57,11 +57,19 @@
         return this.generateWatchProperties( [ this.dataOptions, this.multiple, this.disabled ] )
       }
     },
+    beforeMount () {
+      this.unwatch = this.$watch('watchProperties', (data) => {
+        this.options = this.getAutocompleteOptions()
+        this.destroyAutocomplete()
+        this.initAutocomplete()
+      }, { deep: true })
+    },
     mounted () {
       this.initAutocomplete()
     },
     destroyed () {
       this.destroyAutocomplete()
+      this.unwatch()
     }
   }
 </script>

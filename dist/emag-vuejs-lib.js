@@ -335,11 +335,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.generateWatchProperties([this.dataOptions, this.multiple, this.disabled]);
 	    }
 	  },
+	  beforeMount: function beforeMount() {
+	    var _this = this;
+	
+	    this.unwatch = this.$watch('watchProperties', function (data) {
+	      _this.options = _this.getOptions();
+	      _this.destroyChosen();
+	      _this.initChosen();
+	      _this.updateChosen();
+	    }, { deep: true, immediate: true });
+	  },
 	  mounted: function mounted() {
 	    this.initChosen();
 	  },
 	  destroyed: function destroyed() {
 	    this.destroyChosen();
+	    this.unwatch();
 	  }
 	};
 	// </script>
@@ -2644,8 +2655,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function initChosen() {
-	  var _this = this;
-	
 	  try {
 	    var $chosen = $('#chosen_' + this.id);
 	    var self = this;
@@ -2664,13 +2673,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      self.dataOptions.selected = selectedValues;
 	    });
-	
-	    this.unwatch = this.$watch('watchProperties', function (data) {
-	      _this.options = _this.getOptions();
-	      _this.destroyChosen();
-	      _this.initChosen();
-	      _this.updateChosen();
-	    }, { deep: true, immediate: true });
 	  } catch (ex) {}
 	}
 	
@@ -2684,7 +2686,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	function destroyChosen() {
 	  try {
 	    $('#chosen_' + this.id).chosen('destroy');
-	    this.unwatch();
 	  } catch (ex) {}
 	}
 	
@@ -2754,6 +2755,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      appName: this.dataOptions ? this.dataOptions.appName : '',
 	      currentView: this.headerChildren
 	    };
+	  },
+	  beforeMount: function beforeMount() {
+	    this.unwatch = this.$watch('currentView', function (data) {
+	      this.currentView = this.headerChildren;
+	    }, { deep: true });
 	  },
 	  destroy: function destroy() {
 	    this.unwatch();
@@ -2868,12 +2874,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.generateWatchProperties([this.dataOptions]);
 	    }
 	  },
+	  beforeMount: function beforeMount() {
+	    this.unwatch = this.$watch('watchProperties', function (data) {
+	      this.destroyJqGrid();
+	      this.initJqGrid();
+	    }, { deep: true });
+	  },
 	  mounted: function mounted() {
 	    this.initJqGrid();
 	  },
 	
 	  destroyed: function destroyed() {
 	    this.destroyJqGrid();
+	    this.unwatch();
 	  }
 	  // </script>
 	
@@ -2906,17 +2919,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (this.dataOptions && this.dataOptions.mountCallback) {
 	    this.dataOptions.mountCallback(this.photonGrid.grid || {});
 	  }
-	
-	  this.unwatch = this.$watch('watchProperties', function (data) {
-	    this.destroyJqGrid();
-	    this.initJqGrid();
-	  }, { deep: true });
 	}
 	
 	function destroyJqGrid() {
 	  try {
 	    $.jgrid.gridUnload('#grid_table_' + this.id);
-	    this.unwatch();
 	  } catch (ex) {}
 	}
 	
@@ -3719,11 +3726,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.generateWatchProperties([this.dataOptions, this.multiple, this.disabled]);
 	    }
 	  },
+	  beforeMount: function beforeMount() {
+	    var _this = this;
+	
+	    this.unwatch = this.$watch('watchProperties', function (data) {
+	      _this.options = _this.getAutocompleteOptions();
+	      _this.destroyAutocomplete();
+	      _this.initAutocomplete();
+	    }, { deep: true });
+	  },
 	  mounted: function mounted() {
 	    this.initAutocomplete();
 	  },
 	  destroyed: function destroyed() {
 	    this.destroyAutocomplete();
+	    this.unwatch();
 	  }
 	};
 	// </script>
@@ -3771,8 +3788,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function initAutocomplete() {
-	  var _this = this;
-	
 	  try {
 	    var $autoComplete = $('#autocomplete_' + this.id);
 	    var self = this;
@@ -3791,12 +3806,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      self.dataOptions.selected = selectedValues;
 	    });
-	
-	    this.unwatch = this.$watch('watchProperties', function (data) {
-	      _this.options = _this.getAutocompleteOptions();
-	      _this.destroyAutocomplete();
-	      _this.initAutocomplete();
-	    }, { deep: true });
 	  } catch (ex) {}
 	}
 	
@@ -3840,7 +3849,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	function destroyAutocomplete() {
 	  try {
 	    $('#autocomplete_' + this.id).chosen('destroy');
-	    this.unwatch();
 	  } catch (ex) {}
 	}
 	
@@ -4139,12 +4147,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.generateWatchProperties([this.dataOptions, this.disabled, this.name, this.required]);
 	    }
 	  },
+	  beforeMount: function beforeMount() {
+	    this.unwatch = this.$watch('watchProperties', function (data) {
+	      this.options = this.getOptions();
+	      this.destroyDatetimepicker();
+	      this.initDatetimepicker();
+	    }, { deep: true });
+	  },
 	  mounted: function mounted() {
 	    this.initDatetimepicker();
 	  },
 	
 	  destroyed: function destroyed() {
 	    this.destroyDatetimepicker();
+	    this.unwatch();
 	  },
 	  methods: {}
 	  // </script>
@@ -4238,12 +4254,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    $dateTimePicker.on('input change paste dp.change dp.update', function (event) {
 	      self.$emit('input', $(this).val());
 	    });
-	
-	    this.unwatch = this.$watch('watchProperties', function (data) {
-	      this.options = this.getOptions();
-	      this.destroyDatetimepicker();
-	      this.initDatetimepicker();
-	    }, { deep: true });
 	  } catch (ex) {}
 	}
 	
@@ -4251,7 +4261,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  try {
 	    $(this.$el).find('#date_time_' + this.id).val('');
 	    $(this.$el).find('#date_time_' + this.id).data('DateTimePicker').destroy();
-	    this.unwatch();
 	  } catch (ex) {}
 	}
 	
@@ -4322,10 +4331,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mounted: function mounted() {
 	    this.initDaterangepicker();
+	    this.unwatch = this.$watch('dataOptions', function (data) {
+	      this.options = this.getOptions();
+	      this.destroyDaterangepicker();
+	      this.initDaterangepicker();
+	    }, { deep: true });
 	  },
 	
 	  destroyed: function destroyed() {
 	    this.destroyDaterangepicker();
+	    this.unwatch();
 	  },
 	  methods: {}
 	  // </script>
@@ -4418,12 +4433,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        $picker.on('input change paste', function (event) {
 	          self.$emit('input', $picker.val());
 	        });
-	
-	        this.unwatch = this.$watch('dataOptions', function (data) {
-	          this.options = this.getOptions();
-	          this.destroyDaterangepicker();
-	          this.initDaterangepicker();
-	        }, { deep: true });
 	      } catch (e) {}
 	    },
 	    destroyDaterangepicker: function destroyDaterangepicker() {
@@ -4433,7 +4442,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // remove value, destroy and unwatch
 	        $picker.val('');
 	        $picker.data('daterangepicker').destroy();
-	        this.unwatch();
 	      } catch (e) {}
 	    }
 	  }

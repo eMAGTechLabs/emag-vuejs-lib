@@ -31,13 +31,6 @@ function initChosen () {
 
       self.dataOptions.selected = selectedValues;
     })
-
-    this.unwatch = this.$watch('watchProperties', (data) => {
-      this.options = this.getOptions()
-      this.destroyChosen()
-      this.initChosen()
-      this.updateChosen()
-    }, { deep: true, immediate: true })
   } catch (ex) { }
 }
 
@@ -51,7 +44,6 @@ function updateChosen () {
 function destroyChosen () {
   try {
     $('#chosen_' + this.id).chosen('destroy')
-    this.unwatch()
   } catch (ex) {}
 }
 

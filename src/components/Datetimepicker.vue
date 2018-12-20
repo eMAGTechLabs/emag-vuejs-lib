@@ -21,11 +21,19 @@ export default {
         return this.generateWatchProperties( [ this.dataOptions, this.disabled, this.name, this.required ] )
       }
     },
+  beforeMount () {
+    this.unwatch = this.$watch('watchProperties', function (data) {
+      this.options = this.getOptions()
+      this.destroyDatetimepicker()
+      this.initDatetimepicker()
+    }, { deep: true })
+  },
   mounted () {
     this.initDatetimepicker()
   },
   destroyed: function () {
     this.destroyDatetimepicker()
+    this.unwatch()
   },
   methods: {}
 }

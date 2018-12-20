@@ -43,12 +43,6 @@ function initAutocomplete () {
 
       self.dataOptions.selected = selectedValues;
     })
-
-    this.unwatch = this.$watch('watchProperties', (data) => {
-      this.options = this.getAutocompleteOptions()
-      this.destroyAutocomplete()
-      this.initAutocomplete()
-    }, { deep: true })
   } catch (ex) { }
 }
 
@@ -92,7 +86,6 @@ function getAutocompleteOptions () {
 function destroyAutocomplete () {
   try {
     $('#autocomplete_' + this.id).chosen('destroy')
-    this.unwatch()
   } catch (ex) {}
 }
 
