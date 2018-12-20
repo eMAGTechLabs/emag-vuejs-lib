@@ -3686,9 +3686,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  methods: {
 	    setValue: function setValue(value) {
 	      $('#autocomplete_' + this.id).val(value).trigger('change').trigger('chosen:updated');
+	      self.$emit('input', $('#autocomplete_' + this.id).val());
 	    },
 	    getValue: function getValue() {
 	      return $('#autocomplete_' + this.id).val();
+	    },
+	    clearOptions: function clearOptions() {
+	      $('#autocomplete_' + this.id).val('');
+	      $('#autocomplete_' + this.id + ' option[value!=""]').remove();
+	      $('#autocomplete_' + this.id).trigger('change').trigger('chosen:updated');
 	    }
 	  },
 	  computed: {
