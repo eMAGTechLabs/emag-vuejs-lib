@@ -335,16 +335,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.generateWatchProperties([this.dataOptions, this.multiple, this.disabled]);
 	    }
 	  },
-	  beforeMount: function beforeMount() {
-	    var _this = this;
-	
-	    this.unwatch = this.$watch('watchProperties', function (data) {
-	      _this.options = _this.getOptions();
-	      _this.destroyChosen();
-	      _this.initChosen();
-	      _this.updateChosen();
-	    }, { deep: true, immediate: true });
-	  },
 	  mounted: function mounted() {
 	    this.initChosen();
 	  },
@@ -2654,6 +2644,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function initChosen() {
+	  var _this = this;
+	
 	  try {
 	    var $chosen = $('#chosen_' + this.id);
 	    var self = this;
@@ -2672,6 +2664,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      self.dataOptions.selected = selectedValues;
 	    });
+	
+	    this.unwatch = this.$watch('watchProperties', function (data) {
+	      _this.options = _this.getOptions();
+	      _this.destroyChosen();
+	      _this.initChosen();
+	      _this.updateChosen();
+	    }, { deep: true, immediate: true });
 	  } catch (ex) {}
 	}
 	
@@ -2755,11 +2754,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      appName: this.dataOptions ? this.dataOptions.appName : '',
 	      currentView: this.headerChildren
 	    };
-	  },
-	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('currentView', function (data) {
-	      this.currentView = this.headerChildren;
-	    }, { deep: true });
 	  },
 	  destroy: function destroy() {
 	    this.unwatch();
@@ -2849,11 +2843,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
+	
 	//   <div>
+	
 	//     <table :id="'grid_table_' + id" class="table table-bordered"></table>
+	
 	//     <div :id="'grid_pager_' + id"></div>
+	
 	//   </div>
+	
 	// </template>
+	
 	// <script>
 	exports.default = {
 	  name: 'jqGrid',
@@ -2867,12 +2867,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    watchProperties: function watchProperties() {
 	      return this.generateWatchProperties([this.dataOptions]);
 	    }
-	  },
-	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('watchProperties', function (data) {
-	      this.destroyJqGrid();
-	      this.initJqGrid();
-	    }, { deep: true });
 	  },
 	  mounted: function mounted() {
 	    this.initJqGrid();
@@ -2912,6 +2906,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (this.dataOptions && this.dataOptions.mountCallback) {
 	    this.dataOptions.mountCallback(this.photonGrid.grid || {});
 	  }
+	
+	  this.unwatch = this.$watch('watchProperties', function (data) {
+	    this.destroyJqGrid();
+	    this.initJqGrid();
+	  }, { deep: true });
 	}
 	
 	function destroyJqGrid() {
@@ -2932,7 +2931,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 108 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div>\n    <table :id=\"'grid_table_' + id\" class=\"table table-bordered\"></table>\n    <div :id=\"'grid_pager_' + id\"></div>\n  </div>";
+	module.exports = "<div>\r\n    <table :id=\"'grid_table_' + id\" class=\"table table-bordered\"></table>\r\n    <div :id=\"'grid_pager_' + id\"></div>\r\n  </div>";
 
 /***/ }),
 /* 109 */
@@ -3500,23 +3499,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	// </script>
 	// <template>
+	
 	//   <div>
+	
 	//     <div class="hide-with-opacity">
+	
 	//       <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple" :name="name" :required="required">
+	
 	//         <option value=""></option>
+	
 	//         <option :value="item.key" v-for="item in options.treeData" :selected="item.selected">
+	
 	//             {{ item.title }}
+	
 	//         </option>
+	
 	//       </select>
+	
 	//     </div>
+	
 	//     <div class="input-group input-group-no-separation">
+	
 	//       <div class="form-control" :id="'id_tree_type_' + _uid"></div>
+	
 	//       <span class="input-group-addon">
+	
 	//           <i class="fa fa-sitemap" v-on:click="openTree"></i>
+	
 	//       </span>
+	
 	//     </div>
+	
 	//   </div>
+	
 	// </template>
+	
 	// <script>
 
 /***/ }),
@@ -3581,7 +3598,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 128 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\" :name=\"name\" :required=\"required\">\n        <option value=\"\"></option>\n        <option :value=\"item.key\" v-for=\"item in options.treeData\" :selected=\"item.selected\">\n            {{ item.title }}\n        </option>\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
+	module.exports = "<div>\r\n    <div class=\"hide-with-opacity\">\r\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\" :name=\"name\" :required=\"required\">\r\n        <option value=\"\"></option>\r\n        <option :value=\"item.key\" v-for=\"item in options.treeData\" :selected=\"item.selected\">\r\n            {{ item.title }}\r\n        </option>\r\n      </select>\r\n    </div>\r\n    <div class=\"input-group input-group-no-separation\">\r\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\r\n      <span class=\"input-group-addon\">\r\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\r\n      </span>\r\n    </div>\r\n  </div>";
 
 /***/ }),
 /* 129 */
@@ -3702,15 +3719,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.generateWatchProperties([this.dataOptions, this.multiple, this.disabled]);
 	    }
 	  },
-	  beforeMount: function beforeMount() {
-	    var _this = this;
-	
-	    this.unwatch = this.$watch('watchProperties', function (data) {
-	      _this.options = _this.getAutocompleteOptions();
-	      _this.destroyAutocomplete();
-	      _this.initAutocomplete();
-	    }, { deep: true });
-	  },
 	  mounted: function mounted() {
 	    this.initAutocomplete();
 	  },
@@ -3763,6 +3771,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function initAutocomplete() {
+	  var _this = this;
+	
 	  try {
 	    var $autoComplete = $('#autocomplete_' + this.id);
 	    var self = this;
@@ -3781,6 +3791,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	      self.dataOptions.selected = selectedValues;
 	    });
+	
+	    this.unwatch = this.$watch('watchProperties', function (data) {
+	      _this.options = _this.getAutocompleteOptions();
+	      _this.destroyAutocomplete();
+	      _this.initAutocomplete();
+	    }, { deep: true });
 	  } catch (ex) {}
 	}
 	
@@ -4123,13 +4139,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.generateWatchProperties([this.dataOptions, this.disabled, this.name, this.required]);
 	    }
 	  },
-	  beforeMount: function beforeMount() {
-	    this.unwatch = this.$watch('watchProperties', function (data) {
-	      this.options = this.getOptions();
-	      this.destroyDatetimepicker();
-	      this.initDatetimepicker();
-	    }, { deep: true });
-	  },
 	  mounted: function mounted() {
 	    this.initDatetimepicker();
 	  },
@@ -4229,6 +4238,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    $dateTimePicker.on('input change paste dp.change dp.update', function (event) {
 	      self.$emit('input', $(this).val());
 	    });
+	
+	    this.unwatch = this.$watch('watchProperties', function (data) {
+	      this.options = this.getOptions();
+	      this.destroyDatetimepicker();
+	      this.initDatetimepicker();
+	    }, { deep: true });
 	  } catch (ex) {}
 	}
 	
@@ -4307,11 +4322,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mounted: function mounted() {
 	    this.initDaterangepicker();
-	    this.unwatch = this.$watch('dataOptions', function (data) {
-	      this.options = this.getOptions();
-	      this.destroyDaterangepicker();
-	      this.initDaterangepicker();
-	    }, { deep: true });
 	  },
 	
 	  destroyed: function destroyed() {
@@ -4408,6 +4418,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        $picker.on('input change paste', function (event) {
 	          self.$emit('input', $picker.val());
 	        });
+	
+	        this.unwatch = this.$watch('dataOptions', function (data) {
+	          this.options = this.getOptions();
+	          this.destroyDaterangepicker();
+	          this.initDaterangepicker();
+	        }, { deep: true });
 	      } catch (e) {}
 	    },
 	    destroyDaterangepicker: function destroyDaterangepicker() {

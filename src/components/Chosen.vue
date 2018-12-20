@@ -47,14 +47,6 @@
         return this.generateWatchProperties( [this.dataOptions, this.multiple, this.disabled ] )
       }
     },
-    beforeMount () {
-      this.unwatch = this.$watch('watchProperties', (data) => {
-        this.options = this.getOptions()
-        this.destroyChosen()
-        this.initChosen()
-        this.updateChosen()
-      }, { deep: true, immediate: true })
-    },
     mounted () {
       this.initChosen()
     },

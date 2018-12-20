@@ -31,6 +31,13 @@ function initChosen () {
 
       self.dataOptions.selected = selectedValues;
     })
+
+    this.unwatch = this.$watch('watchProperties', (data) => {
+      this.options = this.getOptions()
+      this.destroyChosen()
+      this.initChosen()
+      this.updateChosen()
+    }, { deep: true, immediate: true })
   } catch (ex) { }
 }
 

@@ -36,6 +36,12 @@ export default {
         $picker.on('input change paste', (event) => {
           self.$emit('input', $picker.val())
         })
+
+        this.unwatch = this.$watch('dataOptions', function (data) {
+          this.options = this.getOptions()
+          this.destroyDaterangepicker()
+          this.initDaterangepicker()
+        }, { deep: true })
       } catch(e) {}
     },
     destroyDaterangepicker () {

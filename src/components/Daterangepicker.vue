@@ -26,11 +26,6 @@ export default {
   },
   mounted () {
     this.initDaterangepicker()
-    this.unwatch = this.$watch('dataOptions', function (data) {
-      this.options = this.getOptions()
-      this.destroyDaterangepicker()
-      this.initDaterangepicker()
-    }, { deep: true })
   },
   destroyed: function () {
     this.destroyDaterangepicker()

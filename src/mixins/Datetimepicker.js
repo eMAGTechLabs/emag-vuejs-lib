@@ -69,6 +69,12 @@ function initDatetimepicker () {
     $dateTimePicker.on('input change paste dp.change dp.update', function (event) {
       self.$emit('input', $(this).val())
     })
+
+    this.unwatch = this.$watch('watchProperties', function (data) {
+      this.options = this.getOptions()
+      this.destroyDatetimepicker()
+      this.initDatetimepicker()
+    }, { deep: true })
   } catch (ex) {}
 }
 

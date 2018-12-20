@@ -9,6 +9,11 @@ function initJqGrid () {
   if (this.dataOptions && this.dataOptions.mountCallback) {
     this.dataOptions.mountCallback(this.photonGrid.grid || {})
   }
+
+  this.unwatch = this.$watch('watchProperties', function (data) {
+    this.destroyJqGrid()
+    this.initJqGrid()
+  }, { deep: true })
 }
 
 function destroyJqGrid () {
