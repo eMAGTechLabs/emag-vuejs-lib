@@ -44,7 +44,6 @@ function updateChosen () {
 function destroyChosen () {
   try {
     $('#chosen_' + this.id).chosen('destroy')
-    this.unwatch()
   } catch (ex) {}
 }
 

@@ -45,7 +45,6 @@ export default {
         // remove value, destroy and unwatch
         $picker.val('')
         $picker.data('daterangepicker').destroy()
-        this.unwatch()
       } catch(e) {}
     }
   }

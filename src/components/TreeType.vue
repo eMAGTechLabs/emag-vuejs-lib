@@ -20,6 +20,7 @@
   import translationMessages from './../translations/messages'
   import generalMixin from './../mixins/General'
   import treeType from './../mixins/TreeType'
+  
   export default {
     name: 'tree-type',
     props: ['dataOptions', 'disabled', 'name', 'required'],

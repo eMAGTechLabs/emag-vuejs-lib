@@ -5,25 +5,35 @@
     </div>
 </template>
 <script>
+import generalMixin from './../mixins/General'
 import datetimeMixin from './../mixins/Datetimepicker'
+
 /* eslint-disable no-undef */
 export default {
   name: 'datetimepicker',
   props: ['dataOptions', 'disabled', 'name', 'required'],
-  mixins: [ datetimeMixin ],
+  mixins: [ generalMixin, datetimeMixin ],
   data () {
     return { options: this.getOptions() }
   },
-  mounted () {
-    this.initDatetimepicker()
-    this.unwatch = this.$watch('dataOptions', function (data) {
+  computed: {
+      watchProperties() {
+        return this.generateWatchProperties( [ this.dataOptions, this.disabled, this.name, this.required ] )
+      }
+    },
+  beforeMount () {
+    this.unwatch = this.$watch('watchProperties', function (data) {
       this.options = this.getOptions()
       this.destroyDatetimepicker()
       this.initDatetimepicker()
     }, { deep: true })
   },
+  mounted () {
+    this.initDatetimepicker()
+  },
   destroyed: function () {
     this.destroyDatetimepicker()
+    this.unwatch()
   },
   methods: {}
 }

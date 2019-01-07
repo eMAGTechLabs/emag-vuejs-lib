@@ -76,7 +76,6 @@ function destroyDatetimepicker () {
   try {
     $(this.$el).find('#date_time_' + this.id).val('')
     $(this.$el).find('#date_time_' + this.id).data('DateTimePicker').destroy()
-    this.unwatch()
   } catch (ex) {}
 }
 

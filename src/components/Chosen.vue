@@ -8,6 +8,7 @@
   import translationMessages from './../translations/messages'
   import generalMixin from './../mixins/General'
   import chosenMixin from './../mixins/Chosen'
+  
   export default {
     name: 'chosen',
     props: {
@@ -43,7 +44,7 @@
     },
     computed: {
       watchProperties() {
-        return [JSON.stringify(this.dataOptions), this.multiple, this.disabled].join()
+        return this.generateWatchProperties( [this.dataOptions, this.multiple, this.disabled ] )
       }
     },
     beforeMount () {
@@ -59,6 +60,7 @@
     },
     destroyed () {
       this.destroyChosen()
+      this.unwatch()
     }
   }
 </script>

@@ -5,23 +5,33 @@
   </div>
 </template>
 <script>
+import generalMixin from './../mixins/General'
+import jqGridMixin from './../mixins/JqGrid'
+
 export default {
   name: 'jqGrid',
+  mixins: [ generalMixin, jqGridMixin ],
   props: ['dataOptions'],
   beforeCreate () {
     this.id = this._uid
   },
-  mounted () {
-    let options = Object.assign(this.dataOptions, {
-      table: '#grid_table_' + this.id,
-      pager: '#grid_pager_' + this.id
-    })
-    /* eslint-disable no-undef */
-    var photonGrid = new PhotonJqGrid(options)
-    photonGrid.init()
-    if (this.dataOptions && this.dataOptions.mountCallback) {
-      this.dataOptions.mountCallback(photonGrid.grid || {})
+  computed: {
+    watchProperties() {
+      return this.generateWatchProperties( [ this.dataOptions ] )
     }
+  },
+  beforeMount () {
+    this.unwatch = this.$watch('watchProperties', function (data) {
+      this.destroyJqGrid()
+      this.initJqGrid()
+    }, { deep: true })
+  },
+  mounted () {
+    this.initJqGrid()
+  },
+  destroyed: function () {
+    this.destroyJqGrid()
+    this.unwatch()
   }
 }
 </script>

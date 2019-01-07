@@ -86,7 +86,6 @@ function getAutocompleteOptions () {
 function destroyAutocomplete () {
   try {
     $('#autocomplete_' + this.id).chosen('destroy')
-    this.unwatch()
   } catch (ex) {}
 }
 

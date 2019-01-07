@@ -24,16 +24,19 @@ export default {
   data () {
     return { options: this.getOptions() }
   },
-  mounted () {
-    this.initDaterangepicker()
+  beforeMount () {
     this.unwatch = this.$watch('dataOptions', function (data) {
       this.options = this.getOptions()
       this.destroyDaterangepicker()
       this.initDaterangepicker()
     }, { deep: true })
   },
+  mounted () {
+    this.initDaterangepicker()
+  },
   destroyed: function () {
     this.destroyDaterangepicker()
+    this.unwatch()
   },
   methods: {}
 }
