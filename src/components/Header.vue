@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="nav-controls visible-xs-inline-block pull-left">
-                    <button id="toggle-sidebar-btn" type="button" class="btn btn-default navbar-btn"
+                    <button id="toggle-sidebar-btn" type="button" v-if="sidebar.visible" class="btn btn-default navbar-btn"
                             aria-expanded="false">
                         <span class="sr-only">Toggle sidepanel</span><i class="fa fa-bars"></i>
                     </button>
@@ -39,7 +39,8 @@
         logoPath: this.dataOptions ? this.dataOptions.logoPath : '',
         logoRoute: this.dataOptions ? this.dataOptions.logoRoute : '',
         appName: this.dataOptions ? this.dataOptions.appName : '',
-        currentView: this.headerChildren
+        currentView: this.headerChildren,
+        sidebar: this.$store.state.config.sidebar
       }
     },
     beforeMount () {
