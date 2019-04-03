@@ -19,7 +19,22 @@ function generateWatchProperties (properties) {
       for (let key in properties[property]) {
         let value = properties[property][key]
 
-        if (typeof value === 'function' && value !== null) {
+        if (key == "colModel") {
+          let newValues = []
+
+          for (let col in value) {
+            let newValue = ''
+            newValue += 'index:' + (value[col].index || '')
+            newValue += 'name:' + (value[col].name || '')
+            newValue += 'resizable:' + (value[col].resizable || '')
+            newValue += 'sortable:' + (value[col].sortable || '')
+            newValue += 'width:' + (value[col].width || '')
+
+            newValues.push(newValue)
+          }
+
+          objectPropertyValues.push(key + ':' + newValues.join())
+        } else if (typeof value === 'function' && value !== null) {
           objectPropertyValues.push(key + ':[Function]')
         } else if (typeof value === 'object' && value !== null) {
           try {
