@@ -7,7 +7,6 @@ function getDefaultLang () {
 
 function generateWatchProperties (properties) {
   let resultArray = []
-  console.log(properties)
 
   for (let property in properties) {
     let propertyResult = ''
@@ -20,14 +19,22 @@ function generateWatchProperties (properties) {
       for (let key in properties[property]) {
         let value = properties[property][key]
 
-        if (typeof value === 'function' && value !== null) {
+        if (key == "colModel") {
+          let newValue = ''
+
+          newValue += 'index:' + (value.index || '')
+          newValue += 'name:' + (value.name || '')
+          newValue += 'resizable:' + (value.resizable || '')
+          newValue += 'sortable:' + (value.sortable || '')
+          newValue += 'width:' + (value.width || '')
+
+          objectPropertyValues.push(key + ':' + newValue)
+        } else if (typeof value === 'function' && value !== null) {
           objectPropertyValues.push(key + ':[Function]')
         } else if (typeof value === 'object' && value !== null) {
           try {
-            debugger
             objectPropertyValues.push(key + ':' + JSON.stringify(value))
           } catch (error) {
-            debugger
             objectPropertyValues.push(key + ':[Object]')
           }
         } else {

@@ -1715,7 +1715,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function generateWatchProperties(properties) {
 	  var resultArray = [];
-	  console.log(properties);
 	
 	  for (var property in properties) {
 	    var propertyResult = '';
@@ -1728,14 +1727,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	      for (var _key in properties[property]) {
 	        var value = properties[property][_key];
 	
-	        if (typeof value === 'function' && value !== null) {
+	        if (_key == "colModel") {
+	          var newValue = '';
+	
+	          newValue += 'index:' + (value.index || '');
+	          newValue += 'name:' + (value.name || '');
+	          newValue += 'resizable:' + (value.resizable || '');
+	          newValue += 'sortable:' + (value.sortable || '');
+	          newValue += 'width:' + (value.width || '');
+	
+	          objectPropertyValues.push(_key + ':' + newValue);
+	        } else if (typeof value === 'function' && value !== null) {
 	          objectPropertyValues.push(_key + ':[Function]');
 	        } else if ((typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object' && value !== null) {
 	          try {
-	            debugger;
 	            objectPropertyValues.push(_key + ':' + (0, _stringify2.default)(value));
 	          } catch (error) {
-	            debugger;
 	            objectPropertyValues.push(_key + ':[Object]');
 	          }
 	        } else {
