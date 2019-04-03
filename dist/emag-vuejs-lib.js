@@ -1728,15 +1728,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var value = properties[property][_key];
 	
 	        if (_key == "colModel") {
-	          var newValue = '';
+	          var newValues = [];
 	
-	          newValue += 'index:' + (value.index || '');
-	          newValue += 'name:' + (value.name || '');
-	          newValue += 'resizable:' + (value.resizable || '');
-	          newValue += 'sortable:' + (value.sortable || '');
-	          newValue += 'width:' + (value.width || '');
+	          for (var col in value) {
+	            var newValue = '';
+	            newValue += 'index:' + (col.index || '');
+	            newValue += 'name:' + (col.name || '');
+	            newValue += 'resizable:' + (col.resizable || '');
+	            newValue += 'sortable:' + (col.sortable || '');
+	            newValue += 'width:' + (col.width || '');
 	
-	          objectPropertyValues.push(_key + ':' + newValue);
+	            newValues.push(newValue);
+	          }
+	
+	          objectPropertyValues.push(_key + ':' + newValues.join());
 	        } else if (typeof value === 'function' && value !== null) {
 	          objectPropertyValues.push(_key + ':[Function]');
 	        } else if ((typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object' && value !== null) {
