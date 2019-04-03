@@ -1732,11 +1732,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	          for (var col in value) {
 	            var newValue = '';
-	            newValue += 'index:' + (col.index || '');
-	            newValue += 'name:' + (col.name || '');
-	            newValue += 'resizable:' + (col.resizable || '');
-	            newValue += 'sortable:' + (col.sortable || '');
-	            newValue += 'width:' + (col.width || '');
+	            newValue += 'index:' + (value[col].index || '');
+	            newValue += 'name:' + (value[col].name || '');
+	            newValue += 'resizable:' + (value[col].resizable || '');
+	            newValue += 'sortable:' + (value[col].sortable || '');
+	            newValue += 'width:' + (value[col].width || '');
 	
 	            newValues.push(newValue);
 	          }
