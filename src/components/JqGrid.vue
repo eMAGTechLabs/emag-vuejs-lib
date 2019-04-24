@@ -27,8 +27,8 @@ export default {
     }, { deep: true })
   },
   mounted () {
-    document.getElementById('grid_table_' + this.id).className = document.getElementById('wrap_grid_table_' + this.id).className
-    document.getElementById('wrap_grid_table_' + this.id).className = ''
+    this.$el.children[0].className = this.$el.className
+    this.$el.className = ''
     this.initJqGrid()
   },
   destroyed: function () {

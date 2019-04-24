@@ -2909,8 +2909,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }, { deep: true });
 	  },
 	  mounted: function mounted() {
-	    document.getElementById('grid_table_' + this.id).className = document.getElementById('wrap_grid_table_' + this.id).className;
-	    document.getElementById('wrap_grid_table_' + this.id).className = '';
+	    this.$el.children[0].className = this.$el.className;
+	    this.$el.className = '';
 	    this.initJqGrid();
 	  },
 	
@@ -4511,11 +4511,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	//       <li v-for="item in items" v-on:click="reloadPage()">
 	//         <a :href="getHrefForMenuItem(item)" v-on:click="item.onClick || null" v-if="isAbsolute(item) || hasEmptyLink(item)">
 	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//             <span class="menu-text"><template v-if="isFunction(this.$t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//             <span class="menu-text"><template v-if="isFunction(this.$t) || $t(item.label)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	//         </a>
 	//         <router-link :to="item.link" v-on:click="onClick || null" v-else>
 	//             <i :class="['flag-icon', item.icon]" v-if="item.icon"></i>
-	//             <span class="menu-text"><template v-if="isFunction(this.$t)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
+	//             <span class="menu-text"><template v-if="isFunction(this.$t) || $t(item.label)">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>
 	//         </router-link>
 	//       </li>
 	//     </ul>
@@ -12820,7 +12820,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 149 */
 /***/ (function(module, exports) {
 
-	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\"><template v-if=\"isFunction(this.$t)\">{{ $t('label.language') }}</template><template v-else>Language</template></span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\"><template v-if=\"isFunction(this.$t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\"><template v-if=\"isFunction(this.$t)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
+	module.exports = "<li class=\"dropdown\">\n    <a href=\"javascript:void(0)\" class=\"dropdown-toggle dd-language\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">\n      <span class=\"visible-xs-inline\"><template v-if=\"isFunction(this.$t)\">{{ $t('label.language') }}</template><template v-else>Language</template></span>\n      <span><i :class=\"['flag-icon', locale.icon]\"></i>{{ locale.label }}</span><i class=\"fa fa-angle-down hidden-xs\"></i>\n    </a>\n    <ul class=\"dropdown-menu dm-language\">\n      <li v-for=\"item in items\" v-on:click=\"reloadPage()\">\n        <a :href=\"getHrefForMenuItem(item)\" v-on:click=\"item.onClick || null\" v-if=\"isAbsolute(item) || hasEmptyLink(item)\">\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\"><template v-if=\"isFunction(this.$t) || $t(item.label)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n        </a>\n        <router-link :to=\"item.link\" v-on:click=\"onClick || null\" v-else>\n            <i :class=\"['flag-icon', item.icon]\" v-if=\"item.icon\"></i>\n            <span class=\"menu-text\"><template v-if=\"isFunction(this.$t) || $t(item.label)\">{{ $t(item.label) }}</template><template v-else>{{ item.label }}</template></span>\n        </router-link>\n      </li>\n    </ul>\n  </li>";
 
 /***/ }),
 /* 150 */
@@ -12875,7 +12875,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//         </a>
 	//         <ul class="dropdown-menu">
 	//             <li class="dm-header hidden-xs">
-	//                 <span><template v-if="isFunction(this.$t)">{{ $t(label) }}</template><template v-else>Notifications</template></span>
+	//                 <span><template v-if="isFunction(this.$t) || $t(label)">{{ $t(label) }}</template><template v-else>Notifications</template></span>
 	//             </li>
 	//             <li v-for="notification in notifications">
 	//               <link-item :item="notification"></link-item>
@@ -12990,7 +12990,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 155 */
 /***/ (function(module, exports) {
 
-	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\"><template v-if=\"isFunction(this.$t)\">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span><template v-if=\"isFunction(this.$t)\">{{ $t(label) }}</template><template v-else>Notifications</template></span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
+	module.exports = "<li v-if=\"user.label\" class=\"dropdown\">\n        <a href=\"javascript:void(0)\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            <i class=\"fa fa-bell nav-icon-lg hidden-xs\"></i>\n            <span class=\"visible-xs-inline\"><template v-if=\"isFunction(this.$t)\">{{ $t('baseNotifications.titleNotice') }}</template><template v-else>Notifications</template></span>\n            <span class=\"jewel\" v-if=\"total != 0\">{{ total }} </span>\n        </a>\n        <ul class=\"dropdown-menu\">\n            <li class=\"dm-header hidden-xs\">\n                <span><template v-if=\"isFunction(this.$t) || $t(label)\">{{ $t(label) }}</template><template v-else>Notifications</template></span>\n            </li>\n            <li v-for=\"notification in notifications\">\n              <link-item :item=\"notification\"></link-item>\n            </li>\n        </ul>\n    </li>";
 
 /***/ }),
 /* 156 */
