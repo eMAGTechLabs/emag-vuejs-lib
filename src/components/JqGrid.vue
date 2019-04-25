@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <table :id="'grid_table_' + id" class="table table-bordered"></table>
+  <div :id="'wrap_grid_table_' + id" class="">
+    <table :id="'grid_table_' + id"></table>
     <div :id="'grid_pager_' + id"></div>
   </div>
 </template>
@@ -27,6 +27,8 @@ export default {
     }, { deep: true })
   },
   mounted () {
+    this.$el.children[0].className = this.$el.className
+    this.$el.className = ''
     this.initJqGrid()
   },
   destroyed: function () {

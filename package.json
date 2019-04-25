@@ -20,7 +20,7 @@
     "vuex": "^2.0.0"
   },
   "devDependencies": {
-    "emag-apps-ui-kit": "git+ssh://git@github.com/eMAGTechLabs/emag-apps-ui-kit.git",
+    "emag-apps-ui-kit": "https://github.com/eMAGTechLabs/emag-apps-ui-kit.git",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.0",
     "babel-plugin-transform-runtime": "^6.15.0",

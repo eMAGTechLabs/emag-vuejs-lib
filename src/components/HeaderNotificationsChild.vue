@@ -7,7 +7,7 @@
         </a>
         <ul class="dropdown-menu">
             <li class="dm-header hidden-xs">
-                <span><template v-if="isFunction(this.$t)">{{ $t(label) }}</template><template v-else>Notifications</template></span>
+                <span><template v-if="isFunction(this.$t) || $t(label)">{{ $t(label) }}</template><template v-else>Notifications</template></span>
             </li>
             <li v-for="notification in notifications">
               <link-item :item="notification"></link-item>
