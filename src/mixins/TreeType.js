@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 function getOptions () {
-  return Object.assign({
+  let options = Object.assign({
     treeData: [],
     selectId: 'tree_type_' + this._uid,
     modalTitle: this.translations.tree.modalTitle,
@@ -13,6 +13,9 @@ function getOptions () {
     textSelected: this.translations.tree.textSelected,
     searchPlaceholder: this.translations.tree.searchPlaceholder
   }, this.dataOptions)
+  options.selectData = this.getSelectData(options.treeData)
+
+  return options
 }
 
 function initTreeType () {
@@ -34,10 +37,28 @@ function updateTreeData (treeData) {
   }
 }
 
+function getSelectData (treeData) {
+  let selectData = []
+
+  for (let nodeId in treeData) {
+    selectData.push(treeData[nodeId])
+    if (treeData[nodeId] && treeData[nodeId].children && treeData[nodeId].children.length > 0) {
+      let childrenData = this.getSelectData(treeData[nodeId].children)
+      
+      for (let childId in childrenData) {
+        selectData.push(childrenData[childId])
+      }
+    }
+  }
+
+  return selectData
+}
+
 export default {
   methods: {
     getOptions,
     initTreeType,
-    updateTreeData
+    updateTreeData,
+    getSelectData
   }
 }
