@@ -3526,7 +3526,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     <div class="hide-with-opacity">
 	//       <select :id="'tree_type_' + _uid" class="form-control" :disabled="disabled" multiple="multiple" :name="name" :required="required">
 	//         <option value=""></option>
-	//         <option :value="item.key" v-for="item in options.treeData" :selected="item.selected">
+	//         <option :value="item.key" v-for="item in options.selectData" :selected="item.selected">
 	//             {{ item.title }}
 	//         </option>
 	//       </select>
@@ -3559,7 +3559,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	/* eslint-disable no-undef */
 	function getOptions() {
-	  return (0, _assign2.default)({
+	  var options = (0, _assign2.default)({
 	    treeData: [],
 	    selectId: 'tree_type_' + this._uid,
 	    modalTitle: this.translations.tree.modalTitle,
@@ -3572,6 +3572,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    textSelected: this.translations.tree.textSelected,
 	    searchPlaceholder: this.translations.tree.searchPlaceholder
 	  }, this.dataOptions);
+	  options.selectData = this.getSelectData(options.treeData);
+	
+	  return options;
 	}
 	
 	function initTreeType() {
@@ -3591,11 +3594,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	  } catch (ex) {}
 	}
 	
+	function getSelectData(treeData) {
+	  var selectData = [];
+	
+	  for (var nodeId in treeData) {
+	    selectData.push(treeData[nodeId]);
+	    if (treeData[nodeId] && treeData[nodeId].children && treeData[nodeId].children.length > 0) {
+	      var childrenData = this.getSelectData(treeData[nodeId].children);
+	
+	      for (var childId in childrenData) {
+	        selectData.push(childrenData[childId]);
+	      }
+	    }
+	  }
+	
+	  return selectData;
+	}
+	
 	exports.default = {
 	  methods: {
 	    getOptions: getOptions,
 	    initTreeType: initTreeType,
-	    updateTreeData: updateTreeData
+	    updateTreeData: updateTreeData,
+	    getSelectData: getSelectData
 	  }
 	};
 
@@ -3603,7 +3624,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 128 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\" :name=\"name\" :required=\"required\">\n        <option value=\"\"></option>\n        <option :value=\"item.key\" v-for=\"item in options.treeData\" :selected=\"item.selected\">\n            {{ item.title }}\n        </option>\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
+	module.exports = "<div>\n    <div class=\"hide-with-opacity\">\n      <select :id=\"'tree_type_' + _uid\" class=\"form-control\" :disabled=\"disabled\" multiple=\"multiple\" :name=\"name\" :required=\"required\">\n        <option value=\"\"></option>\n        <option :value=\"item.key\" v-for=\"item in options.selectData\" :selected=\"item.selected\">\n            {{ item.title }}\n        </option>\n      </select>\n    </div>\n    <div class=\"input-group input-group-no-separation\">\n      <div class=\"form-control\" :id=\"'id_tree_type_' + _uid\"></div>\n      <span class=\"input-group-addon\">\n          <i class=\"fa fa-sitemap\" v-on:click=\"openTree\"></i>\n      </span>\n    </div>\n  </div>";
 
 /***/ }),
 /* 129 */
