@@ -1,8 +1,7 @@
 {
-  "name": "emag-vuejs-lib",
-  "version": "0.1.0",
-  "description": "JS library for admin applications based on Vue JS and eMAG Apps UI KIT",
-  "author": "Valentin Bica | eMAG, Software Development <valentin.bica@emag.ro>",
+  "name": "ui/emag-vuejs-lib",
+  "description": "JS library for admin applications based on Vue JS and eMAG Apps UI Kit",
+  "author": "HX Team <tech.team.hx@emag.ro>",
   "main": "dist/emag-vuejs-lib.js",
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
